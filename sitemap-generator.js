@@ -7,10 +7,10 @@ const paths = [
   { url: "/pricing", changefreq: "monthly", priority: 0.8 },
   { url: "/faqs", changefreq: "monthly", priority: 0.9 }, // Higher priority for FAQs
   { url: "/reviews", changefreq: "monthly", priority: 0.7 },
-  { url: "/contact", changefreq: "monthly", priority: 0.5 },
-  { url: "/privacy", changefreq: "yearly", priority: 0.3 },
-  { url: "/terms", changefreq: "yearly", priority: 0.3 },
-  { url: "/backlink-terms", changefreq: "yearly", priority: 0.3 }
+  { url: "/contact", changefreq: "monthly", priority: 0.5 }
+  //   { url: "/privacy", changefreq: "yearly", priority: 0.3 },
+  //   { url: "/terms", changefreq: "yearly", priority: 0.3 },
+  //   { url: "/backlink-terms", changefreq: "yearly", priority: 0.3 }
 ];
 
 async function generateSitemap() {
