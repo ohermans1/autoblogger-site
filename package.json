@@ -1,6 +1,6 @@
 {
   "name": "autoblogger-site",
-  "homepage": "https://github.com/ohermans1/autoblogger-site",
+  "homepage": "https://autoblogger.bot",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
