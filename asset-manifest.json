@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ohermans1/autoblogger-site/static/css/main.9f32c8c4.css",
+    "main.js": "/ohermans1/autoblogger-site/static/js/main.d1caea27.js",
+    "static/js/453.87b4b50e.chunk.js": "/ohermans1/autoblogger-site/static/js/453.87b4b50e.chunk.js",
+    "index.html": "/ohermans1/autoblogger-site/index.html",
+    "main.9f32c8c4.css.map": "/ohermans1/autoblogger-site/static/css/main.9f32c8c4.css.map",
+    "main.d1caea27.js.map": "/ohermans1/autoblogger-site/static/js/main.d1caea27.js.map",
+    "453.87b4b50e.chunk.js.map": "/ohermans1/autoblogger-site/static/js/453.87b4b50e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9f32c8c4.css",
+    "static/js/main.d1caea27.js"
+  ]
+}
