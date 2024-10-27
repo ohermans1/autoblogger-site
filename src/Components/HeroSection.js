@@ -10,12 +10,14 @@ const HeroSection = () => {
       {/* Optional logo here */}
       {/* <img src="path_to_logo" alt="autoBlogger Logo" className="mx-auto mb-4" /> */}
 
-      <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
+      <h1 className="text-4xl md:text-5xl font-bold mb-10 text-gray-800">
+        Welcome to{" "}
         <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" className="text-primary no-underline" aria-label="Visit autoBlogger on Shopify">
           autoBlogger
         </a>{" "}
-        - Set and Forget, Fully Automated AI Blogging
+        - Your AI Solution for Effortless Blogging
       </h1>
+
       <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-gray-700">
         Transform Your{" "}
         <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" className="text-primary no-underline" aria-label="Visit Shopify">

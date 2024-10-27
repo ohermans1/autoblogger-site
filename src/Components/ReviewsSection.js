@@ -1,6 +1,6 @@
 import React from "react";
 
-const ReviewsSection = () => {
+const ReviewsSection = props => {
   const trimmedLength = 150; // Set to the length of the shortest review
   const fullReviewsLink = "https://apps.shopify.com/autoblogger"; // Link to the app store listing
 
@@ -26,13 +26,19 @@ const ReviewsSection = () => {
   ];
 
   return (
-    <section className="py-10 bg-gray-100">
-      <h3 className="text-2xl font-semibold mb-4 text-center">
+    <section className="py-10 bg-white md:bg-gray-100">
+      {props.home ? (
+        <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">Latest Reviews from Our Happy autoBlogger Users</h3>
+      ) : (
+        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Latest Reviews from Our Happy autoBlogger Users</h1>
+      )}
+
+      <h4 className="text-2xl font-semibold mb-4 text-center">
         Current Rating: 4.6 out of 5 stars on the{" "}
         <a href={fullReviewsLink} aria-label="Visit the Shopify App Store to read more reviews">
           Shopify app store!
         </a>
-      </h3>
+      </h4>
       <p className="text-center mb-8">Here are 3 of the latest reviews from real users' stores:</p>
       <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
         {reviews.map((review, index) => (

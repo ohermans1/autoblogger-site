@@ -1,7 +1,7 @@
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa"; // Importing an icon
 
-const FeaturesSection = () => {
+const FeaturesSection = props => {
   const appStoreUrl = "https://apps.shopify.com/autoblogger"; // Update with actual URL
   const mediumBlogUrl = "https://medium.com/@ohermans1"; // Update with actual Medium blog URL
 
@@ -41,8 +41,12 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section id="features" className="py-16 bg-gradient-to-r from-gray-100 to-white">
-      <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">Features</h3>
+    <section id="features" className="py-16 bg-white md:bg-gradient-to-r md:from-gray-100 md:to-white">
+      {props.home ? (
+        <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">Discover the Powerful Features of autoBlogger</h3>
+      ) : (
+        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Discover the Powerful Features of autoBlogger</h1>
+      )}
       <div className="max-w-3xl mx-auto">
         <ul className="list-disc list-inside space-y-6 text-lg text-gray-700">
           {features.map((feature, index) => (

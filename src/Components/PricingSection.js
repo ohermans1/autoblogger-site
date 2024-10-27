@@ -22,10 +22,14 @@ const pricingPlans = [
   }
 ];
 
-const PricingSection = () => {
+const PricingSection = props => {
   return (
-    <section className="py-10 bg-gray-100">
-      <h3 className="text-2xl font-semibold mb-8 text-center">Pricing</h3>
+    <section className="py-10 bg-white md:bg-gray-100">
+      {props.home ? (
+        <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">Affordable Pricing Plans for autoBlogger</h3>
+      ) : (
+        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Affordable Pricing Plans for autoBlogger</h1>
+      )}
       <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {pricingPlans.map((plan, index) => (
           <div key={index} className="bg-white rounded-lg shadow-lg">

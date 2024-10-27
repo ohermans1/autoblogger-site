@@ -43,11 +43,11 @@ const App = () => {
               element={
                 <>
                   <HeroSection />
-                  <FeaturesSection />
-                  <PricingSection />
-                  <FAQsSection />
-                  <ReviewsSection />
-                  <ContactSection />
+                  <FeaturesSection home={true} />
+                  <PricingSection home={true} />
+                  <FAQsSection home={true} />
+                  <ReviewsSection home={true} />
+                  <ContactSection home={true} />
                 </>
               }
             />

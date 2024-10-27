@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { obfuscateEmail } from "../Utils/helpers"; // Adjust path as necessary
 
-const FAQsSection = () => {
+const FAQsSection = props => {
   // State to manage which FAQ is open
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -120,8 +120,12 @@ const FAQsSection = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-100">
-      <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">FAQs</h3>
+    <section className="py-16 bg-white md:bg-gray-100">
+      {props.home ? (
+        <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">Frequently Asked Questions about autoBlogger</h3>
+      ) : (
+        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Frequently Asked Questions about autoBlogger</h1>
+      )}
       <div className="max-w-3xl mx-auto">
         <p className="text-lg text-gray-700 mb-6">Find answers to your most common questions below:</p>
         <div className="space-y-4">
