@@ -34,7 +34,7 @@ const HeroSection = () => {
       {/* Call-to-action text */}
       <p className="text-xl font-semibold text-gray-700 mb-4">Start your 14-day free trial now:</p>
 
-      <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+      <div className="flex flex-col md:flex-row justify-center items-center md:items-start space-y-4 md:space-y-0 md:space-x-4">
         {/* Shopify Badge */}
         <a
           href={shopifyUrl}
