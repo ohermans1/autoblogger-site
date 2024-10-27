@@ -63,13 +63,13 @@ const HeroSection = () => {
       </div>
 
       {/* Learn More Button with Animation */}
-      <button
+      {/* <button
         onClick={handleScroll}
         className="mt-8 px-6 py-3 bg-primary text-white rounded shadow hover:shadow-lg transition-transform transform hover:scale-105"
         aria-label="Learn more about autoBlogger"
       >
         Learn More
-      </button>
+      </button> */}
     </section>
   );
 };
