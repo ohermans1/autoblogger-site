@@ -36,7 +36,7 @@ const HeroSection = () => {
         >
           Start your 14-day free trial
         </a>
-        <a
+        {/* <a
           href={demoStoreUrl}
           target="_blank"
           rel="noopener noreferrer"
@@ -44,7 +44,7 @@ const HeroSection = () => {
           aria-label="View the autoBlogger demo store"
         >
           View Demo Store
-        </a>
+        </a> */}
       </div>
     </section>
   );
