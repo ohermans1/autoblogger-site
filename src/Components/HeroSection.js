@@ -3,7 +3,7 @@ import React from "react";
 const HeroSection = () => {
   const appStoreUrl = "https://apps.shopify.com/autoblogger";
   const demoStoreUrl =
-    "https://demo-store-autoblogger.myshopify.com/blogs/news?_bt=BAh7BkkiC19yYWlscwY6BkVUewhJIglkYXRhBjsAVEkiKWRlbW8tc3RvcmUtYXV0b2Jsb2dnZXIubXlzaG9waWZ5LmNvbQY7AEZJIghleHAGOwBUSSIdMjAyNC0xMC0yN1QwMTo0NzoxOC4zNjJaBjsAVEkiCHB1cgY7AFRJIh5wZXJtYW5lbnRfcGFzc3dvcmRfYnlwYXNzBjsARg%3D%3D--28c3bee0cbca7e43c6707668493d59388c94931a";
+    "https://demo-store-autoblogger.myshopify.com/blogs/news?_bt=BAh7BkkiC19yYWlscwY6BkVUewhJIglkYXRhBjsAVEkiKWRlbW8tc3RvcmUtYXV0b2Jsb2dnZXIubXlzaG9waWZ5LmNvbQY7AEZJIghleHAGOwBUSSIdMjAyNC0xMC0yN1QwNjoyMzozMS41ODNaBjsAVEkiCHB1cgY7AFRJIh5wZXJtYW5lbnRfcGFzc3dvcmRfYnlwYXNzBjsARg%3D%3D--2f4db89014f23a8bae51292bf1585876f495ebff";
 
   return (
     <section className="text-center py-24 bg-gradient-to-r from-gray-50 to-white relative">
