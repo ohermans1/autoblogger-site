@@ -112,6 +112,21 @@ const FAQsSection = props => {
     {
       question: "How does autoBlogger handle my data and privacy?",
       answer: "We take data security seriously. autoBlogger complies with data protection regulations and ensures that your information is kept secure."
+    },
+    {
+      question: "What is SEO?",
+      answer:
+        "SEO, or Search Engine Optimisation, is the practice of improving your website's visibility in search engine results, making it easier for potential customers to find your site through organic search."
+    },
+    {
+      question: "How can blogs help with SEO?",
+      answer:
+        "Blogs can significantly enhance your SEO by providing fresh, relevant content that search engines favour. They help increase your site's keyword diversity and can attract backlinks, boosting your site's authority. autoBlogger automates this entire process, ensuring that you receive consistently generated articles."
+    },
+    {
+      question: "What are other strategies I can implement for better SEO?",
+      answer:
+        "Blogging is just one piece of the puzzle. In addition to blogging, consider optimising your website's structure, using relevant keywords, improving page load speed, enhancing mobile responsiveness, and building quality backlinks to improve your overall SEO performance."
     }
   ];
 
