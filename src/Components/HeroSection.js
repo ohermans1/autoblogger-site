@@ -55,7 +55,7 @@ const HeroSection = () => {
             aria-label="Start your 14-day free trial on Wix"
             className="transition-transform duration-200 ease-in-out transform hover:scale-105"
           >
-            <img src="/wixbadge.png" alt="Wix Badge" className="w-60 h-16 object-cover" />
+            <img src="/wixbadgedark.png" alt="Wix Badge" className="w-60 h-16 object-cover" />
           </a>
           {/* New Feature Text with Smaller Font */}
           <p className="text-xs text-gray-500 mt-1">New, currently with limited features</p>
