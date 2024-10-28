@@ -43,7 +43,7 @@ const HeroSection = () => {
           aria-label="Start your 14-day free trial on Shopify"
           className="transition-transform duration-200 ease-in-out transform hover:scale-105"
         >
-          <img src="/shopifybadgedark.png" alt="Shopify Badge" className="w-60 h-16 object-cover" />
+          <img src="/shopifybadgedark.png" alt="Shopify Badge" className="w-60 h-16 object-cover rounded-lg grayscale" />
         </a>
 
         {/* Wix Badge with aligned smaller text */}
@@ -55,7 +55,7 @@ const HeroSection = () => {
             aria-label="Start your 14-day free trial on Wix"
             className="transition-transform duration-200 ease-in-out transform hover:scale-105"
           >
-            <img src="/wixbadgedark.png" alt="Wix Badge" className="w-60 h-16 object-cover" />
+            <img src="/wixbadgedark.png" alt="Wix Badge" className="w-60 h-16 object-cover rounded-lg grayscale" />{" "}
           </a>
           {/* New Feature Text with Smaller Font */}
           <p className="text-xs text-gray-500 mt-1">New, currently with limited features</p>
