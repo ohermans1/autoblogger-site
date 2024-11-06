@@ -27,10 +27,10 @@ const SEOChecklist = props => {
 
       {/* Download Links */}
       <div className="flex flex-col sm:flex-row justify-center sm:gap-8">
-        <a href="/Wix SEO Checklist.xlsx" className="bg-primary text-white px-6 py-3 rounded shadow hover:bg-opacity-90 transition mb-4 sm:mb-0" aria-label="Free Shopify SEO checklist download">
+        <a href="/Shopify SEO Checklist.xlsx" className="bg-primary text-white px-6 py-3 rounded shadow hover:bg-opacity-90 transition mb-4 sm:mb-0" aria-label="Free Shopify SEO checklist download">
           Download Shopify SEO Checklist
         </a>
-        <a href="/Shopify SEO Checklist.xlsx" className="bg-primary text-white px-6 py-3 rounded shadow hover:bg-opacity-90 transition" aria-label="Free Wix SEO checklist download">
+        <a href="/Wix SEO Checklist.xlsx" className="bg-primary text-white px-6 py-3 rounded shadow hover:bg-opacity-90 transition" aria-label="Free Wix SEO checklist download">
           Download Wix SEO Checklist
         </a>
       </div>

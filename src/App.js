@@ -48,6 +48,7 @@ const App = () => {
                   <PricingSection home={true} />
                   <FAQsSection home={true} />
                   <ReviewsSection home={true} />
+                  <SEOChecklist home={true} />
                   <ContactSection home={true} />
                 </>
               }
