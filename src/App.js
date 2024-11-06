@@ -7,6 +7,7 @@ import FeaturesSection from "./Components/FeaturesSection";
 import FAQsSection from "./Components/FAQsSection";
 import ReviewsSection from "./Components/ReviewsSection";
 import ContactSection from "./Components/ContactSection";
+import SEOChecklist from "./Components/SEOChecklist";
 import PricingSection from "./Components/PricingSection";
 import PrivacyPolicy from "./Components/PrivacyPolicy"; // Import your PrivacyPolicy component
 import TermsAndConditions from "./Components/TermsAndConditions"; // Import your TermsAndConditions component
@@ -56,6 +57,7 @@ const App = () => {
             <Route path="/faqs" element={<FAQsSection />} />
             <Route path="/reviews" element={<ReviewsSection />} />
             <Route path="/contact" element={<ContactSection />} />
+            <Route path="/free-seo-checklist" element={<SEOChecklist />} />
             <Route path="/privacy" element={<PrivacyPolicy />} /> {/* Add Privacy Policy Route */}
             <Route path="/terms" element={<TermsAndConditions />} /> {/* Add Terms and Conditions Route */}
             <Route path="/backlink-terms" element={<BacklinkProgramTerms />} /> {/* Add Backlink Program Terms Route */}

@@ -23,6 +23,9 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
         <NavLink to="/contact" onClick={toggleMenu} className={({ isActive }) => `block px-4 py-2 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:bg-gray-200`}>
           Contact Us
         </NavLink>
+        <NavLink to="/free-seo-checklist" onClick={toggleMenu} className={({ isActive }) => `block px-4 py-2 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:bg-gray-200`}>
+          Free SEO Checklist
+        </NavLink>
       </div>
     )
   );
