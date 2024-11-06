@@ -41,7 +41,7 @@ const FeaturesSection = props => {
   ];
 
   return (
-    <section id="features" className="py-16 bg-white md:bg-gradient-to-r md:from-gray-100 md:to-white">
+    <section id="features" className="py-16 md:bg-gradient-to-b md:from-white md:to-gray-100">
       {props.home ? (
         <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">Discover the Powerful Features of autoBlogger</h3>
       ) : (

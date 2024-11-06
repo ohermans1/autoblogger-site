@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="text-center py-4 bg-gray-100">
+    <footer className="text-center py-4 md:bg-gradient-to-b md:from-white md:to-gray-100">
       <p>&copy; {new Date().getFullYear()} autoBlogger. All rights reserved.</p>
       <div className="mt-2">
         <Link to="/privacy" className="text-primary hover:underline mx-2">

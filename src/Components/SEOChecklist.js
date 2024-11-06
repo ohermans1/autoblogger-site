@@ -2,7 +2,7 @@ import React from "react";
 
 const SEOChecklist = props => {
   return (
-    <section className="py-10 px-4 md:px-12">
+    <section className="py-16 md:bg-gradient-to-b md:from-white md:to-gray-100 px-4 md:px-16">
       {props.home ? (
         <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">Free SEO Checklist for Shopify and Wix</h3>
       ) : (

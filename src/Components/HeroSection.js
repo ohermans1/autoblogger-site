@@ -13,7 +13,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="text-center pt-12 pb-24 bg-gradient-to-r from-gray-50 to-white relative">
+    <section className="text-center pt-12 pb-24 relative">
       <h1 className="text-4xl md:text-5xl font-bold mb-10 text-gray-800">
         Welcome to{" "}
         <a href={shopifyUrl} target="_blank" rel="noopener noreferrer" className="text-primary no-underline" aria-label="Visit autoBlogger on Shopify">

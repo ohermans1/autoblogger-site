@@ -6,7 +6,7 @@ const ContactSection = props => {
   const { email, mailto } = obfuscateEmail("support", "autoblogger.bot");
 
   return (
-    <section className="py-10 bg-white md:bg-gray-100">
+    <section className="py-16 md:bg-gradient-to-b md:from-gray-100 md:to-white">
       {" "}
       {/* Change applied here */}
       {props.home ? (

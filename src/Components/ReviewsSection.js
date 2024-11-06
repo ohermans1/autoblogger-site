@@ -26,7 +26,7 @@ const ReviewsSection = props => {
   ];
 
   return (
-    <section className="py-10 bg-white md:bg-gray-100">
+    <section className="py-16 md:bg-gradient-to-b md:from-gray-100 md:to-white">
       {props.home ? (
         <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">Latest Reviews from Our Happy autoBlogger Users</h3>
       ) : (
