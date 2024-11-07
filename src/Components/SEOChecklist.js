@@ -1,6 +1,16 @@
 import React from "react";
+import ReactGA from "react-ga4";
 
 const SEOChecklist = props => {
+  // Function to handle click events and send to Google Analytics
+  const handleDownloadClick = platform => {
+    ReactGA.event({
+      category: "Downloads",
+      action: `Download ${platform} SEO Checklist`,
+      label: `${platform} SEO Checklist Button Click`
+    });
+  };
+
   return (
     <section className="py-16 md:bg-gradient-to-b md:from-white md:to-gray-100 px-4 md:px-16">
       {props.home ? (
@@ -9,7 +19,6 @@ const SEOChecklist = props => {
         <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Free SEO Checklist for Shopify and Wix</h1>
       )}
 
-      {/* SEO Optimised Text */}
       <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 text-center">
         Optimising your website for search engines is essential to driving organic traffic and boosting your visibility online. Our free, downloadable SEO checklists for both Shopify and Wix are
         designed to help you enhance your site’s performance, rankings, and user experience. Whether you're an eCommerce store owner or a content creator, these checklists will guide you through key
@@ -25,12 +34,21 @@ const SEOChecklist = props => {
         Download your platform-specific checklist today and start improving your SEO to drive more traffic, conversions, and success!
       </p>
 
-      {/* Download Links */}
       <div className="flex flex-col sm:flex-row justify-center sm:gap-8">
-        <a href="/Shopify SEO Checklist.xlsx" className="bg-primary text-white px-6 py-3 rounded shadow hover:bg-opacity-90 transition mb-4 sm:mb-0" aria-label="Free Shopify SEO checklist download">
+        <a
+          href="/Shopify SEO Checklist.xlsx"
+          className="bg-primary text-white px-6 py-3 rounded shadow hover:bg-opacity-90 transition mb-4 sm:mb-0"
+          aria-label="Free Shopify SEO checklist download"
+          onClick={() => handleDownloadClick("Shopify")}
+        >
           Download Shopify SEO Checklist
         </a>
-        <a href="/Wix SEO Checklist.xlsx" className="bg-primary text-white px-6 py-3 rounded shadow hover:bg-opacity-90 transition" aria-label="Free Wix SEO checklist download">
+        <a
+          href="/Wix SEO Checklist.xlsx"
+          className="bg-primary text-white px-6 py-3 rounded shadow hover:bg-opacity-90 transition"
+          aria-label="Free Wix SEO checklist download"
+          onClick={() => handleDownloadClick("Wix")}
+        >
           Download Wix SEO Checklist
         </a>
       </div>
