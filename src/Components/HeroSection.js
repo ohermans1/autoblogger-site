@@ -1,8 +1,18 @@
 import React from "react";
+import ReactGA from "react-ga4";
 
 const HeroSection = () => {
   const shopifyUrl = "https://apps.shopify.com/autoblogger";
   const wixUrl = "https://www.wix.com/app-market/web-solution/autoblogger-ai-blog-creator";
+
+  // Function to handle click events and send to Google Analytics
+  const handleAppStoreClick = platform => {
+    ReactGA.event({
+      category: "App Store Links",
+      action: `Clicked ${platform} App Store Link`,
+      label: `${platform} App Store Link Click`
+    });
+  };
 
   // Function to handle smooth scrolling
   const handleScroll = () => {
@@ -42,6 +52,7 @@ const HeroSection = () => {
           rel="noopener noreferrer"
           aria-label="Start your 14-day free trial on Shopify"
           className="transition-transform duration-200 ease-in-out transform hover:scale-105"
+          onClick={() => handleAppStoreClick("Shopify")}
         >
           <img src="/shopifybadgedark.png" alt="Shopify Badge" className="w-60 h-16 object-cover rounded-lg grayscale" />
         </a>
@@ -54,6 +65,7 @@ const HeroSection = () => {
             rel="noopener noreferrer"
             aria-label="Start your 14-day free trial on Wix"
             className="transition-transform duration-200 ease-in-out transform hover:scale-105"
+            onClick={() => handleAppStoreClick("Wix")}
           >
             <img src="/wixbadgedark.png" alt="Wix Badge" className="w-60 h-16 object-cover rounded-lg grayscale" />{" "}
           </a>

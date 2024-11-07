@@ -14,9 +14,9 @@ const SEOChecklist = props => {
   return (
     <section className="py-16 md:bg-gradient-to-b md:from-white md:to-gray-100 px-4 md:px-16">
       {props.home ? (
-        <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">Free SEO Checklist for Shopify and Wix</h3>
+        <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">Free 2024 SEO Checklist for Shopify and Wix</h3>
       ) : (
-        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Free SEO Checklist for Shopify and Wix</h1>
+        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Free 2024 SEO Checklist for Shopify and Wix</h1>
       )}
 
       <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 text-center">
@@ -26,8 +26,8 @@ const SEOChecklist = props => {
       </p>
 
       <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 text-center">
-        These SEO checklists have been specifically tailored for Shopify and Wix platforms, ensuring that you can easily implement the best practices in your store or website. With actionable tasks
-        that you can track and measure, you'll be well on your way to improving your search engine rankings.
+        These SEO checklists have been specifically tailored for Shopify and Wix platforms (in 2024), ensuring that you can easily implement the best practices in your store or website. With
+        actionable tasks that you can track and measure, you'll be well on your way to improving your search engine rankings.
       </p>
 
       <p className="text-base sm:text-lg text-gray-700 mb-8 text-center">
