@@ -17,6 +17,10 @@ const Footer = () => {
         <Link to="/backlink-terms" className="text-primary hover:underline mx-2">
           Backlink Program Terms
         </Link>
+        <span>|</span>
+        <Link to="/free-extras" className="text-primary hover:underline mx-2">
+          Free Extras
+        </Link>
       </div>
     </footer>
   );

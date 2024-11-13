@@ -12,6 +12,7 @@ import PricingSection from "./Components/PricingSection";
 import PrivacyPolicy from "./Components/PrivacyPolicy"; // Import your PrivacyPolicy component
 import TermsAndConditions from "./Components/TermsAndConditions"; // Import your TermsAndConditions component
 import BacklinkProgramTerms from "./Components/BacklinkProgramTerms"; // Import your BacklinkProgramTerms component
+import FreeExtras from "./Components/FreeExtras";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -62,6 +63,7 @@ const App = () => {
             <Route path="/privacy" element={<PrivacyPolicy />} /> {/* Add Privacy Policy Route */}
             <Route path="/terms" element={<TermsAndConditions />} /> {/* Add Terms and Conditions Route */}
             <Route path="/backlink-terms" element={<BacklinkProgramTerms />} /> {/* Add Backlink Program Terms Route */}
+            <Route path="/free-extras" element={<FreeExtras />} /> {/* Add Backlink Program Terms Route */}
           </Routes>
         </main>
 
