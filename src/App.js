@@ -13,6 +13,8 @@ import PrivacyPolicy from "./Components/PrivacyPolicy"; // Import your PrivacyPo
 import TermsAndConditions from "./Components/TermsAndConditions"; // Import your TermsAndConditions component
 import BacklinkProgramTerms from "./Components/BacklinkProgramTerms"; // Import your BacklinkProgramTerms component
 import FreeExtras from "./Components/FreeExtras";
+import AutoSchemaTerms from "./Components/AutoSchemaTerms";
+import AutoSchemaPrivacy from "./Components/AutoSchemaPrivacy";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -62,6 +64,8 @@ const App = () => {
             <Route path="/free-seo-checklist" element={<SEOChecklist />} />
             <Route path="/privacy" element={<PrivacyPolicy />} /> {/* Add Privacy Policy Route */}
             <Route path="/terms" element={<TermsAndConditions />} /> {/* Add Terms and Conditions Route */}
+            <Route path="/autoschema-terms" element={<AutoSchemaTerms />} /> {/* Add Terms and Conditions Route */}
+            <Route path="/autoschema-privacy" element={<AutoSchemaPrivacy />} /> {/* Add Terms and Conditions Route */}
             <Route path="/backlink-terms" element={<BacklinkProgramTerms />} /> {/* Add Backlink Program Terms Route */}
             <Route path="/free-extras" element={<FreeExtras />} /> {/* Add Backlink Program Terms Route */}
           </Routes>
