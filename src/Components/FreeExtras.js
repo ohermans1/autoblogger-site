@@ -8,7 +8,7 @@ const FreeExtras = props => {
     <section className="py-16 md:bg-gradient-to-b md:from-white md:to-gray-100 px-4 md:px-16">
       <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Free Extras</h1>
       {/* New Section: Backlink Program */}
-      <h2 className="text-2xl font-bold text-center mb-8 text-gray-800">Backlink Programme</h2>
+      <h2 className="text-2xl font-bold text-center mb-8 text-gray-800">Backlink Programme (currently Shopify users only)</h2>
       <p className="text-center text-gray-700 mb-6">
         By opting into the backlink programme, your store's link will occasionally be shared on other users' spotlight articles, giving you more exposure and potentially helping to improve your SEO.
         In exchange, your link will also be featured in the articles of other participants.
@@ -22,7 +22,7 @@ const FreeExtras = props => {
         visibility and potential SEO benefits!
       </p>
       {/* First Heading: Free Weekly Spotlight Articles */}
-      <h2 className="text-2xl font-bold text-center mb-8 text-gray-800 mt-12">Free Weekly Spotlight Articles</h2>
+      <h2 className="text-2xl font-bold text-center mb-8 text-gray-800 mt-12">Free Weekly Spotlight Articles (Wix and Shopify Users)</h2>
 
       <p className="text-center text-gray-700 mb-6">
         Enter the weekly draw for a chance to win a free spotlight article on Medium! This article will not only feature your store but also help with backlinks and improve your online visibility.
@@ -61,7 +61,7 @@ const FreeExtras = props => {
       </p>
 
       {/* Second Heading: Free Google Structured Data Reviews */}
-      <h2 className="text-2xl font-bold text-center mb-8 text-gray-800 mt-12">Free Google Structured Data Reviews</h2>
+      <h2 className="text-2xl font-bold text-center mb-8 text-gray-800 mt-12">Free Lifetime Access to my new Google structured data app autoSchema</h2>
       <p className="text-center text-gray-700 mb-6">
         Get a free review of your Google Structured Data markup. Structured Data helps search engines understand the content of your site, improving SEO and making your site more visible in search
         results.
@@ -78,7 +78,14 @@ const FreeExtras = props => {
         </a>
         .
       </p>
-      <p className="text-center text-gray-700 mb-6">Once your review is complete, I will send an email to the address associated with your account to let you know how it went.</p>
+      <p className="text-center text-gray-700 mb-6">
+        To learn more about autoSchema, visit{" "}
+        <a href="https://apps.shopify.com/autoschema-google-structures" className="text-primary font-semibold hover:underline" target="_blank" rel="noopener noreferrer">
+          Google’s official page
+        </a>
+        .
+      </p>
+      <p className="text-center text-gray-700 mb-6">Simply sign-up to autoBlogger on Shopify, opt in, and I will send you a code.</p>
       <p className="text-center text-gray-700 mb-6">
         Make sure to keep an eye on your spam folder, or mark{" "}
         <a href={mailto} className="text-primary font-semibold hover:underline">
