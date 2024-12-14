@@ -61,10 +61,10 @@ const FreeExtras = props => {
       </p>
 
       {/* Second Heading: Free Google Structured Data Reviews */}
-      <h2 className="text-2xl font-bold text-center mb-8 text-gray-800 mt-12">Free Lifetime Access to my new Google structured data app autoSchema</h2>
+      <h2 className="text-2xl font-bold text-center mb-8 text-gray-800 mt-12">Free Lifetime Access to My New Google Structured Data App, autoSchema</h2>
       <p className="text-center text-gray-700 mb-6">
-        Get a free review of your Google Structured Data markup. Structured Data helps search engines understand the content of your site, improving SEO and making your site more visible in search
-        results.
+        Get free access to autoSchema, the tool that fully automates your Google Structured Data. Structured Data helps search engines understand your site’s content, improving SEO and increasing
+        visibility in search results.
       </p>
       <p className="text-center text-gray-700 mb-6">
         To learn more about Google Structured Data, visit{" "}
@@ -81,17 +81,17 @@ const FreeExtras = props => {
       <p className="text-center text-gray-700 mb-6">
         To learn more about autoSchema, visit{" "}
         <a href="https://apps.shopify.com/autoschema-google-structures" className="text-primary font-semibold hover:underline" target="_blank" rel="noopener noreferrer">
-          Google’s official page
+          our Shopify app store listing
         </a>
         .
       </p>
-      <p className="text-center text-gray-700 mb-6">Simply sign-up to autoBlogger on Shopify, opt in, and I will send you a code.</p>
+      <p className="text-center text-gray-700 mb-6">To claim this offer, simply sign up for autoBlogger on Shopify, opt in, and I’ll send you your promo code.</p>
       <p className="text-center text-gray-700 mb-6">
-        Make sure to keep an eye on your spam folder, or mark{" "}
-        <a href={mailto} className="text-primary font-semibold hover:underline">
+        Be sure to check your spam folder, or mark{" "}
+        <a href={`mailto:${email}`} className="text-primary font-semibold hover:underline">
           {email}
         </a>{" "}
-        as not spam to ensure you don't miss it!
+        as "not spam" to ensure you don’t miss the code!
       </p>
     </section>
   );
