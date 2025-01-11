@@ -61,7 +61,7 @@ const FreeExtras = props => {
       </p>
 
       {/* Second Heading: Free Google Structured Data Reviews */}
-      <h2 className="text-2xl font-bold text-center mb-8 text-gray-800 mt-12">Free Lifetime Access to My New Google Structured Data App, autoSchema</h2>
+      <h2 className="text-2xl font-bold text-center mb-8 text-gray-800 mt-12">Free Lifetime Access to my Google Structured Data App, autoSchema</h2>
       <p className="text-center text-gray-700 mb-6">
         Get free access to autoSchema, the tool that fully automates your Google Structured Data. Structured Data helps search engines understand your site’s content, improving SEO and increasing
         visibility in search results.

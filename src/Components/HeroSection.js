@@ -69,8 +69,6 @@ const HeroSection = () => {
           >
             <img src="/wixbadgedark.png" alt="Wix Badge" className="w-60 h-16 object-cover rounded-lg grayscale" />{" "}
           </a>
-          {/* New Feature Text with Smaller Font */}
-          <p className="text-xs text-gray-500 mt-1">New, currently with limited features</p>
         </div>
       </div>
 
