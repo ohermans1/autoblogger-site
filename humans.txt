@@ -1,0 +1,23 @@
+/* humans.txt — autoblogger.bot */
+
+Site: https://autoblogger.bot
+Project: autoBlogger — AI-powered automated blogging for Shopify & Wix
+Owner/Developer: Ollie Hermans
+Location: New Zealand
+Contact: support@autoblogger.bot
+
+Official Listings:
+  Shopify: https://apps.shopify.com/autoblogger
+  Wix: https://www.wix.com/app-market/web-solution/autoblogger-ai-blog-creator
+
+Mission:
+  To be the #1 AI blogging tool for Shopify and Wix — helping merchants grow
+  organic traffic with consistent, SEO-optimised blog posts and powerful extras.
+
+Premium Extras:
+  • Backlink Programme
+  • Weekly Spotlight Articles
+  • Free lifetime access to autoSchema
+
+Thanks:
+  To our merchants, testers, and the ecommerce community who help us improve autoBlogger every day.
