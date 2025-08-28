@@ -12,7 +12,7 @@ import PricingSection from "./Components/PricingSection";
 import PrivacyPolicy from "./Components/PrivacyPolicy"; // Import your PrivacyPolicy component
 import TermsAndConditions from "./Components/TermsAndConditions"; // Import your TermsAndConditions component
 import BacklinkProgramTerms from "./Components/BacklinkProgramTerms"; // Import your BacklinkProgramTerms component
-import FreeExtras from "./Components/FreeExtras";
+import PremiumExtras from "./Components/PremiumExtras";
 import AutoSchemaTerms from "./Components/AutoSchemaTerms";
 import AutoSchemaPrivacy from "./Components/AutoSchemaPrivacy";
 
@@ -67,7 +67,8 @@ const App = () => {
             <Route path="/autoschema-terms" element={<AutoSchemaTerms />} /> {/* Add Terms and Conditions Route */}
             <Route path="/autoschema-privacy" element={<AutoSchemaPrivacy />} /> {/* Add Terms and Conditions Route */}
             <Route path="/backlink-terms" element={<BacklinkProgramTerms />} /> {/* Add Backlink Program Terms Route */}
-            <Route path="/free-extras" element={<FreeExtras />} /> {/* Add Backlink Program Terms Route */}
+            {/* <Route path="/free-extras" element={<FreeExtras />} /> Add Backlink Program Terms Route */}
+            <Route path="/premium-extras" element={<PremiumExtras />} /> Add Backlink Program Terms Route
           </Routes>
         </main>
 

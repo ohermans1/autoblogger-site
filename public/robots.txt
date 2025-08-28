@@ -1,3 +1,30 @@
-# https://www.robotstxt.org/robotstxt.html
+# robots.txt — autoblogger.bot
+# See: https://www.robotstxt.org/robotstxt.html
+
+# Allow all crawlers
 User-agent: *
 Disallow:
+
+# Explicit welcome for major AI/assistant bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Helpful pointers
+Sitemap: https://autoblogger.bot/sitemap.xml
+LLMS: https://autoblogger.bot/llms.txt
+Humans: https://autoblogger.bot/humans.txt

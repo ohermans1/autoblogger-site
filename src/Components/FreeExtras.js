@@ -8,7 +8,7 @@ const FreeExtras = props => {
     <section className="py-16 md:bg-gradient-to-b md:from-white md:to-gray-100 px-4 md:px-16">
       <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Free Extras</h1>
       {/* New Section: Backlink Program */}
-      <h2 className="text-2xl font-bold text-center mb-8 text-gray-800">Backlink Programme (currently Shopify users only)</h2>
+      <h2 className="text-2xl font-bold text-center mb-8 text-gray-800">Backlink Programme (Premium)</h2>
       <p className="text-center text-gray-700 mb-6">
         By opting into the backlink programme, your store's link will occasionally be shared on other users' spotlight articles, giving you more exposure and potentially helping to improve your SEO.
         In exchange, your link will also be featured in the articles of other participants.

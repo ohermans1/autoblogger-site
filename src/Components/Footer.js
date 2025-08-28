@@ -18,8 +18,8 @@ const Footer = () => {
           Backlink Program Terms
         </Link>
         <span>|</span>
-        <Link to="/free-extras" className="text-primary hover:underline mx-2">
-          Free Extras
+        <Link to="/premium-extras" className="text-primary hover:underline mx-2">
+          Premium Extras
         </Link>
       </div>
     </footer>
