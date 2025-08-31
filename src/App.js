@@ -15,6 +15,7 @@ import BacklinkProgramTerms from "./Components/BacklinkProgramTerms"; // Import 
 import PremiumExtras from "./Components/PremiumExtras";
 import AutoSchemaTerms from "./Components/AutoSchemaTerms";
 import AutoSchemaPrivacy from "./Components/AutoSchemaPrivacy";
+import OtherAppsSection from "./Components/OtherAppsSection";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -53,11 +54,13 @@ const App = () => {
                   <ReviewsSection home={true} />
                   <SEOChecklist home={true} />
                   <ContactSection home={true} />
+                  <OtherAppsSection home={true} />
                 </>
               }
             />
             <Route path="/features" element={<FeaturesSection />} />
             <Route path="/pricing" element={<PricingSection />} />
+            <Route path="/other-apps" element={<OtherAppsSection />} />
             <Route path="/faqs" element={<FAQsSection />} />
             <Route path="/reviews" element={<ReviewsSection />} />
             <Route path="/contact" element={<ContactSection />} />

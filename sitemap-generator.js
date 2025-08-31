@@ -6,6 +6,7 @@ const paths = [
   { url: "/features", changefreq: "monthly", priority: 0.8 },
   { url: "/pricing", changefreq: "monthly", priority: 0.8 },
   { url: "/faqs", changefreq: "monthly", priority: 0.8 },
+  { url: "/other-apps", changefreq: "yearly", priority: 0.8 },
   { url: "/free-seo-checklist", changefreq: "monthly", priority: 0.9 },
   { url: "/reviews", changefreq: "monthly", priority: 0.7 },
   { url: "/contact", changefreq: "monthly", priority: 0.5 },
