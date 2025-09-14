@@ -25,8 +25,8 @@ const OtherAppsSection = props => {
       comingSoon: false
     },
     {
-      key: "autoetsy",
-      name: "autoEtsy",
+      key: "autoconnect",
+      name: "autoConnect",
       logo: null, // no logo yet
       description: "A super simple, no-nonsense two-way Etsy sync for Shopify. Set it once, and let it get on with the job.",
       cta: null,
