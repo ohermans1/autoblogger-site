@@ -22,6 +22,9 @@ const Footer = () => {
           Premium Extras
         </Link>
       </div>
+      <p className="mt-3 text-sm text-gray-600">
+        Legal business name: Oliver R Corich-Hermans. autoBlogger is operated by Oliver R Corich-Hermans, Station Road, St Monans, UK.
+      </p>
     </footer>
   );
 };
