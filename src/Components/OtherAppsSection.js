@@ -23,14 +23,6 @@ const OtherAppsSection = props => {
         label: "View on Shopify App Store"
       },
       comingSoon: false
-    },
-    {
-      key: "autoconnect",
-      name: "autoConnect",
-      logo: null, // no logo yet
-      description: "A super simple, no-nonsense two-way Etsy sync for Shopify. Set it once, and let it get on with the job.",
-      cta: null,
-      comingSoon: true
     }
   ];
 
