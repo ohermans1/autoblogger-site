@@ -34,6 +34,17 @@ const HeroSection = () => {
         product links, and relevant imagery.
       </p>
       <p className="mb-6 text-lg md:text-xl text-gray-600">Edit directly in Shopify, auto-share to social channels, and set and forget your blogging strategy.</p>
+      <p className="mb-6 text-base md:text-lg text-gray-600">
+        Need implementation frameworks? Start with our{" "}
+        <a href="/solutions" className="text-primary hover:underline">
+          SEO solutions hub
+        </a>{" "}
+        and{" "}
+        <a href="/resources" className="text-primary hover:underline">
+          free resource library
+        </a>
+        .
+      </p>
 
       {/* Call-to-action text */}
       <p className="text-xl font-semibold text-gray-700 mb-4">Start your 14-day free trial now:</p>
@@ -48,7 +59,16 @@ const HeroSection = () => {
           className="transition-transform duration-200 ease-in-out transform hover:scale-105"
           onClick={() => handleAppStoreClick("Shopify")}
         >
-          <img src="/shopifybadgedark.png" alt="Shopify Badge" className="w-60 h-16 object-cover rounded-lg grayscale" />
+          <img
+            src="/shopifybadgedark.png"
+            alt="Shopify Badge"
+            className="w-60 h-16 object-cover rounded-lg grayscale"
+            width="240"
+            height="64"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
         </a>
       </div>
     </section>

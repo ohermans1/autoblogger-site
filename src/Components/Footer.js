@@ -21,6 +21,14 @@ const Footer = () => {
         <Link to="/premium-extras" className="text-primary hover:underline mx-2">
           Premium Extras
         </Link>
+        <span>|</span>
+        <a href="/solutions" className="text-primary hover:underline mx-2">
+          SEO Solutions
+        </a>
+        <span>|</span>
+        <a href="/resources" className="text-primary hover:underline mx-2">
+          SEO Resources
+        </a>
       </div>
       <p className="mt-3 text-sm text-gray-600">
         Legal business name: Oliver R Corich-Hermans. autoBlogger is operated by Oliver R Corich-Hermans, Station Road, St Monans, UK.

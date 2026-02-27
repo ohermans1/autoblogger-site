@@ -69,7 +69,11 @@ const OtherAppsSection = props => {
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center space-x-3">
                 <div className="h-10 w-10 rounded bg-gray-100 flex items-center justify-center overflow-hidden text-gray-500 font-bold">
-                  {app.logo ? <img src={app.logo} alt={`${app.name} logo`} className="h-10 w-10 object-contain" loading="lazy" /> : <span className="text-sm">AE</span>}
+                  {app.logo ? (
+                    <img src={app.logo} alt={`${app.name} logo`} className="h-10 w-10 object-contain" loading="lazy" decoding="async" width="40" height="40" />
+                  ) : (
+                    <span className="text-sm">AE</span>
+                  )}
                 </div>
                 <h2 className="text-xl font-semibold text-gray-900">{app.name}</h2>
               </div>

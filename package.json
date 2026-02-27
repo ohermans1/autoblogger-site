@@ -19,6 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "seo:static": "node seo-static-pages-generator.js",
+    "seo:ctr": "node tools/seo-ctr-audit.js",
     "prebuild": "npm run seo:static && node sitemap-generator.js",
     "build": "react-scripts build",
     "test": "react-scripts test",

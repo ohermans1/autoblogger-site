@@ -28,6 +28,12 @@ const Navigation = () => {
       <NavLink to="/free-seo-checklist" className={({ isActive }) => `mx-3 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:underline`}>
         Free SEO Checklist
       </NavLink>
+      <a href="/solutions" className="mx-3 text-gray-600 hover:underline">
+        Solutions
+      </a>
+      <a href="/resources" className="mx-3 text-gray-600 hover:underline">
+        Resources
+      </a>
     </nav>
   );
 };

@@ -1,22 +1,27 @@
 const { SitemapStream, streamToPromise } = require("sitemap");
 const { createWriteStream } = require("fs");
+const { STATIC_SEO_PAGES, getCanonicalRoute, isIndexablePage } = require("./seo-static-pages-generator");
 
-const paths = [
-  { url: "/", changefreq: "monthly", priority: 1.0 },
-  { url: "/features", changefreq: "monthly", priority: 0.8 },
-  { url: "/pricing", changefreq: "monthly", priority: 0.8 },
-  { url: "/faqs", changefreq: "monthly", priority: 0.8 },
-  { url: "/other-apps", changefreq: "yearly", priority: 0.8 },
-  { url: "/free-seo-checklist", changefreq: "monthly", priority: 0.9 },
-  { url: "/reviews", changefreq: "monthly", priority: 0.7 },
-  { url: "/contact", changefreq: "monthly", priority: 0.5 },
-  { url: "/privacy", changefreq: "yearly", priority: 0.3 },
-  { url: "/terms", changefreq: "yearly", priority: 0.3 },
-  { url: "/backlink-terms", changefreq: "yearly", priority: 0.3 },
-  { url: "/premium-extras", changefreq: "monthly", priority: 0.5 },
-  { url: "/autoschema-terms", changefreq: "yearly", priority: 0.2 },
-  { url: "/autoschema-privacy", changefreq: "yearly", priority: 0.2 }
-];
+const HOME_PATH = { url: "/", changefreq: "weekly", priority: 1.0 };
+
+function buildSitemapPaths() {
+  const seen = new Set([HOME_PATH.url]);
+  const paths = [HOME_PATH];
+
+  STATIC_SEO_PAGES.filter(isIndexablePage).forEach(page => {
+    const canonicalRoute = getCanonicalRoute(page);
+    if (seen.has(canonicalRoute)) return;
+
+    seen.add(canonicalRoute);
+    paths.push({
+      url: canonicalRoute,
+      changefreq: page.changefreq || "monthly",
+      priority: typeof page.priority === "number" ? page.priority : 0.6
+    });
+  });
+
+  return paths;
+}
 
 async function generateSitemap() {
   try {
@@ -26,7 +31,7 @@ async function generateSitemap() {
 
     sitemapStream.pipe(writeStream);
 
-    paths.forEach(path => {
+    buildSitemapPaths().forEach(path => {
       sitemapStream.write({
         ...path,
         lastmodISO
@@ -34,8 +39,6 @@ async function generateSitemap() {
     });
 
     sitemapStream.end();
-
-    // Await the completion of the stream
     await streamToPromise(sitemapStream);
 
     console.log("Sitemap has been successfully generated at ./public/sitemap.xml");

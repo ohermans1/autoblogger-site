@@ -1,33 +1,45 @@
-import React, { useState, useEffect } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import { HashRouter as Router, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import PageHeader from "./Components/PageHeader";
 import Footer from "./Components/Footer";
 import HeroSection from "./Components/HeroSection";
-import FeaturesSection from "./Components/FeaturesSection";
-import FAQsSection from "./Components/FAQsSection";
-import ReviewsSection from "./Components/ReviewsSection";
-import ContactSection from "./Components/ContactSection";
-import SEOChecklist from "./Components/SEOChecklist";
-import PricingSection from "./Components/PricingSection";
-import PrivacyPolicy from "./Components/PrivacyPolicy"; // Import your PrivacyPolicy component
-import TermsAndConditions from "./Components/TermsAndConditions"; // Import your TermsAndConditions component
-import BacklinkProgramTerms from "./Components/BacklinkProgramTerms"; // Import your BacklinkProgramTerms component
-import PremiumExtras from "./Components/PremiumExtras";
-import AutoSchemaTerms from "./Components/AutoSchemaTerms";
-import AutoSchemaPrivacy from "./Components/AutoSchemaPrivacy";
-import OtherAppsSection from "./Components/OtherAppsSection";
 import SeoManager from "./Components/SeoManager";
 import NotFoundPage from "./Components/NotFoundPage";
+
+const FeaturesSection = lazy(() => import("./Components/FeaturesSection"));
+const FAQsSection = lazy(() => import("./Components/FAQsSection"));
+const ReviewsSection = lazy(() => import("./Components/ReviewsSection"));
+const ContactSection = lazy(() => import("./Components/ContactSection"));
+const SEOChecklist = lazy(() => import("./Components/SEOChecklist"));
+const PricingSection = lazy(() => import("./Components/PricingSection"));
+const PrivacyPolicy = lazy(() => import("./Components/PrivacyPolicy"));
+const TermsAndConditions = lazy(() => import("./Components/TermsAndConditions"));
+const BacklinkProgramTerms = lazy(() => import("./Components/BacklinkProgramTerms"));
+const PremiumExtras = lazy(() => import("./Components/PremiumExtras"));
+const AutoSchemaTerms = lazy(() => import("./Components/AutoSchemaTerms"));
+const AutoSchemaPrivacy = lazy(() => import("./Components/AutoSchemaPrivacy"));
+const OtherAppsSection = lazy(() => import("./Components/OtherAppsSection"));
+const SEOPlaybooksSection = lazy(() => import("./Components/SEOPlaybooksSection"));
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (typeof navigator !== "undefined" && /jsdom/i.test(navigator.userAgent || "")) return;
+
+    try {
+      window.scrollTo(0, 0);
+    } catch (_error) {
+      // no-op for environments where scroll APIs are not implemented
+    }
   }, [pathname]);
 
   return null;
 };
+
+const SectionFallback = () => <section className="py-10" aria-hidden="true" />;
+
+const lazySection = element => <Suspense fallback={<SectionFallback />}>{element}</Suspense>;
 
 const App = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -43,7 +55,6 @@ const App = () => {
       <div className="font-sans text-gray-800 bg-white">
         <PageHeader toggleMobileMenu={toggleMobileMenu} isMobileMenuOpen={isMobileMenuOpen} />
 
-        {/* Main Content */}
         <main className="px-5 mt-20">
           <Routes>
             <Route
@@ -51,29 +62,30 @@ const App = () => {
               element={
                 <>
                   <HeroSection />
-                  <FeaturesSection home={true} />
-                  <PricingSection home={true} />
-                  <FAQsSection home={true} />
-                  <ReviewsSection home={true} />
-                  <ContactSection home={true} />
-                  <OtherAppsSection home={true} />
+                  {lazySection(<FeaturesSection home={true} />)}
+                  {lazySection(<PricingSection home={true} />)}
+                  {lazySection(<FAQsSection home={true} />)}
+                  {lazySection(<ReviewsSection home={true} />)}
+                  {lazySection(<SEOPlaybooksSection home={true} />)}
+                  {lazySection(<ContactSection home={true} />)}
+                  {lazySection(<OtherAppsSection home={true} />)}
                 </>
               }
             />
-            <Route path="/features" element={<FeaturesSection />} />
-            <Route path="/pricing" element={<PricingSection />} />
-            <Route path="/other-apps" element={<OtherAppsSection />} />
-            <Route path="/faqs" element={<FAQsSection />} />
-            <Route path="/reviews" element={<ReviewsSection />} />
-            <Route path="/contact" element={<ContactSection />} />
+            <Route path="/features" element={lazySection(<FeaturesSection />)} />
+            <Route path="/pricing" element={lazySection(<PricingSection />)} />
+            <Route path="/other-apps" element={lazySection(<OtherAppsSection />)} />
+            <Route path="/faqs" element={lazySection(<FAQsSection />)} />
+            <Route path="/reviews" element={lazySection(<ReviewsSection />)} />
+            <Route path="/contact" element={lazySection(<ContactSection />)} />
             <Route path="/seo-checklist" element={<Navigate to="/free-seo-checklist" replace />} />
-            <Route path="/free-seo-checklist" element={<SEOChecklist />} />
-            <Route path="/privacy" element={<PrivacyPolicy />} />
-            <Route path="/terms" element={<TermsAndConditions />} />
-            <Route path="/autoschema-terms" element={<AutoSchemaTerms />} />
-            <Route path="/autoschema-privacy" element={<AutoSchemaPrivacy />} />
-            <Route path="/backlink-terms" element={<BacklinkProgramTerms />} />
-            <Route path="/premium-extras" element={<PremiumExtras />} />
+            <Route path="/free-seo-checklist" element={lazySection(<SEOChecklist />)} />
+            <Route path="/privacy" element={lazySection(<PrivacyPolicy />)} />
+            <Route path="/terms" element={lazySection(<TermsAndConditions />)} />
+            <Route path="/autoschema-terms" element={lazySection(<AutoSchemaTerms />)} />
+            <Route path="/autoschema-privacy" element={lazySection(<AutoSchemaPrivacy />)} />
+            <Route path="/backlink-terms" element={lazySection(<BacklinkProgramTerms />)} />
+            <Route path="/premium-extras" element={lazySection(<PremiumExtras />)} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>

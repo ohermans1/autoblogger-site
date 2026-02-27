@@ -19,6 +19,12 @@ const NotFoundPage = () => {
         <Link to="/free-seo-checklist" className="border border-gray-300 px-5 py-2 rounded hover:bg-gray-100 transition">
           Free SEO Checklist
         </Link>
+        <a href="/solutions" className="border border-gray-300 px-5 py-2 rounded hover:bg-gray-100 transition">
+          SEO Solutions
+        </a>
+        <a href="/resources" className="border border-gray-300 px-5 py-2 rounded hover:bg-gray-100 transition">
+          SEO Resources
+        </a>
       </div>
     </section>
   );

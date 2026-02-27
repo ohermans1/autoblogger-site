@@ -1,0 +1,314 @@
+[
+  {
+    "route": "/solutions",
+    "title": "Ecommerce SEO Solutions Hub | autoBlogger",
+    "description": "Explore actionable Shopify, Wix, and ecommerce SEO solution pages focused on content operations, internal linking, schema, and conversions.",
+    "heading": "Ecommerce SEO Solutions Hub",
+    "intro": "This hub groups practical SEO playbooks for store owners who want to improve rankings and revenue with repeatable workflows.",
+    "bullets": [
+      "Shopify and Wix specific workflows",
+      "Content production and internal linking systems",
+      "Schema and FAQ deployment guidance",
+      "Conversion focused implementation steps"
+    ],
+    "changefreq": "weekly",
+    "priority": 0.8,
+    "tags": ["hub", "solutions", "ecommerce"],
+    "faq": [
+      {
+        "question": "Who are these SEO solution pages for?",
+        "answer": "They are designed for merchants and marketers who need practical SEO workflows they can execute each week."
+      },
+      {
+        "question": "Are the solutions specific to one platform?",
+        "answer": "No. The hub includes platform specific guides for Shopify and Wix plus broader ecommerce SEO workflows."
+      }
+    ]
+  },
+  {
+    "route": "/shopify-seo/ai-blog-automation",
+    "title": "Shopify AI Blog Automation Strategy | autoBlogger",
+    "description": "Plan a Shopify AI blog automation workflow that publishes product-focused SEO articles, builds topical authority, and drives qualified traffic.",
+    "heading": "Shopify AI Blog Automation Strategy",
+    "intro": "Use this framework to turn content production into a predictable growth channel for your Shopify store.",
+    "bullets": [
+      "Define core topic clusters and supporting keywords",
+      "Map each article to a product or collection page",
+      "Publish on a fixed weekly cadence with QA checks",
+      "Track Search Console impressions and CTR trends"
+    ],
+    "changefreq": "monthly",
+    "priority": 0.7,
+    "tags": ["shopify", "content", "automation"],
+    "faq": [
+      {
+        "question": "How often should Shopify stores publish SEO blog posts?",
+        "answer": "Most stores see strong momentum with at least one high quality post per week mapped to commercial pages."
+      },
+      {
+        "question": "What should every article include?",
+        "answer": "Use clear headings, product links, FAQ snippets, and metadata aligned to search intent."
+      }
+    ]
+  },
+  {
+    "route": "/shopify-seo/internal-linking-for-products",
+    "title": "Shopify Internal Linking Blueprint for Product Discovery | autoBlogger",
+    "description": "Build a Shopify internal linking system that routes blog authority to products and collections, improving crawl depth and conversions.",
+    "heading": "Shopify Internal Linking Blueprint",
+    "intro": "This blueprint helps merchants pass relevance from informational pages to high value commercial pages.",
+    "bullets": [
+      "Create anchor text rules by product category",
+      "Link each post to one primary and two secondary targets",
+      "Refresh top posts quarterly with updated links",
+      "Measure assisted conversions from blog traffic"
+    ],
+    "changefreq": "monthly",
+    "priority": 0.68,
+    "tags": ["shopify", "internal-links", "product-pages"],
+    "faq": [
+      {
+        "question": "How many internal links should a post contain?",
+        "answer": "Aim for contextual links to priority pages without overloading the article or repeating identical anchors."
+      },
+      {
+        "question": "Should links point to products or collections first?",
+        "answer": "Use collections for broader queries and products for high intent queries tied to specific items."
+      }
+    ]
+  },
+  {
+    "route": "/shopify-seo/collection-page-content-plan",
+    "title": "Shopify Collection Page Content Plan for SEO | autoBlogger",
+    "description": "Use a collection page content plan that aligns category copy, blog support content, schema, and internal links for stronger rankings.",
+    "heading": "Shopify Collection Page Content Plan",
+    "intro": "Collection pages often rank for valuable intent. This plan strengthens them with supporting content and clear on-page structure.",
+    "bullets": [
+      "Expand thin category copy with buyer intent language",
+      "Support each collection with targeted blog clusters",
+      "Use FAQ blocks for pre-purchase objections",
+      "Validate collection schema and link hierarchy"
+    ],
+    "changefreq": "monthly",
+    "priority": 0.66,
+    "tags": ["shopify", "collections", "on-page"],
+    "faq": [
+      {
+        "question": "How long should collection descriptions be?",
+        "answer": "Use enough copy to explain intent and differentiation while keeping product browsing friction low."
+      },
+      {
+        "question": "Do collection pages need FAQ sections?",
+        "answer": "FAQ sections can improve relevance and clarity when they answer real pre-purchase questions."
+      }
+    ]
+  },
+  {
+    "route": "/wix-seo/ai-content-ops-playbook",
+    "title": "Wix AI Content Operations Playbook | autoBlogger",
+    "description": "Run a Wix SEO content operations playbook for consistent publishing, metadata QA, and internal linking to service pages.",
+    "heading": "Wix AI Content Operations Playbook",
+    "intro": "This playbook gives Wix site owners a weekly operating rhythm for SEO content execution.",
+    "bullets": [
+      "Plan weekly post themes around service intent",
+      "Standardize title and meta QA before publish",
+      "Link every article to one priority service page",
+      "Track CTR, rankings, and lead quality"
+    ],
+    "changefreq": "monthly",
+    "priority": 0.64,
+    "tags": ["wix", "content", "operations"],
+    "faq": [
+      {
+        "question": "Can Wix sites run advanced SEO workflows?",
+        "answer": "Yes. Consistent publishing, strong metadata, and structured internal links can perform very well on Wix."
+      },
+      {
+        "question": "What KPI should Wix teams track first?",
+        "answer": "Start with impressions, CTR, and conversions from pages linked in your content workflow."
+      }
+    ]
+  },
+  {
+    "route": "/ecommerce-seo/schema-and-faq-rollout",
+    "title": "Ecommerce Schema and FAQ Rollout Framework | autoBlogger",
+    "description": "Deploy product, article, and FAQ schema in a structured rollout that improves eligibility for rich search results.",
+    "heading": "Schema and FAQ Rollout Framework",
+    "intro": "Use this framework to launch schema changes in controlled batches and avoid index quality regressions.",
+    "bullets": [
+      "Prioritize templates by commercial impact",
+      "Validate JSON-LD before deployment",
+      "Roll out in batches and monitor warnings",
+      "Document ownership and update cadence"
+    ],
+    "changefreq": "monthly",
+    "priority": 0.65,
+    "tags": ["schema", "technical-seo", "faq"],
+    "faq": [
+      {
+        "question": "Which schema types matter most for ecommerce?",
+        "answer": "Product, Article, FAQ, Organization, and Breadcrumb schema are the most common high impact types."
+      },
+      {
+        "question": "How do you avoid schema rollout issues?",
+        "answer": "Validate each template, deploy in phases, and monitor Search Console enhancements after launch."
+      }
+    ]
+  },
+  {
+    "route": "/ecommerce-seo/seasonal-content-calendar",
+    "title": "Seasonal Ecommerce SEO Content Calendar | autoBlogger",
+    "description": "Build a seasonal SEO content calendar that captures peak demand windows with product-led editorial planning.",
+    "heading": "Seasonal Ecommerce SEO Content Calendar",
+    "intro": "This calendar process helps you publish before demand spikes and capture intent while competition is still low.",
+    "bullets": [
+      "Map major retail events to category priorities",
+      "Publish lead-in content 6 to 10 weeks early",
+      "Refresh top seasonal pages each cycle",
+      "Repurpose winning posts for social and email"
+    ],
+    "changefreq": "monthly",
+    "priority": 0.63,
+    "tags": ["ecommerce", "seasonal", "content-calendar"],
+    "faq": [
+      {
+        "question": "When should seasonal SEO pages be published?",
+        "answer": "Publish early enough for indexing and ranking momentum, typically several weeks before demand peaks."
+      },
+      {
+        "question": "Should seasonal pages be removed after campaigns?",
+        "answer": "Usually no. Keep and refresh them annually so they retain authority over time."
+      }
+    ]
+  },
+  {
+    "route": "/resources",
+    "title": "Free Ecommerce SEO Resources and Templates | autoBlogger",
+    "description": "Access free ecommerce SEO templates and frameworks including content briefs, internal linking blueprints, schema QA checklists, and ROI worksheets.",
+    "heading": "Free Ecommerce SEO Resources",
+    "intro": "Use these free resources to speed up planning, QA, and reporting across your SEO workflow.",
+    "bullets": [
+      "Shopify SEO content brief template",
+      "Internal linking blueprint worksheet",
+      "Schema QA checklist for launch reviews",
+      "SEO ROI calculator worksheet"
+    ],
+    "changefreq": "weekly",
+    "priority": 0.78,
+    "tags": ["resources", "templates", "linkable-assets"],
+    "faq": [
+      {
+        "question": "Are these SEO resources free to use?",
+        "answer": "Yes. The templates are free and designed to support practical weekly implementation."
+      },
+      {
+        "question": "Who should use these templates?",
+        "answer": "Merchants, SEO specialists, and content teams can use them to standardize execution."
+      }
+    ]
+  },
+  {
+    "route": "/resources/shopify-seo-content-brief-template",
+    "title": "Shopify SEO Content Brief Template | autoBlogger",
+    "description": "Download a practical Shopify SEO content brief template to align intent, structure, internal links, and conversion goals before writing.",
+    "heading": "Shopify SEO Content Brief Template",
+    "intro": "Use this brief template to reduce revision cycles and improve alignment between SEO, content, and merchandising teams.",
+    "bullets": [
+      "Primary and secondary keyword slots",
+      "Search intent and angle definition",
+      "Required product and collection links",
+      "On-page CTA and conversion notes"
+    ],
+    "changefreq": "yearly",
+    "priority": 0.62,
+    "tags": ["resources", "shopify", "content", "template"],
+    "faq": [
+      {
+        "question": "Why use a content brief template?",
+        "answer": "It keeps SEO, structure, linking, and conversion goals aligned before production starts."
+      },
+      {
+        "question": "Can this template work for non-Shopify sites?",
+        "answer": "Yes. The structure can be adapted for most ecommerce content workflows."
+      }
+    ]
+  },
+  {
+    "route": "/resources/internal-linking-blueprint",
+    "title": "Internal Linking Blueprint for Ecommerce SEO | autoBlogger",
+    "description": "Use an internal linking blueprint to route topical authority from blog and guide pages into priority product and category pages.",
+    "heading": "Internal Linking Blueprint",
+    "intro": "A documented linking blueprint improves consistency and helps teams scale content without losing structural quality.",
+    "bullets": [
+      "Anchor text rule set by page type",
+      "Primary and secondary target mapping",
+      "Quarterly link refresh checklist",
+      "Measurement framework for assisted revenue"
+    ],
+    "changefreq": "yearly",
+    "priority": 0.61,
+    "tags": ["resources", "internal-links", "template"],
+    "faq": [
+      {
+        "question": "How often should internal links be reviewed?",
+        "answer": "Review high traffic pages monthly and run a full link map audit each quarter."
+      },
+      {
+        "question": "What makes an anchor text strategy effective?",
+        "answer": "Anchors should reflect user intent and vary naturally while remaining specific to destination content."
+      }
+    ]
+  },
+  {
+    "route": "/resources/schema-qa-checklist",
+    "title": "Schema QA Checklist for Ecommerce Teams | autoBlogger",
+    "description": "Use a schema QA checklist to validate structured data before and after release, reducing warnings and eligibility issues.",
+    "heading": "Schema QA Checklist",
+    "intro": "This checklist helps engineering and SEO teams ship structured data updates with fewer regressions.",
+    "bullets": [
+      "Required and recommended field validation",
+      "Pre-release and post-release test steps",
+      "Monitoring and escalation ownership",
+      "Release log template for future audits"
+    ],
+    "changefreq": "yearly",
+    "priority": 0.6,
+    "tags": ["resources", "schema", "technical-seo", "template"],
+    "faq": [
+      {
+        "question": "When should schema QA be performed?",
+        "answer": "Run QA before launch and again after deployment to catch rendering and data pipeline differences."
+      },
+      {
+        "question": "Which tools should teams use for schema QA?",
+        "answer": "Use rich result testing tools, page source checks, and Search Console enhancement reports together."
+      }
+    ]
+  },
+  {
+    "route": "/resources/ecommerce-seo-roi-calculator",
+    "title": "Ecommerce SEO ROI Calculator Framework | autoBlogger",
+    "description": "Use this ecommerce SEO ROI calculator framework to estimate traffic, conversion, and revenue impact from ranking improvements.",
+    "heading": "Ecommerce SEO ROI Calculator Framework",
+    "intro": "Use this worksheet framework to prioritize SEO projects by estimated commercial impact instead of volume alone.",
+    "bullets": [
+      "Inputs for impressions, CTR, and conversion rate",
+      "Revenue projection by ranking scenario",
+      "Sensitivity checks for seasonality",
+      "Prioritization scoring for roadmap planning"
+    ],
+    "changefreq": "yearly",
+    "priority": 0.6,
+    "tags": ["resources", "analytics", "roi", "template"],
+    "faq": [
+      {
+        "question": "What inputs matter most in SEO ROI planning?",
+        "answer": "CTR, conversion rate, and average order value have the strongest effect on projected impact."
+      },
+      {
+        "question": "Should teams use one ROI model for all pages?",
+        "answer": "No. Use different assumptions for branded, non-branded, and seasonal page groups."
+      }
+    ]
+  }
+]

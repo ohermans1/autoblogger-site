@@ -166,6 +166,31 @@ const FAQ_MAIN_ENTITIES = [
   }
 ];
 
+const APP_AGGREGATE_RATING = {
+  ratingValue: "4.9",
+  ratingCount: "22",
+  bestRating: "5",
+  worstRating: "1"
+};
+
+const REVIEW_ENTITIES = [
+  {
+    author: "SK8 Clothing",
+    text: "The app saves time and keeps SEO blog publishing consistent.",
+    rating: "5"
+  },
+  {
+    author: "Tony's Aussie Prints",
+    text: "Simple setup and reliable automation for regular blog output.",
+    rating: "5"
+  },
+  {
+    author: "Capric Clothes",
+    text: "Helpful for stores that need consistent content without extra overhead.",
+    rating: "5"
+  }
+];
+
 function normalizePath(pathname) {
   if (!pathname) return "/";
   if (pathname.length > 1 && pathname.endsWith("/")) return pathname.slice(0, -1);
@@ -264,6 +289,44 @@ function buildBreadcrumb(path, canonicalUrl) {
   };
 }
 
+function buildSoftwareApplicationGraph(includeReviews) {
+  return {
+    "@type": "SoftwareApplication",
+    "@id": `${SITE_URL}/#autoblogger-app`,
+    name: "autoBlogger",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    url: "https://apps.shopify.com/autoblogger",
+    description:
+      "Automated SEO blog publishing for Shopify stores, including metadata, internal links, and social sharing.",
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "USD",
+      price: "9.95",
+      description: "Starter plan starts at $9.95 per month"
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ...APP_AGGREGATE_RATING
+    },
+    review: includeReviews
+      ? REVIEW_ENTITIES.map(item => ({
+          "@type": "Review",
+          author: {
+            "@type": "Organization",
+            name: item.author
+          },
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: item.rating,
+            bestRating: "5"
+          },
+          reviewBody: item.text
+        }))
+      : undefined
+  };
+}
+
 function buildSchemaGraph(path, meta, canonicalUrl, isKnownPath) {
   const breadcrumb = buildBreadcrumb(path, canonicalUrl);
 
@@ -325,22 +388,11 @@ function buildSchemaGraph(path, meta, canonicalUrl, isKnownPath) {
   if (breadcrumb) graph.push(breadcrumb);
 
   if (path === "/") {
-    graph.push({
-      "@type": "SoftwareApplication",
-      "@id": `${SITE_URL}/#autoblogger-app`,
-      name: "autoBlogger",
-      applicationCategory: "BusinessApplication",
-      operatingSystem: "Web",
-      url: "https://apps.shopify.com/autoblogger",
-      description:
-        "Automated SEO blog publishing for Shopify stores, including metadata, internal links, and social sharing.",
-      offers: {
-        "@type": "Offer",
-        priceCurrency: "USD",
-        price: "9.95",
-        description: "Starter plan starts at $9.95 per month"
-      }
-    });
+    graph.push(buildSoftwareApplicationGraph(true));
+  }
+
+  if (path === "/reviews") {
+    graph.push(buildSoftwareApplicationGraph(true));
   }
 
   if (path === "/faqs") {
