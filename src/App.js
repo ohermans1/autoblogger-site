@@ -52,7 +52,6 @@ const App = () => {
                   <PricingSection home={true} />
                   <FAQsSection home={true} />
                   <ReviewsSection home={true} />
-                  <SEOChecklist home={true} />
                   <ContactSection home={true} />
                   <OtherAppsSection home={true} />
                 </>
@@ -64,6 +63,7 @@ const App = () => {
             <Route path="/faqs" element={<FAQsSection />} />
             <Route path="/reviews" element={<ReviewsSection />} />
             <Route path="/contact" element={<ContactSection />} />
+            <Route path="/seo-checklist" element={<SEOChecklist />} />
             <Route path="/free-seo-checklist" element={<SEOChecklist />} />
             <Route path="/privacy" element={<PrivacyPolicy />} /> {/* Add Privacy Policy Route */}
             <Route path="/terms" element={<TermsAndConditions />} /> {/* Add Terms and Conditions Route */}

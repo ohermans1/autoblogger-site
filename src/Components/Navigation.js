@@ -25,8 +25,8 @@ const Navigation = () => {
       <NavLink to="/other-apps" className={({ isActive }) => `mx-3 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:underline`}>
         Other Apps
       </NavLink>
-      <NavLink to="/free-seo-checklist" className={({ isActive }) => `mx-3 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:underline`}>
-        Free SEO Checklist
+      <NavLink to="/seo-checklist" className={({ isActive }) => `mx-3 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:underline`}>
+        SEO Checklist
       </NavLink>
     </nav>
   );
