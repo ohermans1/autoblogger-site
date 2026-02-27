@@ -34,7 +34,7 @@ const ReviewsSection = props => {
       )}
 
       <h4 className="text-2xl font-semibold mb-4 text-center">
-        Current Rating: 4.6 out of 5 stars on the{" "}
+        Current Rating: 4.9 out of 5 stars on the{" "}
         <a href={fullReviewsLink} aria-label="Visit the Shopify App Store to read more reviews">
           Shopify app store!
         </a>

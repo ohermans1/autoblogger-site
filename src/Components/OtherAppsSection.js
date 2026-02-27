@@ -29,7 +29,6 @@ const OtherAppsSection = props => {
       name: "autoShip | Free Shipping Bar",
       logo: "https://cdn.shopify.com/app-store/listing_images/5b39da04a16faa71e05dd785528d696e/icon/CO_Rmqzsq5IDEAE=.png",
       description: "Free shipping progress bar for your store.",
-      pricingText: "Free",
       cta: {
         href: "https://apps.shopify.com/autoshippingbar",
         label: "View on Shopify App Store"
@@ -41,7 +40,6 @@ const OtherAppsSection = props => {
       name: "autoStockist | Stock Alerts",
       logo: "https://cdn.shopify.com/app-store/listing_images/833ea1c9a3d52e5b7f6a9de05a187a88/icon/CMCWirLsq5IDEAE=.png",
       description: "Instant low and out-of-stock alerts, tracking, and forecasting.",
-      pricingText: "Free plan available",
       cta: {
         href: "https://apps.shopify.com/autostockist",
         label: "View on Shopify App Store"
@@ -53,7 +51,6 @@ const OtherAppsSection = props => {
       name: "autoBuy | Buy Button Anywhere",
       logo: "https://cdn.shopify.com/app-store/listing_images/d6b0d14db59c4b0805d9b9e0a14b8c8d/icon/CMvYl5Gn6JIDEAE=.png",
       description: "Sell on any blog, social channel, or website in minutes.",
-      pricingText: "Free plan available",
       cta: {
         href: "https://apps.shopify.com/autobuy-1",
         label: "View on Shopify App Store"
@@ -80,11 +77,7 @@ const OtherAppsSection = props => {
               {app.comingSoon && <span className="inline-flex items-center rounded-full bg-gray-200 px-2.5 py-1 text-xs font-medium text-gray-700">Coming soon</span>}
             </div>
 
-            {app.pricingText && (
-              <div className="mb-4 space-y-1 text-sm text-gray-600">
-                {app.pricingText && <p className="font-medium text-gray-700">{app.pricingText}</p>}
-              </div>
-            )}
+            {app.pricingText && <div className="mb-4 space-y-1 text-sm text-gray-600">{app.pricingText && <p className="font-medium text-gray-700">{app.pricingText}</p>}</div>}
 
             <p className="text-gray-700 mb-6">{app.description}</p>
 

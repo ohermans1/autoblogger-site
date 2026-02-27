@@ -14,75 +14,6 @@ const FeaturesSection = props => {
     { title: "14-Day free trial", description: "Try autoBlogger risk-free before choosing a paid plan." }
   ];
 
-  const worksWith = ["Shopify Admin", "ChatGPT", "AI Backlinks", "Facebook", "Instagram", "Unsplash"];
-
-  const categories = ["Blogs", "SEO"];
-
-  const languages = [
-    "English",
-    "Chinese (Simplified)",
-    "Italian",
-    "German",
-    "Chinese (Traditional)",
-    "Czech",
-    "Danish",
-    "Dutch",
-    "Finnish",
-    "French",
-    "Japanese",
-    "Korean",
-    "Norwegian (Bokmal)",
-    "Polish",
-    "Portuguese (Brazil)",
-    "Portuguese (Portugal)",
-    "Spanish",
-    "Swedish",
-    "Thai",
-    "Turkish",
-    "Hindi",
-    "Bangla",
-    "Telugu",
-    "Albanian",
-    "Amharic",
-    "Arabic",
-    "Armenian",
-    "Bosnian",
-    "Bulgarian",
-    "Burmese",
-    "Catalan",
-    "Croatian",
-    "Estonian",
-    "Greek",
-    "Georgian",
-    "Gujarati",
-    "Hebrew",
-    "Hungarian",
-    "Icelandic",
-    "Indonesian",
-    "Kannada",
-    "Kazakh",
-    "Lithuanian",
-    "Latvian",
-    "Macedonian",
-    "Malayalam",
-    "Malay",
-    "Marathi",
-    "Mongolian",
-    "Persian",
-    "Punjabi",
-    "Romanian",
-    "Russian",
-    "Serbian",
-    "Slovak",
-    "Slovenian",
-    "Somali",
-    "Swahili",
-    "Tamil",
-    "Ukrainian",
-    "Urdu",
-    "Vietnamese"
-  ];
-
   return (
     <section id="features" className="py-16 md:bg-gradient-to-b md:from-white md:to-gray-100">
       {props.home ? (
@@ -108,35 +39,6 @@ const FeaturesSection = props => {
             </li>
           ))}
         </ul>
-      </div>
-
-      <div className="max-w-4xl mx-auto mt-10 grid gap-8 md:grid-cols-2">
-        <div className="bg-white rounded-lg shadow p-6">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">Works with</h2>
-          <div className="flex flex-wrap gap-2">
-            {worksWith.map(item => (
-              <span key={item} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="bg-white rounded-lg shadow p-6">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">Categories</h2>
-          <div className="flex flex-wrap gap-2">
-            {categories.map(item => (
-              <span key={item} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="max-w-4xl mx-auto mt-8 bg-white rounded-lg shadow p-6">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Languages</h2>
-        <p className="text-gray-700">{languages.join(", ")}</p>
       </div>
 
       <div className="text-center mt-8">
