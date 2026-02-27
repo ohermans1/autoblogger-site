@@ -19,7 +19,7 @@ const PageHeader = ({ toggleMobileMenu, isMobileMenuOpen }) => {
             transform: "translateY(0)"
           }}
         >
-          <img src="./../logo.png" alt="autoBlogger" className="h-16" />
+          <img src="/logo.png" alt="autoBlogger" className="h-16" />
         </Link>
 
         {/* Navigation Links */}

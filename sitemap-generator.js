@@ -12,18 +12,25 @@ const paths = [
   { url: "/contact", changefreq: "monthly", priority: 0.5 },
   { url: "/privacy", changefreq: "yearly", priority: 0.3 },
   { url: "/terms", changefreq: "yearly", priority: 0.3 },
-  { url: "/backlink-terms", changefreq: "yearly", priority: 0.3 }
+  { url: "/backlink-terms", changefreq: "yearly", priority: 0.3 },
+  { url: "/premium-extras", changefreq: "monthly", priority: 0.5 },
+  { url: "/autoschema-terms", changefreq: "yearly", priority: 0.2 },
+  { url: "/autoschema-privacy", changefreq: "yearly", priority: 0.2 }
 ];
 
 async function generateSitemap() {
   try {
     const sitemapStream = new SitemapStream({ hostname: "https://autoblogger.bot" });
     const writeStream = createWriteStream("./public/sitemap.xml");
+    const lastmodISO = new Date().toISOString();
 
     sitemapStream.pipe(writeStream);
 
     paths.forEach(path => {
-      sitemapStream.write(path);
+      sitemapStream.write({
+        ...path,
+        lastmodISO
+      });
     });
 
     sitemapStream.end();

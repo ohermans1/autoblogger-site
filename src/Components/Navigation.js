@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <nav className="hidden md:flex ml-auto">
+    <nav className="hidden md:flex ml-auto" aria-label="Primary">
       <NavLink to="/" className={({ isActive }) => `mx-3 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:underline`}>
         Home
       </NavLink>
@@ -25,8 +25,8 @@ const Navigation = () => {
       <NavLink to="/other-apps" className={({ isActive }) => `mx-3 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:underline`}>
         Other Apps
       </NavLink>
-      <NavLink to="/seo-checklist" className={({ isActive }) => `mx-3 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:underline`}>
-        SEO Checklist
+      <NavLink to="/free-seo-checklist" className={({ isActive }) => `mx-3 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:underline`}>
+        Free SEO Checklist
       </NavLink>
     </nav>
   );

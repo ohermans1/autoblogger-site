@@ -77,27 +77,6 @@ const SEOChecklist = props => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(progressByPlatform));
   }, [progressByPlatform]);
 
-  useEffect(() => {
-    const previousTitle = document.title;
-    const metaDescription = document.querySelector('meta[name="description"]');
-    const previousDescription = metaDescription ? metaDescription.getAttribute("content") : "";
-
-    document.title = "Free Shopify SEO Checklist & Free Wix SEO Checklist | autoBlogger";
-    if (metaDescription) {
-      metaDescription.setAttribute(
-        "content",
-        "Use this free Shopify SEO checklist and free Wix SEO checklist to improve rankings, fix technical SEO issues, and grow organic traffic."
-      );
-    }
-
-    return () => {
-      document.title = previousTitle;
-      if (metaDescription && previousDescription) {
-        metaDescription.setAttribute("content", previousDescription);
-      }
-    };
-  }, []);
-
   const rows = useMemo(() => {
     const source = CHECKLISTS[platform] || [];
     const progress = progressByPlatform[platform] || {};
