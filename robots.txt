@@ -1,4 +1,4 @@
-# robots.txt — autoblogger.bot
+# robots.txt - autoblogger.bot
 # See: https://www.robotstxt.org/robotstxt.html
 
 # Allow all crawlers
@@ -28,3 +28,4 @@ Allow: /
 Sitemap: https://autoblogger.bot/sitemap.xml
 LLMS: https://autoblogger.bot/llms.txt
 Humans: https://autoblogger.bot/humans.txt
+Host: autoblogger.bot
