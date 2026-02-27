@@ -77,6 +77,27 @@ const SEOChecklist = props => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(progressByPlatform));
   }, [progressByPlatform]);
 
+  useEffect(() => {
+    const previousTitle = document.title;
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const previousDescription = metaDescription ? metaDescription.getAttribute("content") : "";
+
+    document.title = "Free Shopify SEO Checklist & Free Wix SEO Checklist | autoBlogger";
+    if (metaDescription) {
+      metaDescription.setAttribute(
+        "content",
+        "Use this free Shopify SEO checklist and free Wix SEO checklist to improve rankings, fix technical SEO issues, and grow organic traffic."
+      );
+    }
+
+    return () => {
+      document.title = previousTitle;
+      if (metaDescription && previousDescription) {
+        metaDescription.setAttribute("content", previousDescription);
+      }
+    };
+  }, []);
+
   const rows = useMemo(() => {
     const source = CHECKLISTS[platform] || [];
     const progress = progressByPlatform[platform] || {};
@@ -184,6 +205,18 @@ const SEOChecklist = props => {
           )}
 
           <p className="text-center text-slate-700 max-w-4xl mx-auto mb-5">Run your SEO from one board. Pick Shopify or Wix, follow the playbook steps for each task, and save progress in-browser.</p>
+
+          <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 mb-5">
+            <h2 className="text-xl font-bold text-slate-900 mb-2">Free Shopify SEO Checklist and Free Wix SEO Checklist</h2>
+            <p className="text-slate-700 mb-2">
+              This page is built to be a practical free Shopify SEO checklist for ecommerce stores and a free Wix SEO checklist for website owners who want more organic traffic.
+              Instead of downloading spreadsheets, you can follow each step directly on-page, track progress, and work through technical SEO, on-page SEO, content SEO, and link building.
+            </p>
+            <p className="text-slate-700">
+              If you searched for a free Shopify SEO checklist, start with P0 tasks, complete indexing and performance fixes first, then move to content publishing and authority building.
+              For Wix users, choose the Wix tab to get the same structured workflow adapted for Wix SEO.
+            </p>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-4 text-sm">
             <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
@@ -471,6 +504,22 @@ function buildGuide(taskItem, platform) {
     ];
   }
 
+  if (/sitemap|index coverage|review coverage/.test(action)) {
+    return [
+      `Open ${platformName} sitemap settings and confirm the sitemap URL is live and returning status 200.`,
+      "Submit sitemap in Search Console and review excluded/error URLs for patterns.",
+      "Fix one high-impact indexing issue batch first, then re-request indexing."
+    ];
+  }
+
+  if (/fix broken links|404|crawl errors/.test(action)) {
+    return [
+      `Crawl your ${platformName} site and export all 404 and broken internal links.`,
+      "Update links at source pages first, then add 301 redirects for removed URLs.",
+      "Re-crawl the site and verify that critical navigation and money pages are clean."
+    ];
+  }
+
   if (/schema/.test(action)) {
     return [
       "Run a schema test on priority URLs and list all missing fields.",
@@ -479,10 +528,90 @@ function buildGuide(taskItem, platform) {
     ];
   }
 
-  if (/blog|content|publish|internal links/.test(action)) {
+  if (/optimize title tags and meta descriptions|improve weak snippets/.test(action)) {
+    return [
+      "Start with pages that already have impressions but weak click-through rate.",
+      "Rewrite title + meta pairs to match user intent and include a clear value angle.",
+      "Track CTR changes over 14 days and keep the winning variants."
+    ];
+  }
+
+  if (/heading structure|h1 to h3|hierarchy/.test(action)) {
+    return [
+      "Audit one template at a time and map heading levels to page sections.",
+      "Keep one clear H1, then structure H2/H3 blocks around distinct subtopics.",
+      "Re-check pages after publishing to ensure heading order stayed intact."
+    ];
+  }
+
+  if (/publish one .*seo (blog|post)|intent-focused seo post|product-focused seo blog/.test(action)) {
+    return [
+      "Choose one target query and define search intent before writing.",
+      "Outline sections with real examples, FAQs, and a clear conversion path.",
+      "Publish, request indexing, and review first impression/CTR signals after 1-2 weeks."
+    ];
+  }
+
+  if (/internal links/.test(action)) {
+    return [
+      "Pick the target page that needs authority and identify 3-5 relevant source pages.",
+      "Add natural anchor text links inside existing content, not just footer/nav links.",
+      "Track crawl depth and target page ranking movement over the next month."
+    ];
+  }
+
+  if (/refresh stale posts|refresh old pages/.test(action)) {
+    return [
+      "Prioritize pages with traffic decline over the last 60-90 days.",
+      "Update outdated facts, improve structure, add current links, and sharpen CTA copy.",
+      "Republish with meaningful changes and compare traffic trend 2-4 weeks later."
+    ];
+  }
+
+  if (/expand thin product|thin product and collection copy/.test(action)) {
+    return [
+      `Audit thin ${platformName} product and collection pages by word count and conversion rate.`,
+      "Add use cases, differentiators, objections, and keyword-aligned descriptive content.",
+      "Re-check for duplicate copy across variants and canonicalize where needed."
+    ];
+  }
+
+  if (/improve homepage and service page copy/.test(action)) {
+    return [
+      "Rewrite hero and above-the-fold sections around intent, credibility, and CTA clarity.",
+      "Expand service sections with proof, scope, FAQs, and internal links to support pages.",
+      "Measure engagement, conversion rate, and assisted conversions after rollout."
+    ];
+  }
+
+  if (/improve image alt text/.test(action)) {
+    return [
+      "Export images from key pages and identify missing or duplicated alt text.",
+      "Write concise alt text that describes image context and user intent naturally.",
+      "Validate coverage on priority templates and maintain standards for new uploads."
+    ];
+  }
+
+  if (/repurpose blogs to social channels/.test(action)) {
+    return [
+      "Turn one blog into multiple social snippets with unique hooks per channel.",
+      "Link back to the original page using tracked UTM parameters.",
+      "Review referral sessions and on-site behavior to find top-performing formats."
+    ];
+  }
+
+  if (/pillar page|topic cluster/.test(action)) {
+    return [
+      "Choose one high-value core topic and map supporting long-tail subtopics.",
+      "Publish the pillar page first, then link all supporting articles back to it.",
+      "Monitor cluster visibility and internal click flow each month."
+    ];
+  }
+
+  if (/blog|content|publish/.test(action)) {
     return [
       "Draft content around one clear search intent and include product/service relevance.",
-      "Add structured headers, FAQs where useful, and 3 to 5 internal links to key pages.",
+      "Add structured headers, FAQs where useful, and strong internal linking.",
       "Publish, request indexing, and monitor impressions and CTR over the next 2 weeks."
     ];
   }
