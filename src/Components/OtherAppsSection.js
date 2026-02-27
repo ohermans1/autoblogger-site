@@ -5,7 +5,7 @@ const OtherAppsSection = props => {
     {
       key: "autollms",
       name: "autoLLMs",
-      logo: "/autollms-logo.png", // public folder
+      logo: "/autollms-logo.png",
       description: "Create and maintain an LLMs.txt so AI tools can easily read and index your store. Simple, automated, SEO-friendly.",
       cta: {
         href: "https://apps.shopify.com/autollm",
@@ -16,10 +16,46 @@ const OtherAppsSection = props => {
     {
       key: "autoschema",
       name: "autoSchema",
-      logo: "/autoschema-logo.png", // public folder
+      logo: "/autoschema-logo.png",
       description: "Automatically add Google-friendly structured data (schema) to your store for richer search results and improved SEO.",
       cta: {
         href: "https://apps.shopify.com/autoschema-google-structures",
+        label: "View on Shopify App Store"
+      },
+      comingSoon: false
+    },
+    {
+      key: "autoship",
+      name: "autoShip | Free Shipping Bar",
+      logo: "https://cdn.shopify.com/app-store/listing_images/5b39da04a16faa71e05dd785528d696e/icon/CO_Rmqzsq5IDEAE=.png",
+      description: "Free shipping progress bar for your store.",
+      pricingText: "Free",
+      cta: {
+        href: "https://apps.shopify.com/autoshippingbar",
+        label: "View on Shopify App Store"
+      },
+      comingSoon: false
+    },
+    {
+      key: "autostockist",
+      name: "autoStockist | Stock Alerts",
+      logo: "https://cdn.shopify.com/app-store/listing_images/833ea1c9a3d52e5b7f6a9de05a187a88/icon/CMCWirLsq5IDEAE=.png",
+      description: "Instant low and out-of-stock alerts, tracking, and forecasting.",
+      pricingText: "Free plan available",
+      cta: {
+        href: "https://apps.shopify.com/autostockist",
+        label: "View on Shopify App Store"
+      },
+      comingSoon: false
+    },
+    {
+      key: "autobuy",
+      name: "autoBuy | Buy Button Anywhere",
+      logo: "https://cdn.shopify.com/app-store/listing_images/d6b0d14db59c4b0805d9b9e0a14b8c8d/icon/CMvYl5Gn6JIDEAE=.png",
+      description: "Sell on any blog, social channel, or website in minutes.",
+      pricingText: "Free plan available",
+      cta: {
+        href: "https://apps.shopify.com/autobuy-1",
         label: "View on Shopify App Store"
       },
       comingSoon: false
@@ -30,24 +66,25 @@ const OtherAppsSection = props => {
     <section id="other-apps" className="py-16 md:bg-gradient-to-b md:from-white md:to-gray-100">
       {props.home ? <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">Our Other Apps</h3> : <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Our Other Apps</h1>}
 
-      <div className="max-w-5xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="max-w-6xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {apps.map(app => (
           <article key={app.key} className="bg-white rounded-lg shadow hover:shadow-md transition p-6 flex flex-col">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center space-x-3">
-                {/* Logo or fallback */}
                 <div className="h-10 w-10 rounded bg-gray-100 flex items-center justify-center overflow-hidden text-gray-500 font-bold">
-                  {app.logo ? (
-                    <img src={app.logo} alt={`${app.name} logo`} className="h-10 w-10 object-contain" loading="lazy" />
-                  ) : (
-                    <span className="text-sm">AE</span> // fallback initials
-                  )}
+                  {app.logo ? <img src={app.logo} alt={`${app.name} logo`} className="h-10 w-10 object-contain" loading="lazy" /> : <span className="text-sm">AE</span>}
                 </div>
                 <h2 className="text-xl font-semibold text-gray-900">{app.name}</h2>
               </div>
 
               {app.comingSoon && <span className="inline-flex items-center rounded-full bg-gray-200 px-2.5 py-1 text-xs font-medium text-gray-700">Coming soon</span>}
             </div>
+
+            {app.pricingText && (
+              <div className="mb-4 space-y-1 text-sm text-gray-600">
+                {app.pricingText && <p className="font-medium text-gray-700">{app.pricingText}</p>}
+              </div>
+            )}
 
             <p className="text-gray-700 mb-6">{app.description}</p>
 
@@ -58,7 +95,7 @@ const OtherAppsSection = props => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-primary text-white px-4 py-2 rounded hover:bg-opacity-90 transition"
-                  aria-label={`${app.name} – ${app.cta.label}`}
+                  aria-label={`${app.name} - ${app.cta.label}`}
                 >
                   {app.cta.label}
                 </a>

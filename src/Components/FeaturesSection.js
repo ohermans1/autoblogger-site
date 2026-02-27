@@ -1,43 +1,86 @@
 import React from "react";
-import { FaCheckCircle } from "react-icons/fa"; // Importing an icon
+import { FaCheckCircle } from "react-icons/fa";
 
 const FeaturesSection = props => {
-  const appStoreUrl = "https://apps.shopify.com/autoblogger"; // Update with actual URL
-  const mediumBlogUrl = "https://medium.com/@ohermans1"; // Update with actual Medium blog URL
+  const appStoreUrl = "https://apps.shopify.com/autoblogger";
 
   const features = [
-    { title: "Set and Forget", description: "Automatically generate and publish up to 7 high-quality blogs per week." },
-    { title: "SEO-Friendly", description: "Automatically create SEO-optimised content complete with HTML, metadata, and on-page SEO." },
-    { title: "Easy Blog Management", description: "Effortlessly plan, add, delete, and reorder your upcoming blogs." },
-    { title: "Seamless Integration", description: "Blogs integrate flawlessly with your Shopify store's interface." },
-    { title: "Backlink Program", description: "Opt in for free backlinks from fellow autoBlogger users’ stores to enhance your SEO exposure." },
-    { title: "Customisation", description: "Easily tweak or edit published articles directly within Shopify’s blog interface." },
-    { title: "Direct Developer Contact and Friendly Support", description: "Get in touch with me, Ollie (the developer and owner), if you encounter any issues or need assistance." },
-    {
-      title: "Free Medium Spotlight Articles",
-      description: (
-        <span>
-          Opt in to feature your store on our{" "}
-          <a href={mediumBlogUrl} target="_blank" rel="noopener noreferrer" className="text-primary underline">
-            Medium blog
-          </a>
-          , gaining additional backlinks and exposure.
-        </span>
-      )
-    },
-    {
-      title: "Available in Most Languages",
-      description: (
-        <span>
-          Check out the{" "}
-          <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" className="text-primary underline">
-            app listing
-          </a>{" "}
-          for a complete list.
-        </span>
-      )
-    },
-    { title: "14-Day Free Trial", description: "Enjoy a no-obligation 14-day free trial to explore all features and see how autoBlogger can transform your blogging experience." }
+    { title: "Set and Forget", description: "Automated SEO publishing with structured, search-ready articles." },
+    { title: "Article modes", description: "Topic and product-focused SEO content built for Shopify stores." },
+    { title: "SEO-ready", description: "Optimised HTML, overviews, FAQs, metadata, and structured formatting." },
+    { title: "Easy blog management", description: "Plan, schedule, and manage your publishing calendar easily." },
+    { title: "Backlink Program", description: "Optional backlink network to strengthen search authority." },
+    { title: "Built for Shopify workflows", description: "Edit directly in Shopify and automatically share to social channels." },
+    { title: "14-Day free trial", description: "Try autoBlogger risk-free before choosing a paid plan." }
+  ];
+
+  const worksWith = ["Shopify Admin", "ChatGPT", "AI Backlinks", "Facebook", "Instagram", "Unsplash"];
+
+  const categories = ["Blogs", "SEO"];
+
+  const languages = [
+    "English",
+    "Chinese (Simplified)",
+    "Italian",
+    "German",
+    "Chinese (Traditional)",
+    "Czech",
+    "Danish",
+    "Dutch",
+    "Finnish",
+    "French",
+    "Japanese",
+    "Korean",
+    "Norwegian (Bokmal)",
+    "Polish",
+    "Portuguese (Brazil)",
+    "Portuguese (Portugal)",
+    "Spanish",
+    "Swedish",
+    "Thai",
+    "Turkish",
+    "Hindi",
+    "Bangla",
+    "Telugu",
+    "Albanian",
+    "Amharic",
+    "Arabic",
+    "Armenian",
+    "Bosnian",
+    "Bulgarian",
+    "Burmese",
+    "Catalan",
+    "Croatian",
+    "Estonian",
+    "Greek",
+    "Georgian",
+    "Gujarati",
+    "Hebrew",
+    "Hungarian",
+    "Icelandic",
+    "Indonesian",
+    "Kannada",
+    "Kazakh",
+    "Lithuanian",
+    "Latvian",
+    "Macedonian",
+    "Malayalam",
+    "Malay",
+    "Marathi",
+    "Mongolian",
+    "Persian",
+    "Punjabi",
+    "Romanian",
+    "Russian",
+    "Serbian",
+    "Slovak",
+    "Slovenian",
+    "Somali",
+    "Swahili",
+    "Tamil",
+    "Ukrainian",
+    "Urdu",
+    "Vietnamese"
   ];
 
   return (
@@ -47,7 +90,12 @@ const FeaturesSection = props => {
       ) : (
         <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Discover the Powerful Features of autoBlogger</h1>
       )}
-      <div className="max-w-3xl mx-auto">
+
+      <p className="max-w-4xl mx-auto text-center text-lg text-gray-700 mb-8">
+        autoBlogger turns your Shopify blog into an automated SEO engine with content designed for topical authority and product discovery.
+      </p>
+
+      <div className="max-w-4xl mx-auto">
         <ul className="list-disc list-inside space-y-6 text-lg text-gray-700">
           {features.map((feature, index) => (
             <li key={index} className="flex items-start space-x-4">
@@ -61,6 +109,36 @@ const FeaturesSection = props => {
           ))}
         </ul>
       </div>
+
+      <div className="max-w-4xl mx-auto mt-10 grid gap-8 md:grid-cols-2">
+        <div className="bg-white rounded-lg shadow p-6">
+          <h2 className="text-xl font-semibold text-gray-800 mb-4">Works with</h2>
+          <div className="flex flex-wrap gap-2">
+            {worksWith.map(item => (
+              <span key={item} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-white rounded-lg shadow p-6">
+          <h2 className="text-xl font-semibold text-gray-800 mb-4">Categories</h2>
+          <div className="flex flex-wrap gap-2">
+            {categories.map(item => (
+              <span key={item} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-4xl mx-auto mt-8 bg-white rounded-lg shadow p-6">
+        <h2 className="text-xl font-semibold text-gray-800 mb-4">Languages</h2>
+        <p className="text-gray-700">{languages.join(", ")}</p>
+      </div>
+
       <div className="text-center mt-8">
         <a href={appStoreUrl} className="bg-primary text-white px-6 py-3 rounded shadow hover:bg-opacity-90 transition" aria-label="Get started with autoBlogger">
           Start Your Free Trial Now!
