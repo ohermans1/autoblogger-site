@@ -7,19 +7,19 @@ import MobileMenu from "./MobileMenu";
 const PageHeader = ({ toggleMobileMenu, isMobileMenuOpen }) => {
   return (
     <header className="fixed top-0 w-full bg-white shadow-md z-10">
-      <div className="flex justify-between items-center p-5">
+      <div className="flex items-center gap-4 px-5 py-4">
         {/* Logo */}
-        <Link
-          to="/"
-          className="text-2xl font-bold"
-          style={{
-            position: "absolute",
-            left: "0",
-            top: "0",
-            transform: "translateY(0)"
-          }}
-        >
-          <img src="/logo.png" alt="autoBlogger" className="h-16" width="256" height="64" loading="eager" fetchpriority="high" decoding="async" />
+        <Link to="/" className="flex shrink-0 items-center" aria-label="autoBlogger home">
+          <img
+            src="/logo.png"
+            alt="autoBlogger"
+            className="block h-12 w-auto object-contain"
+            width="1200"
+            height="1200"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
         </Link>
 
         {/* Navigation Links */}
