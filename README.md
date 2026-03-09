@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# autoBlogger Site
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Marketing site for `autoblogger.bot`, built with Create React App and Tailwind CSS.
 
-## Available Scripts
+## What the build does
 
-In the project directory, you can run:
+`npm run build` does more than bundle the React app:
 
-### `npm start`
+1. Generates static SEO landing pages into `public/`
+2. Regenerates `public/sitemap.xml`
+3. Builds the production bundle into `build/`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+That means the production deploy should always start with `npm run build` or `npm run deploy`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Scripts
 
-### `npm test`
+- `npm start` runs the app locally
+- `npm run seo:static` regenerates the static SEO pages only
+- `npm run sitemap` regenerates the sitemap only
+- `npm run build` creates a full production build
+- `npm test -- --watch=false` runs the test suite once
+- `npm run deploy` publishes the `build/` folder with `gh-pages`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Local development
 
-### `npm run build`
+```bash
+npm install
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The app will be available at `http://localhost:3000`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Production build
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm run build
+```
 
-### `npm run eject`
+To preview the production output locally:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npx serve -s build
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deploy
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### GitHub Pages
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This repo is already set up for `gh-pages` deployment.
 
-## Learn More
+```bash
+npm install
+npm run deploy
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+That command will:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Run the full production build
+2. Push the contents of `build/` to the GitHub Pages branch
 
-### Code Splitting
+The custom domain file at [public/CNAME](/c:/Users/ADMIN/Coding/autoblogger-site/public/CNAME) is copied into the deploy output automatically.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Any other static host
 
-### Analyzing the Bundle Size
+If you deploy somewhere other than GitHub Pages, run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm run build
+```
 
-### Making a Progressive Web App
+Then upload the contents of `build/` to your host.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## SEO content sources
 
-### Advanced Configuration
+- Shared page metadata lives in [src/seo/corePages.json](/c:/Users/ADMIN/Coding/autoblogger-site/src/seo/corePages.json)
+- Programmatic SEO pages live in [src/seo/programmaticPages.json](/c:/Users/ADMIN/Coding/autoblogger-site/src/seo/programmaticPages.json)
+- Static page generation is handled by [seo-static-pages-generator.js](/c:/Users/ADMIN/Coding/autoblogger-site/seo-static-pages-generator.js)
+- Sitemap generation is handled by [sitemap-generator.js](/c:/Users/ADMIN/Coding/autoblogger-site/sitemap-generator.js)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you add or edit SEO landing pages, run a fresh production build before deploying.

@@ -5,6 +5,7 @@ import Footer from "./Components/Footer";
 import HeroSection from "./Components/HeroSection";
 import SeoManager from "./Components/SeoManager";
 import NotFoundPage from "./Components/NotFoundPage";
+import { STATIC_SEO_PAGES } from "./seo/pageCatalog";
 
 const FeaturesSection = lazy(() => import("./Components/FeaturesSection"));
 const FAQsSection = lazy(() => import("./Components/FAQsSection"));
@@ -20,6 +21,26 @@ const AutoSchemaTerms = lazy(() => import("./Components/AutoSchemaTerms"));
 const AutoSchemaPrivacy = lazy(() => import("./Components/AutoSchemaPrivacy"));
 const OtherAppsSection = lazy(() => import("./Components/OtherAppsSection"));
 const SEOPlaybooksSection = lazy(() => import("./Components/SEOPlaybooksSection"));
+const SeoLandingPage = lazy(() => import("./Components/SeoLandingPage"));
+
+const CUSTOM_ROUTE_PATHS = new Set([
+  "/features",
+  "/pricing",
+  "/other-apps",
+  "/faqs",
+  "/reviews",
+  "/contact",
+  "/free-seo-checklist",
+  "/seo-checklist",
+  "/privacy",
+  "/terms",
+  "/autoschema-terms",
+  "/autoschema-privacy",
+  "/backlink-terms",
+  "/premium-extras"
+]);
+
+const generatedRoutePages = STATIC_SEO_PAGES.filter(page => !CUSTOM_ROUTE_PATHS.has(page.route));
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -86,6 +107,9 @@ const App = () => {
             <Route path="/autoschema-privacy" element={lazySection(<AutoSchemaPrivacy />)} />
             <Route path="/backlink-terms" element={lazySection(<BacklinkProgramTerms />)} />
             <Route path="/premium-extras" element={lazySection(<PremiumExtras />)} />
+            {generatedRoutePages.map(page => (
+              <Route key={page.route} path={page.route} element={lazySection(<SeoLandingPage page={page} />)} />
+            ))}
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>

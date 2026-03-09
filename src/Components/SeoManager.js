@@ -1,140 +1,26 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import {
+  DEFAULT_OG_IMAGE,
+  DEFAULT_ROBOTS,
+  SITE_NAV_ITEMS,
+  SITE_URL,
+  buildAbsoluteUrl,
+  getCanonicalRoute,
+  getPageByRoute,
+  hasRoutePrefix,
+  isGuidePage,
+  isHubPage,
+  normalizePath
+} from "../seo/pageCatalog";
 
-const SITE_URL = "https://autoblogger.bot";
-const DEFAULT_OG_IMAGE = `${SITE_URL}/logo.png`;
-const DEFAULT_ROBOTS = "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1";
-
-const NAV_ITEMS = [
-  { name: "Home", path: "/" },
-  { name: "Features", path: "/features" },
-  { name: "Pricing", path: "/pricing" },
-  { name: "FAQs", path: "/faqs" },
-  { name: "Reviews", path: "/reviews" },
-  { name: "Contact", path: "/contact" },
-  { name: "Other Apps", path: "/other-apps" },
-  { name: "Free SEO Checklist", path: "/free-seo-checklist" }
-];
-
-const BREADCRUMB_LABELS = {
-  "/": "Home",
-  "/features": "Features",
-  "/pricing": "Pricing",
-  "/other-apps": "Other Apps",
-  "/faqs": "FAQs",
-  "/reviews": "Reviews",
-  "/contact": "Contact",
-  "/free-seo-checklist": "Free SEO Checklist",
-  "/seo-checklist": "Free SEO Checklist",
-  "/privacy": "Privacy Policy",
-  "/terms": "Terms and Conditions",
-  "/autoschema-terms": "autoSchema Terms",
-  "/autoschema-privacy": "autoSchema Privacy Policy",
-  "/backlink-terms": "Backlink Program Terms",
-  "/premium-extras": "Premium Extras"
-};
-
-const PAGE_META = {
-  "/": {
-    title: "autoBlogger for Shopify | 2x Shopify Staff Pick SEO Blog Automation",
-    description:
-      "2x Shopify Staff Pick. autoBlogger automatically publishes SEO-optimized Shopify blogs with product links, FAQs, metadata, and social sharing.",
-    path: "/",
-    type: "website"
-  },
-  "/features": {
-    title: "autoBlogger Features | Automated SEO Blogging for Shopify",
-    description:
-      "Explore autoBlogger features: automated SEO publishing, product-focused content, metadata, internal links, and social sharing workflows for Shopify.",
-    path: "/features",
-    type: "article"
-  },
-  "/pricing": {
-    title: "autoBlogger Pricing | Starter, Growth, and Pro Plans",
-    description:
-      "View autoBlogger pricing for Starter, Growth, and Pro plans. Start with a 14-day trial, then choose the SEO publishing cadence that fits your store.",
-    path: "/pricing",
-    type: "website"
-  },
-  "/other-apps": {
-    title: "Other Shopify Apps by autoBlogger | autoLLMs, autoSchema, and More",
-    description:
-      "Discover other Shopify apps from the autoBlogger team, including autoLLMs, autoSchema, autoShip, autoStockist, and autoBuy.",
-    path: "/other-apps",
-    type: "website"
-  },
-  "/faqs": {
-    title: "autoBlogger FAQs | Setup, Pricing, Publishing, and Support",
-    description:
-      "Read frequently asked questions about autoBlogger setup, trial terms, publishing frequency, pricing, integrations, and customer support.",
-    path: "/faqs",
-    type: "article"
-  },
-  "/reviews": {
-    title: "autoBlogger Reviews | Shopify Merchant Feedback",
-    description:
-      "See recent autoBlogger reviews from Shopify merchants and learn how stores use automated SEO blogging to grow organic traffic.",
-    path: "/reviews",
-    type: "article"
-  },
-  "/contact": {
-    title: "Contact autoBlogger Support",
-    description: "Contact autoBlogger support for setup help, account questions, and product guidance.",
-    path: "/contact",
-    type: "website"
-  },
-  "/free-seo-checklist": {
-    title: "Free Shopify SEO Checklist and Free Wix SEO Checklist | autoBlogger",
-    description:
-      "Use this free Shopify SEO checklist and free Wix SEO checklist to improve rankings, fix technical SEO issues, and grow organic traffic.",
-    path: "/free-seo-checklist",
-    type: "article"
-  },
-  "/seo-checklist": {
-    title: "Free Shopify SEO Checklist and Free Wix SEO Checklist | autoBlogger",
-    description:
-      "Use this free Shopify SEO checklist and free Wix SEO checklist to improve rankings, fix technical SEO issues, and grow organic traffic.",
-    path: "/free-seo-checklist",
-    type: "article",
-    robots: "noindex,follow"
-  },
-  "/privacy": {
-    title: "Privacy Policy | autoBlogger",
-    description: "Read the privacy policy for autoBlogger.",
-    path: "/privacy",
-    type: "website"
-  },
-  "/terms": {
-    title: "Terms and Conditions | autoBlogger",
-    description: "Read the terms and conditions for autoBlogger.",
-    path: "/terms",
-    type: "website"
-  },
-  "/autoschema-terms": {
-    title: "autoSchema Terms and Conditions",
-    description: "Read the terms and conditions for autoSchema.",
-    path: "/autoschema-terms",
-    type: "website"
-  },
-  "/autoschema-privacy": {
-    title: "autoSchema Privacy Policy",
-    description: "Read the privacy policy for autoSchema.",
-    path: "/autoschema-privacy",
-    type: "website"
-  },
-  "/backlink-terms": {
-    title: "Backlink Program Terms | autoBlogger",
-    description: "Read the backlink program terms for autoBlogger.",
-    path: "/backlink-terms",
-    type: "website"
-  },
-  "/premium-extras": {
-    title: "Premium Extras | autoBlogger",
-    description:
-      "Learn about premium autoBlogger extras including the backlink program, weekly spotlight articles, and complimentary autoSchema access.",
-    path: "/premium-extras",
-    type: "article"
-  }
+const HOME_META = {
+  title: "autoBlogger for Shopify | 2x Shopify Staff Pick SEO Blog Automation",
+  description:
+    "2x Shopify Staff Pick. autoBlogger automatically publishes SEO-optimized Shopify blogs with product links, FAQs, metadata, and social sharing.",
+  path: "/",
+  type: "website",
+  robots: DEFAULT_ROBOTS
 };
 
 const FALLBACK_META = {
@@ -145,7 +31,7 @@ const FALLBACK_META = {
   robots: "noindex,follow"
 };
 
-const FAQ_MAIN_ENTITIES = [
+const HOME_FAQ = [
   {
     question: "What is autoBlogger?",
     answer:
@@ -191,15 +77,36 @@ const REVIEW_ENTITIES = [
   }
 ];
 
-function normalizePath(pathname) {
-  if (!pathname) return "/";
-  if (pathname.length > 1 && pathname.endsWith("/")) return pathname.slice(0, -1);
-  return pathname;
+function resolveOpenGraphType(page) {
+  if (!page) return "website";
+
+  if (isGuidePage(page)) return "article";
+
+  return ["/features", "/faqs", "/reviews", "/premium-extras", "/free-seo-checklist"].includes(page.route) ? "article" : "website";
 }
 
-function buildAbsoluteUrl(path) {
-  if (!path || path === "/") return `${SITE_URL}/`;
-  return `${SITE_URL}${path}`;
+function resolvePageMeta(pathname) {
+  if (pathname === "/") {
+    return { meta: HOME_META, page: null, isKnownPath: true };
+  }
+
+  const page = getPageByRoute(pathname);
+
+  if (!page) {
+    return { meta: FALLBACK_META, page: null, isKnownPath: false };
+  }
+
+  return {
+    meta: {
+      title: page.title,
+      description: page.description,
+      path: getCanonicalRoute(page),
+      type: resolveOpenGraphType(page),
+      robots: page.robots || DEFAULT_ROBOTS
+    },
+    page,
+    isKnownPath: true
+  };
 }
 
 function setMetaTag(attributeName, key, content) {
@@ -265,9 +172,8 @@ function setJsonLd(graph) {
   });
 }
 
-function buildBreadcrumb(path, canonicalUrl) {
-  const currentLabel = BREADCRUMB_LABELS[path];
-  if (!currentLabel || path === "/") return null;
+function buildBreadcrumb(page, canonicalUrl) {
+  if (!page) return null;
 
   return {
     "@type": "BreadcrumbList",
@@ -282,7 +188,7 @@ function buildBreadcrumb(path, canonicalUrl) {
       {
         "@type": "ListItem",
         position: 2,
-        name: currentLabel,
+        name: page.heading || page.title,
         item: canonicalUrl
       }
     ]
@@ -327,8 +233,72 @@ function buildSoftwareApplicationGraph(includeReviews) {
   };
 }
 
-function buildSchemaGraph(path, meta, canonicalUrl, isKnownPath) {
-  const breadcrumb = buildBreadcrumb(path, canonicalUrl);
+function buildFaqGraph(path, page, canonicalUrl) {
+  const faqItems = path === "/" ? HOME_FAQ : page?.faq || [];
+
+  if (faqItems.length === 0) return null;
+
+  return {
+    "@type": "FAQPage",
+    "@id": `${canonicalUrl}#faq`,
+    mainEntity: faqItems.map(item => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer
+      }
+    }))
+  };
+}
+
+function buildGuideGraph(page, canonicalUrl) {
+  if (!page || (!isGuidePage(page) && page.route !== "/free-seo-checklist")) return null;
+
+  return {
+    "@type": "Article",
+    "@id": `${canonicalUrl}#article`,
+    headline: page.title,
+    description: page.description,
+    image: DEFAULT_OG_IMAGE,
+    inLanguage: "en",
+    mainEntityOfPage: canonicalUrl,
+    author: {
+      "@id": `${SITE_URL}/#organization`
+    },
+    publisher: {
+      "@id": `${SITE_URL}/#organization`
+    }
+  };
+}
+
+function buildCollectionGraph(page, canonicalUrl) {
+  if (!page || !isHubPage(page)) return null;
+
+  return {
+    "@type": "CollectionPage",
+    "@id": `${canonicalUrl}#collection`,
+    name: page.title,
+    description: page.description,
+    url: canonicalUrl,
+    isPartOf: {
+      "@id": `${SITE_URL}/#website`
+    }
+  };
+}
+
+function shouldIncludeSoftwareApplication(path, page) {
+  if (path === "/") return true;
+  if (!page) return false;
+
+  return ["/reviews", "/pricing", "/features", "/solutions", "/free-seo-checklist"].includes(page.route) || hasRoutePrefix(page, "/shopify-seo");
+}
+
+function buildSchemaGraph(path, meta, canonicalUrl, page, isKnownPath) {
+  const breadcrumb = buildBreadcrumb(page, canonicalUrl);
+  const faqGraph = buildFaqGraph(path, page, canonicalUrl);
+  const guideGraph = buildGuideGraph(page, canonicalUrl);
+  const collectionGraph = buildCollectionGraph(page, canonicalUrl);
 
   const graph = [
     {
@@ -361,7 +331,7 @@ function buildSchemaGraph(path, meta, canonicalUrl, isKnownPath) {
     {
       "@type": "ItemList",
       "@id": `${SITE_URL}/#site-navigation`,
-      itemListElement: NAV_ITEMS.map((item, index) => ({
+      itemListElement: SITE_NAV_ITEMS.map((item, index) => ({
         "@type": "SiteNavigationElement",
         position: index + 1,
         name: item.name,
@@ -386,28 +356,12 @@ function buildSchemaGraph(path, meta, canonicalUrl, isKnownPath) {
   ];
 
   if (breadcrumb) graph.push(breadcrumb);
+  if (faqGraph) graph.push(faqGraph);
+  if (guideGraph) graph.push(guideGraph);
+  if (collectionGraph) graph.push(collectionGraph);
 
-  if (path === "/") {
-    graph.push(buildSoftwareApplicationGraph(true));
-  }
-
-  if (path === "/reviews") {
-    graph.push(buildSoftwareApplicationGraph(true));
-  }
-
-  if (path === "/faqs") {
-    graph.push({
-      "@type": "FAQPage",
-      "@id": `${canonicalUrl}#faq`,
-      mainEntity: FAQ_MAIN_ENTITIES.map(item => ({
-        "@type": "Question",
-        name: item.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: item.answer
-        }
-      }))
-    });
+  if (shouldIncludeSoftwareApplication(path, page)) {
+    graph.push(buildSoftwareApplicationGraph(path === "/" || path === "/reviews"));
   }
 
   if (!isKnownPath) {
@@ -429,8 +383,7 @@ const SeoManager = () => {
 
   useEffect(() => {
     const normalizedPath = normalizePath(pathname);
-    const isKnownPath = Object.prototype.hasOwnProperty.call(PAGE_META, normalizedPath);
-    const meta = isKnownPath ? PAGE_META[normalizedPath] : FALLBACK_META;
+    const { meta, page, isKnownPath } = resolvePageMeta(normalizedPath);
     const canonicalUrl = buildAbsoluteUrl(meta.path);
 
     document.title = meta.title;
@@ -457,7 +410,7 @@ const SeoManager = () => {
 
     setCanonicalTag(canonicalUrl);
     setHreflangTags(canonicalUrl);
-    setJsonLd(buildSchemaGraph(normalizedPath, meta, canonicalUrl, isKnownPath));
+    setJsonLd(buildSchemaGraph(normalizedPath, meta, canonicalUrl, page, isKnownPath));
   }, [pathname]);
 
   return null;
