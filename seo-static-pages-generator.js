@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const corePages = require("./src/seo/corePages.json");
 const programmaticPages = require("./src/seo/programmaticPages.json");
+const pageContentByRoute = require("./src/seo/pageContent.json");
 
 const SITE_URL = "https://autoblogger.bot";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/logo.png`;
@@ -47,15 +48,48 @@ const REVIEW_SNIPPETS = [
   }
 ];
 
-const STATIC_SEO_PAGES = [...corePages, ...programmaticPages].map(page => ({
-  ...page,
-  bullets: Array.isArray(page.bullets) ? page.bullets : [],
-  faq: Array.isArray(page.faq) ? page.faq : [],
-  tags: Array.isArray(page.tags) ? page.tags : [],
-  changefreq: page.changefreq || "monthly",
-  priority: typeof page.priority === "number" ? page.priority : 0.6,
-  robots: page.robots || DEFAULT_ROBOTS
-}));
+function normalizeSections(sections) {
+  if (!Array.isArray(sections)) return [];
+
+  return sections
+    .map(section => ({
+      title: section && section.title ? section.title : "",
+      paragraphs: Array.isArray(section && section.paragraphs) ? section.paragraphs : [],
+      items: Array.isArray(section && section.items) ? section.items : [],
+      ordered: Boolean(section && section.ordered)
+    }))
+    .filter(section => section.title || section.paragraphs.length > 0 || section.items.length > 0);
+}
+
+function normalizeComparisonTable(table) {
+  if (!table || !Array.isArray(table.columns) || !Array.isArray(table.rows) || table.columns.length === 0) {
+    return null;
+  }
+
+  return {
+    title: table.title || "Comparison Snapshot",
+    columns: table.columns,
+    rows: table.rows.filter(row => Array.isArray(row) && row.length > 0)
+  };
+}
+
+const STATIC_SEO_PAGES = [...corePages, ...programmaticPages].map(page => {
+  const content = pageContentByRoute[page.route] || {};
+  const mergedPage = { ...page, ...content };
+
+  return {
+    ...mergedPage,
+    bullets: Array.isArray(mergedPage.bullets) ? mergedPage.bullets : [],
+    faq: Array.isArray(mergedPage.faq) ? mergedPage.faq : [],
+    tags: Array.isArray(mergedPage.tags) ? mergedPage.tags : [],
+    sections: normalizeSections(mergedPage.sections),
+    checklist: Array.isArray(mergedPage.checklist) ? mergedPage.checklist : [],
+    comparisonTable: normalizeComparisonTable(mergedPage.comparisonTable),
+    changefreq: mergedPage.changefreq || "monthly",
+    priority: typeof mergedPage.priority === "number" ? mergedPage.priority : 0.6,
+    robots: mergedPage.robots || DEFAULT_ROBOTS
+  };
+});
 
 function escapeHtml(value) {
   return String(value)
@@ -96,6 +130,47 @@ function isGuidePage(page) {
   return ["/shopify-seo", "/wix-seo", "/ecommerce-seo", "/resources"].some(prefix => hasRoutePrefix(page, prefix)) && !isHubPage(page);
 }
 
+function getPageSection(page) {
+  if (page.route === "/site-map") return "Site";
+  if (page.route === "/solutions" || hasRoutePrefix(page, "/shopify-seo") || hasRoutePrefix(page, "/wix-seo") || hasRoutePrefix(page, "/ecommerce-seo")) return "Solutions";
+  if (page.route === "/resources" || hasRoutePrefix(page, "/resources")) return "Resources";
+  if (["/privacy", "/terms", "/autoschema-terms", "/autoschema-privacy", "/backlink-terms"].includes(page.route)) return "Legal";
+  return "Core";
+}
+
+function getBreadcrumbTrail(page) {
+  const trail = [{ label: "Home", path: "/" }];
+
+  if (page.route === "/site-map") {
+    trail.push({ label: "HTML Sitemap", path: "/site-map" });
+    return trail;
+  }
+
+  if (isGuidePage(page) && !hasRoutePrefix(page, "/resources")) {
+    trail.push({ label: "Solutions", path: "/solutions" });
+  }
+
+  if (hasRoutePrefix(page, "/resources") && page.route !== "/resources") {
+    trail.push({ label: "Resources", path: "/resources" });
+  }
+
+  trail.push({
+    label: page.heading || page.title,
+    path: getCanonicalRoute(page)
+  });
+
+  return trail;
+}
+
+function groupPagesBySection(pages) {
+  return pages.filter(isIndexablePage).reduce((groups, page) => {
+    const section = getPageSection(page);
+    if (!groups[section]) groups[section] = [];
+    groups[section].push(page);
+    return groups;
+  }, {});
+}
+
 function scoreRelatedness(source, candidate) {
   if (!source.tags.length || !candidate.tags.length) return 0;
 
@@ -132,16 +207,20 @@ function findRelatedPages(page, pages) {
   return [...scored, ...fallback].slice(0, 4);
 }
 
-function buildBreadcrumbList(route, canonicalUrl, heading) {
-  if (route === "/") return null;
+function buildBreadcrumbList(page, canonicalUrl) {
+  if (page.route === "/") return null;
+
+  const trail = getBreadcrumbTrail(page);
 
   return {
     "@type": "BreadcrumbList",
     "@id": `${canonicalUrl}#breadcrumb`,
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
-      { "@type": "ListItem", position: 2, name: heading, item: canonicalUrl }
-    ]
+    itemListElement: trail.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: toAbsolute(item.path)
+    }))
   };
 }
 
@@ -219,15 +298,34 @@ function buildCollectionGraph(page, canonicalUrl) {
   };
 }
 
+function buildSiteMapGraph(page, canonicalUrl) {
+  if (page.route !== "/site-map") return null;
+
+  const listedPages = STATIC_SEO_PAGES.filter(isIndexablePage);
+
+  return {
+    "@type": "ItemList",
+    "@id": `${canonicalUrl}#sitemap`,
+    name: "autoBlogger HTML Sitemap",
+    itemListElement: listedPages.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.heading || item.title,
+      url: toAbsolute(getCanonicalRoute(item))
+    }))
+  };
+}
+
 function shouldIncludeSoftwareApplication(page) {
   return ["/reviews", "/pricing", "/features", "/solutions", "/free-seo-checklist"].includes(page.route) || hasRoutePrefix(page, "/shopify-seo");
 }
 
 function buildSchemaGraph(page, canonicalUrl) {
-  const breadcrumb = buildBreadcrumbList(page.route, canonicalUrl, page.heading || page.title);
+  const breadcrumb = buildBreadcrumbList(page, canonicalUrl);
   const faqGraph = buildFaqGraph(page, canonicalUrl);
   const guideGraph = buildGuideGraph(page, canonicalUrl);
   const collectionGraph = buildCollectionGraph(page, canonicalUrl);
+  const siteMapGraph = buildSiteMapGraph(page, canonicalUrl);
 
   const graph = [
     {
@@ -284,6 +382,7 @@ function buildSchemaGraph(page, canonicalUrl) {
   if (faqGraph) graph.push(faqGraph);
   if (guideGraph) graph.push(guideGraph);
   if (collectionGraph) graph.push(collectionGraph);
+  if (siteMapGraph) graph.push(siteMapGraph);
   if (shouldIncludeSoftwareApplication(page)) graph.push(buildReviewsGraph());
 
   return {
@@ -294,6 +393,57 @@ function buildSchemaGraph(page, canonicalUrl) {
 
 function serializeJsonForScript(value) {
   return JSON.stringify(value).replace(/</g, "\\u003c");
+}
+
+function renderList(items, ordered = false, className = "") {
+  if (!items.length) return "";
+
+  const tag = ordered ? "ol" : "ul";
+  const classAttribute = className ? ` class="${className}"` : "";
+  const listItems = items.map(item => `<li>${escapeHtml(item)}</li>`).join("");
+
+  return `<${tag}${classAttribute}>${listItems}</${tag}>`;
+}
+
+function renderQuickTakeaways(page) {
+  if (page.bullets.length === 0) return "";
+
+  return `<section class="sub-card"><h2>Quick Takeaways</h2>${renderList(page.bullets)}</section>`;
+}
+
+function renderContentSections(page) {
+  if (page.sections.length === 0) return "";
+
+  return page.sections
+    .map(section => {
+      const paragraphs = section.paragraphs.map(paragraph => `<p>${escapeHtml(paragraph)}</p>`).join("");
+      const items = section.items.length > 0 ? renderList(section.items, section.ordered) : "";
+
+      return `<section class="sub-card content-section"><h2>${escapeHtml(section.title)}</h2>${paragraphs}${items}</section>`;
+    })
+    .join("");
+}
+
+function renderComparisonTable(page) {
+  if (!page.comparisonTable) return "";
+
+  const header = page.comparisonTable.columns.map(column => `<th>${escapeHtml(column)}</th>`).join("");
+  const rows = page.comparisonTable.rows
+    .map(
+      row =>
+        `<tr>${row
+          .map(cell => `<td>${escapeHtml(cell)}</td>`)
+          .join("")}</tr>`
+    )
+    .join("");
+
+  return `<section class="sub-card"><h2>${escapeHtml(page.comparisonTable.title)}</h2><div class="table-wrap"><table class="comparison-table"><thead><tr>${header}</tr></thead><tbody>${rows}</tbody></table></div></section>`;
+}
+
+function renderChecklist(page) {
+  if (page.checklist.length === 0) return "";
+
+  return `<section class="sub-card"><h2>Action Checklist</h2>${renderList(page.checklist, true)}</section>`;
 }
 
 function renderFaqSection(page) {
@@ -330,13 +480,59 @@ function renderTrustAndCta(page, appUrl) {
   )}">${escapeHtml(ctaLabel)}</a><a class="btn-secondary" href="${escapeHtml(appUrl)}">Open Interactive Version</a></div></section>`;
 }
 
+function renderBreadcrumbNav(page) {
+  const trail = getBreadcrumbTrail(page);
+  if (trail.length <= 1) return "";
+
+  const items = trail
+    .map((item, index) => {
+      const isLast = index === trail.length - 1;
+      if (isLast) return `<span aria-current="page">${escapeHtml(item.label)}</span>`;
+      return `<a href="${escapeHtml(item.path)}">${escapeHtml(item.label)}</a>`;
+    })
+    .join(`<span aria-hidden="true">/</span>`);
+
+  return `<nav class="breadcrumb" aria-label="Breadcrumb">${items}</nav>`;
+}
+
+function renderSiteMapCollection(pages) {
+  const sectionLabels = {
+    Core: "Core Pages",
+    Solutions: "Solutions and Playbooks",
+    Resources: "Resources and Templates",
+    Legal: "Legal Pages",
+    Site: "Site Utilities"
+  };
+
+  const grouped = groupPagesBySection(pages);
+  const orderedSections = ["Core", "Solutions", "Resources", "Legal", "Site"].filter(section => (grouped[section] || []).length > 0);
+
+  return orderedSections
+    .map(section => {
+      const items = grouped[section]
+        .slice()
+        .sort((left, right) => left.route.localeCompare(right.route))
+        .map(
+          item =>
+            `<li><a href="${escapeHtml(item.route)}">${escapeHtml(item.heading || item.title)}</a><span>${escapeHtml(item.description)}</span></li>`
+        )
+        .join("");
+
+      return `<section class="sub-card"><h2>${escapeHtml(sectionLabels[section])}</h2><ul class="related-list">${items}</ul></section>`;
+    })
+    .join("");
+}
+
 function renderHtml(page, pages) {
   const canonicalRoute = getCanonicalRoute(page);
   const canonicalUrl = toAbsolute(canonicalRoute);
   const appUrl = hashRoute(canonicalRoute);
   const schema = serializeJsonForScript(buildSchemaGraph(page, canonicalUrl));
   const nav = NAV_LINKS.map(link => `<a href="${link.href}">${escapeHtml(link.label)}</a>`).join("");
-  const bullets = page.bullets.map(item => `<li>${escapeHtml(item)}</li>`).join("");
+  const primaryContent =
+    page.route === "/site-map"
+      ? `<p>${escapeHtml(page.intro)}</p>${renderSiteMapCollection(pages)}`
+      : `${renderBreadcrumbNav(page)}<p>${escapeHtml(page.intro)}</p>${renderQuickTakeaways(page)}${renderComparisonTable(page)}${renderContentSections(page)}${renderChecklist(page)}`;
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -377,12 +573,22 @@ function renderHtml(page, pages) {
       .grid { display: grid; gap: 1rem; grid-template-columns: 2fr 1fr; }
       .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 1.4rem 1.3rem; }
       .sub-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; margin-top: 1rem; }
+      .breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; font-size: 0.95rem; margin-bottom: 1rem; color: #4b5563; }
+      .breadcrumb a { color: #0f766e; font-weight: 600; text-decoration: none; }
       h1 { margin-top: 0; line-height: 1.25; }
       h2 { margin-top: 0; font-size: 1.1rem; }
       ul { margin: 1rem 0 0; padding-left: 1.1rem; }
+      ol { margin: 1rem 0 0; padding-left: 1.2rem; }
+      li + li { margin-top: 0.45rem; }
+      .content-section p + p { margin-top: 0.85rem; }
+      .content-section ul, .content-section ol { margin-top: 1rem; }
       .faq-item { border-top: 1px solid #d1d5db; padding: 0.55rem 0; }
       .faq-item summary { font-weight: 700; cursor: pointer; }
       .faq-item p { margin: 0.5rem 0 0; }
+      .table-wrap { overflow-x: auto; }
+      .comparison-table { width: 100%; border-collapse: collapse; }
+      .comparison-table th, .comparison-table td { border-bottom: 1px solid #d1d5db; padding: 0.75rem; text-align: left; vertical-align: top; }
+      .comparison-table th { color: #111827; }
       .related-list { list-style: none; margin: 0; padding: 0; }
       .related-list li { border-top: 1px solid #d1d5db; padding: 0.65rem 0; }
       .related-list a { color: #0f766e; font-weight: 700; text-decoration: none; }
@@ -405,8 +611,7 @@ function renderHtml(page, pages) {
       <div class="container grid">
         <article class="card">
           <h1>${escapeHtml(page.heading)}</h1>
-          <p>${escapeHtml(page.intro)}</p>
-          <ul>${bullets}</ul>
+          ${primaryContent}
           <div class="actions">
             <a class="btn-primary" href="${escapeHtml(appUrl)}">Open Interactive Version</a>
             <a class="btn-secondary" href="${APP_LISTING_URL}">View Shopify App Listing</a>

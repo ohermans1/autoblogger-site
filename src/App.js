@@ -22,6 +22,7 @@ const AutoSchemaPrivacy = lazy(() => import("./Components/AutoSchemaPrivacy"));
 const OtherAppsSection = lazy(() => import("./Components/OtherAppsSection"));
 const SEOPlaybooksSection = lazy(() => import("./Components/SEOPlaybooksSection"));
 const SeoLandingPage = lazy(() => import("./Components/SeoLandingPage"));
+const SiteMapPage = lazy(() => import("./Components/SiteMapPage"));
 
 const CUSTOM_ROUTE_PATHS = new Set([
   "/features",
@@ -37,7 +38,8 @@ const CUSTOM_ROUTE_PATHS = new Set([
   "/autoschema-terms",
   "/autoschema-privacy",
   "/backlink-terms",
-  "/premium-extras"
+  "/premium-extras",
+  "/site-map"
 ]);
 
 const generatedRoutePages = STATIC_SEO_PAGES.filter(page => !CUSTOM_ROUTE_PATHS.has(page.route));
@@ -74,9 +76,12 @@ const App = () => {
       <ScrollToTop />
       <SeoManager />
       <div className="font-sans text-gray-800 bg-white">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:text-primary focus:shadow">
+          Skip to main content
+        </a>
         <PageHeader toggleMobileMenu={toggleMobileMenu} isMobileMenuOpen={isMobileMenuOpen} />
 
-        <main className="px-5 mt-20">
+        <main id="main-content" className="px-5 mt-20">
           <Routes>
             <Route
               path="/"
@@ -107,6 +112,7 @@ const App = () => {
             <Route path="/autoschema-privacy" element={lazySection(<AutoSchemaPrivacy />)} />
             <Route path="/backlink-terms" element={lazySection(<BacklinkProgramTerms />)} />
             <Route path="/premium-extras" element={lazySection(<PremiumExtras />)} />
+            <Route path="/site-map" element={lazySection(<SiteMapPage />)} />
             {generatedRoutePages.map(page => (
               <Route key={page.route} path={page.route} element={lazySection(<SeoLandingPage page={page} />)} />
             ))}

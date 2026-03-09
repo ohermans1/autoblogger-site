@@ -1,5 +1,6 @@
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
+import { SmartLink } from "./SmartLink";
 
 const FeaturesSection = props => {
   const appStoreUrl = "https://apps.shopify.com/autoblogger";
@@ -24,6 +25,21 @@ const FeaturesSection = props => {
 
       <p className="max-w-4xl mx-auto text-center text-lg text-gray-700 mb-8">
         autoBlogger turns your Shopify blog into an automated SEO engine with content designed for topical authority and product discovery.
+      </p>
+      <p className="max-w-4xl mx-auto text-center text-base text-gray-600 mb-8">
+        Need the implementation side too? Explore the{" "}
+        <SmartLink to="/solutions" className="text-primary font-semibold hover:underline">
+          SEO solutions hub
+        </SmartLink>
+        , the{" "}
+        <SmartLink to="/resources" className="text-primary font-semibold hover:underline">
+          resource library
+        </SmartLink>
+        , and recent{" "}
+        <SmartLink to="/reviews" className="text-primary font-semibold hover:underline">
+          merchant reviews
+        </SmartLink>
+        .
       </p>
 
       <div className="max-w-4xl mx-auto">

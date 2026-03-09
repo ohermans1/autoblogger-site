@@ -74,6 +74,7 @@ Then upload the contents of `build/` to your host.
 
 - Shared page metadata lives in [src/seo/corePages.json](/c:/Users/ADMIN/Coding/autoblogger-site/src/seo/corePages.json)
 - Programmatic SEO pages live in [src/seo/programmaticPages.json](/c:/Users/ADMIN/Coding/autoblogger-site/src/seo/programmaticPages.json)
+- Route-specific SEO body content lives in [src/seo/pageContent.json](/c:/Users/ADMIN/Coding/autoblogger-site/src/seo/pageContent.json)
 - Static page generation is handled by [seo-static-pages-generator.js](/c:/Users/ADMIN/Coding/autoblogger-site/seo-static-pages-generator.js)
 - Sitemap generation is handled by [sitemap-generator.js](/c:/Users/ADMIN/Coding/autoblogger-site/sitemap-generator.js)
 

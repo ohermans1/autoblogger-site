@@ -37,12 +37,22 @@
       .grid { display: grid; gap: 1rem; grid-template-columns: 2fr 1fr; }
       .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 1.4rem 1.3rem; }
       .sub-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; margin-top: 1rem; }
+      .breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; font-size: 0.95rem; margin-bottom: 1rem; color: #4b5563; }
+      .breadcrumb a { color: #0f766e; font-weight: 600; text-decoration: none; }
       h1 { margin-top: 0; line-height: 1.25; }
       h2 { margin-top: 0; font-size: 1.1rem; }
       ul { margin: 1rem 0 0; padding-left: 1.1rem; }
+      ol { margin: 1rem 0 0; padding-left: 1.2rem; }
+      li + li { margin-top: 0.45rem; }
+      .content-section p + p { margin-top: 0.85rem; }
+      .content-section ul, .content-section ol { margin-top: 1rem; }
       .faq-item { border-top: 1px solid #d1d5db; padding: 0.55rem 0; }
       .faq-item summary { font-weight: 700; cursor: pointer; }
       .faq-item p { margin: 0.5rem 0 0; }
+      .table-wrap { overflow-x: auto; }
+      .comparison-table { width: 100%; border-collapse: collapse; }
+      .comparison-table th, .comparison-table td { border-bottom: 1px solid #d1d5db; padding: 0.75rem; text-align: left; vertical-align: top; }
+      .comparison-table th { color: #111827; }
       .related-list { list-style: none; margin: 0; padding: 0; }
       .related-list li { border-top: 1px solid #d1d5db; padding: 0.65rem 0; }
       .related-list a { color: #0f766e; font-weight: 700; text-decoration: none; }
@@ -65,8 +75,7 @@
       <div class="container grid">
         <article class="card">
           <h1>Backlink Program Terms</h1>
-          <p>Review program eligibility, usage rules, and participation expectations for the backlink program.</p>
-          <ul><li>Program participation terms</li><li>Responsibilities and usage boundaries</li><li>Content and link placement context</li><li>Reference to the full terms document</li></ul>
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Backlink Program Terms</span></nav><p>Review program eligibility, usage rules, and participation expectations for the backlink program.</p><section class="sub-card"><h2>Quick Takeaways</h2><ul><li>Program participation terms</li><li>Responsibilities and usage boundaries</li><li>Content and link placement context</li><li>Reference to the full terms document</li></ul></section>
           <div class="actions">
             <a class="btn-primary" href="https://autoblogger.bot/#/backlink-terms">Open Interactive Version</a>
             <a class="btn-secondary" href="https://apps.shopify.com/autoblogger">View Shopify App Listing</a>

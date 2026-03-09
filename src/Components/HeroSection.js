@@ -1,5 +1,6 @@
 import React from "react";
 import ReactGA from "react-ga4";
+import { SmartLink } from "./SmartLink";
 
 const HeroSection = () => {
   const shopifyUrl = "https://apps.shopify.com/autoblogger";
@@ -36,13 +37,13 @@ const HeroSection = () => {
       <p className="mb-6 text-lg md:text-xl text-gray-600">Edit directly in Shopify, auto-share to social channels, and set and forget your blogging strategy.</p>
       <p className="mb-6 text-base md:text-lg text-gray-600">
         Need implementation frameworks? Start with our{" "}
-        <a href="/solutions" className="text-primary hover:underline">
+        <SmartLink to="/solutions" className="text-primary hover:underline">
           SEO solutions hub
-        </a>{" "}
+        </SmartLink>{" "}
         and{" "}
-        <a href="/resources" className="text-primary hover:underline">
+        <SmartLink to="/resources" className="text-primary hover:underline">
           free resource library
-        </a>
+        </SmartLink>
         .
       </p>
 
@@ -61,7 +62,7 @@ const HeroSection = () => {
         >
           <img
             src="/shopifybadgedark.png"
-            alt="Shopify Badge"
+            alt="Install autoBlogger from the Shopify App Store"
             className="w-60 h-16 object-cover rounded-lg grayscale"
             width="240"
             height="64"

@@ -1,0 +1,760 @@
+{
+  "/solutions": {
+    "sections": [
+      {
+        "title": "How to use the solutions hub",
+        "paragraphs": [
+          "This hub is meant to help merchants move from broad SEO goals into repeatable operating systems. Start with the pages closest to your current bottleneck, then work outward into supporting workflows.",
+          "If publishing is inconsistent, begin with content operations. If impressions are rising but clicks are flat, move into the CTR and refresh playbooks. If traffic is not reaching commercial pages, prioritize internal linking and collection page support."
+        ],
+        "items": [
+          "Pick one playbook to implement this week",
+          "Connect each guide to a measurable store KPI",
+          "Document owners for publishing, QA, and reporting",
+          "Refresh the workflow once the first month of data comes in"
+        ]
+      }
+    ]
+  },
+  "/shopify-seo/ai-blog-automation": {
+    "sections": [
+      {
+        "title": "Build the workflow around money pages",
+        "paragraphs": [
+          "Start with product, collection, and problem-solution pages that already matter to revenue. Blog topics should support those destinations, not sit in a disconnected editorial bucket.",
+          "A small store usually gets more value from one to three tightly mapped posts each week than from publishing generic volume that never links into the buying journey."
+        ],
+        "items": [
+          "Group keywords by collection, product type, and buying stage",
+          "Assign one primary commercial page to each post before drafting",
+          "Use recurring article formats so output stays consistent",
+          "Set a publish cadence your team can sustain for at least 8 weeks"
+        ]
+      },
+      {
+        "title": "Lock in QA before scaling output",
+        "paragraphs": [
+          "Automation only helps when the page template is strong. Every article should ship with a title angle, meta description, product links, FAQ coverage where useful, and a clear next step for the reader.",
+          "Treat quality control as a fixed stage in the workflow instead of a best-effort review after publication."
+        ],
+        "items": [
+          "Check title and meta against the exact search intent",
+          "Add links to one priority page and nearby secondary targets",
+          "Review headings, images, and CTA placement before publish",
+          "Track impressions, CTR, and assisted conversions by topic cluster"
+        ]
+      }
+    ],
+    "checklist": [
+      "Map each planned article to one primary collection or product page",
+      "Create a reusable brief format for title, angle, links, and CTA",
+      "Set weekly publishing slots and a QA owner",
+      "Review Search Console performance by cluster every 2 to 4 weeks"
+    ]
+  },
+  "/shopify-seo/internal-linking-for-products": {
+    "sections": [
+      {
+        "title": "Create destination rules before editing posts",
+        "paragraphs": [
+          "Internal linking works best when editors know the primary commercial target before they start writing. That stops posts from collecting random links and makes authority flow more deliberate.",
+          "Use a simple map that pairs each informational topic with one main destination and one or two secondary pages."
+        ],
+        "items": [
+          "Use one primary commercial target for each article",
+          "Reserve secondary links for adjacent collections or products",
+          "Avoid sending every post to the same generic category page",
+          "Update the map whenever merchandising priorities change"
+        ]
+      },
+      {
+        "title": "Keep anchors natural but specific",
+        "paragraphs": [
+          "Anchor text should describe the destination without repeating the same keyword formula on every page. Overly rigid anchor reuse makes the site feel forced and weakens the editorial experience.",
+          "Writers should vary anchors by intent while preserving relevance to the target page."
+        ],
+        "items": [
+          "Use broader anchors for collections and specific anchors for products",
+          "Place links where the reader expects the next step",
+          "Avoid stacking multiple commercial links in one paragraph",
+          "Refresh anchor patterns when pages stop converting"
+        ]
+      }
+    ],
+    "checklist": [
+      "Build a target map for top blog posts and guides",
+      "Audit anchors on high-impression articles",
+      "Add one primary and up to two secondary commercial links per post",
+      "Review assisted revenue and ranking lift each month"
+    ]
+  },
+  "/shopify-seo/collection-page-content-plan": {
+    "sections": [
+      {
+        "title": "Strengthen the collection page itself",
+        "paragraphs": [
+          "Collection pages rank better when the category page gives search engines and shoppers enough context to understand the assortment, intent, and differentiators. Thin copy usually leaves too much of that signal unstated.",
+          "The goal is not to bury products under long text. It is to add useful category guidance, FAQs, and merchandising context that supports the page without disrupting browse flow."
+        ],
+        "items": [
+          "Expand category copy around intent and product fit",
+          "Add FAQs for sizing, use case, shipping, or material questions",
+          "Review heading hierarchy and supporting subheadings",
+          "Make sure the page still keeps product discovery easy"
+        ]
+      },
+      {
+        "title": "Support the collection with surrounding content",
+        "paragraphs": [
+          "Strong collection pages are usually supported by nearby guides that answer comparison, buying, and care questions. Those articles help the category page rank and create better internal linking paths.",
+          "Treat each collection as a hub with a small set of supporting posts rather than a standalone page."
+        ],
+        "items": [
+          "Publish guides that answer pre-purchase questions around the category",
+          "Link new posts back into the collection with intent-matched anchors",
+          "Refresh older posts when the category assortment changes",
+          "Measure both ranking movement and collection-page revenue"
+        ]
+      }
+    ],
+    "checklist": [
+      "Audit thin collections with high commercial value",
+      "Write or expand category copy with buyer intent language",
+      "Add support content that feeds the collection with internal links",
+      "Track CTR, rankings, and conversion rate after updates"
+    ]
+  },
+  "/shopify-seo/shopify-blog-automation-software-guide": {
+    "sections": [
+      {
+        "title": "Judge the workflow, not just the output",
+        "paragraphs": [
+          "A useful automation stack should help you move from topic planning to publish to refresh without dropping metadata, internal links, or approvals along the way. Output quality matters, but operating discipline matters just as much.",
+          "If the tool makes it easy to produce text but hard to control links, snippets, and publishing rhythm, you will still end up rebuilding the system manually."
+        ],
+        "items": [
+          "Check whether publishing can be scheduled and reviewed cleanly",
+          "Look for support for links, FAQs, and commercial page alignment",
+          "Ask how title, meta, and snippet quality are controlled",
+          "Confirm how the workflow handles updates and refreshes later"
+        ]
+      },
+      {
+        "title": "Compare on revenue support, not content volume",
+        "paragraphs": [
+          "The strongest tools connect content work to money pages and reporting. More posts only help when they create better discovery, stronger snippets, and clearer conversion paths.",
+          "Before choosing a platform, decide which metrics would prove the workflow is working for your store."
+        ],
+        "items": [
+          "Define a target publish cadence and who owns QA",
+          "Require visibility into impressions, CTR, and assisted conversions",
+          "Review how easily posts can be tied to products and collections",
+          "Factor setup friction and ongoing cleanup into total cost"
+        ]
+      }
+    ],
+    "comparisonTable": {
+      "title": "Buying Criteria Snapshot",
+      "columns": ["Criteria", "Minimum acceptable", "Strong setup"],
+      "rows": [
+        ["Publishing control", "Basic scheduling", "Scheduling plus a review gate and revision workflow"],
+        ["Metadata support", "Manual title and meta edits", "Consistent title, meta, and snippet workflow built into publishing"],
+        ["Internal links", "Links added after drafting", "Commercial links mapped into the brief or article template"],
+        ["Reporting", "Traffic checks only", "Impressions, CTR, conversions, and refresh triggers tracked by page group"]
+      ]
+    },
+    "checklist": [
+      "List the workflow stages your team needs the software to support",
+      "Score tools on snippet control, linking, QA, and reporting",
+      "Run a short pilot on real store topics before committing",
+      "Choose the system that reduces manual cleanup, not just drafting time"
+    ]
+  },
+  "/shopify-seo/autoblogger-vs-manual-shopify-blogging": {
+    "sections": [
+      {
+        "title": "When manual blogging is still enough",
+        "paragraphs": [
+          "Manual publishing can work when the store covers a narrow topic set, the content volume is low, and someone can consistently manage briefs, editing, links, and snippet updates. In that environment the workflow may stay simple enough to control without automation.",
+          "The problem usually appears when publishing volume rises or when no one owns the full process end to end."
+        ],
+        "items": [
+          "Good fit for low-volume stores with a hands-on editor",
+          "Works when publishing cadence can stay consistent manually",
+          "Relies on the team remembering links, metadata, and refreshes",
+          "Becomes fragile when priorities shift or content volume grows"
+        ]
+      },
+      {
+        "title": "When automation becomes the better operating model",
+        "paragraphs": [
+          "Automation starts to win when you need reliable output, structured QA, and predictable internal linking across dozens of posts. The value is not just speed. It is process consistency.",
+          "For SEO teams, that consistency usually shows up first in publishing cadence, cleaner metadata, and better coverage of commercial targets."
+        ],
+        "items": [
+          "Useful when the team needs recurring publishing without bottlenecks",
+          "Helps standardize title, meta, FAQ, and CTA patterns",
+          "Makes it easier to revisit and refresh content later",
+          "Reduces the number of editorial tasks that depend on memory"
+        ]
+      }
+    ],
+    "comparisonTable": {
+      "title": "Workflow Comparison",
+      "columns": ["Area", "autoBlogger", "Manual workflow"],
+      "rows": [
+        ["Publishing cadence", "Built for repeatable scheduled output", "Depends on team capacity and editorial time"],
+        ["SEO consistency", "Structured process for metadata and linking", "Varies by writer and reviewer discipline"],
+        ["Refreshability", "Easier to repeat the same update workflow", "Often becomes a separate project later"],
+        ["Ops overhead", "Front-loaded setup with lower ongoing admin", "Lower tooling cost but heavier recurring effort"]
+      ]
+    },
+    "checklist": [
+      "Estimate how many posts you need each month to hit goals",
+      "Decide who owns briefs, QA, linking, and post-publish reviews",
+      "Compare the cost of recurring manual work against automation",
+      "Choose the model that your team can sustain for at least one quarter"
+    ]
+  },
+  "/shopify-seo/shopify-seo-blogging-app-comparison": {
+    "sections": [
+      {
+        "title": "Use the same scoring framework across every tool",
+        "paragraphs": [
+          "App comparisons get noisy when each tool is judged on different criteria. Set the categories first, then score every option the same way so you can compare workflows instead of marketing claims.",
+          "For most stores, the critical categories are content quality, snippet control, commercial linking, setup friction, and reporting clarity."
+        ],
+        "items": [
+          "Score workflow control before cosmetic features",
+          "Check whether the tool supports commercial page linking",
+          "Measure how much manual cleanup the output still needs",
+          "Look at how easy it is to review results after publishing"
+        ]
+      },
+      {
+        "title": "Choose for merchant fit, not just feature count",
+        "paragraphs": [
+          "A feature-heavy app can still be the wrong choice if it adds complexity your team will never use. The right tool should fit your publishing cadence, review style, and SEO maturity.",
+          "Strong fit usually means the app is simple enough to adopt quickly but structured enough to keep output consistent as volume grows."
+        ],
+        "items": [
+          "Decide whether your team needs review workflows or fully hands-off publishing",
+          "Check how pricing changes as content volume grows",
+          "Confirm support quality and onboarding expectations",
+          "Prefer the app that creates a durable weekly system"
+        ]
+      }
+    ],
+    "comparisonTable": {
+      "title": "Comparison Framework",
+      "columns": ["Category", "Why it matters", "What strong looks like"],
+      "rows": [
+        ["Content quality", "Weak pages waste impressions", "Useful articles aligned to product and collection demand"],
+        ["Snippet control", "CTR depends on title and meta clarity", "Clear process for titles, meta descriptions, and updates"],
+        ["Internal linking", "Commercial pages need support", "Built-in prompts or templates for product and collection links"],
+        ["Reporting", "You need proof the workflow works", "Visibility into impressions, CTR, rankings, and downstream conversions"]
+      ]
+    },
+    "checklist": [
+      "Score each app on the same 4 to 6 categories",
+      "Run a live test on one topic cluster instead of relying on demos",
+      "Check how much QA and cleanup the workflow still requires",
+      "Pick the app that fits your team and your commercial SEO goals"
+    ]
+  },
+  "/shopify-seo/seo-content-refresh-playbook": {
+    "sections": [
+      {
+        "title": "Choose pages with real upside",
+        "paragraphs": [
+          "Refresh work is most valuable when a page already has demand. Prioritize URLs with rising impressions but weak CTR, or pages that have slipped in clicks while still matching an active search intent.",
+          "That usually produces faster wins than rewriting pages that never had traction in the first place."
+        ],
+        "items": [
+          "Find pages with high impressions and weak CTR",
+          "Look for posts sitting just off the strongest positions",
+          "Review whether examples, screenshots, or offers are now stale",
+          "Start with pages that can still feed products or collections"
+        ]
+      },
+      {
+        "title": "Refresh the snippet and the page together",
+        "paragraphs": [
+          "Title updates alone can help, but CTR gains tend to hold better when the page body also gets stronger. Refresh the promise in the snippet, then make sure the page actually delivers on that new angle.",
+          "This is also the right moment to tighten internal links, FAQs, proof elements, and conversion paths."
+        ],
+        "items": [
+          "Rewrite title and meta around the dominant query intent",
+          "Update headings, examples, and product references",
+          "Add or improve FAQ and CTA sections where useful",
+          "Track CTR and clicks for 2 to 4 weeks after republishing"
+        ]
+      }
+    ],
+    "checklist": [
+      "Build a refresh shortlist from Search Console data",
+      "Update the snippet, body copy, and internal links in one pass",
+      "Republish with a clear date and stronger examples",
+      "Review clicks, CTR, and assisted conversions after the change"
+    ]
+  },
+  "/wix-seo/ai-content-ops-playbook": {
+    "sections": [
+      {
+        "title": "Set a weekly operating rhythm",
+        "paragraphs": [
+          "Wix sites benefit from the same discipline as any other content program: plan, publish, review, and refresh on a fixed rhythm. The main difference is which service pages and local or niche intents the content needs to support.",
+          "A lightweight weekly cadence is easier to keep than a large monthly sprint that slips every time priorities change."
+        ],
+        "items": [
+          "Plan posts around service intent and recurring customer questions",
+          "Use a standard review step for title, meta, and headings",
+          "Link each article to one clear service or conversion page",
+          "Review impressions and lead quality by topic group"
+        ]
+      },
+      {
+        "title": "Keep content tied to leads, not just traffic",
+        "paragraphs": [
+          "The purpose of the workflow is to create useful content that supports inquiries, bookings, or service page visits. Every article should make the next step obvious without turning the page into a sales pitch.",
+          "If a content topic cannot support a meaningful service path, it is usually lower priority."
+        ],
+        "items": [
+          "Add service links where the reader expects the next step",
+          "Use FAQs to address objections before the contact stage",
+          "Refresh posts when services, offers, or proof points change",
+          "Measure both click quality and lead outcomes"
+        ]
+      }
+    ],
+    "checklist": [
+      "Create a simple editorial calendar tied to core services",
+      "Standardize snippet and internal-link QA before publishing",
+      "Track which articles assist service-page visits or leads",
+      "Refresh top-performing pages each quarter"
+    ]
+  },
+  "/ecommerce-seo/schema-and-faq-rollout": {
+    "sections": [
+      {
+        "title": "Roll out by template and business impact",
+        "paragraphs": [
+          "Schema projects are easier to control when they are released in small batches. Start with templates that matter most commercially, validate those, then move to the next layer.",
+          "That approach keeps debugging manageable and makes it easier to see which changes actually improve eligibility and rich-result coverage."
+        ],
+        "items": [
+          "Prioritize product, article, and collection-related templates first",
+          "Document owners for development, QA, and monitoring",
+          "Use a change log so every release can be traced later",
+          "Separate FAQ deployment from broader schema changes if needed"
+        ]
+      },
+      {
+        "title": "Validate before and after release",
+        "paragraphs": [
+          "Pre-release validation catches obvious formatting and field issues. Post-release validation catches rendering, template, and data-feed problems that only appear in production.",
+          "Both stages matter. Many schema rollouts look correct in staging and still break after deployment."
+        ],
+        "items": [
+          "Check rendered JSON-LD in the final page output",
+          "Validate required and recommended fields before launch",
+          "Monitor Search Console enhancements after deployment",
+          "Escalate warnings quickly if coverage drops or errors rise"
+        ]
+      }
+    ],
+    "checklist": [
+      "Group pages by template and release order",
+      "Validate markup on representative URLs before launch",
+      "Deploy in batches instead of sitewide all at once",
+      "Monitor enhancements and warning trends after each batch"
+    ]
+  },
+  "/ecommerce-seo/seasonal-content-calendar": {
+    "sections": [
+      {
+        "title": "Work backward from demand windows",
+        "paragraphs": [
+          "Seasonal SEO works best when content is published early enough to earn indexing and ranking momentum before demand peaks. The calendar should start from the retail event or seasonal spike, then move backward into planning and production deadlines.",
+          "That makes the workflow proactive instead of reactive."
+        ],
+        "items": [
+          "List seasonal events by category and revenue impact",
+          "Schedule lead-in content 6 to 10 weeks before peak demand",
+          "Refresh last year's seasonal winners before writing net-new pages",
+          "Coordinate SEO topics with inventory and merchandising plans"
+        ]
+      },
+      {
+        "title": "Refresh, do not restart",
+        "paragraphs": [
+          "Older seasonal pages often come back faster than brand-new ones when they are updated properly. Reuse URLs where possible, refresh the angle, and expand the page with this year's offers or examples.",
+          "This preserves whatever authority the page has already built."
+        ],
+        "items": [
+          "Update titles, intros, and product references each cycle",
+          "Check whether internal links still point to live destinations",
+          "Repurpose the strongest seasonal pieces for email and social",
+          "Review the calendar after the season ends and capture learnings"
+        ]
+      }
+    ],
+    "checklist": [
+      "Build the calendar at least one quarter ahead",
+      "Refresh past seasonal pages before producing replacements",
+      "Align publish dates with stock, offers, and promotional timing",
+      "Measure season-over-season clicks, rankings, and revenue"
+    ]
+  },
+  "/ecommerce-seo/seo-content-production-system": {
+    "sections": [
+      {
+        "title": "Define stages and owners",
+        "paragraphs": [
+          "A content system only stays repeatable when each stage is explicit. Someone should own the brief, someone should own quality checks, and someone should verify the page after it goes live.",
+          "Without named ownership, metadata, links, and measurement usually get skipped in the rush to publish."
+        ],
+        "items": [
+          "Set stages for brief, draft, QA, publish, and refresh",
+          "Assign responsibility for titles, links, and approval",
+          "Use a shared brief so commercial targets stay visible",
+          "Keep the workflow simple enough to run every week"
+        ]
+      },
+      {
+        "title": "Build the QA gate around recurring misses",
+        "paragraphs": [
+          "The QA step should focus on the things teams most often forget: snippet quality, heading clarity, internal links, FAQ blocks where useful, and conversion cues. That makes quality control practical instead of generic.",
+          "Over time, the checklist should be updated based on what actually causes weak performance."
+        ],
+        "items": [
+          "Check that the title and intro align with the target query",
+          "Confirm links to priority collections or products",
+          "Review CTA placement and proof elements",
+          "Flag pages for later refresh if they underperform"
+        ]
+      }
+    ],
+    "checklist": [
+      "Document the stages from idea to refresh",
+      "Assign owners for brief, QA, and post-publish review",
+      "Create one standard QA checklist for all pages",
+      "Review output quality and throughput every month"
+    ]
+  },
+  "/ecommerce-seo/ctr-improvement-playbook": {
+    "sections": [
+      {
+        "title": "Start with pages that already earn visibility",
+        "paragraphs": [
+          "CTR work matters most on pages that already have impressions. If Google is showing the page but searchers are not clicking, the issue is usually the promise in the snippet, not indexation alone.",
+          "That makes high-impression pages the best testing ground for faster SEO gains."
+        ],
+        "items": [
+          "Sort pages by impressions, CTR, and average position",
+          "Focus on URLs ranking close enough to win more clicks",
+          "Group tests by search intent, not just by page type",
+          "Use branded and non-branded pages as separate buckets"
+        ]
+      },
+      {
+        "title": "Test the promise before rewriting the whole page",
+        "paragraphs": [
+          "In many cases the first lift comes from a better title angle, clearer offer framing, or stronger proof in the snippet. Once the promise improves, make sure the page body reinforces that message.",
+          "Keep the tests disciplined so you can tell what actually changed performance."
+        ],
+        "items": [
+          "Write variants around speed, proof, outcome, or specificity",
+          "Review whether the meta description supports the title claim",
+          "Update on-page headings if the angle changes materially",
+          "Leave enough time for impressions to accumulate before deciding"
+        ]
+      }
+    ],
+    "checklist": [
+      "Build a test list from high-impression low-CTR pages",
+      "Log title and meta variants before publishing changes",
+      "Review CTR movement after enough impressions accumulate",
+      "Keep winners and iterate again on the remaining laggards"
+    ]
+  },
+  "/ecommerce-seo/blog-to-product-linking-model": {
+    "sections": [
+      {
+        "title": "Use one primary destination per article",
+        "paragraphs": [
+          "Each editorial page should have a clear commercial destination that reflects the main user journey after the reader gets their answer. That makes the link structure easier to manage and stops posts from spraying traffic across too many competing targets.",
+          "Secondary links can still exist, but the primary destination should be obvious."
+        ],
+        "items": [
+          "Choose one primary product or collection page before writing",
+          "Use secondary links for adjacent options only where relevant",
+          "Keep destination choices aligned with the article intent",
+          "Review commercial targets whenever the assortment changes"
+        ]
+      },
+      {
+        "title": "Place commercial links where they help the reader",
+        "paragraphs": [
+          "Links convert better when they feel like the natural next step. Put them next to product recommendations, example sections, or decision guidance instead of dropping them into unrelated copy.",
+          "That keeps the article useful while still strengthening commercial pages."
+        ],
+        "items": [
+          "Use anchors that match the surrounding sentence naturally",
+          "Avoid repeating the same commercial anchor across every page",
+          "Add CTA blocks when a product path is the main next step",
+          "Track assisted conversions to see which patterns work best"
+        ]
+      }
+    ],
+    "checklist": [
+      "Map primary and secondary commercial destinations for top articles",
+      "Update articles so link placement matches user progression",
+      "Vary anchors while preserving destination relevance",
+      "Review both rankings and assisted revenue after changes"
+    ]
+  },
+  "/resources": {
+    "sections": [
+      {
+        "title": "How to use the resource library",
+        "paragraphs": [
+          "These resource pages are designed to shorten the planning and QA work around ecommerce SEO. Start with the template or checklist that matches the process you are trying to tighten first.",
+          "Most teams get the best results by pairing one operational playbook from the solutions hub with one resource that standardizes the work."
+        ],
+        "items": [
+          "Use the brief and QA templates before publishing",
+          "Use the CTR and refresh sheets during optimization cycles",
+          "Use the ROI framework when prioritizing roadmap work",
+          "Share the same templates across SEO, content, and merchandising"
+        ]
+      }
+    ]
+  },
+  "/resources/shopify-seo-content-brief-template": {
+    "sections": [
+      {
+        "title": "What the brief should contain",
+        "paragraphs": [
+          "A strong brief reduces revision cycles because the writer, editor, and SEO owner all start from the same assumptions. The document should define the target query, article angle, internal links, and conversion intent before drafting begins.",
+          "That keeps the final article aligned to both rankings and revenue."
+        ],
+        "items": [
+          "Primary query, supporting queries, and search intent",
+          "Target reader stage and the angle the article should own",
+          "Required product, collection, or service links",
+          "CTA direction, proof points, and measurement notes"
+        ]
+      }
+    ],
+    "checklist": [
+      "Define the main keyword and search intent",
+      "List required internal links before writing starts",
+      "Specify the article angle and commercial goal",
+      "Use the brief in every stage from drafting to QA"
+    ]
+  },
+  "/resources/internal-linking-blueprint": {
+    "sections": [
+      {
+        "title": "Core columns to include in the blueprint",
+        "paragraphs": [
+          "The blueprint should make link decisions easy to follow for anyone touching the page. Keep it simple enough to update regularly but detailed enough to show the relationship between editorial pages and commercial destinations.",
+          "A spreadsheet or shared doc is usually enough as long as it stays current."
+        ],
+        "items": [
+          "Source page and page type",
+          "Primary commercial target and secondary targets",
+          "Suggested anchor approaches by intent",
+          "Review date and owner for refreshes"
+        ]
+      }
+    ],
+    "checklist": [
+      "Document top traffic pages and their target destinations",
+      "Add anchor guidance instead of only listing URLs",
+      "Review the blueprint after merchandising changes",
+      "Use the same system for new and refreshed articles"
+    ]
+  },
+  "/resources/schema-qa-checklist": {
+    "sections": [
+      {
+        "title": "Pre-release validation",
+        "paragraphs": [
+          "The pre-release pass should confirm that the expected schema appears on the page, contains the right fields, and matches the visible content. This is where formatting and template issues should be caught.",
+          "Run the checks on representative URLs, not just a single sample page."
+        ],
+        "items": [
+          "Confirm rendered schema is present in the final HTML",
+          "Validate required and recommended fields",
+          "Check that visible content matches the structured data",
+          "Log which templates and URLs were reviewed"
+        ]
+      },
+      {
+        "title": "Post-release QA",
+        "paragraphs": [
+          "Production issues often appear after deployment because of caching, data feeds, or template variations. A second QA pass after release is what catches those differences before they turn into longer-term coverage problems.",
+          "Monitor enhancement reports and individual page output together."
+        ],
+        "items": [
+          "Retest live URLs after deployment",
+          "Monitor Search Console warnings and eligibility changes",
+          "Escalate template-specific issues quickly",
+          "Update the release log with final outcomes"
+        ]
+      }
+    ],
+    "checklist": [
+      "Validate representative URLs before release",
+      "Retest the same pages after deployment",
+      "Track warnings by template rather than by isolated URL",
+      "Maintain a release log for future audits"
+    ]
+  },
+  "/resources/ecommerce-seo-roi-calculator": {
+    "sections": [
+      {
+        "title": "Use inputs that change real outcomes",
+        "paragraphs": [
+          "The most useful ROI model focuses on impressions, CTR, conversion rate, and average order value. Those are the inputs that usually explain whether a ranking or snippet improvement is actually worth prioritizing.",
+          "Volume alone can look attractive while still producing weak revenue."
+        ],
+        "items": [
+          "Current impressions and CTR by page or cluster",
+          "Projected CTR or ranking improvement scenario",
+          "Conversion rate assumptions by page type",
+          "Average order value or lead value for the destination"
+        ]
+      },
+      {
+        "title": "Use projections for prioritization, not certainty",
+        "paragraphs": [
+          "SEO forecasts are best used to compare opportunities against each other, not to promise exact outcomes. The model should help you decide where to spend time first.",
+          "Run conservative, expected, and aggressive cases so the plan stays grounded."
+        ],
+        "items": [
+          "Create low, base, and upside scenarios",
+          "Separate branded, non-branded, and seasonal assumptions",
+          "Review the model after results come in and update it",
+          "Use the framework to defend roadmap priorities"
+        ]
+      }
+    ],
+    "checklist": [
+      "Pull current impressions, CTR, conversion rate, and AOV",
+      "Model multiple outcome scenarios instead of one forecast",
+      "Compare projected impact across competing SEO ideas",
+      "Recalibrate the model once real results arrive"
+    ]
+  },
+  "/resources/ctr-title-test-sheet": {
+    "sections": [
+      {
+        "title": "What the test log should capture",
+        "paragraphs": [
+          "A CTR testing sheet should make it easy to see what changed, why it changed, and what happened after the edit. Without that history, teams end up repeating weak ideas or misreading short-term fluctuations.",
+          "Treat the sheet as a decision log, not just a dumping ground for title variants."
+        ],
+        "items": [
+          "Current title and meta description",
+          "Proposed variant and the angle behind it",
+          "Before-and-after impression and CTR windows",
+          "Decision notes for keep, revert, or iterate"
+        ]
+      },
+      {
+        "title": "Keep review rules consistent",
+        "paragraphs": [
+          "Snippet tests need enough impressions to be meaningful. Pages with low volume may need longer review windows, while high-volume pages can be assessed faster.",
+          "Use the same review logic across tests so you can compare outcomes fairly."
+        ],
+        "items": [
+          "Group tests by page type or search intent",
+          "Review high-volume pages more quickly than low-volume pages",
+          "Record whether body copy was also changed",
+          "Capture the winning angle so it can be reused elsewhere"
+        ]
+      }
+    ],
+    "checklist": [
+      "Log the original snippet before changing anything",
+      "Record the reason for the new title angle",
+      "Review CTR after a comparable impression window",
+      "Keep the winner and recycle the insight into future tests"
+    ]
+  },
+  "/resources/content-refresh-checklist": {
+    "sections": [
+      {
+        "title": "Use the checklist to pick the right pages",
+        "paragraphs": [
+          "Refresh work is easiest to justify when the page already shows demand, but performance is slipping. The checklist should help you identify whether the problem is snippet quality, stale content, weak links, or conversion friction.",
+          "That prevents teams from refreshing pages simply because they are old."
+        ],
+        "items": [
+          "Impressions rising while clicks stay flat",
+          "Clicks falling while query relevance stays intact",
+          "Examples, screenshots, or offers now outdated",
+          "Internal links or CTAs no longer support current priorities"
+        ]
+      },
+      {
+        "title": "Run the update in a fixed sequence",
+        "paragraphs": [
+          "A consistent refresh sequence keeps important steps from being skipped. Start with the snippet, then move through body content, links, and measurement notes before republishing.",
+          "The checklist is there to make the work repeatable across many pages."
+        ],
+        "items": [
+          "Rewrite title and meta where intent or proof is weak",
+          "Update headings, examples, FAQs, and product mentions",
+          "Check internal links, CTA blocks, and destination relevance",
+          "Note the date and what changed for later analysis"
+        ]
+      }
+    ],
+    "checklist": [
+      "Confirm the page still serves an active query and business goal",
+      "Update snippet, body, and links in one refresh pass",
+      "Log the change date and the exact edits made",
+      "Review CTR, clicks, and conversions after republishing"
+    ]
+  },
+  "/resources/shopify-blog-qa-checklist": {
+    "sections": [
+      {
+        "title": "Pre-publish checks",
+        "paragraphs": [
+          "The QA pass should focus on the structural details that often get missed when content is moving quickly. Those small misses add up to weaker snippets, weaker internal linking, and weaker conversion support.",
+          "A short consistent checklist is better than an exhaustive process no one follows."
+        ],
+        "items": [
+          "Title, meta description, and heading hierarchy",
+          "Primary product or collection links",
+          "FAQ or proof blocks where the topic calls for them",
+          "CTA placement and image or media quality"
+        ]
+      },
+      {
+        "title": "Post-publish checks",
+        "paragraphs": [
+          "Once the post is live, confirm the page renders correctly, links point to the right destinations, and the URL is ready for indexing and measurement. Post-publish QA is where template and publishing issues usually surface.",
+          "This step also makes later refresh work easier because the baseline is documented."
+        ],
+        "items": [
+          "Confirm live rendering and internal links",
+          "Check indexing status and page discoverability",
+          "Record the page in the reporting or refresh tracker",
+          "Review early performance once impressions begin to appear"
+        ]
+      }
+    ],
+    "checklist": [
+      "Run the pre-publish QA before every Shopify post goes live",
+      "Confirm links, snippet, and CTA behavior on the live URL",
+      "Log the post in the tracking sheet after publication",
+      "Use performance data to improve the checklist over time"
+    ]
+  }
+}

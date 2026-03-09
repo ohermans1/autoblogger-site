@@ -2,13 +2,13 @@
   {
     "route": "/solutions",
     "title": "Ecommerce SEO Solutions Hub | autoBlogger",
-    "description": "Explore actionable Shopify, Wix, and ecommerce SEO solution pages focused on content operations, internal linking, schema, and conversions.",
+    "description": "Explore actionable Shopify, Wix, and ecommerce SEO solution pages focused on content operations, internal linking, schema, CTR, and conversions.",
     "heading": "Ecommerce SEO Solutions Hub",
     "intro": "This hub groups practical SEO playbooks for store owners who want to improve rankings and revenue with repeatable workflows.",
     "bullets": [
       "Shopify and Wix specific workflows",
       "Content production and internal linking systems",
-      "Schema and FAQ deployment guidance",
+      "Schema, CTR, and FAQ deployment guidance",
       "Conversion focused implementation steps"
     ],
     "changefreq": "weekly",
@@ -104,6 +104,116 @@
     ]
   },
   {
+    "route": "/shopify-seo/shopify-blog-automation-software-guide",
+    "title": "Shopify Blog Automation Software Guide | autoBlogger",
+    "description": "Evaluate Shopify blog automation software for SEO publishing, metadata, internal links, workflow control, and conversion support.",
+    "heading": "Shopify Blog Automation Software Guide",
+    "intro": "Use this page to evaluate what a serious Shopify blog automation stack should include before you commit to a tool or workflow.",
+    "bullets": [
+      "Publishing cadence and QA controls",
+      "Metadata, FAQ, and internal linking support",
+      "Product and collection page alignment",
+      "Measurement of impressions, CTR, and revenue impact"
+    ],
+    "changefreq": "monthly",
+    "priority": 0.72,
+    "tags": ["shopify", "content", "automation", "software"],
+    "ctaLabel": "See autoBlogger Pricing",
+    "ctaHref": "https://autoblogger.bot/pricing",
+    "faq": [
+      {
+        "question": "What makes blog automation software SEO useful?",
+        "answer": "It needs to improve output quality, internal linking, metadata discipline, and publishing consistency rather than just generate text."
+      },
+      {
+        "question": "What should merchants compare first?",
+        "answer": "Start with workflow control, linking support, QA guardrails, and how easily the content connects to product and collection pages."
+      }
+    ]
+  },
+  {
+    "route": "/shopify-seo/autoblogger-vs-manual-shopify-blogging",
+    "title": "autoBlogger vs Manual Shopify Blogging | autoBlogger",
+    "description": "Compare autoBlogger with manual Shopify blogging across publishing speed, SEO consistency, internal linking, metadata QA, and content ops effort.",
+    "heading": "autoBlogger vs Manual Shopify Blogging",
+    "intro": "This comparison frame helps merchants decide when manual blogging is enough and when an automated content workflow becomes the better operating model.",
+    "bullets": [
+      "Publishing speed and consistency tradeoffs",
+      "Internal linking and metadata coverage",
+      "Editorial QA expectations per workflow",
+      "Cost of content ops versus revenue upside"
+    ],
+    "changefreq": "monthly",
+    "priority": 0.71,
+    "tags": ["shopify", "comparison", "content", "operations"],
+    "ctaLabel": "Read Reviews and Proof",
+    "ctaHref": "https://autoblogger.bot/reviews",
+    "faq": [
+      {
+        "question": "When is manual blogging still enough?",
+        "answer": "Manual workflows can work when volume is low, topic coverage is narrow, and a team can maintain consistency on publishing and linking."
+      },
+      {
+        "question": "When does automation usually win?",
+        "answer": "Automation becomes stronger when stores need dependable publishing, structured metadata, and repeatable links into products and collections."
+      }
+    ]
+  },
+  {
+    "route": "/shopify-seo/shopify-seo-blogging-app-comparison",
+    "title": "Shopify SEO Blogging App Comparison Framework | autoBlogger",
+    "description": "Use this Shopify SEO blogging app comparison framework to compare automation, metadata support, internal linking, workflow controls, and merchant fit.",
+    "heading": "Shopify SEO Blogging App Comparison Framework",
+    "intro": "This page gives merchants a shortlist of the criteria that matter most when comparing SEO blogging apps for Shopify.",
+    "bullets": [
+      "Automation quality and publishing controls",
+      "Metadata, FAQ, and schema support",
+      "Internal linking support to money pages",
+      "Support quality, pricing, and setup friction"
+    ],
+    "changefreq": "monthly",
+    "priority": 0.7,
+    "tags": ["shopify", "comparison", "software", "conversion"],
+    "ctaLabel": "Start 14-Day Free Trial",
+    "ctaHref": "https://apps.shopify.com/autoblogger",
+    "faq": [
+      {
+        "question": "What comparison criteria matter most?",
+        "answer": "Look at output quality, metadata coverage, internal linking, scheduling controls, and whether the workflow supports commercial SEO rather than generic blog volume."
+      },
+      {
+        "question": "Should merchants choose the cheapest app?",
+        "answer": "Not usually. A cheaper tool can still be expensive if it creates weak content ops, poor linking, or more manual cleanup."
+      }
+    ]
+  },
+  {
+    "route": "/shopify-seo/seo-content-refresh-playbook",
+    "title": "Shopify SEO Content Refresh Playbook | autoBlogger",
+    "description": "Use a Shopify SEO content refresh playbook to recover clicks from aging posts by updating intent, links, snippets, and conversion paths.",
+    "heading": "Shopify SEO Content Refresh Playbook",
+    "intro": "Content refresh work often produces faster wins than net-new publishing when pages already have impressions but weak CTR or stale rankings.",
+    "bullets": [
+      "Prioritize posts with declining clicks and stable impressions",
+      "Update title, meta, FAQ, and internal link blocks",
+      "Refresh examples, screenshots, and product references",
+      "Track CTR and ranking movement after republish"
+    ],
+    "changefreq": "monthly",
+    "priority": 0.69,
+    "tags": ["shopify", "content-refresh", "ctr", "internal-links"],
+    "faq": [
+      {
+        "question": "Which posts should be refreshed first?",
+        "answer": "Start with pages that already earn impressions, sit near page one, or have lost clicks without losing topical relevance."
+      },
+      {
+        "question": "What usually changes CTR fastest?",
+        "answer": "Title rewrites, better meta descriptions, stronger intent match, and a cleaner value proposition in the snippet."
+      }
+    ]
+  },
+  {
     "route": "/wix-seo/ai-content-ops-playbook",
     "title": "Wix AI Content Operations Playbook | autoBlogger",
     "description": "Run a Wix SEO content operations playbook for consistent publishing, metadata QA, and internal linking to service pages.",
@@ -182,16 +292,94 @@
     ]
   },
   {
+    "route": "/ecommerce-seo/seo-content-production-system",
+    "title": "Ecommerce SEO Content Production System | autoBlogger",
+    "description": "Design an ecommerce SEO content production system that moves from brief to publish to refresh without losing metadata, linking, or QA discipline.",
+    "heading": "Ecommerce SEO Content Production System",
+    "intro": "This operating model is built for teams that want repeatable SEO output without turning publishing into a bottleneck.",
+    "bullets": [
+      "Brief, draft, QA, and publish stages",
+      "Ownership for metadata, links, and approvals",
+      "Content refresh and decay monitoring",
+      "Weekly production pacing tied to revenue goals"
+    ],
+    "changefreq": "monthly",
+    "priority": 0.67,
+    "tags": ["ecommerce", "content", "operations", "workflow"],
+    "faq": [
+      {
+        "question": "What breaks most content systems?",
+        "answer": "Weak ownership, inconsistent QA, and no process for internal links, snippet updates, or refresh cycles usually create the biggest failures."
+      },
+      {
+        "question": "How many stages should the workflow have?",
+        "answer": "Keep it simple enough to move fast, but explicit enough that keyword targeting, metadata, internal links, and conversion notes never get skipped."
+      }
+    ]
+  },
+  {
+    "route": "/ecommerce-seo/ctr-improvement-playbook",
+    "title": "Ecommerce SEO CTR Improvement Playbook | autoBlogger",
+    "description": "Improve ecommerce SEO CTR with a playbook focused on title testing, snippet positioning, intent match, and proof-driven messaging.",
+    "heading": "Ecommerce SEO CTR Improvement Playbook",
+    "intro": "When impressions rise but clicks lag, CTR work often becomes the fastest lever available for growth.",
+    "bullets": [
+      "Prioritize high impression pages with weak CTR",
+      "Test title and meta variants by search intent",
+      "Add proof, offer clarity, and stronger hooks",
+      "Measure changes by page group and query group"
+    ],
+    "changefreq": "monthly",
+    "priority": 0.71,
+    "tags": ["ecommerce", "ctr", "snippets", "conversion"],
+    "faq": [
+      {
+        "question": "What usually causes weak CTR?",
+        "answer": "Weak titles, unclear positioning, low trust signals, or mismatch between the query and the page promise tend to be the biggest causes."
+      },
+      {
+        "question": "How fast should CTR tests be reviewed?",
+        "answer": "Review after enough impressions accumulate to make the shift meaningful, usually over one to three weeks depending on page volume."
+      }
+    ]
+  },
+  {
+    "route": "/ecommerce-seo/blog-to-product-linking-model",
+    "title": "Blog to Product Linking Model for Ecommerce SEO | autoBlogger",
+    "description": "Use a blog to product linking model that routes informational traffic into category and product pages without over-optimizing anchors.",
+    "heading": "Blog to Product Linking Model",
+    "intro": "This model helps ecommerce teams convert editorial traffic into commercial page authority and cleaner assisted conversion paths.",
+    "bullets": [
+      "Map one article to one primary commercial target",
+      "Use secondary links for adjacent collections and products",
+      "Refresh anchors as product priorities change",
+      "Track assisted revenue and ranking lift"
+    ],
+    "changefreq": "monthly",
+    "priority": 0.68,
+    "tags": ["ecommerce", "internal-links", "products", "conversion"],
+    "faq": [
+      {
+        "question": "How many commercial links should a guide contain?",
+        "answer": "Use enough links to help the reader progress naturally, but keep the structure selective so the primary page remains obvious."
+      },
+      {
+        "question": "Should the same anchor be reused every time?",
+        "answer": "No. Anchors should stay intent aligned and natural while still making destination relevance clear."
+      }
+    ]
+  },
+  {
     "route": "/resources",
     "title": "Free Ecommerce SEO Resources and Templates | autoBlogger",
-    "description": "Access free ecommerce SEO templates and frameworks including content briefs, internal linking blueprints, schema QA checklists, and ROI worksheets.",
+    "description": "Access free ecommerce SEO templates and frameworks including content briefs, internal linking blueprints, schema QA checklists, CTR worksheets, and ROI models.",
     "heading": "Free Ecommerce SEO Resources",
-    "intro": "Use these free resources to speed up planning, QA, and reporting across your SEO workflow.",
+    "intro": "Use these free resources to speed up planning, QA, reporting, CTR testing, and refresh work across your SEO workflow.",
     "bullets": [
       "Shopify SEO content brief template",
       "Internal linking blueprint worksheet",
       "Schema QA checklist for launch reviews",
-      "SEO ROI calculator worksheet"
+      "CTR test sheet, content refresh checklist, and ROI worksheet"
     ],
     "changefreq": "weekly",
     "priority": 0.78,
@@ -308,6 +496,84 @@
       {
         "question": "Should teams use one ROI model for all pages?",
         "answer": "No. Use different assumptions for branded, non-branded, and seasonal page groups."
+      }
+    ]
+  },
+  {
+    "route": "/resources/ctr-title-test-sheet",
+    "title": "CTR Title Test Sheet for SEO Teams | autoBlogger",
+    "description": "Use a CTR title test sheet to plan, log, and review title and meta description tests across high impression SEO pages.",
+    "heading": "CTR Title Test Sheet",
+    "intro": "This sheet is designed for teams that want to run CTR tests with more discipline instead of rewriting snippets ad hoc.",
+    "bullets": [
+      "Current and proposed title columns",
+      "Intent angle and proof angle fields",
+      "Impression and CTR comparison tracking",
+      "Decision notes for keep, revert, or iterate"
+    ],
+    "changefreq": "yearly",
+    "priority": 0.61,
+    "tags": ["resources", "ctr", "snippets", "template"],
+    "faq": [
+      {
+        "question": "Why track title tests in a sheet?",
+        "answer": "It keeps snippet experiments organized so teams can compare outcomes and avoid re-testing the same weak ideas."
+      },
+      {
+        "question": "Should meta descriptions be tested too?",
+        "answer": "Yes. Titles usually drive the first lift, but meta descriptions can improve click quality and message clarity."
+      }
+    ]
+  },
+  {
+    "route": "/resources/content-refresh-checklist",
+    "title": "SEO Content Refresh Checklist | autoBlogger",
+    "description": "Use an SEO content refresh checklist to update stale pages, improve CTR, tighten internal links, and restore lost click momentum.",
+    "heading": "SEO Content Refresh Checklist",
+    "intro": "This checklist helps teams refresh the right pages in the right order without missing snippet, content, or internal link updates.",
+    "bullets": [
+      "Page selection criteria by impression and click trend",
+      "Snippet, heading, and FAQ update prompts",
+      "Internal linking and CTA review steps",
+      "Post-refresh measurement notes"
+    ],
+    "changefreq": "yearly",
+    "priority": 0.6,
+    "tags": ["resources", "content-refresh", "ctr", "template"],
+    "faq": [
+      {
+        "question": "How often should a page be refreshed?",
+        "answer": "Refresh when the page shows traffic decay, outdated examples, weak CTR, or a broken internal link path to conversion pages."
+      },
+      {
+        "question": "Should every post be refreshed on a fixed schedule?",
+        "answer": "No. Prioritize by potential upside rather than treating all pages as equal."
+      }
+    ]
+  },
+  {
+    "route": "/resources/shopify-blog-qa-checklist",
+    "title": "Shopify Blog QA Checklist for SEO Publishing | autoBlogger",
+    "description": "Use a Shopify blog QA checklist to review title tags, metadata, internal links, FAQs, media, and CTA alignment before publishing.",
+    "heading": "Shopify Blog QA Checklist",
+    "intro": "This checklist is designed for stores that want every Shopify post to ship with cleaner SEO structure and fewer avoidable misses.",
+    "bullets": [
+      "Title, meta, and heading review",
+      "Product and collection link checks",
+      "FAQ, imagery, and CTA review",
+      "Post-publish indexing and measurement steps"
+    ],
+    "changefreq": "yearly",
+    "priority": 0.6,
+    "tags": ["resources", "shopify", "qa", "template"],
+    "faq": [
+      {
+        "question": "What does a QA checklist prevent most often?",
+        "answer": "It reduces missed metadata, broken links, weak CTA placement, and inconsistent article structure before the page goes live."
+      },
+      {
+        "question": "Who should use this checklist?",
+        "answer": "Merchants, content managers, and SEO freelancers can use it to standardize Shopify publishing quality."
       }
     ]
   }

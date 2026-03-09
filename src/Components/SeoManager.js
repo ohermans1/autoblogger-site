@@ -5,10 +5,13 @@ import {
   DEFAULT_ROBOTS,
   SITE_NAV_ITEMS,
   SITE_URL,
+  STATIC_SEO_PAGES,
   buildAbsoluteUrl,
   getCanonicalRoute,
+  getBreadcrumbTrail,
   getPageByRoute,
   hasRoutePrefix,
+  isIndexablePage,
   isGuidePage,
   isHubPage,
   normalizePath
@@ -175,23 +178,17 @@ function setJsonLd(graph) {
 function buildBreadcrumb(page, canonicalUrl) {
   if (!page) return null;
 
+  const trail = getBreadcrumbTrail(page);
+
   return {
     "@type": "BreadcrumbList",
     "@id": `${canonicalUrl}#breadcrumb`,
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: `${SITE_URL}/`
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: page.heading || page.title,
-        item: canonicalUrl
-      }
-    ]
+    itemListElement: trail.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: buildAbsoluteUrl(item.path)
+    }))
   };
 }
 
@@ -287,6 +284,24 @@ function buildCollectionGraph(page, canonicalUrl) {
   };
 }
 
+function buildSiteMapGraph(page, canonicalUrl) {
+  if (!page || page.route !== "/site-map") return null;
+
+  const listedPages = STATIC_SEO_PAGES.filter(isIndexablePage);
+
+  return {
+    "@type": "ItemList",
+    "@id": `${canonicalUrl}#sitemap`,
+    name: "autoBlogger HTML Sitemap",
+    itemListElement: listedPages.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.heading || item.title,
+      url: buildAbsoluteUrl(getCanonicalRoute(item))
+    }))
+  };
+}
+
 function shouldIncludeSoftwareApplication(path, page) {
   if (path === "/") return true;
   if (!page) return false;
@@ -299,6 +314,7 @@ function buildSchemaGraph(path, meta, canonicalUrl, page, isKnownPath) {
   const faqGraph = buildFaqGraph(path, page, canonicalUrl);
   const guideGraph = buildGuideGraph(page, canonicalUrl);
   const collectionGraph = buildCollectionGraph(page, canonicalUrl);
+  const siteMapGraph = buildSiteMapGraph(page, canonicalUrl);
 
   const graph = [
     {
@@ -359,6 +375,7 @@ function buildSchemaGraph(path, meta, canonicalUrl, page, isKnownPath) {
   if (faqGraph) graph.push(faqGraph);
   if (guideGraph) graph.push(guideGraph);
   if (collectionGraph) graph.push(collectionGraph);
+  if (siteMapGraph) graph.push(siteMapGraph);
 
   if (shouldIncludeSoftwareApplication(path, page)) {
     graph.push(buildSoftwareApplicationGraph(path === "/" || path === "/reviews"));

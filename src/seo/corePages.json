@@ -218,6 +218,22 @@
     "tags": ["conversion", "backlinks", "growth"]
   },
   {
+    "route": "/site-map",
+    "title": "HTML Sitemap | autoBlogger",
+    "description": "Browse the HTML sitemap for autoBlogger to discover product pages, SEO playbooks, resources, reviews, and legal pages.",
+    "heading": "HTML Sitemap",
+    "intro": "Use this HTML sitemap to browse all major pages on the site, including solutions, resources, reviews, pricing, and legal content.",
+    "bullets": [
+      "Core product and trust pages",
+      "SEO solutions and implementation playbooks",
+      "Resource templates and worksheets",
+      "Legal and support pages"
+    ],
+    "changefreq": "weekly",
+    "priority": 0.5,
+    "tags": ["sitemap", "site"]
+  },
+  {
     "route": "/seo-checklist",
     "title": "Free SEO Checklist | autoBlogger",
     "description": "Use the free Shopify and Wix SEO checklist on autoBlogger.",

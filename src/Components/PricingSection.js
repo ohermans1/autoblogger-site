@@ -1,4 +1,5 @@
 import React from "react";
+import { SmartLink } from "./SmartLink";
 
 const themeColor = "bg-primary text-white";
 
@@ -66,6 +67,21 @@ const PricingSection = props => {
         <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Pricing for autoBlogger</h1>
       )}
       <p className="text-center text-gray-700 mb-8">No ongoing free plan. Start with a 14-day free trial, then choose Starter, Growth, or Pro.</p>
+      <p className="max-w-4xl mx-auto text-center text-base text-gray-600 mb-8">
+        Compare plan depth with the{" "}
+        <SmartLink to="/features" className="text-primary font-semibold hover:underline">
+          features overview
+        </SmartLink>
+        , see what is included in{" "}
+        <SmartLink to="/premium-extras" className="text-primary font-semibold hover:underline">
+          premium extras
+        </SmartLink>
+        , and review{" "}
+        <SmartLink to="/reviews" className="text-primary font-semibold hover:underline">
+          merchant feedback
+        </SmartLink>
+        .
+      </p>
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {pricingPlans.map((plan, index) => {

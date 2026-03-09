@@ -1,34 +1,38 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { SmartLink } from "./SmartLink";
 
 const Footer = () => {
   return (
     <footer className="text-center py-4 md:bg-gradient-to-b md:from-white md:to-gray-100">
       <p>&copy; {new Date().getFullYear()} autoBlogger. All rights reserved.</p>
       <div className="mt-2">
-        <Link to="/privacy" className="text-primary hover:underline mx-2">
+        <SmartLink to="/privacy" className="text-primary hover:underline mx-2">
           Privacy Policy
-        </Link>
+        </SmartLink>
         <span>|</span>
-        <Link to="/terms" className="text-primary hover:underline mx-2">
+        <SmartLink to="/terms" className="text-primary hover:underline mx-2">
           Terms and Conditions
-        </Link>
+        </SmartLink>
         <span>|</span>
-        <Link to="/backlink-terms" className="text-primary hover:underline mx-2">
+        <SmartLink to="/backlink-terms" className="text-primary hover:underline mx-2">
           Backlink Program Terms
-        </Link>
+        </SmartLink>
         <span>|</span>
-        <Link to="/premium-extras" className="text-primary hover:underline mx-2">
+        <SmartLink to="/premium-extras" className="text-primary hover:underline mx-2">
           Premium Extras
-        </Link>
+        </SmartLink>
         <span>|</span>
-        <a href="/solutions" className="text-primary hover:underline mx-2">
+        <SmartLink to="/solutions" className="text-primary hover:underline mx-2">
           SEO Solutions
-        </a>
+        </SmartLink>
         <span>|</span>
-        <a href="/resources" className="text-primary hover:underline mx-2">
+        <SmartLink to="/resources" className="text-primary hover:underline mx-2">
           SEO Resources
-        </a>
+        </SmartLink>
+        <span>|</span>
+        <SmartLink to="/site-map" className="text-primary hover:underline mx-2">
+          HTML Sitemap
+        </SmartLink>
       </div>
       <p className="mt-3 text-sm text-gray-600">
         Legal business name: Oliver R Corich-Hermans. autoBlogger is operated by Oliver R Corich-Hermans, Station Road, St Monans, UK.

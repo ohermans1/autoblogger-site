@@ -1,15 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Navigation from "./Navigation";
 import MobileMenu from "./MobileMenu";
+import { SmartLink } from "./SmartLink";
 
 const PageHeader = ({ toggleMobileMenu, isMobileMenuOpen }) => {
   return (
     <header className="fixed top-0 w-full bg-white shadow-md z-10">
       <div className="flex items-center gap-4 px-5 py-4">
         {/* Logo */}
-        <Link to="/" className="flex shrink-0 items-center" aria-label="autoBlogger home">
+        <SmartLink to="/" className="flex shrink-0 items-center" aria-label="autoBlogger home">
           <img
             src="/logo.png"
             alt="autoBlogger"
@@ -20,7 +20,7 @@ const PageHeader = ({ toggleMobileMenu, isMobileMenuOpen }) => {
             fetchpriority="high"
             decoding="async"
           />
-        </Link>
+        </SmartLink>
 
         {/* Navigation Links */}
         <Navigation />

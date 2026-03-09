@@ -1,5 +1,6 @@
 import corePages from "./corePages.json";
 import programmaticPages from "./programmaticPages.json";
+import pageContentByRoute from "./pageContent.json";
 
 export const SITE_URL = "https://autoblogger.bot";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/logo.png`;
@@ -25,15 +26,48 @@ export const SITE_NAV_ITEMS = [
   { name: "Free SEO Checklist", path: "/free-seo-checklist" }
 ];
 
-export const STATIC_SEO_PAGES = [...corePages, ...programmaticPages].map(page => ({
-  ...page,
-  bullets: Array.isArray(page.bullets) ? page.bullets : [],
-  faq: Array.isArray(page.faq) ? page.faq : [],
-  tags: Array.isArray(page.tags) ? page.tags : [],
-  changefreq: page.changefreq || "monthly",
-  priority: typeof page.priority === "number" ? page.priority : 0.6,
-  robots: page.robots || DEFAULT_ROBOTS
-}));
+function normalizeSections(sections) {
+  if (!Array.isArray(sections)) return [];
+
+  return sections
+    .map(section => ({
+      title: section?.title || "",
+      paragraphs: Array.isArray(section?.paragraphs) ? section.paragraphs : [],
+      items: Array.isArray(section?.items) ? section.items : [],
+      ordered: Boolean(section?.ordered)
+    }))
+    .filter(section => section.title || section.paragraphs.length > 0 || section.items.length > 0);
+}
+
+function normalizeComparisonTable(table) {
+  if (!table || !Array.isArray(table.columns) || !Array.isArray(table.rows) || table.columns.length === 0) {
+    return null;
+  }
+
+  return {
+    title: table.title || "Comparison Snapshot",
+    columns: table.columns,
+    rows: table.rows.filter(row => Array.isArray(row) && row.length > 0)
+  };
+}
+
+export const STATIC_SEO_PAGES = [...corePages, ...programmaticPages].map(page => {
+  const content = pageContentByRoute[page.route] || {};
+  const mergedPage = { ...page, ...content };
+
+  return {
+    ...mergedPage,
+    bullets: Array.isArray(mergedPage.bullets) ? mergedPage.bullets : [],
+    faq: Array.isArray(mergedPage.faq) ? mergedPage.faq : [],
+    tags: Array.isArray(mergedPage.tags) ? mergedPage.tags : [],
+    sections: normalizeSections(mergedPage.sections),
+    checklist: Array.isArray(mergedPage.checklist) ? mergedPage.checklist : [],
+    comparisonTable: normalizeComparisonTable(mergedPage.comparisonTable),
+    changefreq: mergedPage.changefreq || "monthly",
+    priority: typeof mergedPage.priority === "number" ? mergedPage.priority : 0.6,
+    robots: mergedPage.robots || DEFAULT_ROBOTS
+  };
+});
 
 const PAGE_BY_ROUTE = new Map(STATIC_SEO_PAGES.map(page => [page.route, page]));
 
@@ -73,6 +107,49 @@ export function isHubPage(pageOrRoute) {
 
 export function isGuidePage(pageOrRoute) {
   return ["/shopify-seo", "/wix-seo", "/ecommerce-seo", "/resources"].some(prefix => hasRoutePrefix(pageOrRoute, prefix)) && !isHubPage(pageOrRoute);
+}
+
+export function getPageSection(page) {
+  if (page.route === "/site-map") return "Site";
+  if (page.route === "/solutions" || hasRoutePrefix(page, "/shopify-seo") || hasRoutePrefix(page, "/wix-seo") || hasRoutePrefix(page, "/ecommerce-seo")) return "Solutions";
+  if (page.route === "/resources" || hasRoutePrefix(page, "/resources")) return "Resources";
+  if (["/privacy", "/terms", "/autoschema-terms", "/autoschema-privacy", "/backlink-terms"].includes(page.route)) return "Legal";
+  return "Core";
+}
+
+export function groupPagesBySection(pages = STATIC_SEO_PAGES) {
+  return pages
+    .filter(isIndexablePage)
+    .reduce((groups, page) => {
+      const section = getPageSection(page);
+      if (!groups[section]) groups[section] = [];
+      groups[section].push(page);
+      return groups;
+    }, {});
+}
+
+export function getBreadcrumbTrail(page) {
+  const trail = [{ label: "Home", path: "/" }];
+
+  if (page.route === "/site-map") {
+    trail.push({ label: "HTML Sitemap", path: "/site-map" });
+    return trail;
+  }
+
+  if (isGuidePage(page) && !hasRoutePrefix(page, "/resources")) {
+    trail.push({ label: "Solutions", path: "/solutions" });
+  }
+
+  if (hasRoutePrefix(page, "/resources") && page.route !== "/resources") {
+    trail.push({ label: "Resources", path: "/resources" });
+  }
+
+  trail.push({
+    label: page.heading || page.title,
+    path: getCanonicalRoute(page)
+  });
+
+  return trail;
 }
 
 function scoreRelatedness(source, candidate) {

@@ -4,25 +4,64 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex,follow" />
-    <title>Redirecting...</title>
-    <script>
-      (function () {
-        var path = window.location.pathname.replace(/^\/+/, "");
-        var query = window.location.search || "";
-        var hash = window.location.hash || "";
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Page Not Found | autoBlogger</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Segoe UI, Arial, sans-serif;
+        background: #f8fafc;
+        color: #1f2937;
+      }
 
-        if (!path) {
-          window.location.replace("/");
-          return;
-        }
+      main {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 48px 24px;
+        text-align: center;
+      }
 
-        window.location.replace("/#/" + path + query + hash);
-      })();
-    </script>
+      h1 {
+        margin-top: 0;
+        font-size: 2rem;
+      }
+
+      p {
+        line-height: 1.6;
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .links a {
+        display: inline-block;
+        padding: 12px 18px;
+        border-radius: 999px;
+        border: 1px solid #cbd5e1;
+        color: #0f766e;
+        text-decoration: none;
+        font-weight: 600;
+        background: #ffffff;
+      }
+    </style>
   </head>
   <body>
-    <noscript>
-      <p>Page not found. Continue to <a href="/">autoblogger.bot</a>.</p>
-    </noscript>
+    <main>
+      <h1>Page Not Found</h1>
+      <p>The page you requested does not exist. Use one of the links below to continue browsing the site.</p>
+      <div class="links">
+        <a href="/">Home</a>
+        <a href="/features">Features</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/solutions">SEO Solutions</a>
+        <a href="/resources">SEO Resources</a>
+        <a href="/site-map">HTML Sitemap</a>
+      </div>
+    </main>
   </body>
 </html>

@@ -37,12 +37,22 @@
       .grid { display: grid; gap: 1rem; grid-template-columns: 2fr 1fr; }
       .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 1.4rem 1.3rem; }
       .sub-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; margin-top: 1rem; }
+      .breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; font-size: 0.95rem; margin-bottom: 1rem; color: #4b5563; }
+      .breadcrumb a { color: #0f766e; font-weight: 600; text-decoration: none; }
       h1 { margin-top: 0; line-height: 1.25; }
       h2 { margin-top: 0; font-size: 1.1rem; }
       ul { margin: 1rem 0 0; padding-left: 1.1rem; }
+      ol { margin: 1rem 0 0; padding-left: 1.2rem; }
+      li + li { margin-top: 0.45rem; }
+      .content-section p + p { margin-top: 0.85rem; }
+      .content-section ul, .content-section ol { margin-top: 1rem; }
       .faq-item { border-top: 1px solid #d1d5db; padding: 0.55rem 0; }
       .faq-item summary { font-weight: 700; cursor: pointer; }
       .faq-item p { margin: 0.5rem 0 0; }
+      .table-wrap { overflow-x: auto; }
+      .comparison-table { width: 100%; border-collapse: collapse; }
+      .comparison-table th, .comparison-table td { border-bottom: 1px solid #d1d5db; padding: 0.75rem; text-align: left; vertical-align: top; }
+      .comparison-table th { color: #111827; }
       .related-list { list-style: none; margin: 0; padding: 0; }
       .related-list li { border-top: 1px solid #d1d5db; padding: 0.65rem 0; }
       .related-list a { color: #0f766e; font-weight: 700; text-decoration: none; }
@@ -65,8 +75,7 @@
       <div class="container grid">
         <article class="card">
           <h1>autoBlogger Pricing</h1>
-          <p>Choose the plan that matches your publishing pace. Start with a 14-day trial and scale from weekly to daily automated SEO blogging as your store grows.</p>
-          <ul><li>Starter: weekly SEO publishing</li><li>Growth: three SEO posts per week with advanced AI</li><li>Pro: daily SEO publishing for maximum content velocity</li><li>All paid plans are managed through Shopify billing</li></ul>
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">autoBlogger Pricing</span></nav><p>Choose the plan that matches your publishing pace. Start with a 14-day trial and scale from weekly to daily automated SEO blogging as your store grows.</p><section class="sub-card"><h2>Quick Takeaways</h2><ul><li>Starter: weekly SEO publishing</li><li>Growth: three SEO posts per week with advanced AI</li><li>Pro: daily SEO publishing for maximum content velocity</li><li>All paid plans are managed through Shopify billing</li></ul></section>
           <div class="actions">
             <a class="btn-primary" href="https://autoblogger.bot/#/pricing">Open Interactive Version</a>
             <a class="btn-secondary" href="https://apps.shopify.com/autoblogger">View Shopify App Listing</a>
@@ -75,7 +84,7 @@
         </article>
         <aside>
           <section class="sub-card"><h2>Proof and Next Step</h2><ul><li>2x Shopify Staff Pick</li><li>4.9 out of 5 average rating on the Shopify App Store</li><li>14-day free trial with no long setup process</li></ul><p>Use this page as your execution checklist, then launch implementation inside autoBlogger.</p><div class="actions"><a class="btn-primary" href="https://apps.shopify.com/autoblogger">Start 14-Day Free Trial</a><a class="btn-secondary" href="https://autoblogger.bot/#/pricing">Open Interactive Version</a></div></section>
-          <section class="sub-card"><h2>Related Guides</h2><ul class="related-list"><li><a href="/features">autoBlogger Features</a><span>Explore autoBlogger features: automated SEO publishing, product-focused content, metadata, internal links, and social sharing workflows for Shopify.</span></li><li><a href="/other-apps">Other Apps by autoBlogger</a><span>Discover other Shopify apps from the autoBlogger team, including autoLLMs, autoSchema, autoShip, autoStockist, and autoBuy.</span></li><li><a href="/faqs">autoBlogger FAQs</a><span>Read frequently asked questions about autoBlogger setup, trial terms, publishing frequency, pricing, integrations, and customer support.</span></li><li><a href="/reviews">autoBlogger Reviews</a><span>See recent autoBlogger reviews from Shopify merchants and learn how stores use automated SEO blogging to grow organic traffic.</span></li></ul></section>
+          <section class="sub-card"><h2>Related Guides</h2><ul class="related-list"><li><a href="/shopify-seo/shopify-seo-blogging-app-comparison">Shopify SEO Blogging App Comparison Framework</a><span>Use this Shopify SEO blogging app comparison framework to compare automation, metadata support, internal linking, workflow controls, and merchant fit.</span></li><li><a href="/features">autoBlogger Features</a><span>Explore autoBlogger features: automated SEO publishing, product-focused content, metadata, internal links, and social sharing workflows for Shopify.</span></li><li><a href="/other-apps">Other Apps by autoBlogger</a><span>Discover other Shopify apps from the autoBlogger team, including autoLLMs, autoSchema, autoShip, autoStockist, and autoBuy.</span></li><li><a href="/faqs">autoBlogger FAQs</a><span>Read frequently asked questions about autoBlogger setup, trial terms, publishing frequency, pricing, integrations, and customer support.</span></li></ul></section>
           
         </aside>
       </div>

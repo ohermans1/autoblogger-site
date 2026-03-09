@@ -37,12 +37,22 @@
       .grid { display: grid; gap: 1rem; grid-template-columns: 2fr 1fr; }
       .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 1.4rem 1.3rem; }
       .sub-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; margin-top: 1rem; }
+      .breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; font-size: 0.95rem; margin-bottom: 1rem; color: #4b5563; }
+      .breadcrumb a { color: #0f766e; font-weight: 600; text-decoration: none; }
       h1 { margin-top: 0; line-height: 1.25; }
       h2 { margin-top: 0; font-size: 1.1rem; }
       ul { margin: 1rem 0 0; padding-left: 1.1rem; }
+      ol { margin: 1rem 0 0; padding-left: 1.2rem; }
+      li + li { margin-top: 0.45rem; }
+      .content-section p + p { margin-top: 0.85rem; }
+      .content-section ul, .content-section ol { margin-top: 1rem; }
       .faq-item { border-top: 1px solid #d1d5db; padding: 0.55rem 0; }
       .faq-item summary { font-weight: 700; cursor: pointer; }
       .faq-item p { margin: 0.5rem 0 0; }
+      .table-wrap { overflow-x: auto; }
+      .comparison-table { width: 100%; border-collapse: collapse; }
+      .comparison-table th, .comparison-table td { border-bottom: 1px solid #d1d5db; padding: 0.75rem; text-align: left; vertical-align: top; }
+      .comparison-table th { color: #111827; }
       .related-list { list-style: none; margin: 0; padding: 0; }
       .related-list li { border-top: 1px solid #d1d5db; padding: 0.65rem 0; }
       .related-list a { color: #0f766e; font-weight: 700; text-decoration: none; }
@@ -65,8 +75,7 @@
       <div class="container grid">
         <article class="card">
           <h1>autoBlogger Features</h1>
-          <p>autoBlogger helps Shopify merchants publish SEO-focused content with less manual work. The app combines planning, generation, linking, and distribution in one workflow.</p>
-          <ul><li>Automated publishing with structured SEO article formatting</li><li>Product-focused and topic-focused blog modes</li><li>Built-in metadata, internal links, and FAQ content blocks</li><li>Social sharing support and scheduling controls</li></ul>
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">autoBlogger Features</span></nav><p>autoBlogger helps Shopify merchants publish SEO-focused content with less manual work. The app combines planning, generation, linking, and distribution in one workflow.</p><section class="sub-card"><h2>Quick Takeaways</h2><ul><li>Automated publishing with structured SEO article formatting</li><li>Product-focused and topic-focused blog modes</li><li>Built-in metadata, internal links, and FAQ content blocks</li><li>Social sharing support and scheduling controls</li></ul></section>
           <div class="actions">
             <a class="btn-primary" href="https://autoblogger.bot/#/features">Open Interactive Version</a>
             <a class="btn-secondary" href="https://apps.shopify.com/autoblogger">View Shopify App Listing</a>
@@ -75,7 +84,7 @@
         </article>
         <aside>
           <section class="sub-card"><h2>Proof and Next Step</h2><ul><li>2x Shopify Staff Pick</li><li>4.9 out of 5 average rating on the Shopify App Store</li><li>14-day free trial with no long setup process</li></ul><p>Use this page as your execution checklist, then launch implementation inside autoBlogger.</p><div class="actions"><a class="btn-primary" href="https://apps.shopify.com/autoblogger">Start 14-Day Free Trial</a><a class="btn-secondary" href="https://autoblogger.bot/#/features">Open Interactive Version</a></div></section>
-          <section class="sub-card"><h2>Related Guides</h2><ul class="related-list"><li><a href="/shopify-seo/ai-blog-automation">Shopify AI Blog Automation Strategy</a><span>Plan a Shopify AI blog automation workflow that publishes product-focused SEO articles, builds topical authority, and drives qualified traffic.</span></li><li><a href="/resources/shopify-seo-content-brief-template">Shopify SEO Content Brief Template</a><span>Download a practical Shopify SEO content brief template to align intent, structure, internal links, and conversion goals before writing.</span></li><li><a href="/pricing">autoBlogger Pricing</a><span>View autoBlogger pricing for Starter, Growth, and Pro plans. Start with a 14-day trial, then choose the SEO publishing cadence that fits your store.</span></li><li><a href="/other-apps">Other Apps by autoBlogger</a><span>Discover other Shopify apps from the autoBlogger team, including autoLLMs, autoSchema, autoShip, autoStockist, and autoBuy.</span></li></ul></section>
+          <section class="sub-card"><h2>Related Guides</h2><ul class="related-list"><li><a href="/shopify-seo/ai-blog-automation">Shopify AI Blog Automation Strategy</a><span>Plan a Shopify AI blog automation workflow that publishes product-focused SEO articles, builds topical authority, and drives qualified traffic.</span></li><li><a href="/shopify-seo/shopify-blog-automation-software-guide">Shopify Blog Automation Software Guide</a><span>Evaluate Shopify blog automation software for SEO publishing, metadata, internal links, workflow control, and conversion support.</span></li><li><a href="/shopify-seo/autoblogger-vs-manual-shopify-blogging">autoBlogger vs Manual Shopify Blogging</a><span>Compare autoBlogger with manual Shopify blogging across publishing speed, SEO consistency, internal linking, metadata QA, and content ops effort.</span></li><li><a href="/resources/shopify-seo-content-brief-template">Shopify SEO Content Brief Template</a><span>Download a practical Shopify SEO content brief template to align intent, structure, internal links, and conversion goals before writing.</span></li></ul></section>
           
         </aside>
       </div>
