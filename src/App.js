@@ -20,7 +20,7 @@ const PremiumExtras = lazy(() => import("./Components/PremiumExtras"));
 const AutoSchemaTerms = lazy(() => import("./Components/AutoSchemaTerms"));
 const AutoSchemaPrivacy = lazy(() => import("./Components/AutoSchemaPrivacy"));
 const OtherAppsSection = lazy(() => import("./Components/OtherAppsSection"));
-const SEOPlaybooksSection = lazy(() => import("./Components/SEOPlaybooksSection"));
+// const SEOPlaybooksSection = lazy(() => import("./Components/SEOPlaybooksSection"));
 const SeoLandingPage = lazy(() => import("./Components/SeoLandingPage"));
 const SiteMapPage = lazy(() => import("./Components/SiteMapPage"));
 
@@ -76,7 +76,10 @@ const App = () => {
       <ScrollToTop />
       <SeoManager />
       <div className="font-sans text-gray-800 bg-white">
-        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:text-primary focus:shadow">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:text-primary focus:shadow"
+        >
           Skip to main content
         </a>
         <PageHeader toggleMobileMenu={toggleMobileMenu} isMobileMenuOpen={isMobileMenuOpen} />
@@ -92,7 +95,7 @@ const App = () => {
                   {lazySection(<PricingSection home={true} />)}
                   {lazySection(<FAQsSection home={true} />)}
                   {lazySection(<ReviewsSection home={true} />)}
-                  {lazySection(<SEOPlaybooksSection home={true} />)}
+                  {/* {lazySection(<SEOPlaybooksSection home={true} />)} */}
                   {lazySection(<ContactSection home={true} />)}
                   {lazySection(<OtherAppsSection home={true} />)}
                 </>
