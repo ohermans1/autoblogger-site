@@ -35,7 +35,9 @@
       nav a { text-decoration: none; color: #0f766e; font-weight: 600; }
       main { padding: 2rem 0 3rem; }
       .grid { display: grid; gap: 1rem; grid-template-columns: 2fr 1fr; }
+      .staff-pick-layout { display: block; }
       .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 1.4rem 1.3rem; }
+      .staff-pick-card { max-width: 960px; margin: 0 auto; padding: 2rem; }
       .sub-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; margin-top: 1rem; }
       .breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; font-size: 0.95rem; margin-bottom: 1rem; color: #4b5563; }
       .breadcrumb a { color: #0f766e; font-weight: 600; text-decoration: none; }
@@ -60,6 +62,18 @@
       .proof-header { border-bottom: 1px solid #e5e7eb; background: #f8fafc; padding: 0.8rem 1rem; }
       .proof-header p { margin: 0; font-weight: 700; color: #111827; }
       .proof-caption { margin: 0; padding: 1rem; color: #4b5563; font-size: 0.95rem; }
+      .staff-pick-eyebrow { margin: 0 0 0.85rem; text-align: center; color: #0f766e; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; }
+      .staff-pick-title { margin: 0; text-align: center; font-size: 2.25rem; color: #111827; }
+      .staff-pick-intro { max-width: 50rem; margin: 1.2rem auto 0; text-align: center; font-size: 1.1rem; color: #374151; }
+      .staff-pick-links { max-width: 46rem; margin: 1rem auto 0; text-align: center; color: #4b5563; }
+      .staff-pick-links a { color: #0f766e; font-weight: 700; text-decoration: none; }
+      .staff-pick-highlights { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 2rem; }
+      .highlight-card { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1.2rem; text-align: center; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .highlight-card p { margin: 0; color: #111827; font-weight: 600; }
+      .staff-pick-sections { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
+      .staff-pick-section { margin-top: 0; background: #ffffff; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .staff-pick-cta { text-align: center; }
+      .staff-pick-cta p { max-width: 42rem; margin: 0 auto; color: #4b5563; }
       .resource-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
       .resource-card { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
       .resource-header { display: flex; justify-content: space-between; gap: 0.8rem; align-items: flex-start; }
@@ -90,7 +104,7 @@
       .btn-primary, .btn-secondary { padding: 0.65rem 0.95rem; border-radius: 8px; text-decoration: none; font-weight: 700; }
       .btn-primary { background: #0f766e; color: #ffffff; }
       .btn-secondary { background: #ffffff; color: #0f766e; border: 1px solid #99f6e4; }
-      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results, .staff-pick-highlights, .staff-pick-sections { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
       @media (max-width: 640px) { .tool-grid { grid-template-columns: 1fr; } }
     </style>
   </head>
@@ -105,15 +119,9 @@
         <article class="card">
           <h1>Seasonal Ecommerce SEO Content Calendar</h1>
           <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/solutions">Solutions</a><span aria-hidden="true">/</span><span aria-current="page">Seasonal Ecommerce SEO Content Calendar</span></nav><p>This calendar process helps you publish before demand spikes and capture intent while competition is still low.</p><section class="sub-card"><h2>At a glance</h2><ul><li>Map major retail events to category priorities</li><li>Publish lead-in content 6 to 10 weeks early</li><li>Refresh top seasonal pages each cycle</li><li>Repurpose winning posts for social and email</li></ul></section><section class="sub-card content-section"><h2>Work backward from demand windows</h2><p>Seasonal SEO works best when content is published early enough to earn indexing and ranking momentum before demand peaks. The calendar should start from the retail event or seasonal spike, then move backward into planning and production deadlines.</p><p>That makes the workflow proactive instead of reactive.</p><ul><li>List seasonal events by category and revenue impact</li><li>Schedule lead-in content 6 to 10 weeks before peak demand</li><li>Refresh last year&#39;s seasonal winners before writing net-new pages</li><li>Coordinate SEO topics with inventory and merchandising plans</li></ul></section><section class="sub-card content-section"><h2>Refresh, do not restart</h2><p>Older seasonal pages often come back faster than brand-new ones when they are updated properly. Reuse URLs where possible, refresh the angle, and expand the page with this year&#39;s offers or examples.</p><p>This preserves whatever authority the page has already built.</p><ul><li>Update titles, intros, and product references each cycle</li><li>Check whether internal links still point to live destinations</li><li>Repurpose the strongest seasonal pieces for email and social</li><li>Review the calendar after the season ends and capture learnings</li></ul></section><section class="sub-card"><h2>A quick checklist</h2><ol><li>Build the calendar at least one quarter ahead</li><li>Refresh past seasonal pages before producing replacements</li><li>Align publish dates with stock, offers, and promotional timing</li><li>Measure season-over-season clicks, rankings, and revenue</li></ol></section>
-          <div class="actions">
-            <a class="btn-primary" href="https://apps.shopify.com/autoblogger">Start 14-Day Free Trial</a>
-            <a class="btn-secondary" href="/contact">Contact Support</a>
-          </div>
+          <div class="actions"><a class="btn-primary" href="https://apps.shopify.com/autoblogger">Start 14-Day Free Trial</a><a class="btn-secondary" href="/contact">Contact Support</a></div>
         </article>
-        <aside>
-          <section class="sub-card"><h2>More to explore</h2><ul class="related-list"><li><a href="/solutions">Ecommerce SEO Solutions Hub</a><span>Explore actionable Shopify, Wix, and ecommerce SEO solution pages focused on content operations, internal linking, schema, CTR, and conversions.</span></li><li><a href="/ecommerce-seo/seo-content-production-system">Ecommerce SEO Content Production System</a><span>Design an ecommerce SEO content production system that moves from brief to publish to refresh without losing metadata, linking, or QA discipline.</span></li><li><a href="/ecommerce-seo/ctr-improvement-playbook">Ecommerce SEO CTR Improvement Playbook</a><span>Improve ecommerce SEO CTR with a playbook focused on title testing, snippet positioning, intent match, and proof-driven messaging.</span></li><li><a href="/ecommerce-seo/blog-to-product-linking-model">Blog to Product Linking Model</a><span>Use a blog to product linking model that routes informational traffic into category and product pages without over-optimizing anchors.</span></li></ul></section>
-          <section class="sub-card"><h2>Common questions</h2><details class="faq-item"><summary>When should seasonal SEO pages be published?</summary><p>Publish early enough for indexing and ranking momentum, typically several weeks before demand peaks.</p></details><details class="faq-item"><summary>Should seasonal pages be removed after campaigns?</summary><p>Usually no. Keep and refresh them annually so they retain authority over time.</p></details></section>
-        </aside>
+        <aside><section class="sub-card"><h2>More to explore</h2><ul class="related-list"><li><a href="/solutions">Ecommerce SEO Solutions Hub</a><span>Explore actionable Shopify, Wix, and ecommerce SEO solution pages focused on content operations, internal linking, schema, CTR, and conversions.</span></li><li><a href="/ecommerce-seo/seo-content-production-system">Ecommerce SEO Content Production System</a><span>Design an ecommerce SEO content production system that moves from brief to publish to refresh without losing metadata, linking, or QA discipline.</span></li><li><a href="/ecommerce-seo/ctr-improvement-playbook">Ecommerce SEO CTR Improvement Playbook</a><span>Improve ecommerce SEO CTR with a playbook focused on title testing, snippet positioning, intent match, and proof-driven messaging.</span></li><li><a href="/ecommerce-seo/blog-to-product-linking-model">Blog to Product Linking Model</a><span>Use a blog to product linking model that routes informational traffic into category and product pages without over-optimizing anchors.</span></li></ul></section><section class="sub-card"><h2>Common questions</h2><details class="faq-item"><summary>When should seasonal SEO pages be published?</summary><p>Publish early enough for indexing and ranking momentum, typically several weeks before demand peaks.</p></details><details class="faq-item"><summary>Should seasonal pages be removed after campaigns?</summary><p>Usually no. Keep and refresh them annually so they retain authority over time.</p></details></section></aside>
       </div>
     </main>
     

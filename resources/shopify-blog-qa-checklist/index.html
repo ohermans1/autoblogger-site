@@ -35,7 +35,9 @@
       nav a { text-decoration: none; color: #0f766e; font-weight: 600; }
       main { padding: 2rem 0 3rem; }
       .grid { display: grid; gap: 1rem; grid-template-columns: 2fr 1fr; }
+      .staff-pick-layout { display: block; }
       .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 1.4rem 1.3rem; }
+      .staff-pick-card { max-width: 960px; margin: 0 auto; padding: 2rem; }
       .sub-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; margin-top: 1rem; }
       .breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; font-size: 0.95rem; margin-bottom: 1rem; color: #4b5563; }
       .breadcrumb a { color: #0f766e; font-weight: 600; text-decoration: none; }
@@ -60,6 +62,18 @@
       .proof-header { border-bottom: 1px solid #e5e7eb; background: #f8fafc; padding: 0.8rem 1rem; }
       .proof-header p { margin: 0; font-weight: 700; color: #111827; }
       .proof-caption { margin: 0; padding: 1rem; color: #4b5563; font-size: 0.95rem; }
+      .staff-pick-eyebrow { margin: 0 0 0.85rem; text-align: center; color: #0f766e; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; }
+      .staff-pick-title { margin: 0; text-align: center; font-size: 2.25rem; color: #111827; }
+      .staff-pick-intro { max-width: 50rem; margin: 1.2rem auto 0; text-align: center; font-size: 1.1rem; color: #374151; }
+      .staff-pick-links { max-width: 46rem; margin: 1rem auto 0; text-align: center; color: #4b5563; }
+      .staff-pick-links a { color: #0f766e; font-weight: 700; text-decoration: none; }
+      .staff-pick-highlights { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 2rem; }
+      .highlight-card { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1.2rem; text-align: center; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .highlight-card p { margin: 0; color: #111827; font-weight: 600; }
+      .staff-pick-sections { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
+      .staff-pick-section { margin-top: 0; background: #ffffff; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .staff-pick-cta { text-align: center; }
+      .staff-pick-cta p { max-width: 42rem; margin: 0 auto; color: #4b5563; }
       .resource-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
       .resource-card { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
       .resource-header { display: flex; justify-content: space-between; gap: 0.8rem; align-items: flex-start; }
@@ -90,7 +104,7 @@
       .btn-primary, .btn-secondary { padding: 0.65rem 0.95rem; border-radius: 8px; text-decoration: none; font-weight: 700; }
       .btn-primary { background: #0f766e; color: #ffffff; }
       .btn-secondary { background: #ffffff; color: #0f766e; border: 1px solid #99f6e4; }
-      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results, .staff-pick-highlights, .staff-pick-sections { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
       @media (max-width: 640px) { .tool-grid { grid-template-columns: 1fr; } }
     </style>
   </head>
@@ -105,15 +119,9 @@
         <article class="card">
           <h1>Shopify Blog QA Checklist</h1>
           <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/resources">Resources</a><span aria-hidden="true">/</span><span aria-current="page">Shopify Blog QA Checklist</span></nav><p>This checklist is designed for stores that want every Shopify post to ship with cleaner SEO structure and fewer avoidable misses.</p><section class="sub-card"><h2>At a glance</h2><ul><li>Title, meta, and heading review</li><li>Product and collection link checks</li><li>FAQ, imagery, and CTA review</li><li>Post-publish indexing and measurement steps</li></ul></section><section class="sub-card"><h2>Download the Checklist</h2><p>Use the same sheet before every post goes live so the QA standard stays consistent as publishing volume grows.</p><div class="resource-grid"><article class="resource-card"><div class="resource-header"><div><p class="resource-eyebrow">Checklist</p><h3>Shopify Blog QA Checklist</h3></div><span class="resource-meta">CSV checklist</span></div><p class="resource-description">CSV checklist for metadata, headings, commercial links, FAQs, media, indexing, and reporting handoff.</p><ul class="resource-items"><li>Metadata, heading, and link review fields</li><li>FAQ, CTA, and image checks</li><li>Indexing request and reporting handoff logging</li></ul><div class="actions"><a class="btn-primary" href="/resources/downloads/shopify-blog-qa-checklist.csv" download>Download CSV</a></div></article></div></section><section class="sub-card content-section"><h2>Pre-publish checks</h2><p>The QA pass should focus on the structural details that often get missed when content is moving quickly. Those small misses add up to weaker snippets, weaker internal linking, and weaker conversion support.</p><p>A short consistent checklist is better than an exhaustive process no one follows.</p><ul><li>Title, meta description, and heading hierarchy</li><li>Primary product or collection links</li><li>FAQ or proof blocks where the topic calls for them</li><li>CTA placement and image or media quality</li></ul></section><section class="sub-card content-section"><h2>Post-publish checks</h2><p>Once the post is live, confirm the page renders correctly, links point to the right destinations, and the URL is ready for indexing and measurement. Post-publish QA is where template and publishing issues usually surface.</p><p>This step also makes later refresh work easier because the baseline is documented.</p><ul><li>Confirm live rendering and internal links</li><li>Check indexing status and page discoverability</li><li>Record the page in the reporting or refresh tracker</li><li>Review early performance once impressions begin to appear</li></ul></section><section class="sub-card"><h2>A quick checklist</h2><ol><li>Run the pre-publish QA before every Shopify post goes live</li><li>Confirm links, snippet, and CTA behavior on the live URL</li><li>Log the post in the tracking sheet after publication</li><li>Use performance data to improve the checklist over time</li></ol></section>
-          <div class="actions">
-            <a class="btn-primary" href="https://apps.shopify.com/autoblogger">Start 14-Day Free Trial</a>
-            <a class="btn-secondary" href="/contact">Contact Support</a>
-          </div>
+          <div class="actions"><a class="btn-primary" href="https://apps.shopify.com/autoblogger">Start 14-Day Free Trial</a><a class="btn-secondary" href="/contact">Contact Support</a></div>
         </article>
-        <aside>
-          <section class="sub-card"><h2>More to explore</h2><ul class="related-list"><li><a href="/resources">Free Ecommerce SEO Resources</a><span>Access free ecommerce SEO templates and frameworks including content briefs, internal linking blueprints, schema QA checklists, CTR worksheets, and ROI models.</span></li><li><a href="/resources/shopify-seo-content-brief-template">Shopify SEO Content Brief Template</a><span>Download a practical Shopify SEO content brief template to align intent, structure, internal links, and conversion goals before writing.</span></li><li><a href="/resources/internal-linking-blueprint">Internal Linking Blueprint</a><span>Use an internal linking blueprint to route topical authority from blog and guide pages into priority product and category pages.</span></li><li><a href="/resources/schema-qa-checklist">Schema QA Checklist</a><span>Use a schema QA checklist to validate structured data before and after release, reducing warnings and eligibility issues.</span></li></ul></section>
-          <section class="sub-card"><h2>Common questions</h2><details class="faq-item"><summary>What does a QA checklist prevent most often?</summary><p>It reduces missed metadata, broken links, weak CTA placement, and inconsistent article structure before the page goes live.</p></details><details class="faq-item"><summary>Who should use this checklist?</summary><p>Merchants, content managers, and SEO freelancers can use it to standardize Shopify publishing quality.</p></details></section>
-        </aside>
+        <aside><section class="sub-card"><h2>More to explore</h2><ul class="related-list"><li><a href="/resources">Free Ecommerce SEO Resources</a><span>Access free ecommerce SEO templates and frameworks including content briefs, internal linking blueprints, schema QA checklists, CTR worksheets, and ROI models.</span></li><li><a href="/resources/shopify-seo-content-brief-template">Shopify SEO Content Brief Template</a><span>Download a practical Shopify SEO content brief template to align intent, structure, internal links, and conversion goals before writing.</span></li><li><a href="/resources/internal-linking-blueprint">Internal Linking Blueprint</a><span>Use an internal linking blueprint to route topical authority from blog and guide pages into priority product and category pages.</span></li><li><a href="/resources/schema-qa-checklist">Schema QA Checklist</a><span>Use a schema QA checklist to validate structured data before and after release, reducing warnings and eligibility issues.</span></li></ul></section><section class="sub-card"><h2>Common questions</h2><details class="faq-item"><summary>What does a QA checklist prevent most often?</summary><p>It reduces missed metadata, broken links, weak CTA placement, and inconsistent article structure before the page goes live.</p></details><details class="faq-item"><summary>Who should use this checklist?</summary><p>Merchants, content managers, and SEO freelancers can use it to standardize Shopify publishing quality.</p></details></section></aside>
       </div>
     </main>
     
