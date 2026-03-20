@@ -56,7 +56,7 @@ const ResourceCard = ({ card }) => (
   </article>
 );
 
-const PageResourceSection = ({ title = "Downloads and Tools", intro = "", cards = [] }) => {
+const PageResourceSection = ({ title = "Resources", intro = "", cards = [] }) => {
   if (!cards.length) {
     return null;
   }

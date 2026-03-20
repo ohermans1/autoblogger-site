@@ -1,7 +1,7 @@
 {
   "/free-seo-checklist": {
-    "resourceSectionTitle": "Spreadsheet Downloads",
-    "resourceSectionIntro": "The checklist still works directly on-page, but the original spreadsheet versions are now linked here as well.",
+    "resourceSectionTitle": "Checklist downloads",
+    "resourceSectionIntro": "Prefer working in a spreadsheet? Download the Shopify or Wix version and use the same checklist offline.",
     "resourceCards": [
       {
         "eyebrow": "Checklist",
@@ -34,8 +34,8 @@
     ]
   },
   "/resources": {
-    "resourceSectionTitle": "Downloadable Templates and Tools",
-    "resourceSectionIntro": "Every page in the resource library now includes a working asset. Download the file directly or open the matching guide/tool page.",
+    "resourceSectionTitle": "Templates and tools",
+    "resourceSectionIntro": "Each resource includes a downloadable file you can use right away, plus a guide with extra context where it helps.",
     "resourceCards": [
       {
         "eyebrow": "Template",
@@ -51,7 +51,7 @@
         "label": "Download CSV",
         "download": true,
         "secondaryHref": "/resources/shopify-seo-content-brief-template",
-        "secondaryLabel": "Open guide"
+        "secondaryLabel": "View guide"
       },
       {
         "eyebrow": "Blueprint",
@@ -67,7 +67,7 @@
         "label": "Download CSV",
         "download": true,
         "secondaryHref": "/resources/internal-linking-blueprint",
-        "secondaryLabel": "Open guide"
+        "secondaryLabel": "View guide"
       },
       {
         "eyebrow": "Checklist",
@@ -83,7 +83,7 @@
         "label": "Download CSV",
         "download": true,
         "secondaryHref": "/resources/schema-qa-checklist",
-        "secondaryLabel": "Open guide"
+        "secondaryLabel": "View guide"
       },
       {
         "eyebrow": "Tool",
@@ -96,7 +96,7 @@
           "Incremental clicks, orders, and revenue output"
         ],
         "href": "/resources/ecommerce-seo-roi-calculator",
-        "label": "Open calculator",
+        "label": "Try calculator",
         "secondaryHref": "/resources/downloads/ecommerce-seo-roi-calculator.csv",
         "secondaryLabel": "Download worksheet",
         "secondaryDownload": true
@@ -115,7 +115,7 @@
         "label": "Download CSV",
         "download": true,
         "secondaryHref": "/resources/ctr-title-test-sheet",
-        "secondaryLabel": "Open guide"
+        "secondaryLabel": "View guide"
       },
       {
         "eyebrow": "Checklist",
@@ -131,7 +131,7 @@
         "label": "Download CSV",
         "download": true,
         "secondaryHref": "/resources/content-refresh-checklist",
-        "secondaryLabel": "Open guide"
+        "secondaryLabel": "View guide"
       },
       {
         "eyebrow": "Checklist",
@@ -147,13 +147,13 @@
         "label": "Download CSV",
         "download": true,
         "secondaryHref": "/resources/shopify-blog-qa-checklist",
-        "secondaryLabel": "Open guide"
+        "secondaryLabel": "View guide"
       }
     ]
   },
   "/resources/shopify-seo-content-brief-template": {
     "resourceSectionTitle": "Download the Template",
-    "resourceSectionIntro": "Use the sample row as a starting point, then duplicate it for each planned article.",
+    "resourceSectionIntro": "The template includes an example row to show the format. Copy that structure for each new article you plan.",
     "resourceCards": [
       {
         "eyebrow": "Template",

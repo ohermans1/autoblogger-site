@@ -8,12 +8,6 @@ export const DEFAULT_OG_IMAGE = `${SITE_URL}/logo.png`;
 export const DEFAULT_ROBOTS = "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1";
 export const APP_LISTING_URL = "https://apps.shopify.com/autoblogger";
 
-export const TRUST_BULLETS = [
-  "2x Shopify Staff Pick",
-  "4.9 out of 5 average rating on the Shopify App Store",
-  "14-day free trial with no long setup process"
-];
-
 export const SITE_NAV_ITEMS = [
   { name: "Home", path: "/" },
   { name: "Features", path: "/features" },

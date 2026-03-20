@@ -2,7 +2,7 @@
   "/solutions": {
     "sections": [
       {
-        "title": "How to use the solutions hub",
+        "title": "Start with the problem you want to solve",
         "paragraphs": [
           "This hub is meant to help merchants move from broad SEO goals into repeatable operating systems. Start with the pages closest to your current bottleneck, then work outward into supporting workflows.",
           "If publishing is inconsistent, begin with content operations. If impressions are rising but clicks are flat, move into the CTR and refresh playbooks. If traffic is not reaching commercial pages, prioritize internal linking and collection page support."
@@ -18,7 +18,7 @@
   },
   "/2x-staff-pick": {
     "comparisonTable": {
-      "title": "Staff Pick Timeline",
+      "title": "Featured by Shopify in 2024 and 2026",
       "columns": ["Year", "Evidence", "What it shows"],
       "rows": [
         ["2024", "Shopify App Store \"In the spotlight\" screenshot featuring autoBlogger", "autoBlogger was publicly highlighted by Shopify in 2024"],
@@ -43,20 +43,9 @@
         "height": 409
       }
     ],
-    "sidebarCard": {
-      "title": "Merchant Signals",
-      "bullets": [
-        "2x Shopify Staff Pick",
-        "Featured in the Shopify App Store spotlight in 2024 and 2026",
-        "4.9 out of 5 average rating on the Shopify App Store",
-        "14-day free trial available"
-      ],
-      "paragraph": "Merchants can use these signals alongside reviews, features, pricing, and workflow fit when comparing Shopify blogging apps.",
-      "showActions": false
-    },
     "sections": [
       {
-        "title": "What a Shopify Staff Pick is",
+        "title": "What a Shopify Staff Pick actually means",
         "paragraphs": [
           "A Shopify Staff Pick is an app that Shopify has chosen to highlight within the Shopify App Store spotlight.",
           "For merchants, that kind of placement works as an external trust signal: Shopify decided the app was strong enough to be featured publicly in the store experience at that time."
@@ -76,14 +65,14 @@
         "items": ["Two separate Shopify App Store spotlight placements", "Recognition repeated across two different years", "Useful supporting proof alongside merchant reviews and app store ratings"]
       },
       {
-        "title": "What this means for merchants",
+        "title": "Why that matters when choosing an app",
         "paragraphs": [
           "When you are comparing Shopify apps, independent signals matter. Two separate Staff Pick appearances help show that autoBlogger has had lasting relevance, not just a brief moment of attention.",
           "For merchants, that lowers uncertainty: you can weigh the Staff Pick history alongside the current rating, reviews, features, pricing, and whether the workflow fits your store."
         ]
       },
       {
-        "title": "What autoBlogger helps merchants do",
+        "title": "What autoBlogger is built to do",
         "paragraphs": [
           "autoBlogger helps Shopify merchants turn blogging into a repeatable SEO workflow instead of a manual content chore.",
           "The app automates publishing, adds metadata and internal product links, supports FAQs and social sharing, and is designed for stores that want consistent organic growth without a large content team."
@@ -608,7 +597,7 @@
   "/resources": {
     "sections": [
       {
-        "title": "How to use the resource library",
+        "title": "Start with the resource you need most",
         "paragraphs": [
           "These resource pages are designed to shorten the planning and QA work around ecommerce SEO. Start with the template or checklist that matches the process you are trying to tighten first.",
           "Most teams get the best results by pairing one operational playbook from the solutions hub with one resource that standardizes the work."
@@ -669,7 +658,7 @@
         "title": "Pre-release validation",
         "paragraphs": [
           "The pre-release pass should confirm that the expected schema appears on the page, contains the right fields, and matches the visible content. This is where formatting and template issues should be caught.",
-          "Run the checks on representative URLs, not just a single sample page."
+          "Run the checks on a spread of representative URLs, not just one page."
         ],
         "items": [
           "Confirm rendered schema is present in the final HTML",

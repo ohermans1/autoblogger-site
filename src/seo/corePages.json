@@ -254,12 +254,12 @@
     "title": "Free SEO Checklist | autoBlogger",
     "description": "Use the free Shopify and Wix SEO checklist on autoBlogger.",
     "heading": "Free SEO Checklist",
-    "intro": "This URL is an alias for the canonical checklist page.",
+    "intro": "Looking for the SEO checklist? The full version lives at /free-seo-checklist and includes both the Shopify and Wix workflows.",
     "bullets": [
-      "Canonical route: /free-seo-checklist",
-      "Checklist includes Shopify and Wix workflows",
-      "Track status and notes per SEO task",
-      "Open the canonical page for full context"
+      "Full checklist available at /free-seo-checklist",
+      "Includes both Shopify and Wix workflows",
+      "Track status and notes for each SEO task",
+      "Spreadsheet versions are available if you prefer to work offline"
     ],
     "canonicalRoute": "/free-seo-checklist",
     "robots": "noindex,follow",

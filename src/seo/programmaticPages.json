@@ -30,7 +30,7 @@
     "title": "Shopify AI Blog Automation Strategy | autoBlogger",
     "description": "Plan a Shopify AI blog automation workflow that publishes product-focused SEO articles, builds topical authority, and drives qualified traffic.",
     "heading": "Shopify AI Blog Automation Strategy",
-    "intro": "Use this framework to turn content production into a predictable growth channel for your Shopify store.",
+    "intro": "This framework turns content production into a predictable growth channel for your Shopify store.",
     "bullets": [
       "Define core topic clusters and supporting keywords",
       "Map each article to a product or collection page",
@@ -47,7 +47,7 @@
       },
       {
         "question": "What should every article include?",
-        "answer": "Use clear headings, product links, FAQ snippets, and metadata aligned to search intent."
+        "answer": "Use clear headings, product links, FAQ sections, and metadata aligned to search intent."
       }
     ]
   },
@@ -108,7 +108,7 @@
     "title": "Shopify Blog Automation Software Guide | autoBlogger",
     "description": "Evaluate Shopify blog automation software for SEO publishing, metadata, internal links, workflow control, and conversion support.",
     "heading": "Shopify Blog Automation Software Guide",
-    "intro": "Use this page to evaluate what a serious Shopify blog automation stack should include before you commit to a tool or workflow.",
+    "intro": "This guide shows what a serious Shopify blog automation stack should include before you commit to a tool or workflow.",
     "bullets": [
       "Publishing cadence and QA controls",
       "Metadata, FAQ, and internal linking support",
@@ -244,7 +244,7 @@
     "title": "Ecommerce Schema and FAQ Rollout Framework | autoBlogger",
     "description": "Deploy product, article, and FAQ schema in a structured rollout that improves eligibility for rich search results.",
     "heading": "Schema and FAQ Rollout Framework",
-    "intro": "Use this framework to launch schema changes in controlled batches and avoid index quality regressions.",
+    "intro": "This framework helps teams roll out schema changes in controlled batches and avoid index quality regressions.",
     "bullets": [
       "Prioritize templates by commercial impact",
       "Validate JSON-LD before deployment",
@@ -400,7 +400,7 @@
     "title": "Shopify SEO Content Brief Template | autoBlogger",
     "description": "Download a practical Shopify SEO content brief template to align intent, structure, internal links, and conversion goals before writing.",
     "heading": "Shopify SEO Content Brief Template",
-    "intro": "Use this brief template to reduce revision cycles and improve alignment between SEO, content, and merchandising teams.",
+    "intro": "This brief template helps SEO, content, and merchandising teams stay aligned before writing starts.",
     "bullets": [
       "Primary and secondary keyword slots",
       "Search intent and angle definition",

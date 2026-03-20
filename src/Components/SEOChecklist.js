@@ -202,7 +202,7 @@ const SEOChecklist = props => {
 
           <div className="mb-5">
             <PageResourceSection
-              title={CHECKLIST_PAGE_ASSETS.resourceSectionTitle || "Spreadsheet Downloads"}
+              title={CHECKLIST_PAGE_ASSETS.resourceSectionTitle || "Checklist downloads"}
               intro={CHECKLIST_PAGE_ASSETS.resourceSectionIntro}
               cards={CHECKLIST_PAGE_ASSETS.resourceCards || []}
             />

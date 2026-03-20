@@ -9,14 +9,7 @@ const SITE_URL = "https://autoblogger.bot";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/logo.png`;
 const DEFAULT_ROBOTS = "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1";
 const OUTPUT_ROOT = path.join(__dirname, "public");
-const BUILD_DATE = new Date().toISOString().slice(0, 10);
 const APP_LISTING_URL = "https://apps.shopify.com/autoblogger";
-
-const TRUST_BULLETS = [
-  "2x Shopify Staff Pick",
-  "4.9 out of 5 average rating on the Shopify App Store",
-  "14-day free trial with no long setup process"
-];
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -153,11 +146,6 @@ function escapeHtml(value) {
 function toAbsolute(route) {
   if (!route || route === "/") return `${SITE_URL}/`;
   return `${SITE_URL}${route}`;
-}
-
-function hashRoute(route) {
-  if (!route || route === "/") return `${SITE_URL}/#/`;
-  return `${SITE_URL}/#${route}`;
 }
 
 function isIndexablePage(page) {
@@ -458,7 +446,7 @@ function renderList(items, ordered = false, className = "") {
 function renderQuickTakeaways(page) {
   if (page.bullets.length === 0) return "";
 
-  return `<section class="sub-card"><h2>Quick Takeaways</h2>${renderList(page.bullets)}</section>`;
+  return `<section class="sub-card"><h2>At a glance</h2>${renderList(page.bullets)}</section>`;
 }
 
 function isExternalHref(href) {
@@ -497,7 +485,7 @@ function renderResourceCards(page) {
     })
     .join("");
 
-  return `<section class="sub-card"><h2>${escapeHtml(page.resourceSectionTitle || "Downloads and Tools")}</h2>${intro}<div class="resource-grid">${cards}</div></section>`;
+  return `<section class="sub-card"><h2>${escapeHtml(page.resourceSectionTitle || "Resources")}</h2>${intro}<div class="resource-grid">${cards}</div></section>`;
 }
 
 function renderToolSection(page) {
@@ -623,13 +611,13 @@ function renderProofGallery(page) {
 
   if (!items) return "";
 
-  return `<section class="sub-card"><h2>Proof Screenshots</h2><p>Public Shopify App Store screenshots showing autoBlogger featured in 2024 and 2026.</p><div class="proof-grid">${items}</div></section>`;
+  return `<section class="sub-card"><h2>Seen in the Shopify App Store</h2><p>Screenshots showing autoBlogger featured in Shopify's spotlight in 2024 and 2026.</p><div class="proof-grid">${items}</div></section>`;
 }
 
 function renderChecklist(page) {
   if (page.checklist.length === 0) return "";
 
-  return `<section class="sub-card"><h2>Action Checklist</h2>${renderList(page.checklist, true)}</section>`;
+  return `<section class="sub-card"><h2>A quick checklist</h2>${renderList(page.checklist, true)}</section>`;
 }
 
 function renderFaqSection(page) {
@@ -639,7 +627,7 @@ function renderFaqSection(page) {
     .map(item => `<details class="faq-item"><summary>${escapeHtml(item.question)}</summary><p>${escapeHtml(item.answer)}</p></details>`)
     .join("");
 
-  return `<section class="sub-card"><h2>FAQ Snippets</h2>${items}</section>`;
+  return `<section class="sub-card"><h2>Common questions</h2>${items}</section>`;
 }
 
 function renderRelatedLinks(page, pages) {
@@ -653,26 +641,7 @@ function renderRelatedLinks(page, pages) {
     )
     .join("");
 
-  return `<section class="sub-card"><h2>Related Guides</h2><ul class="related-list">${links}</ul></section>`;
-}
-
-function renderTrustAndCta(page, appUrl) {
-  const sidebarCard = page.sidebarCard || {
-    title: "Proof and Next Step",
-    bullets: TRUST_BULLETS,
-    paragraph: "Use this page as your execution checklist, then launch implementation inside autoBlogger.",
-    showActions: true
-  };
-  const trust = (sidebarCard.bullets || TRUST_BULLETS).map(item => `<li>${escapeHtml(item)}</li>`).join("");
-  const ctaLabel = page.ctaLabel || "Start 14-Day Free Trial";
-  const ctaHref = page.ctaHref || APP_LISTING_URL;
-  const paragraph = sidebarCard.paragraph ? `<p>${escapeHtml(sidebarCard.paragraph)}</p>` : "";
-  const actions =
-    sidebarCard.showActions === false
-      ? ""
-      : `<div class="actions"><a class="btn-primary" href="${escapeHtml(ctaHref)}">${escapeHtml(ctaLabel)}</a><a class="btn-secondary" href="${escapeHtml(appUrl)}">Open Interactive Version</a></div>`;
-
-  return `<section class="sub-card"><h2>${escapeHtml(sidebarCard.title || "Proof and Next Step")}</h2><ul>${trust}</ul>${paragraph}${actions}</section>`;
+  return `<section class="sub-card"><h2>More to explore</h2><ul class="related-list">${links}</ul></section>`;
 }
 
 function renderBreadcrumbNav(page) {
@@ -721,9 +690,10 @@ function renderSiteMapCollection(pages) {
 function renderHtml(page, pages) {
   const canonicalRoute = getCanonicalRoute(page);
   const canonicalUrl = toAbsolute(canonicalRoute);
-  const appUrl = hashRoute(canonicalRoute);
   const schema = serializeJsonForScript(buildSchemaGraph(page, canonicalUrl));
   const nav = NAV_LINKS.map(link => `<a href="${link.href}">${escapeHtml(link.label)}</a>`).join("");
+  const ctaLabel = page.ctaLabel || "Start 14-Day Free Trial";
+  const ctaHref = page.ctaHref || APP_LISTING_URL;
   const primaryContent =
     page.route === "/site-map"
       ? `<p>${escapeHtml(page.intro)}</p>${renderSiteMapCollection(pages)}`
@@ -822,7 +792,6 @@ function renderHtml(page, pages) {
       .btn-primary, .btn-secondary { padding: 0.65rem 0.95rem; border-radius: 8px; text-decoration: none; font-weight: 700; }
       .btn-primary { background: #0f766e; color: #ffffff; }
       .btn-secondary { background: #ffffff; color: #0f766e; border: 1px solid #99f6e4; }
-      .meta-note { color: #4b5563; font-size: 0.92rem; margin-top: 1rem; }
       @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
       @media (max-width: 640px) { .tool-grid { grid-template-columns: 1fr; } }
     </style>
@@ -839,13 +808,11 @@ function renderHtml(page, pages) {
           <h1>${escapeHtml(page.heading)}</h1>
           ${primaryContent}
           <div class="actions">
-            <a class="btn-primary" href="${escapeHtml(appUrl)}">Open Interactive Version</a>
-            <a class="btn-secondary" href="${APP_LISTING_URL}">View Shopify App Listing</a>
+            <a class="btn-primary" href="${escapeHtml(ctaHref)}">${escapeHtml(ctaLabel)}</a>
+            <a class="btn-secondary" href="/contact">Contact Support</a>
           </div>
-          <p class="meta-note">SEO landing page updated on ${escapeHtml(BUILD_DATE)}.</p>
         </article>
         <aside>
-          ${renderTrustAndCta(page, appUrl)}
           ${renderRelatedLinks(page, pages)}
           ${renderFaqSection(page)}
         </aside>

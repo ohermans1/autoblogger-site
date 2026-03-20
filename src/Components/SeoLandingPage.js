@@ -1,5 +1,5 @@
 import React from "react";
-import { APP_LISTING_URL, STATIC_SEO_PAGES, TRUST_BULLETS, findRelatedPages, getBreadcrumbTrail } from "../seo/pageCatalog";
+import { APP_LISTING_URL, STATIC_SEO_PAGES, findRelatedPages, getBreadcrumbTrail } from "../seo/pageCatalog";
 import { SmartLink } from "./SmartLink";
 import PageResourceSection from "./PageResourceSection";
 import SeoRoiCalculator from "./SeoRoiCalculator";
@@ -68,8 +68,8 @@ const ComparisonTable = ({ table }) => (
 const ProofGallery = ({ items }) => (
   <section className="rounded-2xl border border-gray-200 bg-gray-50 p-6">
     <div className="mb-4">
-      <h2 className="text-2xl font-semibold text-gray-900">Proof Screenshots</h2>
-      <p className="mt-2 text-gray-700">Public Shopify App Store screenshots showing autoBlogger featured in 2024 and 2026.</p>
+      <h2 className="text-2xl font-semibold text-gray-900">Seen in the Shopify App Store</h2>
+      <p className="mt-2 text-gray-700">Screenshots showing autoBlogger featured in Shopify's spotlight in 2024 and 2026.</p>
     </div>
 
     <div className="grid gap-6 md:grid-cols-2">
@@ -99,12 +99,6 @@ const ProofGallery = ({ items }) => (
 const SeoLandingPage = ({ page }) => {
   const relatedPages = page ? findRelatedPages(page, STATIC_SEO_PAGES) : [];
   const breadcrumbTrail = page ? getBreadcrumbTrail(page) : [];
-  const sidebarCard = page?.sidebarCard || {
-    title: "Proof and Next Step",
-    bullets: TRUST_BULLETS,
-    paragraph: "Use this page as a working brief, then launch implementation inside autoBlogger."
-  };
-  const sidebarBullets = Array.isArray(sidebarCard.bullets) && sidebarCard.bullets.length > 0 ? sidebarCard.bullets : TRUST_BULLETS;
 
   if (!page) {
     return null;
@@ -142,14 +136,14 @@ const SeoLandingPage = ({ page }) => {
                 <p className="text-lg text-gray-700 mb-5">{page.intro}</p>
                 {page.bullets.length > 0 && (
                   <section className="rounded-2xl border border-gray-200 bg-gray-50 p-6">
-                    <h2 className="text-2xl font-semibold text-gray-900 mb-4">Quick Takeaways</h2>
+                    <h2 className="text-2xl font-semibold text-gray-900 mb-4">At a glance</h2>
                     {renderSectionList(page.bullets)}
                   </section>
                 )}
               </div>
 
               {page.resourceCards.length > 0 && (
-                <PageResourceSection title={page.resourceSectionTitle || "Downloads and Tools"} intro={page.resourceSectionIntro} cards={page.resourceCards} />
+                <PageResourceSection title={page.resourceSectionTitle || "Resources"} intro={page.resourceSectionIntro} cards={page.resourceCards} />
               )}
 
               {page.tool?.key === "seo-roi-calculator" && <SeoRoiCalculator tool={page.tool} />}
@@ -164,7 +158,7 @@ const SeoLandingPage = ({ page }) => {
 
               {page.checklist.length > 0 && (
                 <section className="rounded-2xl border border-gray-200 bg-gray-50 p-6">
-                  <h2 className="text-2xl font-semibold text-gray-900 mb-4">Action Checklist</h2>
+                  <h2 className="text-2xl font-semibold text-gray-900 mb-4">A quick checklist</h2>
                   {renderSectionList(page.checklist, true)}
                 </section>
               )}
@@ -184,19 +178,9 @@ const SeoLandingPage = ({ page }) => {
           </article>
 
           <aside className="space-y-6">
-            <section className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">{sidebarCard.title}</h2>
-              <ul className="list-disc pl-5 space-y-2 text-gray-700">
-                {sidebarBullets.map(item => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-              {sidebarCard.paragraph && <p className="mt-4 text-gray-700">{sidebarCard.paragraph}</p>}
-            </section>
-
             {relatedPages.length > 0 && (
               <section className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-                <h2 className="text-xl font-semibold text-gray-900 mb-4">Related Guides</h2>
+                <h2 className="text-xl font-semibold text-gray-900 mb-4">More to explore</h2>
                 <div className="space-y-4">
                   {relatedPages.map(item => (
                     <div key={item.route} className="border-t border-gray-200 pt-4 first:border-t-0 first:pt-0">
@@ -212,7 +196,7 @@ const SeoLandingPage = ({ page }) => {
 
             {page.faq.length > 0 && (
               <section className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-                <h2 className="text-xl font-semibold text-gray-900 mb-4">FAQ Snippets</h2>
+                <h2 className="text-xl font-semibold text-gray-900 mb-4">Common questions</h2>
                 <div className="space-y-3">
                   {page.faq.map(item => (
                     <details key={item.question} className="rounded-xl border border-gray-200 px-4 py-3">
