@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const DEFAULTS = {
   monthlyImpressions: 20000,
+  projectedImpressions: 28000,
   currentCtr: 2.4,
   targetCtr: 3.8,
   conversionRate: 2.2,
@@ -59,6 +60,7 @@ const SeoRoiCalculator = ({ tool }) => {
 
   const [inputs, setInputs] = useState(() => ({
     monthlyImpressions: String(defaults.monthlyImpressions),
+    projectedImpressions: String(defaults.projectedImpressions),
     currentCtr: String(defaults.currentCtr),
     targetCtr: String(defaults.targetCtr),
     conversionRate: String(defaults.conversionRate),
@@ -66,13 +68,14 @@ const SeoRoiCalculator = ({ tool }) => {
   }));
 
   const monthlyImpressions = parseNumber(inputs.monthlyImpressions);
+  const projectedImpressions = parseNumber(inputs.projectedImpressions);
   const currentCtr = parseNumber(inputs.currentCtr);
   const targetCtr = parseNumber(inputs.targetCtr);
   const conversionRate = parseNumber(inputs.conversionRate);
   const averageOrderValue = parseNumber(inputs.averageOrderValue);
 
   const currentClicks = monthlyImpressions * (currentCtr / 100);
-  const projectedClicks = monthlyImpressions * (targetCtr / 100);
+  const projectedClicks = projectedImpressions * (targetCtr / 100);
   const additionalClicks = projectedClicks - currentClicks;
   const additionalOrders = additionalClicks * (conversionRate / 100);
   const additionalRevenueMonthly = additionalOrders * averageOrderValue;
@@ -92,10 +95,11 @@ const SeoRoiCalculator = ({ tool }) => {
         {tool?.description && <p className="mt-2 text-gray-700">{tool.description}</p>}
       </div>
 
-      <div className="grid gap-4 lg:grid-cols-5">
-        <InputField label="Monthly impressions" value={inputs.monthlyImpressions} onChange={updateInput("monthlyImpressions")} step="1" />
+      <div className="grid gap-4 lg:grid-cols-6">
+        <InputField label="Current monthly impressions" value={inputs.monthlyImpressions} onChange={updateInput("monthlyImpressions")} step="1" />
+        <InputField label="Projected monthly impressions" value={inputs.projectedImpressions} onChange={updateInput("projectedImpressions")} step="1" />
         <InputField label="Current CTR" suffix="%" value={inputs.currentCtr} onChange={updateInput("currentCtr")} />
-        <InputField label="Target CTR" suffix="%" value={inputs.targetCtr} onChange={updateInput("targetCtr")} />
+        <InputField label="Projected CTR" suffix="%" value={inputs.targetCtr} onChange={updateInput("targetCtr")} />
         <InputField label="Conversion rate" suffix="%" value={inputs.conversionRate} onChange={updateInput("conversionRate")} />
         <InputField label="Average order value" suffix="USD" value={inputs.averageOrderValue} onChange={updateInput("averageOrderValue")} />
       </div>
@@ -112,7 +116,7 @@ const SeoRoiCalculator = ({ tool }) => {
       <div className="mt-5 rounded-2xl border border-emerald-100 bg-emerald-50 p-4 text-sm text-emerald-900">
         <p className="font-semibold">What this models</p>
         <p className="mt-2">
-          The calculator assumes impressions stay constant and only click-through rate changes. Orders and revenue are derived from the conversion rate and average order value you enter.
+          The calculator compares a current-state scenario against a projected scenario. Orders and revenue are derived from the conversion rate and average order value you enter.
         </p>
         {tool?.note && <p className="mt-2">{tool.note}</p>}
       </div>

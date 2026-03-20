@@ -109,6 +109,7 @@ function normalizeTool(tool) {
     note: tool.note || "",
     defaults: {
       monthlyImpressions: typeof defaults.monthlyImpressions === "number" ? defaults.monthlyImpressions : 20000,
+      projectedImpressions: typeof defaults.projectedImpressions === "number" ? defaults.projectedImpressions : 28000,
       currentCtr: typeof defaults.currentCtr === "number" ? defaults.currentCtr : 2.4,
       targetCtr: typeof defaults.targetCtr === "number" ? defaults.targetCtr : 3.8,
       conversionRate: typeof defaults.conversionRate === "number" ? defaults.conversionRate : 2.2,
@@ -119,7 +120,7 @@ function normalizeTool(tool) {
 
 const STATIC_SEO_PAGES = [...corePages, ...programmaticPages].map(page => {
   const content = pageContentByRoute[page.route] || {};
-  const assets = pageAssetsByRoute[page.route] || {};
+  const assets = pageAssetsByRoute[page.route] || (page.canonicalRoute ? pageAssetsByRoute[page.canonicalRoute] || {} : {});
   const mergedPage = { ...page, ...content, ...assets };
 
   return {
@@ -506,18 +507,20 @@ function renderToolSection(page) {
   const note = page.tool.note ? `<p class="tool-note">${escapeHtml(page.tool.note)}</p>` : "";
 
   return `<section class="sub-card"><h2>${escapeHtml(page.tool.title || "Interactive SEO ROI Calculator")}</h2><p>${escapeHtml(
-    page.tool.description || "Estimate additional clicks, orders, and revenue from a CTR improvement scenario."
-  )}</p><div class="tool-shell" data-roi-calculator><div class="tool-grid"><label class="tool-field"><span>Monthly impressions</span><div class="tool-input-wrap"><input type="number" min="0" step="1" name="monthlyImpressions" value="${escapeHtml(
+    page.tool.description || "Estimate additional clicks, orders, and revenue from projected visibility and CTR scenarios."
+  )}</p><div class="tool-shell" data-roi-calculator><div class="tool-grid"><label class="tool-field"><span>Current monthly impressions</span><div class="tool-input-wrap"><input type="number" min="0" step="1" name="monthlyImpressions" value="${escapeHtml(
     String(defaults.monthlyImpressions)
+  )}" /></div></label><label class="tool-field"><span>Projected monthly impressions</span><div class="tool-input-wrap"><input type="number" min="0" step="1" name="projectedImpressions" value="${escapeHtml(
+    String(defaults.projectedImpressions)
   )}" /></div></label><label class="tool-field"><span>Current CTR</span><div class="tool-input-wrap"><input type="number" min="0" step="0.1" name="currentCtr" value="${escapeHtml(
     String(defaults.currentCtr)
-  )}" /><em>%</em></div></label><label class="tool-field"><span>Target CTR</span><div class="tool-input-wrap"><input type="number" min="0" step="0.1" name="targetCtr" value="${escapeHtml(
+  )}" /><em>%</em></div></label><label class="tool-field"><span>Projected CTR</span><div class="tool-input-wrap"><input type="number" min="0" step="0.1" name="targetCtr" value="${escapeHtml(
     String(defaults.targetCtr)
   )}" /><em>%</em></div></label><label class="tool-field"><span>Conversion rate</span><div class="tool-input-wrap"><input type="number" min="0" step="0.1" name="conversionRate" value="${escapeHtml(
     String(defaults.conversionRate)
   )}" /><em>%</em></div></label><label class="tool-field"><span>Average order value</span><div class="tool-input-wrap"><input type="number" min="0" step="0.1" name="averageOrderValue" value="${escapeHtml(
     String(defaults.averageOrderValue)
-  )}" /><em>USD</em></div></label></div><div class="tool-results"><div class="tool-stat"><p>Current Clicks / Month</p><strong data-output="current-clicks">0</strong></div><div class="tool-stat"><p>Projected Clicks / Month</p><strong data-output="projected-clicks">0</strong></div><div class="tool-stat"><p>Additional Clicks / Month</p><strong data-output="additional-clicks">0</strong></div><div class="tool-stat"><p>Additional Orders / Month</p><strong data-output="additional-orders">0</strong></div><div class="tool-stat"><p>Additional Revenue / Month</p><strong data-output="additional-revenue-month">0</strong></div><div class="tool-stat"><p>Additional Revenue / Year</p><strong data-output="additional-revenue-year">0</strong></div></div><div class="tool-summary"><p><strong>What this models:</strong> The calculator keeps impressions constant and estimates lift from a CTR change only. Orders and revenue are derived from the conversion rate and average order value you enter.</p>${note}</div></div></section>`;
+  )}" /><em>USD</em></div></label></div><div class="tool-results"><div class="tool-stat"><p>Current Clicks / Month</p><strong data-output="current-clicks">0</strong></div><div class="tool-stat"><p>Projected Clicks / Month</p><strong data-output="projected-clicks">0</strong></div><div class="tool-stat"><p>Additional Clicks / Month</p><strong data-output="additional-clicks">0</strong></div><div class="tool-stat"><p>Additional Orders / Month</p><strong data-output="additional-orders">0</strong></div><div class="tool-stat"><p>Additional Revenue / Month</p><strong data-output="additional-revenue-month">0</strong></div><div class="tool-stat"><p>Additional Revenue / Year</p><strong data-output="additional-revenue-year">0</strong></div></div><div class="tool-summary"><p><strong>What this models:</strong> The calculator compares a current-state scenario against a projected scenario. Orders and revenue are derived from the conversion rate and average order value you enter.</p>${note}</div></div></section>`;
 }
 
 function renderToolScript(page) {
@@ -544,14 +547,15 @@ function renderToolScript(page) {
       }
 
       function update() {
-        var impressions = readValue("monthlyImpressions");
+        var currentImpressions = readValue("monthlyImpressions");
+        var projectedImpressions = readValue("projectedImpressions");
         var currentCtr = readValue("currentCtr");
         var targetCtr = readValue("targetCtr");
         var conversionRate = readValue("conversionRate");
         var averageOrderValue = readValue("averageOrderValue");
 
-        var currentClicks = impressions * (currentCtr / 100);
-        var projectedClicks = impressions * (targetCtr / 100);
+        var currentClicks = currentImpressions * (currentCtr / 100);
+        var projectedClicks = projectedImpressions * (targetCtr / 100);
         var additionalClicks = projectedClicks - currentClicks;
         var additionalOrders = additionalClicks * (conversionRate / 100);
         var additionalRevenueMonth = additionalOrders * averageOrderValue;
@@ -653,13 +657,22 @@ function renderRelatedLinks(page, pages) {
 }
 
 function renderTrustAndCta(page, appUrl) {
-  const trust = TRUST_BULLETS.map(item => `<li>${escapeHtml(item)}</li>`).join("");
+  const sidebarCard = page.sidebarCard || {
+    title: "Proof and Next Step",
+    bullets: TRUST_BULLETS,
+    paragraph: "Use this page as your execution checklist, then launch implementation inside autoBlogger.",
+    showActions: true
+  };
+  const trust = (sidebarCard.bullets || TRUST_BULLETS).map(item => `<li>${escapeHtml(item)}</li>`).join("");
   const ctaLabel = page.ctaLabel || "Start 14-Day Free Trial";
   const ctaHref = page.ctaHref || APP_LISTING_URL;
+  const paragraph = sidebarCard.paragraph ? `<p>${escapeHtml(sidebarCard.paragraph)}</p>` : "";
+  const actions =
+    sidebarCard.showActions === false
+      ? ""
+      : `<div class="actions"><a class="btn-primary" href="${escapeHtml(ctaHref)}">${escapeHtml(ctaLabel)}</a><a class="btn-secondary" href="${escapeHtml(appUrl)}">Open Interactive Version</a></div>`;
 
-  return `<section class="sub-card"><h2>Proof and Next Step</h2><ul>${trust}</ul><p>Use this page as your execution checklist, then launch implementation inside autoBlogger.</p><div class="actions"><a class="btn-primary" href="${escapeHtml(
-    ctaHref
-  )}">${escapeHtml(ctaLabel)}</a><a class="btn-secondary" href="${escapeHtml(appUrl)}">Open Interactive Version</a></div></section>`;
+  return `<section class="sub-card"><h2>${escapeHtml(sidebarCard.title || "Proof and Next Step")}</h2><ul>${trust}</ul>${paragraph}${actions}</section>`;
 }
 
 function renderBreadcrumbNav(page) {
@@ -788,7 +801,7 @@ function renderHtml(page, pages) {
       .resource-description { margin: 0.85rem 0 0; }
       .resource-items { margin-top: 0.9rem; }
       .tool-shell { margin-top: 1rem; }
-      .tool-grid { display: grid; gap: 1rem; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+      .tool-grid { display: grid; gap: 1rem; grid-template-columns: repeat(6, minmax(0, 1fr)); }
       .tool-field { display: block; border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
       .tool-field span { display: block; color: #111827; font-size: 0.92rem; font-weight: 700; }
       .tool-input-wrap { display: flex; gap: 0.7rem; align-items: center; margin-top: 0.7rem; }

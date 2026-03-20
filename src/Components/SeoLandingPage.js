@@ -99,6 +99,12 @@ const ProofGallery = ({ items }) => (
 const SeoLandingPage = ({ page }) => {
   const relatedPages = page ? findRelatedPages(page, STATIC_SEO_PAGES) : [];
   const breadcrumbTrail = page ? getBreadcrumbTrail(page) : [];
+  const sidebarCard = page?.sidebarCard || {
+    title: "Proof and Next Step",
+    bullets: TRUST_BULLETS,
+    paragraph: "Use this page as a working brief, then launch implementation inside autoBlogger."
+  };
+  const sidebarBullets = Array.isArray(sidebarCard.bullets) && sidebarCard.bullets.length > 0 ? sidebarCard.bullets : TRUST_BULLETS;
 
   if (!page) {
     return null;
@@ -179,13 +185,13 @@ const SeoLandingPage = ({ page }) => {
 
           <aside className="space-y-6">
             <section className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">Proof and Next Step</h2>
+              <h2 className="text-xl font-semibold text-gray-900 mb-4">{sidebarCard.title}</h2>
               <ul className="list-disc pl-5 space-y-2 text-gray-700">
-                {TRUST_BULLETS.map(item => (
+                {sidebarBullets.map(item => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-              <p className="mt-4 text-gray-700">Use this page as a working brief, then launch implementation inside autoBlogger.</p>
+              {sidebarCard.paragraph && <p className="mt-4 text-gray-700">{sidebarCard.paragraph}</p>}
             </section>
 
             {relatedPages.length > 0 && (

@@ -88,10 +88,10 @@
       {
         "eyebrow": "Tool",
         "title": "SEO ROI Calculator",
-        "description": "Interactive CTR-lift calculator plus a planning worksheet for scenario modeling and roadmap prioritization.",
+        "description": "Interactive SEO ROI calculator plus a planning worksheet for projected impression, CTR, and revenue scenarios.",
         "meta": "Calculator + CSV",
         "items": [
-          "Monthly impressions and CTR inputs",
+          "Current and projected impression inputs",
           "Conversion rate and AOV scenario modeling",
           "Incremental clicks, orders, and revenue output"
         ],
@@ -218,10 +218,10 @@
       {
         "eyebrow": "Worksheet",
         "title": "SEO ROI Planning Worksheet",
-        "description": "CSV worksheet for modeling CTR-lift scenarios, conversion assumptions, revenue projections, and decision notes.",
+        "description": "CSV worksheet for modeling impression and CTR scenarios, conversion assumptions, revenue projections, and decision notes.",
         "meta": "CSV worksheet",
         "items": [
-          "Scenario inputs for impressions and CTR",
+          "Scenario inputs for current and projected impressions",
           "Conversion rate and AOV assumptions",
           "Incremental clicks, orders, and revenue fields"
         ],
@@ -233,10 +233,11 @@
     "tool": {
       "key": "seo-roi-calculator",
       "title": "Interactive SEO ROI Calculator",
-      "description": "Estimate additional clicks, orders, and revenue from a CTR improvement scenario while holding conversion rate and AOV constant.",
-      "note": "This model isolates CTR lift. It does not assume ranking changes, margin changes, or conversion-rate changes.",
+      "description": "Estimate additional clicks, orders, and revenue from projected visibility and CTR improvements while holding conversion rate and AOV constant.",
+      "note": "Use projected impressions to model ranking or coverage gains. Use projected CTR to model snippet or positioning gains.",
       "defaults": {
         "monthlyImpressions": 20000,
+        "projectedImpressions": 28000,
         "currentCtr": 2.4,
         "targetCtr": 3.8,
         "conversionRate": 2.2,

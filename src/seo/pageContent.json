@@ -43,6 +43,17 @@
         "height": 409
       }
     ],
+    "sidebarCard": {
+      "title": "Merchant Signals",
+      "bullets": [
+        "2x Shopify Staff Pick",
+        "Featured in the Shopify App Store spotlight in 2024 and 2026",
+        "4.9 out of 5 average rating on the Shopify App Store",
+        "14-day free trial available"
+      ],
+      "paragraph": "Merchants can use these signals alongside reviews, features, pricing, and workflow fit when comparing Shopify blogging apps.",
+      "showActions": false
+    },
     "sections": [
       {
         "title": "What a Shopify Staff Pick is",
@@ -693,12 +704,12 @@
       {
         "title": "Use inputs that change real outcomes",
         "paragraphs": [
-          "The most useful ROI model focuses on impressions, CTR, conversion rate, and average order value. Those are the inputs that usually explain whether a ranking or snippet improvement is actually worth prioritizing.",
+          "The most useful ROI model focuses on current impressions, projected impressions, CTR, conversion rate, and average order value. Those are the inputs that usually explain whether an SEO improvement is actually worth prioritizing.",
           "Volume alone can look attractive while still producing weak revenue."
         ],
         "items": [
-          "Current impressions and CTR by page or cluster",
-          "Projected CTR or ranking improvement scenario",
+          "Current and projected impressions by page or cluster",
+          "Projected CTR scenario for snippet or positioning changes",
           "Conversion rate assumptions by page type",
           "Average order value or lead value for the destination"
         ]

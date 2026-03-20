@@ -85,6 +85,7 @@ function normalizeTool(tool) {
     note: tool.note || "",
     defaults: {
       monthlyImpressions: typeof defaults.monthlyImpressions === "number" ? defaults.monthlyImpressions : 20000,
+      projectedImpressions: typeof defaults.projectedImpressions === "number" ? defaults.projectedImpressions : 28000,
       currentCtr: typeof defaults.currentCtr === "number" ? defaults.currentCtr : 2.4,
       targetCtr: typeof defaults.targetCtr === "number" ? defaults.targetCtr : 3.8,
       conversionRate: typeof defaults.conversionRate === "number" ? defaults.conversionRate : 2.2,
@@ -95,7 +96,7 @@ function normalizeTool(tool) {
 
 export const STATIC_SEO_PAGES = [...corePages, ...programmaticPages].map(page => {
   const content = pageContentByRoute[page.route] || {};
-  const assets = pageAssetsByRoute[page.route] || {};
+  const assets = pageAssetsByRoute[page.route] || (page.canonicalRoute ? pageAssetsByRoute[page.canonicalRoute] || {} : {});
   const mergedPage = { ...page, ...content, ...assets };
 
   return {

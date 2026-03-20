@@ -475,15 +475,15 @@
   },
   {
     "route": "/resources/ecommerce-seo-roi-calculator",
-    "title": "Ecommerce SEO ROI Calculator Framework | autoBlogger",
-    "description": "Use this ecommerce SEO ROI calculator framework to estimate traffic, conversion, and revenue impact from ranking improvements.",
-    "heading": "Ecommerce SEO ROI Calculator Framework",
-    "intro": "Use this worksheet framework to prioritize SEO projects by estimated commercial impact instead of volume alone.",
+    "title": "Ecommerce SEO ROI Calculator and Worksheet | autoBlogger",
+    "description": "Use this ecommerce SEO ROI calculator to estimate clicks, orders, and revenue impact from projected impression and CTR improvements.",
+    "heading": "Ecommerce SEO ROI Calculator",
+    "intro": "Use the calculator and worksheet to prioritize SEO projects by estimated commercial impact instead of volume alone.",
     "bullets": [
-      "Inputs for impressions, CTR, and conversion rate",
-      "Revenue projection by ranking scenario",
-      "Sensitivity checks for seasonality",
-      "Prioritization scoring for roadmap planning"
+      "Inputs for current and projected impressions",
+      "Projected CTR, conversion rate, and AOV modeling",
+      "Monthly and annual revenue lift estimates",
+      "Worksheet download for scenario planning"
     ],
     "changefreq": "yearly",
     "priority": 0.6,
