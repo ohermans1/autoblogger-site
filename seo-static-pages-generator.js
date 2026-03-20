@@ -25,6 +25,7 @@ const NAV_LINKS = [
   { label: "Resources", href: "/resources" },
   { label: "FAQs", href: "/faqs" },
   { label: "Reviews", href: "/reviews" },
+  { label: "2x Staff Pick", href: "/2x-staff-pick" },
   { label: "Contact", href: "/contact" },
   { label: "Other Apps", href: "/other-apps" },
   { label: "Free SEO Checklist", href: "/free-seo-checklist" }

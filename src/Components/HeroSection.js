@@ -30,9 +30,9 @@ const HeroSection = () => {
         </a>
       </h2>
       <p className="mb-4 text-base md:text-lg text-gray-600">
-        See the public{" "}
+        See why autoBlogger is a{" "}
         <SmartLink to="/2x-staff-pick" className="text-primary hover:underline">
-          proof page
+          2x Shopify Staff Pick
         </SmartLink>{" "}
         with the 2024 and 2026 Shopify App Store spotlight screenshots.
       </p>

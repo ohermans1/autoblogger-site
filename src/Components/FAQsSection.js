@@ -17,7 +17,7 @@ const FAQsSection = props => {
         <>
           autoBlogger has been selected as a Shopify Staff Pick twice, highlighting quality, merchant value, and platform fit. See the{" "}
           <SmartLink to="/2x-staff-pick" className="text-primary underline">
-            public proof page
+            2x Staff Pick page
           </SmartLink>{" "}
           for the 2024 and 2026 screenshots.
         </>
