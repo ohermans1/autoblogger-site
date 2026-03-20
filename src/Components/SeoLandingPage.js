@@ -1,5 +1,5 @@
 import React from "react";
-import { APP_LISTING_URL, SITE_NAV_ITEMS, STATIC_SEO_PAGES, TRUST_BULLETS, findRelatedPages, getBreadcrumbTrail } from "../seo/pageCatalog";
+import { APP_LISTING_URL, STATIC_SEO_PAGES, TRUST_BULLETS, findRelatedPages, getBreadcrumbTrail } from "../seo/pageCatalog";
 import { SmartLink } from "./SmartLink";
 
 const renderSectionList = (items, ordered = false) => {
@@ -105,14 +105,6 @@ const SeoLandingPage = ({ page }) => {
   return (
     <section className="py-16 md:bg-gradient-to-b md:from-gray-100 md:to-white">
       <div className="max-w-6xl mx-auto px-5">
-        <nav className="flex flex-wrap gap-3 text-sm font-medium text-primary mb-8" aria-label="SEO section navigation">
-          {SITE_NAV_ITEMS.map(item => (
-            <SmartLink key={item.path} to={item.path} className="hover:underline">
-              {item.name}
-            </SmartLink>
-          ))}
-        </nav>
-
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(280px,1fr)] gap-6">
           <article className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
             {breadcrumbTrail.length > 1 && (

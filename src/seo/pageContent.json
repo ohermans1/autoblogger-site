@@ -28,7 +28,7 @@
     "proofGallery": [
       {
         "title": "2024 Shopify App Store spotlight",
-        "src": "/shopify-staff-pick-2024.svg",
+        "src": "/shopify-staff-pick-2024.png",
         "alt": "2024 Shopify App Store screenshot showing autoBlogger in the spotlight",
         "caption": "Shopify App Store spotlight screenshot from 2024 showing autoBlogger featured under \"In the spotlight\".",
         "width": 336,
@@ -36,7 +36,7 @@
       },
       {
         "title": "2026 Shopify App Store spotlight",
-        "src": "/shopify-staff-pick-2026.svg",
+        "src": "/shopify-staff-pick-2026.png",
         "alt": "2026 Shopify App Store screenshot showing autoBlogger in the spotlight",
         "caption": "Shopify App Store spotlight screenshot from 2026 showing autoBlogger featured again in the spotlight.",
         "width": 513,
@@ -62,11 +62,7 @@
           "autoBlogger was highlighted once in 2024 and then again in 2026. That matters because it shows the app was not surfaced only once as a one-off mention.",
           "A repeat Staff Pick does not guarantee fit for every store, but it is strong third-party validation that autoBlogger has continued to be useful, credible, and relevant for Shopify merchants."
         ],
-        "items": [
-          "Two separate Shopify App Store spotlight placements",
-          "Recognition repeated across two different years",
-          "Useful supporting proof alongside merchant reviews and app store ratings"
-        ]
+        "items": ["Two separate Shopify App Store spotlight placements", "Recognition repeated across two different years", "Useful supporting proof alongside merchant reviews and app store ratings"]
       },
       {
         "title": "Why this page exists",
@@ -646,12 +642,7 @@
           "The blueprint should make link decisions easy to follow for anyone touching the page. Keep it simple enough to update regularly but detailed enough to show the relationship between editorial pages and commercial destinations.",
           "A spreadsheet or shared doc is usually enough as long as it stays current."
         ],
-        "items": [
-          "Source page and page type",
-          "Primary commercial target and secondary targets",
-          "Suggested anchor approaches by intent",
-          "Review date and owner for refreshes"
-        ]
+        "items": ["Source page and page type", "Primary commercial target and secondary targets", "Suggested anchor approaches by intent", "Review date and owner for refreshes"]
       }
     ],
     "checklist": [
@@ -741,12 +732,7 @@
           "A CTR testing sheet should make it easy to see what changed, why it changed, and what happened after the edit. Without that history, teams end up repeating weak ideas or misreading short-term fluctuations.",
           "Treat the sheet as a decision log, not just a dumping ground for title variants."
         ],
-        "items": [
-          "Current title and meta description",
-          "Proposed variant and the angle behind it",
-          "Before-and-after impression and CTR windows",
-          "Decision notes for keep, revert, or iterate"
-        ]
+        "items": ["Current title and meta description", "Proposed variant and the angle behind it", "Before-and-after impression and CTR windows", "Decision notes for keep, revert, or iterate"]
       },
       {
         "title": "Keep review rules consistent",
