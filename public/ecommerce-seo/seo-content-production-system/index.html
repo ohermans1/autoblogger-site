@@ -35,7 +35,9 @@
       nav a { text-decoration: none; color: #0f766e; font-weight: 600; }
       main { padding: 2rem 0 3rem; }
       .grid { display: grid; gap: 1rem; grid-template-columns: 2fr 1fr; }
+      .staff-pick-layout { display: block; }
       .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 1.4rem 1.3rem; }
+      .staff-pick-card { max-width: 960px; margin: 0 auto; padding: 2rem; }
       .sub-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; margin-top: 1rem; }
       .breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; font-size: 0.95rem; margin-bottom: 1rem; color: #4b5563; }
       .breadcrumb a { color: #0f766e; font-weight: 600; text-decoration: none; }
@@ -60,6 +62,18 @@
       .proof-header { border-bottom: 1px solid #e5e7eb; background: #f8fafc; padding: 0.8rem 1rem; }
       .proof-header p { margin: 0; font-weight: 700; color: #111827; }
       .proof-caption { margin: 0; padding: 1rem; color: #4b5563; font-size: 0.95rem; }
+      .staff-pick-eyebrow { margin: 0 0 0.85rem; text-align: center; color: #0f766e; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; }
+      .staff-pick-title { margin: 0; text-align: center; font-size: 2.25rem; color: #111827; }
+      .staff-pick-intro { max-width: 50rem; margin: 1.2rem auto 0; text-align: center; font-size: 1.1rem; color: #374151; }
+      .staff-pick-links { max-width: 46rem; margin: 1rem auto 0; text-align: center; color: #4b5563; }
+      .staff-pick-links a { color: #0f766e; font-weight: 700; text-decoration: none; }
+      .staff-pick-highlights { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 2rem; }
+      .highlight-card { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1.2rem; text-align: center; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .highlight-card p { margin: 0; color: #111827; font-weight: 600; }
+      .staff-pick-sections { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
+      .staff-pick-section { margin-top: 0; background: #ffffff; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .staff-pick-cta { text-align: center; }
+      .staff-pick-cta p { max-width: 42rem; margin: 0 auto; color: #4b5563; }
       .resource-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
       .resource-card { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
       .resource-header { display: flex; justify-content: space-between; gap: 0.8rem; align-items: flex-start; }
@@ -90,7 +104,7 @@
       .btn-primary, .btn-secondary { padding: 0.65rem 0.95rem; border-radius: 8px; text-decoration: none; font-weight: 700; }
       .btn-primary { background: #0f766e; color: #ffffff; }
       .btn-secondary { background: #ffffff; color: #0f766e; border: 1px solid #99f6e4; }
-      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results, .staff-pick-highlights, .staff-pick-sections { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
       @media (max-width: 640px) { .tool-grid { grid-template-columns: 1fr; } }
     </style>
   </head>
@@ -105,15 +119,9 @@
         <article class="card">
           <h1>Ecommerce SEO Content Production System</h1>
           <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/solutions">Solutions</a><span aria-hidden="true">/</span><span aria-current="page">Ecommerce SEO Content Production System</span></nav><p>This operating model is built for teams that want repeatable SEO output without turning publishing into a bottleneck.</p><section class="sub-card"><h2>At a glance</h2><ul><li>Brief, draft, QA, and publish stages</li><li>Ownership for metadata, links, and approvals</li><li>Content refresh and decay monitoring</li><li>Weekly production pacing tied to revenue goals</li></ul></section><section class="sub-card content-section"><h2>Define stages and owners</h2><p>A content system only stays repeatable when each stage is explicit. Someone should own the brief, someone should own quality checks, and someone should verify the page after it goes live.</p><p>Without named ownership, metadata, links, and measurement usually get skipped in the rush to publish.</p><ul><li>Set stages for brief, draft, QA, publish, and refresh</li><li>Assign responsibility for titles, links, and approval</li><li>Use a shared brief so commercial targets stay visible</li><li>Keep the workflow simple enough to run every week</li></ul></section><section class="sub-card content-section"><h2>Build the QA gate around recurring misses</h2><p>The QA step should focus on the things teams most often forget: snippet quality, heading clarity, internal links, FAQ blocks where useful, and conversion cues. That makes quality control practical instead of generic.</p><p>Over time, the checklist should be updated based on what actually causes weak performance.</p><ul><li>Check that the title and intro align with the target query</li><li>Confirm links to priority collections or products</li><li>Review CTA placement and proof elements</li><li>Flag pages for later refresh if they underperform</li></ul></section><section class="sub-card"><h2>A quick checklist</h2><ol><li>Document the stages from idea to refresh</li><li>Assign owners for brief, QA, and post-publish review</li><li>Create one standard QA checklist for all pages</li><li>Review output quality and throughput every month</li></ol></section>
-          <div class="actions">
-            <a class="btn-primary" href="https://apps.shopify.com/autoblogger">Start 14-Day Free Trial</a>
-            <a class="btn-secondary" href="/contact">Contact Support</a>
-          </div>
+          <div class="actions"><a class="btn-primary" href="https://apps.shopify.com/autoblogger">Start 14-Day Free Trial</a><a class="btn-secondary" href="/contact">Contact Support</a></div>
         </article>
-        <aside>
-          <section class="sub-card"><h2>More to explore</h2><ul class="related-list"><li><a href="/shopify-seo/autoblogger-vs-manual-shopify-blogging">autoBlogger vs Manual Shopify Blogging</a><span>Compare autoBlogger with manual Shopify blogging across publishing speed, SEO consistency, internal linking, metadata QA, and content ops effort.</span></li><li><a href="/wix-seo/ai-content-ops-playbook">Wix AI Content Operations Playbook</a><span>Run a Wix SEO content operations playbook for consistent publishing, metadata QA, and internal linking to service pages.</span></li><li><a href="/features">autoBlogger Features</a><span>Explore autoBlogger features: automated SEO publishing, product-focused content, metadata, internal links, and social sharing workflows for Shopify.</span></li><li><a href="/solutions">Ecommerce SEO Solutions Hub</a><span>Explore actionable Shopify, Wix, and ecommerce SEO solution pages focused on content operations, internal linking, schema, CTR, and conversions.</span></li></ul></section>
-          <section class="sub-card"><h2>Common questions</h2><details class="faq-item"><summary>What breaks most content systems?</summary><p>Weak ownership, inconsistent QA, and no process for internal links, snippet updates, or refresh cycles usually create the biggest failures.</p></details><details class="faq-item"><summary>How many stages should the workflow have?</summary><p>Keep it simple enough to move fast, but explicit enough that keyword targeting, metadata, internal links, and conversion notes never get skipped.</p></details></section>
-        </aside>
+        <aside><section class="sub-card"><h2>More to explore</h2><ul class="related-list"><li><a href="/shopify-seo/autoblogger-vs-manual-shopify-blogging">autoBlogger vs Manual Shopify Blogging</a><span>Compare autoBlogger with manual Shopify blogging across publishing speed, SEO consistency, internal linking, metadata QA, and content ops effort.</span></li><li><a href="/wix-seo/ai-content-ops-playbook">Wix AI Content Operations Playbook</a><span>Run a Wix SEO content operations playbook for consistent publishing, metadata QA, and internal linking to service pages.</span></li><li><a href="/features">autoBlogger Features</a><span>Explore autoBlogger features: automated SEO publishing, product-focused content, metadata, internal links, and social sharing workflows for Shopify.</span></li><li><a href="/solutions">Ecommerce SEO Solutions Hub</a><span>Explore actionable Shopify, Wix, and ecommerce SEO solution pages focused on content operations, internal linking, schema, CTR, and conversions.</span></li></ul></section><section class="sub-card"><h2>Common questions</h2><details class="faq-item"><summary>What breaks most content systems?</summary><p>Weak ownership, inconsistent QA, and no process for internal links, snippet updates, or refresh cycles usually create the biggest failures.</p></details><details class="faq-item"><summary>How many stages should the workflow have?</summary><p>Keep it simple enough to move fast, but explicit enough that keyword targeting, metadata, internal links, and conversion notes never get skipped.</p></details></section></aside>
       </div>
     </main>
     

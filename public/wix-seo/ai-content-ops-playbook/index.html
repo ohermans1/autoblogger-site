@@ -35,7 +35,9 @@
       nav a { text-decoration: none; color: #0f766e; font-weight: 600; }
       main { padding: 2rem 0 3rem; }
       .grid { display: grid; gap: 1rem; grid-template-columns: 2fr 1fr; }
+      .staff-pick-layout { display: block; }
       .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 1.4rem 1.3rem; }
+      .staff-pick-card { max-width: 960px; margin: 0 auto; padding: 2rem; }
       .sub-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; margin-top: 1rem; }
       .breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; font-size: 0.95rem; margin-bottom: 1rem; color: #4b5563; }
       .breadcrumb a { color: #0f766e; font-weight: 600; text-decoration: none; }
@@ -60,6 +62,18 @@
       .proof-header { border-bottom: 1px solid #e5e7eb; background: #f8fafc; padding: 0.8rem 1rem; }
       .proof-header p { margin: 0; font-weight: 700; color: #111827; }
       .proof-caption { margin: 0; padding: 1rem; color: #4b5563; font-size: 0.95rem; }
+      .staff-pick-eyebrow { margin: 0 0 0.85rem; text-align: center; color: #0f766e; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; }
+      .staff-pick-title { margin: 0; text-align: center; font-size: 2.25rem; color: #111827; }
+      .staff-pick-intro { max-width: 50rem; margin: 1.2rem auto 0; text-align: center; font-size: 1.1rem; color: #374151; }
+      .staff-pick-links { max-width: 46rem; margin: 1rem auto 0; text-align: center; color: #4b5563; }
+      .staff-pick-links a { color: #0f766e; font-weight: 700; text-decoration: none; }
+      .staff-pick-highlights { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 2rem; }
+      .highlight-card { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1.2rem; text-align: center; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .highlight-card p { margin: 0; color: #111827; font-weight: 600; }
+      .staff-pick-sections { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
+      .staff-pick-section { margin-top: 0; background: #ffffff; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .staff-pick-cta { text-align: center; }
+      .staff-pick-cta p { max-width: 42rem; margin: 0 auto; color: #4b5563; }
       .resource-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
       .resource-card { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
       .resource-header { display: flex; justify-content: space-between; gap: 0.8rem; align-items: flex-start; }
@@ -90,7 +104,7 @@
       .btn-primary, .btn-secondary { padding: 0.65rem 0.95rem; border-radius: 8px; text-decoration: none; font-weight: 700; }
       .btn-primary { background: #0f766e; color: #ffffff; }
       .btn-secondary { background: #ffffff; color: #0f766e; border: 1px solid #99f6e4; }
-      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results, .staff-pick-highlights, .staff-pick-sections { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
       @media (max-width: 640px) { .tool-grid { grid-template-columns: 1fr; } }
     </style>
   </head>
@@ -105,15 +119,9 @@
         <article class="card">
           <h1>Wix AI Content Operations Playbook</h1>
           <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/solutions">Solutions</a><span aria-hidden="true">/</span><span aria-current="page">Wix AI Content Operations Playbook</span></nav><p>This playbook gives Wix site owners a weekly operating rhythm for SEO content execution.</p><section class="sub-card"><h2>At a glance</h2><ul><li>Plan weekly post themes around service intent</li><li>Standardize title and meta QA before publish</li><li>Link every article to one priority service page</li><li>Track CTR, rankings, and lead quality</li></ul></section><section class="sub-card content-section"><h2>Set a weekly operating rhythm</h2><p>Wix sites benefit from the same discipline as any other content program: plan, publish, review, and refresh on a fixed rhythm. The main difference is which service pages and local or niche intents the content needs to support.</p><p>A lightweight weekly cadence is easier to keep than a large monthly sprint that slips every time priorities change.</p><ul><li>Plan posts around service intent and recurring customer questions</li><li>Use a standard review step for title, meta, and headings</li><li>Link each article to one clear service or conversion page</li><li>Review impressions and lead quality by topic group</li></ul></section><section class="sub-card content-section"><h2>Keep content tied to leads, not just traffic</h2><p>The purpose of the workflow is to create useful content that supports inquiries, bookings, or service page visits. Every article should make the next step obvious without turning the page into a sales pitch.</p><p>If a content topic cannot support a meaningful service path, it is usually lower priority.</p><ul><li>Add service links where the reader expects the next step</li><li>Use FAQs to address objections before the contact stage</li><li>Refresh posts when services, offers, or proof points change</li><li>Measure both click quality and lead outcomes</li></ul></section><section class="sub-card"><h2>A quick checklist</h2><ol><li>Create a simple editorial calendar tied to core services</li><li>Standardize snippet and internal-link QA before publishing</li><li>Track which articles assist service-page visits or leads</li><li>Refresh top-performing pages each quarter</li></ol></section>
-          <div class="actions">
-            <a class="btn-primary" href="https://apps.shopify.com/autoblogger">Start 14-Day Free Trial</a>
-            <a class="btn-secondary" href="/contact">Contact Support</a>
-          </div>
+          <div class="actions"><a class="btn-primary" href="https://apps.shopify.com/autoblogger">Start 14-Day Free Trial</a><a class="btn-secondary" href="/contact">Contact Support</a></div>
         </article>
-        <aside>
-          <section class="sub-card"><h2>More to explore</h2><ul class="related-list"><li><a href="/shopify-seo/autoblogger-vs-manual-shopify-blogging">autoBlogger vs Manual Shopify Blogging</a><span>Compare autoBlogger with manual Shopify blogging across publishing speed, SEO consistency, internal linking, metadata QA, and content ops effort.</span></li><li><a href="/ecommerce-seo/seo-content-production-system">Ecommerce SEO Content Production System</a><span>Design an ecommerce SEO content production system that moves from brief to publish to refresh without losing metadata, linking, or QA discipline.</span></li><li><a href="/features">autoBlogger Features</a><span>Explore autoBlogger features: automated SEO publishing, product-focused content, metadata, internal links, and social sharing workflows for Shopify.</span></li><li><a href="/free-seo-checklist">Free Shopify SEO Checklist and Free Wix SEO Checklist</a><span>Use this free Shopify SEO checklist and free Wix SEO checklist to improve rankings, fix technical SEO issues, and grow organic traffic.</span></li></ul></section>
-          <section class="sub-card"><h2>Common questions</h2><details class="faq-item"><summary>Can Wix sites run advanced SEO workflows?</summary><p>Yes. Consistent publishing, strong metadata, and structured internal links can perform very well on Wix.</p></details><details class="faq-item"><summary>What KPI should Wix teams track first?</summary><p>Start with impressions, CTR, and conversions from pages linked in your content workflow.</p></details></section>
-        </aside>
+        <aside><section class="sub-card"><h2>More to explore</h2><ul class="related-list"><li><a href="/shopify-seo/autoblogger-vs-manual-shopify-blogging">autoBlogger vs Manual Shopify Blogging</a><span>Compare autoBlogger with manual Shopify blogging across publishing speed, SEO consistency, internal linking, metadata QA, and content ops effort.</span></li><li><a href="/ecommerce-seo/seo-content-production-system">Ecommerce SEO Content Production System</a><span>Design an ecommerce SEO content production system that moves from brief to publish to refresh without losing metadata, linking, or QA discipline.</span></li><li><a href="/features">autoBlogger Features</a><span>Explore autoBlogger features: automated SEO publishing, product-focused content, metadata, internal links, and social sharing workflows for Shopify.</span></li><li><a href="/free-seo-checklist">Free Shopify SEO Checklist and Free Wix SEO Checklist</a><span>Use this free Shopify SEO checklist and free Wix SEO checklist to improve rankings, fix technical SEO issues, and grow organic traffic.</span></li></ul></section><section class="sub-card"><h2>Common questions</h2><details class="faq-item"><summary>Can Wix sites run advanced SEO workflows?</summary><p>Yes. Consistent publishing, strong metadata, and structured internal links can perform very well on Wix.</p></details><details class="faq-item"><summary>What KPI should Wix teams track first?</summary><p>Start with impressions, CTR, and conversions from pages linked in your content workflow.</p></details></section></aside>
       </div>
     </main>
     

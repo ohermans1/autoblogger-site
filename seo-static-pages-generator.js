@@ -611,7 +611,7 @@ function renderProofGallery(page) {
 
   if (!items) return "";
 
-  return `<section class="sub-card"><h2>Seen in the Shopify App Store</h2><p>Screenshots showing autoBlogger featured in Shopify's spotlight in 2024 and 2026.</p><div class="proof-grid">${items}</div></section>`;
+  return `<section class="sub-card"><h2>Seen in the Shopify App Store spotlight</h2><p>Screenshots showing autoBlogger featured in Shopify's spotlight in 2024 and 2026.</p><div class="proof-grid">${items}</div></section>`;
 }
 
 function renderChecklist(page) {
@@ -642,6 +642,48 @@ function renderRelatedLinks(page, pages) {
     .join("");
 
   return `<section class="sub-card"><h2>More to explore</h2><ul class="related-list">${links}</ul></section>`;
+}
+
+function renderStaffPickHighlights(page) {
+  if (page.bullets.length === 0) return "";
+
+  const cards = page.bullets
+    .map(item => `<article class="highlight-card"><p>${escapeHtml(item)}</p></article>`)
+    .join("");
+
+  return `<section class="staff-pick-highlights">${cards}</section>`;
+}
+
+function renderStaffPickSections(page) {
+  if (page.sections.length === 0) return "";
+
+  const sections = page.sections
+    .map(section => {
+      const paragraphs = section.paragraphs.map(paragraph => `<p>${escapeHtml(paragraph)}</p>`).join("");
+      const items = section.items.length > 0 ? renderList(section.items, section.ordered) : "";
+
+      return `<section class="sub-card content-section staff-pick-section"><h2>${escapeHtml(section.title)}</h2>${paragraphs}${items}</section>`;
+    })
+    .join("");
+
+  return `<div class="staff-pick-sections">${sections}</div>`;
+}
+
+function renderStaffPickSupportLinks() {
+  return `<p class="staff-pick-links">Want the fuller picture? Explore the <a href="/features">features</a>, read the <a href="/reviews">merchant reviews</a>, and browse the <a href="/faqs">FAQs</a>.</p>`;
+}
+
+function renderStaffPickPrimaryContent(page) {
+  const ctaLabel = page.ctaLabel || "View autoBlogger on Shopify";
+  const ctaHref = page.ctaHref || APP_LISTING_URL;
+
+  return `<p class="staff-pick-eyebrow">Featured by Shopify twice</p><h1 class="staff-pick-title">${escapeHtml(page.heading)}</h1><p class="staff-pick-intro">${escapeHtml(
+    page.intro
+  )}</p>${renderStaffPickSupportLinks()}${renderStaffPickHighlights(page)}${renderProofGallery(page)}${renderStaffPickSections(page)}${renderFaqSection(
+    page
+  )}<section class="sub-card staff-pick-cta"><h2>See why merchants keep shortlisting autoBlogger</h2><p>The Staff Pick history is one useful signal, but it makes the most sense alongside the reviews, features, pricing, and the full Shopify App Store listing.</p><div class="actions"><a class="btn-primary" href="${escapeHtml(
+    ctaHref
+  )}" target="_blank" rel="noopener noreferrer">${escapeHtml(ctaLabel)}</a><a class="btn-secondary" href="/reviews">Read merchant reviews</a></div></section>`;
 }
 
 function renderBreadcrumbNav(page) {
@@ -694,11 +736,22 @@ function renderHtml(page, pages) {
   const nav = NAV_LINKS.map(link => `<a href="${link.href}">${escapeHtml(link.label)}</a>`).join("");
   const ctaLabel = page.ctaLabel || "Start 14-Day Free Trial";
   const ctaHref = page.ctaHref || APP_LISTING_URL;
+  const isStaffPickPage = page.route === "/2x-staff-pick";
   const primaryContent =
     page.route === "/site-map"
       ? `<p>${escapeHtml(page.intro)}</p>${renderSiteMapCollection(pages)}`
-      : `${renderBreadcrumbNav(page)}<p>${escapeHtml(page.intro)}</p>${renderQuickTakeaways(page)}${renderResourceCards(page)}${renderToolSection(page)}${renderComparisonTable(page)}${renderProofGallery(page)}${renderContentSections(page)}${renderChecklist(page)}`;
+      : isStaffPickPage
+        ? renderStaffPickPrimaryContent(page)
+        : `${renderBreadcrumbNav(page)}<p>${escapeHtml(page.intro)}</p>${renderQuickTakeaways(page)}${renderResourceCards(page)}${renderToolSection(page)}${renderComparisonTable(page)}${renderProofGallery(page)}${renderContentSections(page)}${renderChecklist(page)}`;
   const toolScript = renderToolScript(page);
+  const mainLayoutClass = isStaffPickPage ? "container staff-pick-layout" : "container grid";
+  const articleClass = isStaffPickPage ? "card staff-pick-card" : "card";
+  const articleHeading = page.route === "/site-map" || isStaffPickPage ? "" : `<h1>${escapeHtml(page.heading)}</h1>`;
+  const articleActions = isStaffPickPage
+    ? ""
+    : `<div class="actions"><a class="btn-primary" href="${escapeHtml(ctaHref)}">${escapeHtml(ctaLabel)}</a><a class="btn-secondary" href="/contact">Contact Support</a></div>`;
+  const asideContent = isStaffPickPage ? "" : `<aside>${renderRelatedLinks(page, pages)}${renderFaqSection(page)}</aside>`;
+  const ogType = isGuidePage(page) || isStaffPickPage ? "article" : "website";
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -714,7 +767,7 @@ function renderHtml(page, pages) {
     <link rel="alternate" hreflang="en" href="${escapeHtml(canonicalUrl)}" />
     <link rel="alternate" hreflang="x-default" href="${escapeHtml(canonicalUrl)}" />
     <meta property="og:site_name" content="autoBlogger" />
-    <meta property="og:type" content="${escapeHtml(isGuidePage(page) ? "article" : "website")}" />
+    <meta property="og:type" content="${escapeHtml(ogType)}" />
     <meta property="og:title" content="${escapeHtml(page.title)}" />
     <meta property="og:description" content="${escapeHtml(page.description)}" />
     <meta property="og:url" content="${escapeHtml(canonicalUrl)}" />
@@ -737,7 +790,9 @@ function renderHtml(page, pages) {
       nav a { text-decoration: none; color: #0f766e; font-weight: 600; }
       main { padding: 2rem 0 3rem; }
       .grid { display: grid; gap: 1rem; grid-template-columns: 2fr 1fr; }
+      .staff-pick-layout { display: block; }
       .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 1.4rem 1.3rem; }
+      .staff-pick-card { max-width: 960px; margin: 0 auto; padding: 2rem; }
       .sub-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; margin-top: 1rem; }
       .breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; font-size: 0.95rem; margin-bottom: 1rem; color: #4b5563; }
       .breadcrumb a { color: #0f766e; font-weight: 600; text-decoration: none; }
@@ -762,6 +817,18 @@ function renderHtml(page, pages) {
       .proof-header { border-bottom: 1px solid #e5e7eb; background: #f8fafc; padding: 0.8rem 1rem; }
       .proof-header p { margin: 0; font-weight: 700; color: #111827; }
       .proof-caption { margin: 0; padding: 1rem; color: #4b5563; font-size: 0.95rem; }
+      .staff-pick-eyebrow { margin: 0 0 0.85rem; text-align: center; color: #0f766e; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; }
+      .staff-pick-title { margin: 0; text-align: center; font-size: 2.25rem; color: #111827; }
+      .staff-pick-intro { max-width: 50rem; margin: 1.2rem auto 0; text-align: center; font-size: 1.1rem; color: #374151; }
+      .staff-pick-links { max-width: 46rem; margin: 1rem auto 0; text-align: center; color: #4b5563; }
+      .staff-pick-links a { color: #0f766e; font-weight: 700; text-decoration: none; }
+      .staff-pick-highlights { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 2rem; }
+      .highlight-card { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1.2rem; text-align: center; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .highlight-card p { margin: 0; color: #111827; font-weight: 600; }
+      .staff-pick-sections { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
+      .staff-pick-section { margin-top: 0; background: #ffffff; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .staff-pick-cta { text-align: center; }
+      .staff-pick-cta p { max-width: 42rem; margin: 0 auto; color: #4b5563; }
       .resource-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
       .resource-card { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
       .resource-header { display: flex; justify-content: space-between; gap: 0.8rem; align-items: flex-start; }
@@ -792,7 +859,7 @@ function renderHtml(page, pages) {
       .btn-primary, .btn-secondary { padding: 0.65rem 0.95rem; border-radius: 8px; text-decoration: none; font-weight: 700; }
       .btn-primary { background: #0f766e; color: #ffffff; }
       .btn-secondary { background: #ffffff; color: #0f766e; border: 1px solid #99f6e4; }
-      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results, .staff-pick-highlights, .staff-pick-sections { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
       @media (max-width: 640px) { .tool-grid { grid-template-columns: 1fr; } }
     </style>
   </head>
@@ -803,19 +870,13 @@ function renderHtml(page, pages) {
       </div>
     </header>
     <main>
-      <div class="container grid">
-        <article class="card">
-          <h1>${escapeHtml(page.heading)}</h1>
+      <div class="${mainLayoutClass}">
+        <article class="${articleClass}">
+          ${articleHeading}
           ${primaryContent}
-          <div class="actions">
-            <a class="btn-primary" href="${escapeHtml(ctaHref)}">${escapeHtml(ctaLabel)}</a>
-            <a class="btn-secondary" href="/contact">Contact Support</a>
-          </div>
+          ${articleActions}
         </article>
-        <aside>
-          ${renderRelatedLinks(page, pages)}
-          ${renderFaqSection(page)}
-        </aside>
+        ${asideContent}
       </div>
     </main>
     ${toolScript}

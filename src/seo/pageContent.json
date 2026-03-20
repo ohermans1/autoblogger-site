@@ -17,80 +17,66 @@
     ]
   },
   "/2x-staff-pick": {
-    "comparisonTable": {
-      "title": "Featured by Shopify in 2024 and 2026",
-      "columns": ["Year", "Evidence", "What it shows"],
-      "rows": [
-        ["2024", "Shopify App Store \"In the spotlight\" screenshot featuring autoBlogger", "autoBlogger was publicly highlighted by Shopify in 2024"],
-        ["2026", "Shopify App Store spotlight screenshot featuring autoBlogger again", "autoBlogger was publicly highlighted by Shopify again in 2026"]
-      ]
-    },
     "proofGallery": [
       {
-        "title": "2024 Shopify App Store spotlight",
+        "title": "Shopify spotlight in 2024",
         "src": "/shopify-staff-pick-2024.png",
         "alt": "2024 Shopify App Store screenshot showing autoBlogger in the spotlight",
-        "caption": "Shopify App Store spotlight screenshot from 2024 showing autoBlogger featured under \"In the spotlight\".",
+        "caption": "autoBlogger featured in the Shopify App Store spotlight in 2024.",
         "width": 336,
         "height": 258
       },
       {
-        "title": "2026 Shopify App Store spotlight",
+        "title": "Shopify spotlight in 2026",
         "src": "/shopify-staff-pick-2026.png",
         "alt": "2026 Shopify App Store screenshot showing autoBlogger in the spotlight",
-        "caption": "Shopify App Store spotlight screenshot from 2026 showing autoBlogger featured again in the spotlight.",
+        "caption": "autoBlogger featured again in the Shopify App Store spotlight in 2026.",
         "width": 513,
         "height": 409
       }
     ],
     "sections": [
       {
-        "title": "What a Shopify Staff Pick actually means",
+        "title": "What a Shopify Staff Pick means",
         "paragraphs": [
-          "A Shopify Staff Pick is an app that Shopify has chosen to highlight within the Shopify App Store spotlight.",
-          "For merchants, that kind of placement works as an external trust signal: Shopify decided the app was strong enough to be featured publicly in the store experience at that time."
+          "Shopify uses its Staff Pick spotlight to highlight apps it wants merchants to notice in the App Store. That makes it a real third-party signal, not a label created by the developer.",
+          "When an app shows up there more than once, it suggests the product has kept feeling relevant and useful over time."
         ],
         "items": [
-          "It is a Shopify App Store editorial feature, not a claim created by the developer",
-          "It helps merchants identify apps Shopify has chosen to put in front of more users",
-          "It carries more weight when the same app is featured more than once over time"
+          "Chosen by Shopify, not self-awarded",
+          "Shown publicly inside the Shopify App Store",
+          "More meaningful when it happens more than once"
         ]
       },
       {
-        "title": "Why being selected twice matters",
+        "title": "Why being featured twice stands out",
         "paragraphs": [
-          "autoBlogger was highlighted once in 2024 and then again in 2026. That matters because it shows the app was not surfaced only once as a one-off mention.",
-          "A repeat Staff Pick does not guarantee fit for every store, but it is strong third-party validation that autoBlogger has continued to be useful, credible, and relevant for Shopify merchants."
+          "autoBlogger appeared in Shopify's spotlight in 2024 and then again in 2026. That repeat appearance helps separate it from apps that were only briefly noticed once.",
+          "No badge tells you everything on its own, but two separate Staff Pick placements add weight when you are looking at reviews, ratings, features, pricing, and overall fit."
         ],
-        "items": ["Two separate Shopify App Store spotlight placements", "Recognition repeated across two different years", "Useful supporting proof alongside merchant reviews and app store ratings"]
+        "items": ["Two public spotlight placements", "Recognition repeated across two different years", "Worth reading alongside merchant reviews and the app listing"]
       },
       {
-        "title": "Why that matters when choosing an app",
+        "title": "What autoBlogger helps you do",
         "paragraphs": [
-          "When you are comparing Shopify apps, independent signals matter. Two separate Staff Pick appearances help show that autoBlogger has had lasting relevance, not just a brief moment of attention.",
-          "For merchants, that lowers uncertainty: you can weigh the Staff Pick history alongside the current rating, reviews, features, pricing, and whether the workflow fits your store."
-        ]
-      },
-      {
-        "title": "What autoBlogger is built to do",
-        "paragraphs": [
-          "autoBlogger helps Shopify merchants turn blogging into a repeatable SEO workflow instead of a manual content chore.",
-          "The app automates publishing, adds metadata and internal product links, supports FAQs and social sharing, and is designed for stores that want consistent organic growth without a large content team."
-        ]
+          "autoBlogger is built for stores that want SEO blogging to happen consistently without turning it into a weekly manual job.",
+          "It helps merchants publish product-aware blog content, add internal links and metadata, support FAQs and social sharing, and keep content moving without a heavy editorial process."
+        ],
+        "items": ["Consistent blog publishing", "Product and collection links built into the workflow", "Metadata, FAQ, and social-sharing support"]
       }
     ],
     "faq": [
       {
-        "question": "When was autoBlogger selected as a Shopify Staff Pick?",
-        "answer": "The screenshots on this page show Shopify App Store spotlight placements from 2024 and 2026."
+        "question": "When was autoBlogger featured as a Shopify Staff Pick?",
+        "answer": "The screenshots on this page show public Shopify App Store spotlight placements from 2024 and 2026."
       },
       {
-        "question": "Why should merchants care about a Shopify Staff Pick?",
-        "answer": "Because it is a useful external signal that Shopify chose to highlight the app, which helps merchants compare options with a bit more confidence."
+        "question": "Is a Shopify Staff Pick a paid badge?",
+        "answer": "No. It is a Shopify App Store editorial placement chosen by Shopify, which is why merchants often treat it as an independent trust signal."
       },
       {
-        "question": "Where can merchants install autoBlogger?",
-        "answer": "Merchants can install autoBlogger from the Shopify App Store listing."
+        "question": "Where can I learn more before installing?",
+        "answer": "You can read the reviews, browse the features, or visit the Shopify App Store listing to see more detail before you install."
       }
     ],
     "ctaLabel": "View autoBlogger on Shopify",

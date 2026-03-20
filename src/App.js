@@ -10,6 +10,7 @@ import { STATIC_SEO_PAGES } from "./seo/pageCatalog";
 const FeaturesSection = lazy(() => import("./Components/FeaturesSection"));
 const FAQsSection = lazy(() => import("./Components/FAQsSection"));
 const ReviewsSection = lazy(() => import("./Components/ReviewsSection"));
+const StaffPickPage = lazy(() => import("./Components/StaffPickPage"));
 const ContactSection = lazy(() => import("./Components/ContactSection"));
 const SEOChecklist = lazy(() => import("./Components/SEOChecklist"));
 const PricingSection = lazy(() => import("./Components/PricingSection"));
@@ -30,6 +31,7 @@ const CUSTOM_ROUTE_PATHS = new Set([
   "/other-apps",
   "/faqs",
   "/reviews",
+  "/2x-staff-pick",
   "/contact",
   "/free-seo-checklist",
   "/seo-checklist",
@@ -106,6 +108,7 @@ const App = () => {
             <Route path="/other-apps" element={lazySection(<OtherAppsSection />)} />
             <Route path="/faqs" element={lazySection(<FAQsSection />)} />
             <Route path="/reviews" element={lazySection(<ReviewsSection />)} />
+            <Route path="/2x-staff-pick" element={lazySection(<StaffPickPage />)} />
             <Route path="/contact" element={lazySection(<ContactSection />)} />
             <Route path="/seo-checklist" element={<Navigate to="/free-seo-checklist" replace />} />
             <Route path="/free-seo-checklist" element={lazySection(<SEOChecklist />)} />

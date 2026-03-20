@@ -35,7 +35,9 @@
       nav a { text-decoration: none; color: #0f766e; font-weight: 600; }
       main { padding: 2rem 0 3rem; }
       .grid { display: grid; gap: 1rem; grid-template-columns: 2fr 1fr; }
+      .staff-pick-layout { display: block; }
       .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 1.4rem 1.3rem; }
+      .staff-pick-card { max-width: 960px; margin: 0 auto; padding: 2rem; }
       .sub-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; margin-top: 1rem; }
       .breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; font-size: 0.95rem; margin-bottom: 1rem; color: #4b5563; }
       .breadcrumb a { color: #0f766e; font-weight: 600; text-decoration: none; }
@@ -60,6 +62,18 @@
       .proof-header { border-bottom: 1px solid #e5e7eb; background: #f8fafc; padding: 0.8rem 1rem; }
       .proof-header p { margin: 0; font-weight: 700; color: #111827; }
       .proof-caption { margin: 0; padding: 1rem; color: #4b5563; font-size: 0.95rem; }
+      .staff-pick-eyebrow { margin: 0 0 0.85rem; text-align: center; color: #0f766e; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; }
+      .staff-pick-title { margin: 0; text-align: center; font-size: 2.25rem; color: #111827; }
+      .staff-pick-intro { max-width: 50rem; margin: 1.2rem auto 0; text-align: center; font-size: 1.1rem; color: #374151; }
+      .staff-pick-links { max-width: 46rem; margin: 1rem auto 0; text-align: center; color: #4b5563; }
+      .staff-pick-links a { color: #0f766e; font-weight: 700; text-decoration: none; }
+      .staff-pick-highlights { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 2rem; }
+      .highlight-card { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1.2rem; text-align: center; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .highlight-card p { margin: 0; color: #111827; font-weight: 600; }
+      .staff-pick-sections { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
+      .staff-pick-section { margin-top: 0; background: #ffffff; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .staff-pick-cta { text-align: center; }
+      .staff-pick-cta p { max-width: 42rem; margin: 0 auto; color: #4b5563; }
       .resource-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
       .resource-card { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
       .resource-header { display: flex; justify-content: space-between; gap: 0.8rem; align-items: flex-start; }
@@ -90,7 +104,7 @@
       .btn-primary, .btn-secondary { padding: 0.65rem 0.95rem; border-radius: 8px; text-decoration: none; font-weight: 700; }
       .btn-primary { background: #0f766e; color: #ffffff; }
       .btn-secondary { background: #ffffff; color: #0f766e; border: 1px solid #99f6e4; }
-      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results, .staff-pick-highlights, .staff-pick-sections { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
       @media (max-width: 640px) { .tool-grid { grid-template-columns: 1fr; } }
     </style>
   </head>
@@ -105,15 +119,9 @@
         <article class="card">
           <h1>autoSchema Terms and Conditions</h1>
           <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">autoSchema Terms and Conditions</span></nav><p>Review legal terms for autoSchema usage, eligibility, and service boundaries.</p><section class="sub-card"><h2>At a glance</h2><ul><li>Usage and service scope</li><li>Billing and subscription terms</li><li>Limitations and compliance expectations</li><li>Reference to the full terms document</li></ul></section>
-          <div class="actions">
-            <a class="btn-primary" href="https://apps.shopify.com/autoblogger">Start 14-Day Free Trial</a>
-            <a class="btn-secondary" href="/contact">Contact Support</a>
-          </div>
+          <div class="actions"><a class="btn-primary" href="https://apps.shopify.com/autoblogger">Start 14-Day Free Trial</a><a class="btn-secondary" href="/contact">Contact Support</a></div>
         </article>
-        <aside>
-          <section class="sub-card"><h2>More to explore</h2><ul class="related-list"><li><a href="/autoschema-privacy">autoSchema Privacy Policy</a><span>Read the privacy policy for autoSchema.</span></li><li><a href="/privacy">autoBlogger Privacy Policy</a><span>Read the privacy policy for autoBlogger.</span></li><li><a href="/terms">autoBlogger Terms and Conditions</a><span>Read the terms and conditions for autoBlogger.</span></li><li><a href="/backlink-terms">Backlink Program Terms</a><span>Read the backlink program terms for autoBlogger.</span></li></ul></section>
-          
-        </aside>
+        <aside><section class="sub-card"><h2>More to explore</h2><ul class="related-list"><li><a href="/autoschema-privacy">autoSchema Privacy Policy</a><span>Read the privacy policy for autoSchema.</span></li><li><a href="/privacy">autoBlogger Privacy Policy</a><span>Read the privacy policy for autoBlogger.</span></li><li><a href="/terms">autoBlogger Terms and Conditions</a><span>Read the terms and conditions for autoBlogger.</span></li><li><a href="/backlink-terms">Backlink Program Terms</a><span>Read the backlink program terms for autoBlogger.</span></li></ul></section></aside>
       </div>
     </main>
     

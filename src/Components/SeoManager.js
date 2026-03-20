@@ -85,7 +85,7 @@ function resolveOpenGraphType(page) {
 
   if (isGuidePage(page)) return "article";
 
-  return ["/features", "/faqs", "/reviews", "/premium-extras", "/free-seo-checklist"].includes(page.route) ? "article" : "website";
+  return ["/features", "/faqs", "/reviews", "/premium-extras", "/free-seo-checklist", "/2x-staff-pick"].includes(page.route) ? "article" : "website";
 }
 
 function resolvePageMeta(pathname) {

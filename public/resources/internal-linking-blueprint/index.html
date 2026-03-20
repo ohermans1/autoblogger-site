@@ -35,7 +35,9 @@
       nav a { text-decoration: none; color: #0f766e; font-weight: 600; }
       main { padding: 2rem 0 3rem; }
       .grid { display: grid; gap: 1rem; grid-template-columns: 2fr 1fr; }
+      .staff-pick-layout { display: block; }
       .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 1.4rem 1.3rem; }
+      .staff-pick-card { max-width: 960px; margin: 0 auto; padding: 2rem; }
       .sub-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; margin-top: 1rem; }
       .breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; font-size: 0.95rem; margin-bottom: 1rem; color: #4b5563; }
       .breadcrumb a { color: #0f766e; font-weight: 600; text-decoration: none; }
@@ -60,6 +62,18 @@
       .proof-header { border-bottom: 1px solid #e5e7eb; background: #f8fafc; padding: 0.8rem 1rem; }
       .proof-header p { margin: 0; font-weight: 700; color: #111827; }
       .proof-caption { margin: 0; padding: 1rem; color: #4b5563; font-size: 0.95rem; }
+      .staff-pick-eyebrow { margin: 0 0 0.85rem; text-align: center; color: #0f766e; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; }
+      .staff-pick-title { margin: 0; text-align: center; font-size: 2.25rem; color: #111827; }
+      .staff-pick-intro { max-width: 50rem; margin: 1.2rem auto 0; text-align: center; font-size: 1.1rem; color: #374151; }
+      .staff-pick-links { max-width: 46rem; margin: 1rem auto 0; text-align: center; color: #4b5563; }
+      .staff-pick-links a { color: #0f766e; font-weight: 700; text-decoration: none; }
+      .staff-pick-highlights { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 2rem; }
+      .highlight-card { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1.2rem; text-align: center; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .highlight-card p { margin: 0; color: #111827; font-weight: 600; }
+      .staff-pick-sections { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
+      .staff-pick-section { margin-top: 0; background: #ffffff; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .staff-pick-cta { text-align: center; }
+      .staff-pick-cta p { max-width: 42rem; margin: 0 auto; color: #4b5563; }
       .resource-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
       .resource-card { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
       .resource-header { display: flex; justify-content: space-between; gap: 0.8rem; align-items: flex-start; }
@@ -90,7 +104,7 @@
       .btn-primary, .btn-secondary { padding: 0.65rem 0.95rem; border-radius: 8px; text-decoration: none; font-weight: 700; }
       .btn-primary { background: #0f766e; color: #ffffff; }
       .btn-secondary { background: #ffffff; color: #0f766e; border: 1px solid #99f6e4; }
-      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results, .staff-pick-highlights, .staff-pick-sections { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
       @media (max-width: 640px) { .tool-grid { grid-template-columns: 1fr; } }
     </style>
   </head>
@@ -105,15 +119,9 @@
         <article class="card">
           <h1>Internal Linking Blueprint</h1>
           <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/resources">Resources</a><span aria-hidden="true">/</span><span aria-current="page">Internal Linking Blueprint</span></nav><p>A documented linking blueprint improves consistency and helps teams scale content without losing structural quality.</p><section class="sub-card"><h2>At a glance</h2><ul><li>Anchor text rule set by page type</li><li>Primary and secondary target mapping</li><li>Quarterly link refresh checklist</li><li>Measurement framework for assisted revenue</li></ul></section><section class="sub-card"><h2>Download the Blueprint</h2><p>Use this sheet to assign one primary commercial destination before a post is drafted or refreshed.</p><div class="resource-grid"><article class="resource-card"><div class="resource-header"><div><p class="resource-eyebrow">Blueprint</p><h3>Internal Linking Blueprint</h3></div><span class="resource-meta">CSV worksheet</span></div><p class="resource-description">CSV worksheet for source-page mapping, target selection, anchor angle guidance, and recurring reviews.</p><ul class="resource-items"><li>Source pages and page-type fields</li><li>Primary and secondary destination columns</li><li>Anchor guidance, owner, and review date</li></ul><div class="actions"><a class="btn-primary" href="/resources/downloads/internal-linking-blueprint.csv" download>Download CSV</a></div></article></div></section><section class="sub-card content-section"><h2>Core columns to include in the blueprint</h2><p>The blueprint should make link decisions easy to follow for anyone touching the page. Keep it simple enough to update regularly but detailed enough to show the relationship between editorial pages and commercial destinations.</p><p>A spreadsheet or shared doc is usually enough as long as it stays current.</p><ul><li>Source page and page type</li><li>Primary commercial target and secondary targets</li><li>Suggested anchor approaches by intent</li><li>Review date and owner for refreshes</li></ul></section><section class="sub-card"><h2>A quick checklist</h2><ol><li>Document top traffic pages and their target destinations</li><li>Add anchor guidance instead of only listing URLs</li><li>Review the blueprint after merchandising changes</li><li>Use the same system for new and refreshed articles</li></ol></section>
-          <div class="actions">
-            <a class="btn-primary" href="https://apps.shopify.com/autoblogger">Start 14-Day Free Trial</a>
-            <a class="btn-secondary" href="/contact">Contact Support</a>
-          </div>
+          <div class="actions"><a class="btn-primary" href="https://apps.shopify.com/autoblogger">Start 14-Day Free Trial</a><a class="btn-secondary" href="/contact">Contact Support</a></div>
         </article>
-        <aside>
-          <section class="sub-card"><h2>More to explore</h2><ul class="related-list"><li><a href="/resources">Free Ecommerce SEO Resources</a><span>Access free ecommerce SEO templates and frameworks including content briefs, internal linking blueprints, schema QA checklists, CTR worksheets, and ROI models.</span></li><li><a href="/resources/shopify-seo-content-brief-template">Shopify SEO Content Brief Template</a><span>Download a practical Shopify SEO content brief template to align intent, structure, internal links, and conversion goals before writing.</span></li><li><a href="/resources/schema-qa-checklist">Schema QA Checklist</a><span>Use a schema QA checklist to validate structured data before and after release, reducing warnings and eligibility issues.</span></li><li><a href="/resources/ecommerce-seo-roi-calculator">Ecommerce SEO ROI Calculator</a><span>Use this ecommerce SEO ROI calculator to estimate clicks, orders, and revenue impact from projected impression and CTR improvements.</span></li></ul></section>
-          <section class="sub-card"><h2>Common questions</h2><details class="faq-item"><summary>How often should internal links be reviewed?</summary><p>Review high traffic pages monthly and run a full link map audit each quarter.</p></details><details class="faq-item"><summary>What makes an anchor text strategy effective?</summary><p>Anchors should reflect user intent and vary naturally while remaining specific to destination content.</p></details></section>
-        </aside>
+        <aside><section class="sub-card"><h2>More to explore</h2><ul class="related-list"><li><a href="/resources">Free Ecommerce SEO Resources</a><span>Access free ecommerce SEO templates and frameworks including content briefs, internal linking blueprints, schema QA checklists, CTR worksheets, and ROI models.</span></li><li><a href="/resources/shopify-seo-content-brief-template">Shopify SEO Content Brief Template</a><span>Download a practical Shopify SEO content brief template to align intent, structure, internal links, and conversion goals before writing.</span></li><li><a href="/resources/schema-qa-checklist">Schema QA Checklist</a><span>Use a schema QA checklist to validate structured data before and after release, reducing warnings and eligibility issues.</span></li><li><a href="/resources/ecommerce-seo-roi-calculator">Ecommerce SEO ROI Calculator</a><span>Use this ecommerce SEO ROI calculator to estimate clicks, orders, and revenue impact from projected impression and CTR improvements.</span></li></ul></section><section class="sub-card"><h2>Common questions</h2><details class="faq-item"><summary>How often should internal links be reviewed?</summary><p>Review high traffic pages monthly and run a full link map audit each quarter.</p></details><details class="faq-item"><summary>What makes an anchor text strategy effective?</summary><p>Anchors should reflect user intent and vary naturally while remaining specific to destination content.</p></details></section></aside>
       </div>
     </main>
     
