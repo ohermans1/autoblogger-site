@@ -306,7 +306,7 @@ function shouldIncludeSoftwareApplication(path, page) {
   if (path === "/") return true;
   if (!page) return false;
 
-  return ["/reviews", "/pricing", "/features", "/solutions", "/free-seo-checklist"].includes(page.route) || hasRoutePrefix(page, "/shopify-seo");
+  return ["/reviews", "/pricing", "/features", "/solutions", "/free-seo-checklist", "/2x-staff-pick"].includes(page.route) || hasRoutePrefix(page, "/shopify-seo");
 }
 
 function buildSchemaGraph(path, meta, canonicalUrl, page, isKnownPath) {

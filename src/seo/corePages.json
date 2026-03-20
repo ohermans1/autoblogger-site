@@ -106,6 +106,22 @@
     "tags": ["support", "contact", "conversion"]
   },
   {
+    "route": "/2x-staff-pick",
+    "title": "2x Shopify Staff Pick | autoBlogger",
+    "description": "See proof that autoBlogger was featured twice in the Shopify App Store spotlight, with public screenshots from 2024 and 2026.",
+    "heading": "2x Shopify Staff Pick",
+    "intro": "autoBlogger was featured by Shopify App Store staff twice: once in 2024 and again in 2026. This page explains what that recognition means, why the repeat selection matters, and includes the public screenshots used as evidence.",
+    "bullets": [
+      "Featured in the Shopify App Store spotlight in 2024 and again in 2026",
+      "Public screenshots included on-page as evidence",
+      "A repeat editorial selection is a strong external trust signal",
+      "Built to support the public-facing '2x Shopify Staff Pick' claim"
+    ],
+    "changefreq": "monthly",
+    "priority": 0.7,
+    "tags": ["shopify", "trust", "proof", "reviews"]
+  },
+  {
     "route": "/free-seo-checklist",
     "title": "Free Shopify SEO Checklist and Free Wix SEO Checklist | autoBlogger",
     "description": "Use this free Shopify SEO checklist and free Wix SEO checklist to improve rankings, fix technical SEO issues, and grow organic traffic.",

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { obfuscateEmail } from "../Utils/helpers";
+import { SmartLink } from "./SmartLink";
 
 const FAQsSection = props => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -12,7 +13,15 @@ const FAQsSection = props => {
     },
     {
       question: "What does 2x Shopify Staff Pick mean?",
-      answer: "autoBlogger has been selected as a Shopify Staff Pick twice, highlighting quality, merchant value, and platform fit."
+      answer: (
+        <>
+          autoBlogger has been selected as a Shopify Staff Pick twice, highlighting quality, merchant value, and platform fit. See the{" "}
+          <SmartLink to="/2x-staff-pick" className="text-primary underline">
+            public proof page
+          </SmartLink>{" "}
+          for the 2024 and 2026 screenshots.
+        </>
+      )
     },
     {
       question: "How does the 14-day free trial work?",

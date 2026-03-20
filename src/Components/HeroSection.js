@@ -21,11 +21,21 @@ const HeroSection = () => {
       </h1>
 
       <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-gray-700">
-        2x Shopify Staff Pick:{" "}
+        <SmartLink to="/2x-staff-pick" className="text-primary no-underline hover:underline">
+          2x Shopify Staff Pick
+        </SmartLink>
+        :{" "}
         <a href={shopifyUrl} target="_blank" rel="noopener noreferrer" className="text-primary no-underline" aria-label="Visit autoBlogger on Shopify">
           autoBlogger
         </a>
       </h2>
+      <p className="mb-4 text-base md:text-lg text-gray-600">
+        See the public{" "}
+        <SmartLink to="/2x-staff-pick" className="text-primary hover:underline">
+          proof page
+        </SmartLink>{" "}
+        with the 2024 and 2026 Shopify App Store spotlight screenshots.
+      </p>
       <p className="mb-6 text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
         autoBlogger turns your{" "}
         <a href={shopifyUrl} target="_blank" rel="noopener noreferrer" className="text-primary no-underline" aria-label="Visit Shopify">

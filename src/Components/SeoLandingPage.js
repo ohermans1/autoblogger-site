@@ -63,6 +63,37 @@ const ComparisonTable = ({ table }) => (
   </section>
 );
 
+const ProofGallery = ({ items }) => (
+  <section className="rounded-2xl border border-gray-200 bg-gray-50 p-6">
+    <div className="mb-4">
+      <h2 className="text-2xl font-semibold text-gray-900">Proof Screenshots</h2>
+      <p className="mt-2 text-gray-700">Public Shopify App Store screenshots showing autoBlogger featured in 2024 and 2026.</p>
+    </div>
+
+    <div className="grid gap-6 md:grid-cols-2">
+      {items.map(item => (
+        <figure key={item.src} className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+          <div className="border-b border-gray-200 bg-slate-50 px-4 py-3">
+            <p className="text-sm font-semibold text-gray-900">{item.title}</p>
+          </div>
+          <a href={item.src} target="_blank" rel="noopener noreferrer" className="block bg-white">
+            <img
+              src={item.src}
+              alt={item.alt}
+              width={item.width}
+              height={item.height}
+              className="block w-full h-auto"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+          {item.caption && <figcaption className="px-4 py-4 text-sm text-gray-600">{item.caption}</figcaption>}
+        </figure>
+      ))}
+    </div>
+  </section>
+);
+
 const SeoLandingPage = ({ page }) => {
   const relatedPages = page ? findRelatedPages(page, STATIC_SEO_PAGES) : [];
   const breadcrumbTrail = page ? getBreadcrumbTrail(page) : [];
@@ -118,6 +149,8 @@ const SeoLandingPage = ({ page }) => {
               </div>
 
               {page.comparisonTable && <ComparisonTable table={page.comparisonTable} />}
+
+              {Array.isArray(page.proofGallery) && page.proofGallery.length > 0 && <ProofGallery items={page.proofGallery} />}
 
               {page.sections.map(section => (
                 <ContentSection key={section.title} section={section} />

@@ -317,7 +317,7 @@ function buildSiteMapGraph(page, canonicalUrl) {
 }
 
 function shouldIncludeSoftwareApplication(page) {
-  return ["/reviews", "/pricing", "/features", "/solutions", "/free-seo-checklist"].includes(page.route) || hasRoutePrefix(page, "/shopify-seo");
+  return ["/reviews", "/pricing", "/features", "/solutions", "/free-seo-checklist", "/2x-staff-pick"].includes(page.route) || hasRoutePrefix(page, "/shopify-seo");
 }
 
 function buildSchemaGraph(page, canonicalUrl) {
@@ -440,6 +440,28 @@ function renderComparisonTable(page) {
   return `<section class="sub-card"><h2>${escapeHtml(page.comparisonTable.title)}</h2><div class="table-wrap"><table class="comparison-table"><thead><tr>${header}</tr></thead><tbody>${rows}</tbody></table></div></section>`;
 }
 
+function renderProofGallery(page) {
+  if (!Array.isArray(page.proofGallery) || page.proofGallery.length === 0) return "";
+
+  const items = page.proofGallery
+    .map(item => {
+      if (!item || !item.src || !item.alt) return "";
+
+      const title = item.title ? `<div class="proof-header"><p>${escapeHtml(item.title)}</p></div>` : "";
+      const caption = item.caption ? `<p class="proof-caption">${escapeHtml(item.caption)}</p>` : "";
+      const width = typeof item.width === "number" ? ` width="${item.width}"` : "";
+      const height = typeof item.height === "number" ? ` height="${item.height}"` : "";
+
+      return `<figure class="proof-card">${title}<a href="${escapeHtml(item.src)}" target="_blank" rel="noopener noreferrer"><img src="${escapeHtml(item.src)}" alt="${escapeHtml(item.alt)}"${width}${height} loading="lazy" decoding="async" /></a>${caption}</figure>`;
+    })
+    .filter(Boolean)
+    .join("");
+
+  if (!items) return "";
+
+  return `<section class="sub-card"><h2>Proof Screenshots</h2><p>Public Shopify App Store screenshots showing autoBlogger featured in 2024 and 2026.</p><div class="proof-grid">${items}</div></section>`;
+}
+
 function renderChecklist(page) {
   if (page.checklist.length === 0) return "";
 
@@ -532,7 +554,7 @@ function renderHtml(page, pages) {
   const primaryContent =
     page.route === "/site-map"
       ? `<p>${escapeHtml(page.intro)}</p>${renderSiteMapCollection(pages)}`
-      : `${renderBreadcrumbNav(page)}<p>${escapeHtml(page.intro)}</p>${renderQuickTakeaways(page)}${renderComparisonTable(page)}${renderContentSections(page)}${renderChecklist(page)}`;
+      : `${renderBreadcrumbNav(page)}<p>${escapeHtml(page.intro)}</p>${renderQuickTakeaways(page)}${renderComparisonTable(page)}${renderProofGallery(page)}${renderContentSections(page)}${renderChecklist(page)}`;
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -589,6 +611,13 @@ function renderHtml(page, pages) {
       .comparison-table { width: 100%; border-collapse: collapse; }
       .comparison-table th, .comparison-table td { border-bottom: 1px solid #d1d5db; padding: 0.75rem; text-align: left; vertical-align: top; }
       .comparison-table th { color: #111827; }
+      .proof-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
+      .proof-card { overflow: hidden; border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; margin: 0; }
+      .proof-card a { display: block; background: #ffffff; }
+      .proof-card img { display: block; width: 100%; height: auto; }
+      .proof-header { border-bottom: 1px solid #e5e7eb; background: #f8fafc; padding: 0.8rem 1rem; }
+      .proof-header p { margin: 0; font-weight: 700; color: #111827; }
+      .proof-caption { margin: 0; padding: 1rem; color: #4b5563; font-size: 0.95rem; }
       .related-list { list-style: none; margin: 0; padding: 0; }
       .related-list li { border-top: 1px solid #d1d5db; padding: 0.65rem 0; }
       .related-list a { color: #0f766e; font-weight: 700; text-decoration: none; }
@@ -598,7 +627,7 @@ function renderHtml(page, pages) {
       .btn-primary { background: #0f766e; color: #ffffff; }
       .btn-secondary { background: #ffffff; color: #0f766e; border: 1px solid #99f6e4; }
       .meta-note { color: #4b5563; font-size: 0.92rem; margin-top: 1rem; }
-      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid { grid-template-columns: 1fr; } }
     </style>
   </head>
   <body>
