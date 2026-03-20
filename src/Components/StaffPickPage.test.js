@@ -16,5 +16,5 @@ test("renders the dedicated staff pick page with proof and FAQ content", () => {
 
   fireEvent.click(screen.getByRole("button", { name: /When was autoBlogger featured as a Shopify Staff Pick\?/i }));
 
-  expect(screen.getByText(/2024 and 2026/i)).toBeInTheDocument();
+  expect(screen.getByText(/The screenshots on this page show autoBlogger featured in the Shopify App Store spotlight in 2024 and 2026\./i)).toBeInTheDocument();
 });

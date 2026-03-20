@@ -17,7 +17,7 @@ const renderItems = items => {
 };
 
 const SectionCard = ({ section }) => (
-  <article className="mx-auto max-w-4xl rounded-[28px] border border-gray-200 bg-white p-7 shadow-sm md:p-8">
+  <article className="w-full rounded-[28px] border border-gray-200 bg-white p-7 shadow-sm md:p-8">
     <h2 className="mb-4 text-2xl font-semibold text-gray-900">{section.title}</h2>
     <div className="space-y-3.5 text-lg leading-8 text-gray-700">
       {section.paragraphs.map(paragraph => (
@@ -54,7 +54,7 @@ const StaffPickPage = () => {
         <div className="mb-12 rounded-[32px] border border-gray-200 bg-white p-6 shadow-sm md:p-8">
           <h2 className="mb-4 text-center text-2xl font-semibold text-gray-900 md:text-3xl">Seen in the Shopify App Store spotlight</h2>
           <p className="mx-auto mb-8 max-w-3xl text-center text-base leading-7 text-gray-600 md:text-lg">
-            These screenshots show autoBlogger featured publicly in the Shopify App Store in 2024 and again in 2026.
+            Below are the public App Store screenshots from 2024 and 2026.
           </p>
 
           <div className="grid gap-6 lg:grid-cols-[0.82fr_1.18fr]">
@@ -118,9 +118,9 @@ const StaffPickPage = () => {
         )}
 
         <div className="mx-auto max-w-4xl rounded-[32px] border border-gray-200 bg-white p-8 text-center shadow-sm md:p-10">
-          <h2 className="mb-3 text-2xl font-semibold text-gray-900 md:text-3xl">See why merchants keep shortlisting autoBlogger</h2>
+          <h2 className="mb-3 text-2xl font-semibold text-gray-900 md:text-3xl">See whether autoBlogger is the right fit</h2>
           <p className="mx-auto mb-6 max-w-3xl text-base leading-7 text-gray-700 md:text-lg">
-            The Staff Pick history is one useful signal, but it makes the most sense alongside the reviews, features, pricing, and the full Shopify App Store listing.
+            If you're thinking about installing autoBlogger, the features, reviews, pricing page, and Shopify App Store listing will give you a clearer picture of how it works and whether it suits your store.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3">

@@ -34,49 +34,45 @@
       }
     ],
     "sections": [
-      {
-        "title": "What a Shopify Staff Pick means",
-        "paragraphs": [
-          "Shopify uses its Staff Pick spotlight to highlight apps it wants merchants to notice in the App Store. That makes it a real third-party signal, not a label created by the developer.",
-          "When an app shows up there more than once, it suggests the product has kept feeling relevant and useful over time."
-        ],
-        "items": [
-          "Chosen by Shopify, not self-awarded",
-          "Shown publicly inside the Shopify App Store",
-          "More meaningful when it happens more than once"
-        ]
-      },
-      {
-        "title": "Why being featured twice stands out",
-        "paragraphs": [
-          "autoBlogger appeared in Shopify's spotlight in 2024 and then again in 2026. That repeat appearance helps separate it from apps that were only briefly noticed once.",
-          "No badge tells you everything on its own, but two separate Staff Pick placements add weight when you are looking at reviews, ratings, features, pricing, and overall fit."
-        ],
-        "items": ["Two public spotlight placements", "Recognition repeated across two different years", "Worth reading alongside merchant reviews and the app listing"]
-      },
-      {
-        "title": "What autoBlogger helps you do",
-        "paragraphs": [
-          "autoBlogger is built for stores that want SEO blogging to happen consistently without turning it into a weekly manual job.",
-          "It helps merchants publish product-aware blog content, add internal links and metadata, support FAQs and social sharing, and keep content moving without a heavy editorial process."
-        ],
-        "items": ["Consistent blog publishing", "Product and collection links built into the workflow", "Metadata, FAQ, and social-sharing support"]
-      }
-    ],
+        {
+          "title": "What a Shopify Staff Pick means",
+          "paragraphs": [
+            "A Shopify Staff Pick is an app Shopify chooses to feature in the App Store. It is not a badge developers can add themselves.",
+            "If you are comparing apps, it is one more reason to take a closer look."
+          ],
+          "items": []
+        },
+        {
+          "title": "Why being featured twice stands out",
+          "paragraphs": [
+            "autoBlogger appeared in the spotlight in 2024 and then again in 2026. Seeing it there in two different years suggests it was not just a one-off mention.",
+            "It should still sit alongside reviews, pricing, and features, but it is worth knowing when you are deciding what to install."
+          ],
+          "items": []
+        },
+        {
+          "title": "How autoBlogger helps your store",
+          "paragraphs": [
+            "autoBlogger is built for stores that want to keep publishing SEO-focused blog content without turning it into another job for the team.",
+            "It helps you publish posts that support products and collections, add internal links and metadata, include FAQ content where it makes sense, and keep content moving without a heavy editorial process."
+          ],
+          "items": []
+        }
+      ],
     "faq": [
       {
         "question": "When was autoBlogger featured as a Shopify Staff Pick?",
-        "answer": "The screenshots on this page show public Shopify App Store spotlight placements from 2024 and 2026."
+        "answer": "The screenshots on this page show autoBlogger featured in the Shopify App Store spotlight in 2024 and 2026."
       },
       {
         "question": "Is a Shopify Staff Pick a paid badge?",
-        "answer": "No. It is a Shopify App Store editorial placement chosen by Shopify, which is why merchants often treat it as an independent trust signal."
+        "answer": "No. It is an editorial placement chosen by Shopify, not something developers can pay for."
       },
-      {
-        "question": "Where can I learn more before installing?",
-        "answer": "You can read the reviews, browse the features, or visit the Shopify App Store listing to see more detail before you install."
-      }
-    ],
+        {
+          "question": "Where can I learn more before installing?",
+          "answer": "The features page, reviews, pricing page, and Shopify App Store listing will give you the clearest picture before you install."
+        }
+      ],
     "ctaLabel": "View autoBlogger on Shopify",
     "ctaHref": "https://apps.shopify.com/autoblogger"
   },

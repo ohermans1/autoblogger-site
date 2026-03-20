@@ -611,7 +611,7 @@ function renderProofGallery(page) {
 
   if (!items) return "";
 
-  return `<section class="sub-card"><h2>Seen in the Shopify App Store spotlight</h2><p>Screenshots showing autoBlogger featured in Shopify's spotlight in 2024 and 2026.</p><div class="proof-grid">${items}</div></section>`;
+  return `<section class="sub-card"><h2>Seen in the Shopify App Store spotlight</h2><p>Below are the public App Store screenshots from 2024 and 2026.</p><div class="proof-grid">${items}</div></section>`;
 }
 
 function renderChecklist(page) {
@@ -667,7 +667,7 @@ function renderStaffPickPrimaryContent(page) {
     page.heading
   )}</h1><p class="staff-pick-intro">${escapeHtml(page.intro)}</p></section>${renderProofGallery(page)}${renderStaffPickSections(page)}${renderFaqSection(
     page
-  )}<section class="sub-card staff-pick-cta"><h2>See why merchants keep shortlisting autoBlogger</h2><p>The Staff Pick history is one useful signal, but it makes the most sense alongside the reviews, features, pricing, and the full Shopify App Store listing.</p><div class="actions"><a class="btn-primary" href="${escapeHtml(
+  )}<section class="sub-card staff-pick-cta"><h2>See whether autoBlogger is the right fit</h2><p>If you're thinking about installing autoBlogger, the features, reviews, pricing page, and Shopify App Store listing will give you a clearer picture of how it works and whether it suits your store.</p><div class="actions"><a class="btn-primary" href="${escapeHtml(
     ctaHref
   )}" target="_blank" rel="noopener noreferrer">${escapeHtml(ctaLabel)}</a><a class="btn-secondary" href="/reviews">Read merchant reviews</a></div></section>`;
 }
@@ -817,7 +817,7 @@ function renderHtml(page, pages) {
       .staff-pick-card .proof-card img { border-radius: 14px; }
       .staff-pick-card .proof-header { background: #ffffff; padding: 1rem 1.25rem; }
       .staff-pick-sections { display: grid; gap: 1rem; grid-template-columns: 1fr; margin-top: 1rem; }
-      .staff-pick-section { max-width: 820px; margin: 0 auto; }
+      .staff-pick-section { width: 100%; }
       .staff-pick-card .faq-item { border-top: 1px solid #d1d5db; padding: 0.85rem 0; }
       .staff-pick-cta { text-align: center; }
       .staff-pick-cta p { max-width: 42rem; margin: 0 auto; color: #4b5563; }
