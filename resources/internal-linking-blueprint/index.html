@@ -60,6 +60,28 @@
       .proof-header { border-bottom: 1px solid #e5e7eb; background: #f8fafc; padding: 0.8rem 1rem; }
       .proof-header p { margin: 0; font-weight: 700; color: #111827; }
       .proof-caption { margin: 0; padding: 1rem; color: #4b5563; font-size: 0.95rem; }
+      .resource-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
+      .resource-card { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .resource-header { display: flex; justify-content: space-between; gap: 0.8rem; align-items: flex-start; }
+      .resource-header h3 { margin: 0.35rem 0 0; font-size: 1.1rem; }
+      .resource-eyebrow { margin: 0; color: #0f766e; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+      .resource-meta { display: inline-flex; align-items: center; border-radius: 999px; background: #f3f4f6; padding: 0.3rem 0.7rem; color: #374151; font-size: 0.78rem; font-weight: 700; white-space: nowrap; }
+      .resource-description { margin: 0.85rem 0 0; }
+      .resource-items { margin-top: 0.9rem; }
+      .tool-shell { margin-top: 1rem; }
+      .tool-grid { display: grid; gap: 1rem; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+      .tool-field { display: block; border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .tool-field span { display: block; color: #111827; font-size: 0.92rem; font-weight: 700; }
+      .tool-input-wrap { display: flex; gap: 0.7rem; align-items: center; margin-top: 0.7rem; }
+      .tool-input-wrap input { width: 100%; border: 1px solid #d1d5db; border-radius: 10px; padding: 0.65rem 0.75rem; font: inherit; }
+      .tool-input-wrap em { color: #6b7280; font-style: normal; font-size: 0.82rem; font-weight: 700; }
+      .tool-results { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 1rem; }
+      .tool-stat { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .tool-stat p { margin: 0; color: #6b7280; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+      .tool-stat strong { display: block; margin-top: 0.6rem; font-size: 1.8rem; color: #111827; line-height: 1.15; }
+      .tool-summary { margin-top: 1rem; border: 1px solid #bbf7d0; border-radius: 12px; background: #ecfdf5; padding: 1rem; color: #065f46; }
+      .tool-summary p { margin: 0; }
+      .tool-note { margin-top: 0.75rem !important; }
       .related-list { list-style: none; margin: 0; padding: 0; }
       .related-list li { border-top: 1px solid #d1d5db; padding: 0.65rem 0; }
       .related-list a { color: #0f766e; font-weight: 700; text-decoration: none; }
@@ -69,7 +91,8 @@
       .btn-primary { background: #0f766e; color: #ffffff; }
       .btn-secondary { background: #ffffff; color: #0f766e; border: 1px solid #99f6e4; }
       .meta-note { color: #4b5563; font-size: 0.92rem; margin-top: 1rem; }
-      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid { grid-template-columns: 1fr; } }
+      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 640px) { .tool-grid { grid-template-columns: 1fr; } }
     </style>
   </head>
   <body>
@@ -82,7 +105,7 @@
       <div class="container grid">
         <article class="card">
           <h1>Internal Linking Blueprint</h1>
-          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/resources">Resources</a><span aria-hidden="true">/</span><span aria-current="page">Internal Linking Blueprint</span></nav><p>A documented linking blueprint improves consistency and helps teams scale content without losing structural quality.</p><section class="sub-card"><h2>Quick Takeaways</h2><ul><li>Anchor text rule set by page type</li><li>Primary and secondary target mapping</li><li>Quarterly link refresh checklist</li><li>Measurement framework for assisted revenue</li></ul></section><section class="sub-card content-section"><h2>Core columns to include in the blueprint</h2><p>The blueprint should make link decisions easy to follow for anyone touching the page. Keep it simple enough to update regularly but detailed enough to show the relationship between editorial pages and commercial destinations.</p><p>A spreadsheet or shared doc is usually enough as long as it stays current.</p><ul><li>Source page and page type</li><li>Primary commercial target and secondary targets</li><li>Suggested anchor approaches by intent</li><li>Review date and owner for refreshes</li></ul></section><section class="sub-card"><h2>Action Checklist</h2><ol><li>Document top traffic pages and their target destinations</li><li>Add anchor guidance instead of only listing URLs</li><li>Review the blueprint after merchandising changes</li><li>Use the same system for new and refreshed articles</li></ol></section>
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/resources">Resources</a><span aria-hidden="true">/</span><span aria-current="page">Internal Linking Blueprint</span></nav><p>A documented linking blueprint improves consistency and helps teams scale content without losing structural quality.</p><section class="sub-card"><h2>Quick Takeaways</h2><ul><li>Anchor text rule set by page type</li><li>Primary and secondary target mapping</li><li>Quarterly link refresh checklist</li><li>Measurement framework for assisted revenue</li></ul></section><section class="sub-card"><h2>Download the Blueprint</h2><p>Use this sheet to assign one primary commercial destination before a post is drafted or refreshed.</p><div class="resource-grid"><article class="resource-card"><div class="resource-header"><div><p class="resource-eyebrow">Blueprint</p><h3>Internal Linking Blueprint</h3></div><span class="resource-meta">CSV worksheet</span></div><p class="resource-description">CSV worksheet for source-page mapping, target selection, anchor angle guidance, and recurring reviews.</p><ul class="resource-items"><li>Source pages and page-type fields</li><li>Primary and secondary destination columns</li><li>Anchor guidance, owner, and review date</li></ul><div class="actions"><a class="btn-primary" href="/resources/downloads/internal-linking-blueprint.csv" download>Download CSV</a></div></article></div></section><section class="sub-card content-section"><h2>Core columns to include in the blueprint</h2><p>The blueprint should make link decisions easy to follow for anyone touching the page. Keep it simple enough to update regularly but detailed enough to show the relationship between editorial pages and commercial destinations.</p><p>A spreadsheet or shared doc is usually enough as long as it stays current.</p><ul><li>Source page and page type</li><li>Primary commercial target and secondary targets</li><li>Suggested anchor approaches by intent</li><li>Review date and owner for refreshes</li></ul></section><section class="sub-card"><h2>Action Checklist</h2><ol><li>Document top traffic pages and their target destinations</li><li>Add anchor guidance instead of only listing URLs</li><li>Review the blueprint after merchandising changes</li><li>Use the same system for new and refreshed articles</li></ol></section>
           <div class="actions">
             <a class="btn-primary" href="https://autoblogger.bot/#/resources/internal-linking-blueprint">Open Interactive Version</a>
             <a class="btn-secondary" href="https://apps.shopify.com/autoblogger">View Shopify App Listing</a>
@@ -96,5 +119,6 @@
         </aside>
       </div>
     </main>
+    
   </body>
 </html>

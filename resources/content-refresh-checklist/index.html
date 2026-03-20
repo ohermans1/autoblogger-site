@@ -60,6 +60,28 @@
       .proof-header { border-bottom: 1px solid #e5e7eb; background: #f8fafc; padding: 0.8rem 1rem; }
       .proof-header p { margin: 0; font-weight: 700; color: #111827; }
       .proof-caption { margin: 0; padding: 1rem; color: #4b5563; font-size: 0.95rem; }
+      .resource-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
+      .resource-card { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .resource-header { display: flex; justify-content: space-between; gap: 0.8rem; align-items: flex-start; }
+      .resource-header h3 { margin: 0.35rem 0 0; font-size: 1.1rem; }
+      .resource-eyebrow { margin: 0; color: #0f766e; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+      .resource-meta { display: inline-flex; align-items: center; border-radius: 999px; background: #f3f4f6; padding: 0.3rem 0.7rem; color: #374151; font-size: 0.78rem; font-weight: 700; white-space: nowrap; }
+      .resource-description { margin: 0.85rem 0 0; }
+      .resource-items { margin-top: 0.9rem; }
+      .tool-shell { margin-top: 1rem; }
+      .tool-grid { display: grid; gap: 1rem; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+      .tool-field { display: block; border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .tool-field span { display: block; color: #111827; font-size: 0.92rem; font-weight: 700; }
+      .tool-input-wrap { display: flex; gap: 0.7rem; align-items: center; margin-top: 0.7rem; }
+      .tool-input-wrap input { width: 100%; border: 1px solid #d1d5db; border-radius: 10px; padding: 0.65rem 0.75rem; font: inherit; }
+      .tool-input-wrap em { color: #6b7280; font-style: normal; font-size: 0.82rem; font-weight: 700; }
+      .tool-results { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 1rem; }
+      .tool-stat { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .tool-stat p { margin: 0; color: #6b7280; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+      .tool-stat strong { display: block; margin-top: 0.6rem; font-size: 1.8rem; color: #111827; line-height: 1.15; }
+      .tool-summary { margin-top: 1rem; border: 1px solid #bbf7d0; border-radius: 12px; background: #ecfdf5; padding: 1rem; color: #065f46; }
+      .tool-summary p { margin: 0; }
+      .tool-note { margin-top: 0.75rem !important; }
       .related-list { list-style: none; margin: 0; padding: 0; }
       .related-list li { border-top: 1px solid #d1d5db; padding: 0.65rem 0; }
       .related-list a { color: #0f766e; font-weight: 700; text-decoration: none; }
@@ -69,7 +91,8 @@
       .btn-primary { background: #0f766e; color: #ffffff; }
       .btn-secondary { background: #ffffff; color: #0f766e; border: 1px solid #99f6e4; }
       .meta-note { color: #4b5563; font-size: 0.92rem; margin-top: 1rem; }
-      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid { grid-template-columns: 1fr; } }
+      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 640px) { .tool-grid { grid-template-columns: 1fr; } }
     </style>
   </head>
   <body>
@@ -82,7 +105,7 @@
       <div class="container grid">
         <article class="card">
           <h1>SEO Content Refresh Checklist</h1>
-          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/resources">Resources</a><span aria-hidden="true">/</span><span aria-current="page">SEO Content Refresh Checklist</span></nav><p>This checklist helps teams refresh the right pages in the right order without missing snippet, content, or internal link updates.</p><section class="sub-card"><h2>Quick Takeaways</h2><ul><li>Page selection criteria by impression and click trend</li><li>Snippet, heading, and FAQ update prompts</li><li>Internal linking and CTA review steps</li><li>Post-refresh measurement notes</li></ul></section><section class="sub-card content-section"><h2>Use the checklist to pick the right pages</h2><p>Refresh work is easiest to justify when the page already shows demand, but performance is slipping. The checklist should help you identify whether the problem is snippet quality, stale content, weak links, or conversion friction.</p><p>That prevents teams from refreshing pages simply because they are old.</p><ul><li>Impressions rising while clicks stay flat</li><li>Clicks falling while query relevance stays intact</li><li>Examples, screenshots, or offers now outdated</li><li>Internal links or CTAs no longer support current priorities</li></ul></section><section class="sub-card content-section"><h2>Run the update in a fixed sequence</h2><p>A consistent refresh sequence keeps important steps from being skipped. Start with the snippet, then move through body content, links, and measurement notes before republishing.</p><p>The checklist is there to make the work repeatable across many pages.</p><ul><li>Rewrite title and meta where intent or proof is weak</li><li>Update headings, examples, FAQs, and product mentions</li><li>Check internal links, CTA blocks, and destination relevance</li><li>Note the date and what changed for later analysis</li></ul></section><section class="sub-card"><h2>Action Checklist</h2><ol><li>Confirm the page still serves an active query and business goal</li><li>Update snippet, body, and links in one refresh pass</li><li>Log the change date and the exact edits made</li><li>Review CTR, clicks, and conversions after republishing</li></ol></section>
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/resources">Resources</a><span aria-hidden="true">/</span><span aria-current="page">SEO Content Refresh Checklist</span></nav><p>This checklist helps teams refresh the right pages in the right order without missing snippet, content, or internal link updates.</p><section class="sub-card"><h2>Quick Takeaways</h2><ul><li>Page selection criteria by impression and click trend</li><li>Snippet, heading, and FAQ update prompts</li><li>Internal linking and CTA review steps</li><li>Post-refresh measurement notes</li></ul></section><section class="sub-card"><h2>Download the Checklist</h2><p>Run the sheet in order so snippet updates, body updates, and link checks are logged in the same refresh cycle.</p><div class="resource-grid"><article class="resource-card"><div class="resource-header"><div><p class="resource-eyebrow">Checklist</p><h3>Content Refresh Checklist</h3></div><span class="resource-meta">CSV checklist</span></div><p class="resource-description">CSV checklist for selecting refresh candidates, updating the page, and tracking the review window after republishing.</p><ul class="resource-items"><li>Traffic and CTR trend prompts</li><li>Snippet, body, CTA, and internal-link checks</li><li>Republish date and follow-up review logging</li></ul><div class="actions"><a class="btn-primary" href="/resources/downloads/content-refresh-checklist.csv" download>Download CSV</a></div></article></div></section><section class="sub-card content-section"><h2>Use the checklist to pick the right pages</h2><p>Refresh work is easiest to justify when the page already shows demand, but performance is slipping. The checklist should help you identify whether the problem is snippet quality, stale content, weak links, or conversion friction.</p><p>That prevents teams from refreshing pages simply because they are old.</p><ul><li>Impressions rising while clicks stay flat</li><li>Clicks falling while query relevance stays intact</li><li>Examples, screenshots, or offers now outdated</li><li>Internal links or CTAs no longer support current priorities</li></ul></section><section class="sub-card content-section"><h2>Run the update in a fixed sequence</h2><p>A consistent refresh sequence keeps important steps from being skipped. Start with the snippet, then move through body content, links, and measurement notes before republishing.</p><p>The checklist is there to make the work repeatable across many pages.</p><ul><li>Rewrite title and meta where intent or proof is weak</li><li>Update headings, examples, FAQs, and product mentions</li><li>Check internal links, CTA blocks, and destination relevance</li><li>Note the date and what changed for later analysis</li></ul></section><section class="sub-card"><h2>Action Checklist</h2><ol><li>Confirm the page still serves an active query and business goal</li><li>Update snippet, body, and links in one refresh pass</li><li>Log the change date and the exact edits made</li><li>Review CTR, clicks, and conversions after republishing</li></ol></section>
           <div class="actions">
             <a class="btn-primary" href="https://autoblogger.bot/#/resources/content-refresh-checklist">Open Interactive Version</a>
             <a class="btn-secondary" href="https://apps.shopify.com/autoblogger">View Shopify App Listing</a>
@@ -96,5 +119,6 @@
         </aside>
       </div>
     </main>
+    
   </body>
 </html>

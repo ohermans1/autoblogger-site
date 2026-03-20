@@ -1,0 +1,3 @@
+page_cluster,monthly_impressions,current_ctr_pct,target_ctr_pct,current_clicks,projected_clicks,incremental_clicks,conversion_rate_pct,average_order_value,incremental_orders,incremental_revenue_monthly,incremental_revenue_yearly,scenario_notes
+Non-brand buying guides,20000,2.4,3.8,480,760,280,2.2,95,6.16,585.20,7022.40,"CTR-lift scenario only; impressions, CVR, and AOV held constant."
+Collection pages,35000,1.6,2.4,560,840,280,1.8,120,5.04,604.80,7257.60,"Use base, conservative, and upside cases before prioritizing."

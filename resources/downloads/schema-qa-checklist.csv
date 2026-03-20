@@ -1,0 +1,3 @@
+template_type,url,test_stage,required_fields_passed,recommended_fields_passed,visible_content_match,rich_results_test_status,search_console_status,owner,release_date,follow_up_date,notes
+Product template,https://example.com/products/organic-face-serum,Pre-release,Yes,Yes,Yes,Pass,Pending,Alex,2026-04-08,2026-04-15,Validate a representative product plus one edge-case SKU before launch.
+Product template,https://example.com/products/organic-face-serum,Post-release,Yes,Yes,Yes,Pass,Eligible,Alex,2026-04-08,2026-04-22,Confirm live HTML matches staging output after deployment.

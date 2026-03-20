@@ -60,6 +60,28 @@
       .proof-header { border-bottom: 1px solid #e5e7eb; background: #f8fafc; padding: 0.8rem 1rem; }
       .proof-header p { margin: 0; font-weight: 700; color: #111827; }
       .proof-caption { margin: 0; padding: 1rem; color: #4b5563; font-size: 0.95rem; }
+      .resource-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
+      .resource-card { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .resource-header { display: flex; justify-content: space-between; gap: 0.8rem; align-items: flex-start; }
+      .resource-header h3 { margin: 0.35rem 0 0; font-size: 1.1rem; }
+      .resource-eyebrow { margin: 0; color: #0f766e; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+      .resource-meta { display: inline-flex; align-items: center; border-radius: 999px; background: #f3f4f6; padding: 0.3rem 0.7rem; color: #374151; font-size: 0.78rem; font-weight: 700; white-space: nowrap; }
+      .resource-description { margin: 0.85rem 0 0; }
+      .resource-items { margin-top: 0.9rem; }
+      .tool-shell { margin-top: 1rem; }
+      .tool-grid { display: grid; gap: 1rem; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+      .tool-field { display: block; border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .tool-field span { display: block; color: #111827; font-size: 0.92rem; font-weight: 700; }
+      .tool-input-wrap { display: flex; gap: 0.7rem; align-items: center; margin-top: 0.7rem; }
+      .tool-input-wrap input { width: 100%; border: 1px solid #d1d5db; border-radius: 10px; padding: 0.65rem 0.75rem; font: inherit; }
+      .tool-input-wrap em { color: #6b7280; font-style: normal; font-size: 0.82rem; font-weight: 700; }
+      .tool-results { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 1rem; }
+      .tool-stat { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .tool-stat p { margin: 0; color: #6b7280; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+      .tool-stat strong { display: block; margin-top: 0.6rem; font-size: 1.8rem; color: #111827; line-height: 1.15; }
+      .tool-summary { margin-top: 1rem; border: 1px solid #bbf7d0; border-radius: 12px; background: #ecfdf5; padding: 1rem; color: #065f46; }
+      .tool-summary p { margin: 0; }
+      .tool-note { margin-top: 0.75rem !important; }
       .related-list { list-style: none; margin: 0; padding: 0; }
       .related-list li { border-top: 1px solid #d1d5db; padding: 0.65rem 0; }
       .related-list a { color: #0f766e; font-weight: 700; text-decoration: none; }
@@ -69,7 +91,8 @@
       .btn-primary { background: #0f766e; color: #ffffff; }
       .btn-secondary { background: #ffffff; color: #0f766e; border: 1px solid #99f6e4; }
       .meta-note { color: #4b5563; font-size: 0.92rem; margin-top: 1rem; }
-      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid { grid-template-columns: 1fr; } }
+      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 640px) { .tool-grid { grid-template-columns: 1fr; } }
     </style>
   </head>
   <body>
@@ -82,7 +105,7 @@
       <div class="container grid">
         <article class="card">
           <h1>Free Shopify SEO Checklist and Free Wix SEO Checklist</h1>
-          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Free Shopify SEO Checklist and Free Wix SEO Checklist</span></nav><p>Use the interactive checklist to track high-impact SEO tasks across technical SEO, on-page optimization, content publishing, and link building.</p><section class="sub-card"><h2>Quick Takeaways</h2><ul><li>Shopify and Wix-specific SEO task sets</li><li>Status tracking and notes for each action</li><li>Priority and effort scoring for planning</li><li>Weekly workflow for consistent SEO execution</li></ul></section>
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Free Shopify SEO Checklist and Free Wix SEO Checklist</span></nav><p>Use the interactive checklist to track high-impact SEO tasks across technical SEO, on-page optimization, content publishing, and link building.</p><section class="sub-card"><h2>Quick Takeaways</h2><ul><li>Shopify and Wix-specific SEO task sets</li><li>Status tracking and notes for each action</li><li>Priority and effort scoring for planning</li><li>Weekly workflow for consistent SEO execution</li></ul></section><section class="sub-card"><h2>Spreadsheet Downloads</h2><p>The checklist still works directly on-page, but the original spreadsheet versions are now linked here as well.</p><div class="resource-grid"><article class="resource-card"><div class="resource-header"><div><p class="resource-eyebrow">Checklist</p><h3>Shopify SEO Checklist Spreadsheet</h3></div><span class="resource-meta">XLSX workbook</span></div><p class="resource-description">Offline version of the Shopify checklist with priority, effort, KPI, status, and notes columns.</p><ul class="resource-items"><li>14 core Shopify SEO tasks</li><li>Priority, effort, and KPI columns</li><li>Status tracking and notes fields</li></ul><div class="actions"><a class="btn-primary" href="/Shopify SEO Checklist.xlsx" download>Download Shopify XLSX</a></div></article><article class="resource-card"><div class="resource-header"><div><p class="resource-eyebrow">Checklist</p><h3>Wix SEO Checklist Spreadsheet</h3></div><span class="resource-meta">XLSX workbook</span></div><p class="resource-description">Offline version of the Wix checklist with the same execution columns used in the interactive board.</p><ul class="resource-items"><li>14 core Wix SEO tasks</li><li>Priority, effort, and KPI columns</li><li>Status tracking and notes fields</li></ul><div class="actions"><a class="btn-primary" href="/Wix SEO Checklist.xlsx" download>Download Wix XLSX</a></div></article></div></section>
           <div class="actions">
             <a class="btn-primary" href="https://autoblogger.bot/#/free-seo-checklist">Open Interactive Version</a>
             <a class="btn-secondary" href="https://apps.shopify.com/autoblogger">View Shopify App Listing</a>
@@ -96,5 +119,6 @@
         </aside>
       </div>
     </main>
+    
   </body>
 </html>

@@ -60,6 +60,28 @@
       .proof-header { border-bottom: 1px solid #e5e7eb; background: #f8fafc; padding: 0.8rem 1rem; }
       .proof-header p { margin: 0; font-weight: 700; color: #111827; }
       .proof-caption { margin: 0; padding: 1rem; color: #4b5563; font-size: 0.95rem; }
+      .resource-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
+      .resource-card { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .resource-header { display: flex; justify-content: space-between; gap: 0.8rem; align-items: flex-start; }
+      .resource-header h3 { margin: 0.35rem 0 0; font-size: 1.1rem; }
+      .resource-eyebrow { margin: 0; color: #0f766e; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+      .resource-meta { display: inline-flex; align-items: center; border-radius: 999px; background: #f3f4f6; padding: 0.3rem 0.7rem; color: #374151; font-size: 0.78rem; font-weight: 700; white-space: nowrap; }
+      .resource-description { margin: 0.85rem 0 0; }
+      .resource-items { margin-top: 0.9rem; }
+      .tool-shell { margin-top: 1rem; }
+      .tool-grid { display: grid; gap: 1rem; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+      .tool-field { display: block; border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .tool-field span { display: block; color: #111827; font-size: 0.92rem; font-weight: 700; }
+      .tool-input-wrap { display: flex; gap: 0.7rem; align-items: center; margin-top: 0.7rem; }
+      .tool-input-wrap input { width: 100%; border: 1px solid #d1d5db; border-radius: 10px; padding: 0.65rem 0.75rem; font: inherit; }
+      .tool-input-wrap em { color: #6b7280; font-style: normal; font-size: 0.82rem; font-weight: 700; }
+      .tool-results { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 1rem; }
+      .tool-stat { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .tool-stat p { margin: 0; color: #6b7280; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+      .tool-stat strong { display: block; margin-top: 0.6rem; font-size: 1.8rem; color: #111827; line-height: 1.15; }
+      .tool-summary { margin-top: 1rem; border: 1px solid #bbf7d0; border-radius: 12px; background: #ecfdf5; padding: 1rem; color: #065f46; }
+      .tool-summary p { margin: 0; }
+      .tool-note { margin-top: 0.75rem !important; }
       .related-list { list-style: none; margin: 0; padding: 0; }
       .related-list li { border-top: 1px solid #d1d5db; padding: 0.65rem 0; }
       .related-list a { color: #0f766e; font-weight: 700; text-decoration: none; }
@@ -69,7 +91,8 @@
       .btn-primary { background: #0f766e; color: #ffffff; }
       .btn-secondary { background: #ffffff; color: #0f766e; border: 1px solid #99f6e4; }
       .meta-note { color: #4b5563; font-size: 0.92rem; margin-top: 1rem; }
-      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid { grid-template-columns: 1fr; } }
+      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 640px) { .tool-grid { grid-template-columns: 1fr; } }
     </style>
   </head>
   <body>
@@ -82,7 +105,7 @@
       <div class="container grid">
         <article class="card">
           <h1>Schema QA Checklist</h1>
-          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/resources">Resources</a><span aria-hidden="true">/</span><span aria-current="page">Schema QA Checklist</span></nav><p>This checklist helps engineering and SEO teams ship structured data updates with fewer regressions.</p><section class="sub-card"><h2>Quick Takeaways</h2><ul><li>Required and recommended field validation</li><li>Pre-release and post-release test steps</li><li>Monitoring and escalation ownership</li><li>Release log template for future audits</li></ul></section><section class="sub-card content-section"><h2>Pre-release validation</h2><p>The pre-release pass should confirm that the expected schema appears on the page, contains the right fields, and matches the visible content. This is where formatting and template issues should be caught.</p><p>Run the checks on representative URLs, not just a single sample page.</p><ul><li>Confirm rendered schema is present in the final HTML</li><li>Validate required and recommended fields</li><li>Check that visible content matches the structured data</li><li>Log which templates and URLs were reviewed</li></ul></section><section class="sub-card content-section"><h2>Post-release QA</h2><p>Production issues often appear after deployment because of caching, data feeds, or template variations. A second QA pass after release is what catches those differences before they turn into longer-term coverage problems.</p><p>Monitor enhancement reports and individual page output together.</p><ul><li>Retest live URLs after deployment</li><li>Monitor Search Console warnings and eligibility changes</li><li>Escalate template-specific issues quickly</li><li>Update the release log with final outcomes</li></ul></section><section class="sub-card"><h2>Action Checklist</h2><ol><li>Validate representative URLs before release</li><li>Retest the same pages after deployment</li><li>Track warnings by template rather than by isolated URL</li><li>Maintain a release log for future audits</li></ol></section>
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/resources">Resources</a><span aria-hidden="true">/</span><span aria-current="page">Schema QA Checklist</span></nav><p>This checklist helps engineering and SEO teams ship structured data updates with fewer regressions.</p><section class="sub-card"><h2>Quick Takeaways</h2><ul><li>Required and recommended field validation</li><li>Pre-release and post-release test steps</li><li>Monitoring and escalation ownership</li><li>Release log template for future audits</li></ul></section><section class="sub-card"><h2>Download the Checklist</h2><p>Run the sheet once before release and again after deployment so both validation passes are logged in the same place.</p><div class="resource-grid"><article class="resource-card"><div class="resource-header"><div><p class="resource-eyebrow">Checklist</p><h3>Schema QA Checklist</h3></div><span class="resource-meta">CSV checklist</span></div><p class="resource-description">CSV checklist for template-level validation, rich result testing, live verification, and follow-up actions.</p><ul class="resource-items"><li>Pre-release and post-release stages</li><li>Required-field and visible-content checks</li><li>Owner, release date, and follow-up tracking</li></ul><div class="actions"><a class="btn-primary" href="/resources/downloads/schema-qa-checklist.csv" download>Download CSV</a></div></article></div></section><section class="sub-card content-section"><h2>Pre-release validation</h2><p>The pre-release pass should confirm that the expected schema appears on the page, contains the right fields, and matches the visible content. This is where formatting and template issues should be caught.</p><p>Run the checks on representative URLs, not just a single sample page.</p><ul><li>Confirm rendered schema is present in the final HTML</li><li>Validate required and recommended fields</li><li>Check that visible content matches the structured data</li><li>Log which templates and URLs were reviewed</li></ul></section><section class="sub-card content-section"><h2>Post-release QA</h2><p>Production issues often appear after deployment because of caching, data feeds, or template variations. A second QA pass after release is what catches those differences before they turn into longer-term coverage problems.</p><p>Monitor enhancement reports and individual page output together.</p><ul><li>Retest live URLs after deployment</li><li>Monitor Search Console warnings and eligibility changes</li><li>Escalate template-specific issues quickly</li><li>Update the release log with final outcomes</li></ul></section><section class="sub-card"><h2>Action Checklist</h2><ol><li>Validate representative URLs before release</li><li>Retest the same pages after deployment</li><li>Track warnings by template rather than by isolated URL</li><li>Maintain a release log for future audits</li></ol></section>
           <div class="actions">
             <a class="btn-primary" href="https://autoblogger.bot/#/resources/schema-qa-checklist">Open Interactive Version</a>
             <a class="btn-secondary" href="https://apps.shopify.com/autoblogger">View Shopify App Listing</a>
@@ -96,5 +119,6 @@
         </aside>
       </div>
     </main>
+    
   </body>
 </html>
