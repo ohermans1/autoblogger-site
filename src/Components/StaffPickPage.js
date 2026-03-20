@@ -8,7 +8,7 @@ const renderItems = items => {
   }
 
   return (
-    <ul className="mt-4 list-disc pl-5 space-y-2 text-gray-700">
+    <ul className="mt-5 list-disc pl-5 space-y-2.5 text-gray-700">
       {items.map(item => (
         <li key={item}>{item}</li>
       ))}
@@ -17,9 +17,9 @@ const renderItems = items => {
 };
 
 const SectionCard = ({ section }) => (
-  <article className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-    <h2 className="mb-3 text-2xl font-semibold text-gray-900">{section.title}</h2>
-    <div className="space-y-3 text-gray-700">
+  <article className="mx-auto max-w-4xl rounded-[28px] border border-gray-200 bg-white p-7 shadow-sm md:p-8">
+    <h2 className="mb-4 text-2xl font-semibold text-gray-900">{section.title}</h2>
+    <div className="space-y-3.5 text-lg leading-8 text-gray-700">
       {section.paragraphs.map(paragraph => (
         <p key={paragraph}>{paragraph}</p>
       ))}
@@ -41,56 +41,36 @@ const StaffPickPage = () => {
   };
 
   return (
-    <section className="py-16 md:bg-gradient-to-b md:from-white md:to-gray-100">
+    <section className="py-16 md:bg-gradient-to-b md:from-gray-50 md:via-white md:to-gray-100">
       <div className="mx-auto max-w-5xl">
-        <p className="mb-3 text-center text-sm font-semibold uppercase tracking-[0.24em] text-primary">Featured by Shopify twice</p>
-        <h1 className="mb-6 text-center text-3xl font-bold text-gray-800 md:text-4xl">{page.heading}</h1>
-
-        <p className="mx-auto mb-4 max-w-4xl text-center text-lg text-gray-700">{page.intro}</p>
-        <p className="mx-auto mb-10 max-w-4xl text-center text-base text-gray-600">
-          Want the fuller picture? Explore the{" "}
-          <SmartLink to="/features" className="font-semibold text-primary hover:underline">
-            features
-          </SmartLink>
-          , read the{" "}
-          <SmartLink to="/reviews" className="font-semibold text-primary hover:underline">
-            merchant reviews
-          </SmartLink>
-          , and browse the{" "}
-          <SmartLink to="/faqs" className="font-semibold text-primary hover:underline">
-            FAQs
-          </SmartLink>
-          .
-        </p>
-
-        <div className="mb-12 grid gap-6 md:grid-cols-3">
-          {page.bullets.map(item => (
-            <article key={item} className="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-sm">
-              <p className="text-base font-medium text-gray-800">{item}</p>
-            </article>
-          ))}
+        <div className="mb-12 rounded-[32px] border border-gray-200 bg-white px-6 py-10 text-center shadow-sm md:px-12 md:py-12">
+          <p className="mb-4 inline-flex rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+            Featured by Shopify twice
+          </p>
+          <h1 className="mx-auto mb-6 max-w-3xl text-3xl font-bold leading-tight text-gray-900 md:text-5xl">{page.heading}</h1>
+          <p className="mx-auto max-w-4xl text-lg leading-8 text-gray-700 md:text-xl">{page.intro}</p>
         </div>
 
-        <div className="mb-12">
-          <h2 className="mb-4 text-center text-2xl font-semibold text-gray-900">Seen in the Shopify App Store spotlight</h2>
-          <p className="mx-auto mb-8 max-w-3xl text-center text-gray-600">
+        <div className="mb-12 rounded-[32px] border border-gray-200 bg-white p-6 shadow-sm md:p-8">
+          <h2 className="mb-4 text-center text-2xl font-semibold text-gray-900 md:text-3xl">Seen in the Shopify App Store spotlight</h2>
+          <p className="mx-auto mb-8 max-w-3xl text-center text-base leading-7 text-gray-600 md:text-lg">
             These screenshots show autoBlogger featured publicly in the Shopify App Store in 2024 and again in 2026.
           </p>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 lg:grid-cols-[0.82fr_1.18fr]">
             {page.proofGallery.map(item => (
-              <figure key={item.src} className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
-                <div className="border-b border-gray-200 bg-gray-50 px-5 py-4">
+              <figure key={item.src} className="flex h-full flex-col overflow-hidden rounded-[24px] border border-gray-200 bg-gray-50 shadow-sm">
+                <div className="border-b border-gray-200 bg-white px-5 py-4">
                   <p className="text-sm font-semibold text-gray-900">{item.title}</p>
                 </div>
 
-                <a href={item.src} target="_blank" rel="noopener noreferrer" className="block bg-white">
+                <a href={item.src} target="_blank" rel="noopener noreferrer" className="block bg-white p-3">
                   <img
                     src={item.src}
                     alt={item.alt}
                     width={item.width}
                     height={item.height}
-                    className="block h-auto w-full"
+                    className="mx-auto block h-auto w-full rounded-xl"
                     loading="lazy"
                     decoding="async"
                   />
@@ -102,22 +82,22 @@ const StaffPickPage = () => {
           </div>
         </div>
 
-        <div className="mb-12 grid gap-6 md:grid-cols-2">
+        <div className="mb-12 grid gap-6">
           {page.sections.map(section => (
             <SectionCard key={section.title} section={section} />
           ))}
         </div>
 
         {page.faq.length > 0 && (
-          <div className="mx-auto mb-12 max-w-3xl">
-            <h2 className="mb-6 text-center text-2xl font-semibold text-gray-900">Common questions</h2>
+          <div className="mx-auto mb-12 max-w-4xl rounded-[32px] border border-gray-200 bg-white p-6 shadow-sm md:p-8">
+            <h2 className="mb-6 text-center text-2xl font-semibold text-gray-900 md:text-3xl">Common questions</h2>
 
             <div className="space-y-4">
               {page.faq.map((item, index) => (
-                <div key={item.question} className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+                <div key={item.question} className="overflow-hidden rounded-2xl border border-gray-200 bg-white">
                   <button
                     type="button"
-                    className="flex w-full items-center justify-between bg-gray-100 px-5 py-4 text-left text-lg font-semibold text-gray-900 transition hover:bg-gray-200"
+                    className="flex w-full items-center justify-between bg-gray-50 px-5 py-4 text-left text-lg font-semibold text-gray-900 transition hover:bg-gray-100"
                     onClick={() => toggleFaq(index)}
                     aria-expanded={openIndex === index}
                     aria-controls={`staff-pick-faq-${index}`}
@@ -128,7 +108,7 @@ const StaffPickPage = () => {
 
                   {openIndex === index && (
                     <div id={`staff-pick-faq-${index}`} className="border-t border-gray-200 px-5 py-4">
-                      <p className="text-gray-700">{item.answer}</p>
+                      <p className="text-base leading-7 text-gray-700">{item.answer}</p>
                     </div>
                   )}
                 </div>
@@ -137,9 +117,9 @@ const StaffPickPage = () => {
           </div>
         )}
 
-        <div className="rounded-2xl border border-gray-200 bg-white p-8 text-center shadow-sm">
-          <h2 className="mb-3 text-2xl font-semibold text-gray-900">See why merchants keep shortlisting autoBlogger</h2>
-          <p className="mx-auto mb-6 max-w-3xl text-gray-700">
+        <div className="mx-auto max-w-4xl rounded-[32px] border border-gray-200 bg-white p-8 text-center shadow-sm md:p-10">
+          <h2 className="mb-3 text-2xl font-semibold text-gray-900 md:text-3xl">See why merchants keep shortlisting autoBlogger</h2>
+          <p className="mx-auto mb-6 max-w-3xl text-base leading-7 text-gray-700 md:text-lg">
             The Staff Pick history is one useful signal, but it makes the most sense alongside the reviews, features, pricing, and the full Shopify App Store listing.
           </p>
 
@@ -148,11 +128,11 @@ const StaffPickPage = () => {
               href={page.ctaHref || APP_LISTING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-lg bg-primary px-5 py-3 font-semibold text-white shadow transition hover:bg-opacity-90"
+              className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 font-semibold text-white shadow transition hover:bg-opacity-90"
             >
               {page.ctaLabel || "View autoBlogger on Shopify"}
             </a>
-            <SmartLink to="/reviews" className="inline-flex items-center rounded-lg border border-gray-300 px-5 py-3 font-semibold text-gray-700 transition hover:bg-gray-50">
+            <SmartLink to="/reviews" className="inline-flex items-center justify-center rounded-lg border border-gray-300 px-6 py-3 font-semibold text-gray-700 transition hover:bg-gray-50">
               Read merchant reviews
             </SmartLink>
           </div>

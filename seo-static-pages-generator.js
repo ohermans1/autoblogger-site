@@ -644,16 +644,6 @@ function renderRelatedLinks(page, pages) {
   return `<section class="sub-card"><h2>More to explore</h2><ul class="related-list">${links}</ul></section>`;
 }
 
-function renderStaffPickHighlights(page) {
-  if (page.bullets.length === 0) return "";
-
-  const cards = page.bullets
-    .map(item => `<article class="highlight-card"><p>${escapeHtml(item)}</p></article>`)
-    .join("");
-
-  return `<section class="staff-pick-highlights">${cards}</section>`;
-}
-
 function renderStaffPickSections(page) {
   if (page.sections.length === 0) return "";
 
@@ -669,17 +659,13 @@ function renderStaffPickSections(page) {
   return `<div class="staff-pick-sections">${sections}</div>`;
 }
 
-function renderStaffPickSupportLinks() {
-  return `<p class="staff-pick-links">Want the fuller picture? Explore the <a href="/features">features</a>, read the <a href="/reviews">merchant reviews</a>, and browse the <a href="/faqs">FAQs</a>.</p>`;
-}
-
 function renderStaffPickPrimaryContent(page) {
   const ctaLabel = page.ctaLabel || "View autoBlogger on Shopify";
   const ctaHref = page.ctaHref || APP_LISTING_URL;
 
-  return `<p class="staff-pick-eyebrow">Featured by Shopify twice</p><h1 class="staff-pick-title">${escapeHtml(page.heading)}</h1><p class="staff-pick-intro">${escapeHtml(
-    page.intro
-  )}</p>${renderStaffPickSupportLinks()}${renderStaffPickHighlights(page)}${renderProofGallery(page)}${renderStaffPickSections(page)}${renderFaqSection(
+  return `<section class="staff-pick-hero"><p class="staff-pick-eyebrow">Featured by Shopify twice</p><h1 class="staff-pick-title">${escapeHtml(
+    page.heading
+  )}</h1><p class="staff-pick-intro">${escapeHtml(page.intro)}</p></section>${renderProofGallery(page)}${renderStaffPickSections(page)}${renderFaqSection(
     page
   )}<section class="sub-card staff-pick-cta"><h2>See why merchants keep shortlisting autoBlogger</h2><p>The Staff Pick history is one useful signal, but it makes the most sense alongside the reviews, features, pricing, and the full Shopify App Store listing.</p><div class="actions"><a class="btn-primary" href="${escapeHtml(
     ctaHref
@@ -792,7 +778,7 @@ function renderHtml(page, pages) {
       .grid { display: grid; gap: 1rem; grid-template-columns: 2fr 1fr; }
       .staff-pick-layout { display: block; }
       .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 1.4rem 1.3rem; }
-      .staff-pick-card { max-width: 960px; margin: 0 auto; padding: 2rem; }
+      .staff-pick-card { max-width: 960px; margin: 0 auto; padding: 2rem; border-radius: 28px; box-shadow: 0 6px 24px rgba(15, 23, 42, 0.06); }
       .sub-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; margin-top: 1rem; }
       .breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; font-size: 0.95rem; margin-bottom: 1rem; color: #4b5563; }
       .breadcrumb a { color: #0f766e; font-weight: 600; text-decoration: none; }
@@ -817,18 +803,26 @@ function renderHtml(page, pages) {
       .proof-header { border-bottom: 1px solid #e5e7eb; background: #f8fafc; padding: 0.8rem 1rem; }
       .proof-header p { margin: 0; font-weight: 700; color: #111827; }
       .proof-caption { margin: 0; padding: 1rem; color: #4b5563; font-size: 0.95rem; }
-      .staff-pick-eyebrow { margin: 0 0 0.85rem; text-align: center; color: #0f766e; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; }
-      .staff-pick-title { margin: 0; text-align: center; font-size: 2.25rem; color: #111827; }
-      .staff-pick-intro { max-width: 50rem; margin: 1.2rem auto 0; text-align: center; font-size: 1.1rem; color: #374151; }
-      .staff-pick-links { max-width: 46rem; margin: 1rem auto 0; text-align: center; color: #4b5563; }
-      .staff-pick-links a { color: #0f766e; font-weight: 700; text-decoration: none; }
-      .staff-pick-highlights { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 2rem; }
-      .highlight-card { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1.2rem; text-align: center; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
-      .highlight-card p { margin: 0; color: #111827; font-weight: 600; }
-      .staff-pick-sections { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
-      .staff-pick-section { margin-top: 0; background: #ffffff; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .staff-pick-hero { margin-bottom: 1.75rem; border: 1px solid #e5e7eb; border-radius: 32px; background: #ffffff; padding: 2.5rem 2rem; text-align: center; box-shadow: 0 6px 24px rgba(15, 23, 42, 0.05); }
+      .staff-pick-eyebrow { display: inline-flex; margin: 0 0 1rem; border-radius: 999px; background: rgba(15, 118, 110, 0.1); padding: 0.45rem 1rem; text-align: center; color: #0f766e; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+      .staff-pick-title { max-width: 48rem; margin: 0 auto; text-align: center; font-size: 3rem; line-height: 1.15; color: #111827; }
+      .staff-pick-intro { max-width: 50rem; margin: 1.2rem auto 0; text-align: center; font-size: 1.18rem; line-height: 1.9; color: #374151; }
+      .staff-pick-card .sub-card { border-radius: 28px; background: #ffffff; padding: 1.75rem; margin-top: 0; box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04); }
+      .staff-pick-card .sub-card + .sub-card { margin-top: 1rem; }
+      .staff-pick-card .sub-card h2 { font-size: 1.85rem; color: #111827; }
+      .staff-pick-card .sub-card p { line-height: 1.9; }
+      .staff-pick-card .proof-grid { grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); gap: 1.5rem; }
+      .staff-pick-card .proof-card { border-radius: 24px; background: #f9fafb; box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05); }
+      .staff-pick-card .proof-card a { padding: 0.75rem; }
+      .staff-pick-card .proof-card img { border-radius: 14px; }
+      .staff-pick-card .proof-header { background: #ffffff; padding: 1rem 1.25rem; }
+      .staff-pick-sections { display: grid; gap: 1rem; grid-template-columns: 1fr; margin-top: 1rem; }
+      .staff-pick-section { max-width: 820px; margin: 0 auto; }
+      .staff-pick-card .faq-item { border-top: 1px solid #d1d5db; padding: 0.85rem 0; }
       .staff-pick-cta { text-align: center; }
       .staff-pick-cta p { max-width: 42rem; margin: 0 auto; color: #4b5563; }
+      .staff-pick-card .actions { justify-content: center; }
+      .staff-pick-card .btn-primary, .staff-pick-card .btn-secondary { padding: 0.8rem 1.2rem; }
       .resource-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
       .resource-card { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
       .resource-header { display: flex; justify-content: space-between; gap: 0.8rem; align-items: flex-start; }
@@ -859,8 +853,8 @@ function renderHtml(page, pages) {
       .btn-primary, .btn-secondary { padding: 0.65rem 0.95rem; border-radius: 8px; text-decoration: none; font-weight: 700; }
       .btn-primary { background: #0f766e; color: #ffffff; }
       .btn-secondary { background: #ffffff; color: #0f766e; border: 1px solid #99f6e4; }
-      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results, .staff-pick-highlights, .staff-pick-sections { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
-      @media (max-width: 640px) { .tool-grid { grid-template-columns: 1fr; } }
+      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results, .staff-pick-sections { grid-template-columns: 1fr; } .staff-pick-card .proof-grid { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } .staff-pick-title { font-size: 2.4rem; } }
+      @media (max-width: 640px) { .tool-grid { grid-template-columns: 1fr; } .staff-pick-card { padding: 1.25rem; } .staff-pick-hero { padding: 2rem 1.25rem; } .staff-pick-title { font-size: 2rem; } .staff-pick-card .sub-card { padding: 1.25rem; } }
     </style>
   </head>
   <body>

@@ -111,11 +111,7 @@
     "description": "See proof that autoBlogger was featured twice in the Shopify App Store spotlight, with public screenshots from 2024 and 2026.",
     "heading": "2x Shopify Staff Pick",
     "intro": "autoBlogger was featured in the Shopify App Store spotlight twice: once in 2024 and again in 2026. For merchants comparing Shopify blogging apps, that kind of repeat recognition is a useful sign that the product has stood out over time, not just once.",
-    "bullets": [
-      "Featured by Shopify in the App Store spotlight in 2024 and again in 2026",
-      "Public screenshots showing both spotlight placements",
-      "A useful trust signal alongside reviews, ratings, features, and pricing"
-    ],
+    "bullets": [],
     "changefreq": "monthly",
     "priority": 0.7,
     "tags": ["shopify", "trust", "proof", "reviews"]
