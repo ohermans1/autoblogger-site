@@ -1,0 +1,307 @@
+{
+  "/free-seo-checklist": {
+    "resourceSectionTitle": "Spreadsheet Downloads",
+    "resourceSectionIntro": "The checklist still works directly on-page, but the original spreadsheet versions are now linked here as well.",
+    "resourceCards": [
+      {
+        "eyebrow": "Checklist",
+        "title": "Shopify SEO Checklist Spreadsheet",
+        "description": "Offline version of the Shopify checklist with priority, effort, KPI, status, and notes columns.",
+        "meta": "XLSX workbook",
+        "items": [
+          "14 core Shopify SEO tasks",
+          "Priority, effort, and KPI columns",
+          "Status tracking and notes fields"
+        ],
+        "href": "/Shopify SEO Checklist.xlsx",
+        "label": "Download Shopify XLSX",
+        "download": true
+      },
+      {
+        "eyebrow": "Checklist",
+        "title": "Wix SEO Checklist Spreadsheet",
+        "description": "Offline version of the Wix checklist with the same execution columns used in the interactive board.",
+        "meta": "XLSX workbook",
+        "items": [
+          "14 core Wix SEO tasks",
+          "Priority, effort, and KPI columns",
+          "Status tracking and notes fields"
+        ],
+        "href": "/Wix SEO Checklist.xlsx",
+        "label": "Download Wix XLSX",
+        "download": true
+      }
+    ]
+  },
+  "/resources": {
+    "resourceSectionTitle": "Downloadable Templates and Tools",
+    "resourceSectionIntro": "Every page in the resource library now includes a working asset. Download the file directly or open the matching guide/tool page.",
+    "resourceCards": [
+      {
+        "eyebrow": "Template",
+        "title": "Shopify SEO Content Brief Template",
+        "description": "Planning sheet for keyword intent, internal links, CTA direction, ownership, and publishing status.",
+        "meta": "CSV template",
+        "items": [
+          "Primary and supporting keyword fields",
+          "Internal link and CTA requirements",
+          "Owner, status, and publish-date tracking"
+        ],
+        "href": "/resources/downloads/shopify-seo-content-brief-template.csv",
+        "label": "Download CSV",
+        "download": true,
+        "secondaryHref": "/resources/shopify-seo-content-brief-template",
+        "secondaryLabel": "Open guide"
+      },
+      {
+        "eyebrow": "Blueprint",
+        "title": "Internal Linking Blueprint",
+        "description": "Mapping sheet for source URLs, target pages, anchor angles, commercial goals, and review dates.",
+        "meta": "CSV worksheet",
+        "items": [
+          "Primary and secondary destination mapping",
+          "Anchor angle guidance by source page",
+          "Priority, owner, and review-date fields"
+        ],
+        "href": "/resources/downloads/internal-linking-blueprint.csv",
+        "label": "Download CSV",
+        "download": true,
+        "secondaryHref": "/resources/internal-linking-blueprint",
+        "secondaryLabel": "Open guide"
+      },
+      {
+        "eyebrow": "Checklist",
+        "title": "Schema QA Checklist",
+        "description": "Release checklist for template coverage, required fields, live validation, and follow-up monitoring.",
+        "meta": "CSV checklist",
+        "items": [
+          "Pre-release and post-release stages",
+          "Validation and visible-content checks",
+          "Release owner and follow-up dates"
+        ],
+        "href": "/resources/downloads/schema-qa-checklist.csv",
+        "label": "Download CSV",
+        "download": true,
+        "secondaryHref": "/resources/schema-qa-checklist",
+        "secondaryLabel": "Open guide"
+      },
+      {
+        "eyebrow": "Tool",
+        "title": "SEO ROI Calculator",
+        "description": "Interactive CTR-lift calculator plus a planning worksheet for scenario modeling and roadmap prioritization.",
+        "meta": "Calculator + CSV",
+        "items": [
+          "Monthly impressions and CTR inputs",
+          "Conversion rate and AOV scenario modeling",
+          "Incremental clicks, orders, and revenue output"
+        ],
+        "href": "/resources/ecommerce-seo-roi-calculator",
+        "label": "Open calculator",
+        "secondaryHref": "/resources/downloads/ecommerce-seo-roi-calculator.csv",
+        "secondaryLabel": "Download worksheet",
+        "secondaryDownload": true
+      },
+      {
+        "eyebrow": "Worksheet",
+        "title": "CTR Title Test Sheet",
+        "description": "Test log for current snippets, variant ideas, impression windows, results, and next actions.",
+        "meta": "CSV worksheet",
+        "items": [
+          "Current and proposed title/meta fields",
+          "Before-and-after impression and CTR columns",
+          "Decision and next-test notes"
+        ],
+        "href": "/resources/downloads/ctr-title-test-sheet.csv",
+        "label": "Download CSV",
+        "download": true,
+        "secondaryHref": "/resources/ctr-title-test-sheet",
+        "secondaryLabel": "Open guide"
+      },
+      {
+        "eyebrow": "Checklist",
+        "title": "Content Refresh Checklist",
+        "description": "Refresh workflow for selecting pages, updating snippets and links, and logging the republish cycle.",
+        "meta": "CSV checklist",
+        "items": [
+          "Traffic and CTR trend prompts",
+          "Snippet, body, CTA, and link checks",
+          "Republish and review-date logging"
+        ],
+        "href": "/resources/downloads/content-refresh-checklist.csv",
+        "label": "Download CSV",
+        "download": true,
+        "secondaryHref": "/resources/content-refresh-checklist",
+        "secondaryLabel": "Open guide"
+      },
+      {
+        "eyebrow": "Checklist",
+        "title": "Shopify Blog QA Checklist",
+        "description": "Pre-publish and post-publish QA sheet for metadata, links, FAQs, media, indexing, and reporting.",
+        "meta": "CSV checklist",
+        "items": [
+          "Metadata, headings, and link checks",
+          "FAQ, CTA, and media review fields",
+          "Indexing request and reporting logging"
+        ],
+        "href": "/resources/downloads/shopify-blog-qa-checklist.csv",
+        "label": "Download CSV",
+        "download": true,
+        "secondaryHref": "/resources/shopify-blog-qa-checklist",
+        "secondaryLabel": "Open guide"
+      }
+    ]
+  },
+  "/resources/shopify-seo-content-brief-template": {
+    "resourceSectionTitle": "Download the Template",
+    "resourceSectionIntro": "Use the sample row as a starting point, then duplicate it for each planned article.",
+    "resourceCards": [
+      {
+        "eyebrow": "Template",
+        "title": "Shopify SEO Content Brief Template",
+        "description": "CSV planning sheet for keyword targeting, page angle, internal links, proof points, and publishing workflow.",
+        "meta": "CSV template",
+        "items": [
+          "Keyword, intent, and reader-stage fields",
+          "Required product and collection links",
+          "CTA, owner, and publish-date tracking"
+        ],
+        "href": "/resources/downloads/shopify-seo-content-brief-template.csv",
+        "label": "Download CSV",
+        "download": true
+      }
+    ]
+  },
+  "/resources/internal-linking-blueprint": {
+    "resourceSectionTitle": "Download the Blueprint",
+    "resourceSectionIntro": "Use this sheet to assign one primary commercial destination before a post is drafted or refreshed.",
+    "resourceCards": [
+      {
+        "eyebrow": "Blueprint",
+        "title": "Internal Linking Blueprint",
+        "description": "CSV worksheet for source-page mapping, target selection, anchor angle guidance, and recurring reviews.",
+        "meta": "CSV worksheet",
+        "items": [
+          "Source pages and page-type fields",
+          "Primary and secondary destination columns",
+          "Anchor guidance, owner, and review date"
+        ],
+        "href": "/resources/downloads/internal-linking-blueprint.csv",
+        "label": "Download CSV",
+        "download": true
+      }
+    ]
+  },
+  "/resources/schema-qa-checklist": {
+    "resourceSectionTitle": "Download the Checklist",
+    "resourceSectionIntro": "Run the sheet once before release and again after deployment so both validation passes are logged in the same place.",
+    "resourceCards": [
+      {
+        "eyebrow": "Checklist",
+        "title": "Schema QA Checklist",
+        "description": "CSV checklist for template-level validation, rich result testing, live verification, and follow-up actions.",
+        "meta": "CSV checklist",
+        "items": [
+          "Pre-release and post-release stages",
+          "Required-field and visible-content checks",
+          "Owner, release date, and follow-up tracking"
+        ],
+        "href": "/resources/downloads/schema-qa-checklist.csv",
+        "label": "Download CSV",
+        "download": true
+      }
+    ]
+  },
+  "/resources/ecommerce-seo-roi-calculator": {
+    "resourceSectionTitle": "Use the Worksheet or Calculator",
+    "resourceSectionIntro": "Model the scenario directly on-page, then keep a copy of the worksheet for backlog planning and stakeholder reviews.",
+    "resourceCards": [
+      {
+        "eyebrow": "Worksheet",
+        "title": "SEO ROI Planning Worksheet",
+        "description": "CSV worksheet for modeling CTR-lift scenarios, conversion assumptions, revenue projections, and decision notes.",
+        "meta": "CSV worksheet",
+        "items": [
+          "Scenario inputs for impressions and CTR",
+          "Conversion rate and AOV assumptions",
+          "Incremental clicks, orders, and revenue fields"
+        ],
+        "href": "/resources/downloads/ecommerce-seo-roi-calculator.csv",
+        "label": "Download CSV",
+        "download": true
+      }
+    ],
+    "tool": {
+      "key": "seo-roi-calculator",
+      "title": "Interactive SEO ROI Calculator",
+      "description": "Estimate additional clicks, orders, and revenue from a CTR improvement scenario while holding conversion rate and AOV constant.",
+      "note": "This model isolates CTR lift. It does not assume ranking changes, margin changes, or conversion-rate changes.",
+      "defaults": {
+        "monthlyImpressions": 20000,
+        "currentCtr": 2.4,
+        "targetCtr": 3.8,
+        "conversionRate": 2.2,
+        "averageOrderValue": 95
+      }
+    }
+  },
+  "/resources/ctr-title-test-sheet": {
+    "resourceSectionTitle": "Download the Test Sheet",
+    "resourceSectionIntro": "Use one row per snippet test so your review window and decision notes stay comparable over time.",
+    "resourceCards": [
+      {
+        "eyebrow": "Worksheet",
+        "title": "CTR Title Test Sheet",
+        "description": "CSV log for current snippets, proposed variants, test angles, impression windows, outcomes, and next actions.",
+        "meta": "CSV worksheet",
+        "items": [
+          "Current and proposed title/meta columns",
+          "Before-and-after impression and CTR logging",
+          "Decision, next-test, and owner fields"
+        ],
+        "href": "/resources/downloads/ctr-title-test-sheet.csv",
+        "label": "Download CSV",
+        "download": true
+      }
+    ]
+  },
+  "/resources/content-refresh-checklist": {
+    "resourceSectionTitle": "Download the Checklist",
+    "resourceSectionIntro": "Run the sheet in order so snippet updates, body updates, and link checks are logged in the same refresh cycle.",
+    "resourceCards": [
+      {
+        "eyebrow": "Checklist",
+        "title": "Content Refresh Checklist",
+        "description": "CSV checklist for selecting refresh candidates, updating the page, and tracking the review window after republishing.",
+        "meta": "CSV checklist",
+        "items": [
+          "Traffic and CTR trend prompts",
+          "Snippet, body, CTA, and internal-link checks",
+          "Republish date and follow-up review logging"
+        ],
+        "href": "/resources/downloads/content-refresh-checklist.csv",
+        "label": "Download CSV",
+        "download": true
+      }
+    ]
+  },
+  "/resources/shopify-blog-qa-checklist": {
+    "resourceSectionTitle": "Download the Checklist",
+    "resourceSectionIntro": "Use the same sheet before every post goes live so the QA standard stays consistent as publishing volume grows.",
+    "resourceCards": [
+      {
+        "eyebrow": "Checklist",
+        "title": "Shopify Blog QA Checklist",
+        "description": "CSV checklist for metadata, headings, commercial links, FAQs, media, indexing, and reporting handoff.",
+        "meta": "CSV checklist",
+        "items": [
+          "Metadata, heading, and link review fields",
+          "FAQ, CTA, and image checks",
+          "Indexing request and reporting handoff logging"
+        ],
+        "href": "/resources/downloads/shopify-blog-qa-checklist.csv",
+        "label": "Download CSV",
+        "download": true
+      }
+    ]
+  }
+}

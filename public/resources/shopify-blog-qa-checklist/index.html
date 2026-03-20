@@ -60,6 +60,28 @@
       .proof-header { border-bottom: 1px solid #e5e7eb; background: #f8fafc; padding: 0.8rem 1rem; }
       .proof-header p { margin: 0; font-weight: 700; color: #111827; }
       .proof-caption { margin: 0; padding: 1rem; color: #4b5563; font-size: 0.95rem; }
+      .resource-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
+      .resource-card { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .resource-header { display: flex; justify-content: space-between; gap: 0.8rem; align-items: flex-start; }
+      .resource-header h3 { margin: 0.35rem 0 0; font-size: 1.1rem; }
+      .resource-eyebrow { margin: 0; color: #0f766e; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+      .resource-meta { display: inline-flex; align-items: center; border-radius: 999px; background: #f3f4f6; padding: 0.3rem 0.7rem; color: #374151; font-size: 0.78rem; font-weight: 700; white-space: nowrap; }
+      .resource-description { margin: 0.85rem 0 0; }
+      .resource-items { margin-top: 0.9rem; }
+      .tool-shell { margin-top: 1rem; }
+      .tool-grid { display: grid; gap: 1rem; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+      .tool-field { display: block; border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .tool-field span { display: block; color: #111827; font-size: 0.92rem; font-weight: 700; }
+      .tool-input-wrap { display: flex; gap: 0.7rem; align-items: center; margin-top: 0.7rem; }
+      .tool-input-wrap input { width: 100%; border: 1px solid #d1d5db; border-radius: 10px; padding: 0.65rem 0.75rem; font: inherit; }
+      .tool-input-wrap em { color: #6b7280; font-style: normal; font-size: 0.82rem; font-weight: 700; }
+      .tool-results { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 1rem; }
+      .tool-stat { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .tool-stat p { margin: 0; color: #6b7280; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+      .tool-stat strong { display: block; margin-top: 0.6rem; font-size: 1.8rem; color: #111827; line-height: 1.15; }
+      .tool-summary { margin-top: 1rem; border: 1px solid #bbf7d0; border-radius: 12px; background: #ecfdf5; padding: 1rem; color: #065f46; }
+      .tool-summary p { margin: 0; }
+      .tool-note { margin-top: 0.75rem !important; }
       .related-list { list-style: none; margin: 0; padding: 0; }
       .related-list li { border-top: 1px solid #d1d5db; padding: 0.65rem 0; }
       .related-list a { color: #0f766e; font-weight: 700; text-decoration: none; }
@@ -69,7 +91,8 @@
       .btn-primary { background: #0f766e; color: #ffffff; }
       .btn-secondary { background: #ffffff; color: #0f766e; border: 1px solid #99f6e4; }
       .meta-note { color: #4b5563; font-size: 0.92rem; margin-top: 1rem; }
-      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid { grid-template-columns: 1fr; } }
+      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 640px) { .tool-grid { grid-template-columns: 1fr; } }
     </style>
   </head>
   <body>
@@ -82,7 +105,7 @@
       <div class="container grid">
         <article class="card">
           <h1>Shopify Blog QA Checklist</h1>
-          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/resources">Resources</a><span aria-hidden="true">/</span><span aria-current="page">Shopify Blog QA Checklist</span></nav><p>This checklist is designed for stores that want every Shopify post to ship with cleaner SEO structure and fewer avoidable misses.</p><section class="sub-card"><h2>Quick Takeaways</h2><ul><li>Title, meta, and heading review</li><li>Product and collection link checks</li><li>FAQ, imagery, and CTA review</li><li>Post-publish indexing and measurement steps</li></ul></section><section class="sub-card content-section"><h2>Pre-publish checks</h2><p>The QA pass should focus on the structural details that often get missed when content is moving quickly. Those small misses add up to weaker snippets, weaker internal linking, and weaker conversion support.</p><p>A short consistent checklist is better than an exhaustive process no one follows.</p><ul><li>Title, meta description, and heading hierarchy</li><li>Primary product or collection links</li><li>FAQ or proof blocks where the topic calls for them</li><li>CTA placement and image or media quality</li></ul></section><section class="sub-card content-section"><h2>Post-publish checks</h2><p>Once the post is live, confirm the page renders correctly, links point to the right destinations, and the URL is ready for indexing and measurement. Post-publish QA is where template and publishing issues usually surface.</p><p>This step also makes later refresh work easier because the baseline is documented.</p><ul><li>Confirm live rendering and internal links</li><li>Check indexing status and page discoverability</li><li>Record the page in the reporting or refresh tracker</li><li>Review early performance once impressions begin to appear</li></ul></section><section class="sub-card"><h2>Action Checklist</h2><ol><li>Run the pre-publish QA before every Shopify post goes live</li><li>Confirm links, snippet, and CTA behavior on the live URL</li><li>Log the post in the tracking sheet after publication</li><li>Use performance data to improve the checklist over time</li></ol></section>
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/resources">Resources</a><span aria-hidden="true">/</span><span aria-current="page">Shopify Blog QA Checklist</span></nav><p>This checklist is designed for stores that want every Shopify post to ship with cleaner SEO structure and fewer avoidable misses.</p><section class="sub-card"><h2>Quick Takeaways</h2><ul><li>Title, meta, and heading review</li><li>Product and collection link checks</li><li>FAQ, imagery, and CTA review</li><li>Post-publish indexing and measurement steps</li></ul></section><section class="sub-card"><h2>Download the Checklist</h2><p>Use the same sheet before every post goes live so the QA standard stays consistent as publishing volume grows.</p><div class="resource-grid"><article class="resource-card"><div class="resource-header"><div><p class="resource-eyebrow">Checklist</p><h3>Shopify Blog QA Checklist</h3></div><span class="resource-meta">CSV checklist</span></div><p class="resource-description">CSV checklist for metadata, headings, commercial links, FAQs, media, indexing, and reporting handoff.</p><ul class="resource-items"><li>Metadata, heading, and link review fields</li><li>FAQ, CTA, and image checks</li><li>Indexing request and reporting handoff logging</li></ul><div class="actions"><a class="btn-primary" href="/resources/downloads/shopify-blog-qa-checklist.csv" download>Download CSV</a></div></article></div></section><section class="sub-card content-section"><h2>Pre-publish checks</h2><p>The QA pass should focus on the structural details that often get missed when content is moving quickly. Those small misses add up to weaker snippets, weaker internal linking, and weaker conversion support.</p><p>A short consistent checklist is better than an exhaustive process no one follows.</p><ul><li>Title, meta description, and heading hierarchy</li><li>Primary product or collection links</li><li>FAQ or proof blocks where the topic calls for them</li><li>CTA placement and image or media quality</li></ul></section><section class="sub-card content-section"><h2>Post-publish checks</h2><p>Once the post is live, confirm the page renders correctly, links point to the right destinations, and the URL is ready for indexing and measurement. Post-publish QA is where template and publishing issues usually surface.</p><p>This step also makes later refresh work easier because the baseline is documented.</p><ul><li>Confirm live rendering and internal links</li><li>Check indexing status and page discoverability</li><li>Record the page in the reporting or refresh tracker</li><li>Review early performance once impressions begin to appear</li></ul></section><section class="sub-card"><h2>Action Checklist</h2><ol><li>Run the pre-publish QA before every Shopify post goes live</li><li>Confirm links, snippet, and CTA behavior on the live URL</li><li>Log the post in the tracking sheet after publication</li><li>Use performance data to improve the checklist over time</li></ol></section>
           <div class="actions">
             <a class="btn-primary" href="https://autoblogger.bot/#/resources/shopify-blog-qa-checklist">Open Interactive Version</a>
             <a class="btn-secondary" href="https://apps.shopify.com/autoblogger">View Shopify App Listing</a>
@@ -96,5 +119,6 @@
         </aside>
       </div>
     </main>
+    
   </body>
 </html>

@@ -3,6 +3,7 @@ const path = require("path");
 const corePages = require("./src/seo/corePages.json");
 const programmaticPages = require("./src/seo/programmaticPages.json");
 const pageContentByRoute = require("./src/seo/pageContent.json");
+const pageAssetsByRoute = require("./src/seo/pageAssets.json");
 
 const SITE_URL = "https://autoblogger.bot";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/logo.png`;
@@ -74,9 +75,52 @@ function normalizeComparisonTable(table) {
   };
 }
 
+function normalizeResourceCards(cards) {
+  if (!Array.isArray(cards)) return [];
+
+  return cards
+    .map(card => ({
+      eyebrow: card && card.eyebrow ? card.eyebrow : "",
+      title: card && card.title ? card.title : "",
+      description: card && card.description ? card.description : "",
+      meta: card && card.meta ? card.meta : "",
+      items: Array.isArray(card && card.items) ? card.items : [],
+      href: card && card.href ? card.href : "",
+      label: card && card.label ? card.label : "",
+      download: Boolean(card && card.download),
+      secondaryHref: card && card.secondaryHref ? card.secondaryHref : "",
+      secondaryLabel: card && card.secondaryLabel ? card.secondaryLabel : "",
+      secondaryDownload: Boolean(card && card.secondaryDownload)
+    }))
+    .filter(card => card.title && (card.href || card.secondaryHref));
+}
+
+function normalizeTool(tool) {
+  if (!tool || typeof tool !== "object" || !tool.key) {
+    return null;
+  }
+
+  const defaults = tool.defaults || {};
+
+  return {
+    key: tool.key,
+    title: tool.title || "",
+    description: tool.description || "",
+    note: tool.note || "",
+    defaults: {
+      monthlyImpressions: typeof defaults.monthlyImpressions === "number" ? defaults.monthlyImpressions : 20000,
+      currentCtr: typeof defaults.currentCtr === "number" ? defaults.currentCtr : 2.4,
+      targetCtr: typeof defaults.targetCtr === "number" ? defaults.targetCtr : 3.8,
+      conversionRate: typeof defaults.conversionRate === "number" ? defaults.conversionRate : 2.2,
+      averageOrderValue: typeof defaults.averageOrderValue === "number" ? defaults.averageOrderValue : 95
+    }
+  };
+}
+
 const STATIC_SEO_PAGES = [...corePages, ...programmaticPages].map(page => {
   const content = pageContentByRoute[page.route] || {};
-  const mergedPage = { ...page, ...content };
+  const assets = pageAssetsByRoute[page.route] || {};
+  const mergedPage = { ...page, ...content, ...assets };
 
   return {
     ...mergedPage,
@@ -86,6 +130,10 @@ const STATIC_SEO_PAGES = [...corePages, ...programmaticPages].map(page => {
     sections: normalizeSections(mergedPage.sections),
     checklist: Array.isArray(mergedPage.checklist) ? mergedPage.checklist : [],
     comparisonTable: normalizeComparisonTable(mergedPage.comparisonTable),
+    resourceSectionTitle: mergedPage.resourceSectionTitle || "",
+    resourceSectionIntro: mergedPage.resourceSectionIntro || "",
+    resourceCards: normalizeResourceCards(mergedPage.resourceCards),
+    tool: normalizeTool(mergedPage.tool),
     changefreq: mergedPage.changefreq || "monthly",
     priority: typeof mergedPage.priority === "number" ? mergedPage.priority : 0.6,
     robots: mergedPage.robots || DEFAULT_ROBOTS
@@ -412,6 +460,117 @@ function renderQuickTakeaways(page) {
   return `<section class="sub-card"><h2>Quick Takeaways</h2>${renderList(page.bullets)}</section>`;
 }
 
+function isExternalHref(href) {
+  return /^(?:[a-z][a-z\d+\-.]*:)?\/\//i.test(href) || /^(?:mailto|tel):/i.test(href);
+}
+
+function renderActionLink(href, label, className, download) {
+  if (!href || !label) return "";
+
+  const targetAttributes = isExternalHref(href) ? ' target="_blank" rel="noopener noreferrer"' : "";
+  const downloadAttribute = download ? " download" : "";
+
+  return `<a class="${className}" href="${escapeHtml(href)}"${targetAttributes}${downloadAttribute}>${escapeHtml(label)}</a>`;
+}
+
+function renderResourceCards(page) {
+  if (!page.resourceCards.length) return "";
+
+  const intro = page.resourceSectionIntro ? `<p>${escapeHtml(page.resourceSectionIntro)}</p>` : "";
+  const cards = page.resourceCards
+    .map(card => {
+      const eyebrow = card.eyebrow ? `<p class="resource-eyebrow">${escapeHtml(card.eyebrow)}</p>` : "";
+      const meta = card.meta ? `<span class="resource-meta">${escapeHtml(card.meta)}</span>` : "";
+      const description = card.description ? `<p class="resource-description">${escapeHtml(card.description)}</p>` : "";
+      const items = card.items.length
+        ? `<ul class="resource-items">${card.items.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`
+        : "";
+      const actions = [
+        renderActionLink(card.href, card.label, "btn-primary", card.download),
+        renderActionLink(card.secondaryHref, card.secondaryLabel, "btn-secondary", card.secondaryDownload)
+      ]
+        .filter(Boolean)
+        .join("");
+
+      return `<article class="resource-card"><div class="resource-header"><div>${eyebrow}<h3>${escapeHtml(card.title)}</h3></div>${meta}</div>${description}${items}<div class="actions">${actions}</div></article>`;
+    })
+    .join("");
+
+  return `<section class="sub-card"><h2>${escapeHtml(page.resourceSectionTitle || "Downloads and Tools")}</h2>${intro}<div class="resource-grid">${cards}</div></section>`;
+}
+
+function renderToolSection(page) {
+  if (!page.tool || page.tool.key !== "seo-roi-calculator") return "";
+
+  const defaults = page.tool.defaults || {};
+  const note = page.tool.note ? `<p class="tool-note">${escapeHtml(page.tool.note)}</p>` : "";
+
+  return `<section class="sub-card"><h2>${escapeHtml(page.tool.title || "Interactive SEO ROI Calculator")}</h2><p>${escapeHtml(
+    page.tool.description || "Estimate additional clicks, orders, and revenue from a CTR improvement scenario."
+  )}</p><div class="tool-shell" data-roi-calculator><div class="tool-grid"><label class="tool-field"><span>Monthly impressions</span><div class="tool-input-wrap"><input type="number" min="0" step="1" name="monthlyImpressions" value="${escapeHtml(
+    String(defaults.monthlyImpressions)
+  )}" /></div></label><label class="tool-field"><span>Current CTR</span><div class="tool-input-wrap"><input type="number" min="0" step="0.1" name="currentCtr" value="${escapeHtml(
+    String(defaults.currentCtr)
+  )}" /><em>%</em></div></label><label class="tool-field"><span>Target CTR</span><div class="tool-input-wrap"><input type="number" min="0" step="0.1" name="targetCtr" value="${escapeHtml(
+    String(defaults.targetCtr)
+  )}" /><em>%</em></div></label><label class="tool-field"><span>Conversion rate</span><div class="tool-input-wrap"><input type="number" min="0" step="0.1" name="conversionRate" value="${escapeHtml(
+    String(defaults.conversionRate)
+  )}" /><em>%</em></div></label><label class="tool-field"><span>Average order value</span><div class="tool-input-wrap"><input type="number" min="0" step="0.1" name="averageOrderValue" value="${escapeHtml(
+    String(defaults.averageOrderValue)
+  )}" /><em>USD</em></div></label></div><div class="tool-results"><div class="tool-stat"><p>Current Clicks / Month</p><strong data-output="current-clicks">0</strong></div><div class="tool-stat"><p>Projected Clicks / Month</p><strong data-output="projected-clicks">0</strong></div><div class="tool-stat"><p>Additional Clicks / Month</p><strong data-output="additional-clicks">0</strong></div><div class="tool-stat"><p>Additional Orders / Month</p><strong data-output="additional-orders">0</strong></div><div class="tool-stat"><p>Additional Revenue / Month</p><strong data-output="additional-revenue-month">0</strong></div><div class="tool-stat"><p>Additional Revenue / Year</p><strong data-output="additional-revenue-year">0</strong></div></div><div class="tool-summary"><p><strong>What this models:</strong> The calculator keeps impressions constant and estimates lift from a CTR change only. Orders and revenue are derived from the conversion rate and average order value you enter.</p>${note}</div></div></section>`;
+}
+
+function renderToolScript(page) {
+  if (!page.tool || page.tool.key !== "seo-roi-calculator") return "";
+
+  return `<script>
+    (function () {
+      var root = document.querySelector("[data-roi-calculator]");
+      if (!root) return;
+
+      var numberFormatter = new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 });
+      var currencyFormatter = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+
+      function readValue(name) {
+        var input = root.querySelector('[name="' + name + '"]');
+        var parsed = parseFloat(input && input.value ? input.value : "0");
+        return Number.isFinite(parsed) ? parsed : 0;
+      }
+
+      function writeValue(key, value, formatter) {
+        var node = root.querySelector('[data-output="' + key + '"]');
+        if (!node) return;
+        node.textContent = formatter.format(value);
+      }
+
+      function update() {
+        var impressions = readValue("monthlyImpressions");
+        var currentCtr = readValue("currentCtr");
+        var targetCtr = readValue("targetCtr");
+        var conversionRate = readValue("conversionRate");
+        var averageOrderValue = readValue("averageOrderValue");
+
+        var currentClicks = impressions * (currentCtr / 100);
+        var projectedClicks = impressions * (targetCtr / 100);
+        var additionalClicks = projectedClicks - currentClicks;
+        var additionalOrders = additionalClicks * (conversionRate / 100);
+        var additionalRevenueMonth = additionalOrders * averageOrderValue;
+        var additionalRevenueYear = additionalRevenueMonth * 12;
+
+        writeValue("current-clicks", currentClicks, numberFormatter);
+        writeValue("projected-clicks", projectedClicks, numberFormatter);
+        writeValue("additional-clicks", additionalClicks, numberFormatter);
+        writeValue("additional-orders", additionalOrders, numberFormatter);
+        writeValue("additional-revenue-month", additionalRevenueMonth, currencyFormatter);
+        writeValue("additional-revenue-year", additionalRevenueYear, currencyFormatter);
+      }
+
+      root.addEventListener("input", update);
+      update();
+    }());
+  </script>`;
+}
+
 function renderContentSections(page) {
   if (page.sections.length === 0) return "";
 
@@ -555,7 +714,8 @@ function renderHtml(page, pages) {
   const primaryContent =
     page.route === "/site-map"
       ? `<p>${escapeHtml(page.intro)}</p>${renderSiteMapCollection(pages)}`
-      : `${renderBreadcrumbNav(page)}<p>${escapeHtml(page.intro)}</p>${renderQuickTakeaways(page)}${renderComparisonTable(page)}${renderProofGallery(page)}${renderContentSections(page)}${renderChecklist(page)}`;
+      : `${renderBreadcrumbNav(page)}<p>${escapeHtml(page.intro)}</p>${renderQuickTakeaways(page)}${renderResourceCards(page)}${renderToolSection(page)}${renderComparisonTable(page)}${renderProofGallery(page)}${renderContentSections(page)}${renderChecklist(page)}`;
+  const toolScript = renderToolScript(page);
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -619,6 +779,28 @@ function renderHtml(page, pages) {
       .proof-header { border-bottom: 1px solid #e5e7eb; background: #f8fafc; padding: 0.8rem 1rem; }
       .proof-header p { margin: 0; font-weight: 700; color: #111827; }
       .proof-caption { margin: 0; padding: 1rem; color: #4b5563; font-size: 0.95rem; }
+      .resource-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
+      .resource-card { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .resource-header { display: flex; justify-content: space-between; gap: 0.8rem; align-items: flex-start; }
+      .resource-header h3 { margin: 0.35rem 0 0; font-size: 1.1rem; }
+      .resource-eyebrow { margin: 0; color: #0f766e; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+      .resource-meta { display: inline-flex; align-items: center; border-radius: 999px; background: #f3f4f6; padding: 0.3rem 0.7rem; color: #374151; font-size: 0.78rem; font-weight: 700; white-space: nowrap; }
+      .resource-description { margin: 0.85rem 0 0; }
+      .resource-items { margin-top: 0.9rem; }
+      .tool-shell { margin-top: 1rem; }
+      .tool-grid { display: grid; gap: 1rem; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+      .tool-field { display: block; border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .tool-field span { display: block; color: #111827; font-size: 0.92rem; font-weight: 700; }
+      .tool-input-wrap { display: flex; gap: 0.7rem; align-items: center; margin-top: 0.7rem; }
+      .tool-input-wrap input { width: 100%; border: 1px solid #d1d5db; border-radius: 10px; padding: 0.65rem 0.75rem; font: inherit; }
+      .tool-input-wrap em { color: #6b7280; font-style: normal; font-size: 0.82rem; font-weight: 700; }
+      .tool-results { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 1rem; }
+      .tool-stat { border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; padding: 1rem; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+      .tool-stat p { margin: 0; color: #6b7280; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+      .tool-stat strong { display: block; margin-top: 0.6rem; font-size: 1.8rem; color: #111827; line-height: 1.15; }
+      .tool-summary { margin-top: 1rem; border: 1px solid #bbf7d0; border-radius: 12px; background: #ecfdf5; padding: 1rem; color: #065f46; }
+      .tool-summary p { margin: 0; }
+      .tool-note { margin-top: 0.75rem !important; }
       .related-list { list-style: none; margin: 0; padding: 0; }
       .related-list li { border-top: 1px solid #d1d5db; padding: 0.65rem 0; }
       .related-list a { color: #0f766e; font-weight: 700; text-decoration: none; }
@@ -628,7 +810,8 @@ function renderHtml(page, pages) {
       .btn-primary { background: #0f766e; color: #ffffff; }
       .btn-secondary { background: #ffffff; color: #0f766e; border: 1px solid #99f6e4; }
       .meta-note { color: #4b5563; font-size: 0.92rem; margin-top: 1rem; }
-      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid { grid-template-columns: 1fr; } }
+      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 640px) { .tool-grid { grid-template-columns: 1fr; } }
     </style>
   </head>
   <body>
@@ -655,6 +838,7 @@ function renderHtml(page, pages) {
         </aside>
       </div>
     </main>
+    ${toolScript}
   </body>
 </html>`;
 }

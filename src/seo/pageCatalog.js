@@ -1,6 +1,7 @@
 import corePages from "./corePages.json";
 import programmaticPages from "./programmaticPages.json";
 import pageContentByRoute from "./pageContent.json";
+import pageAssetsByRoute from "./pageAssets.json";
 
 export const SITE_URL = "https://autoblogger.bot";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/logo.png`;
@@ -52,9 +53,50 @@ function normalizeComparisonTable(table) {
   };
 }
 
+function normalizeResourceCards(cards) {
+  if (!Array.isArray(cards)) return [];
+
+  return cards
+    .map(card => ({
+      eyebrow: card?.eyebrow || "",
+      title: card?.title || "",
+      description: card?.description || "",
+      meta: card?.meta || "",
+      items: Array.isArray(card?.items) ? card.items : [],
+      href: card?.href || "",
+      label: card?.label || "",
+      download: Boolean(card?.download),
+      secondaryHref: card?.secondaryHref || "",
+      secondaryLabel: card?.secondaryLabel || "",
+      secondaryDownload: Boolean(card?.secondaryDownload)
+    }))
+    .filter(card => card.title && (card.href || card.secondaryHref));
+}
+
+function normalizeTool(tool) {
+  if (!tool || typeof tool !== "object" || !tool.key) return null;
+
+  const defaults = tool.defaults || {};
+
+  return {
+    key: tool.key,
+    title: tool.title || "",
+    description: tool.description || "",
+    note: tool.note || "",
+    defaults: {
+      monthlyImpressions: typeof defaults.monthlyImpressions === "number" ? defaults.monthlyImpressions : 20000,
+      currentCtr: typeof defaults.currentCtr === "number" ? defaults.currentCtr : 2.4,
+      targetCtr: typeof defaults.targetCtr === "number" ? defaults.targetCtr : 3.8,
+      conversionRate: typeof defaults.conversionRate === "number" ? defaults.conversionRate : 2.2,
+      averageOrderValue: typeof defaults.averageOrderValue === "number" ? defaults.averageOrderValue : 95
+    }
+  };
+}
+
 export const STATIC_SEO_PAGES = [...corePages, ...programmaticPages].map(page => {
   const content = pageContentByRoute[page.route] || {};
-  const mergedPage = { ...page, ...content };
+  const assets = pageAssetsByRoute[page.route] || {};
+  const mergedPage = { ...page, ...content, ...assets };
 
   return {
     ...mergedPage,
@@ -64,6 +106,10 @@ export const STATIC_SEO_PAGES = [...corePages, ...programmaticPages].map(page =>
     sections: normalizeSections(mergedPage.sections),
     checklist: Array.isArray(mergedPage.checklist) ? mergedPage.checklist : [],
     comparisonTable: normalizeComparisonTable(mergedPage.comparisonTable),
+    resourceSectionTitle: mergedPage.resourceSectionTitle || "",
+    resourceSectionIntro: mergedPage.resourceSectionIntro || "",
+    resourceCards: normalizeResourceCards(mergedPage.resourceCards),
+    tool: normalizeTool(mergedPage.tool),
     changefreq: mergedPage.changefreq || "monthly",
     priority: typeof mergedPage.priority === "number" ? mergedPage.priority : 0.6,
     robots: mergedPage.robots || DEFAULT_ROBOTS

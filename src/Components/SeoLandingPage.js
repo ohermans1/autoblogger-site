@@ -1,6 +1,8 @@
 import React from "react";
 import { APP_LISTING_URL, STATIC_SEO_PAGES, TRUST_BULLETS, findRelatedPages, getBreadcrumbTrail } from "../seo/pageCatalog";
 import { SmartLink } from "./SmartLink";
+import PageResourceSection from "./PageResourceSection";
+import SeoRoiCalculator from "./SeoRoiCalculator";
 
 const renderSectionList = (items, ordered = false) => {
   if (!items.length) {
@@ -139,6 +141,12 @@ const SeoLandingPage = ({ page }) => {
                   </section>
                 )}
               </div>
+
+              {page.resourceCards.length > 0 && (
+                <PageResourceSection title={page.resourceSectionTitle || "Downloads and Tools"} intro={page.resourceSectionIntro} cards={page.resourceCards} />
+              )}
+
+              {page.tool?.key === "seo-roi-calculator" && <SeoRoiCalculator tool={page.tool} />}
 
               {page.comparisonTable && <ComparisonTable table={page.comparisonTable} />}
 
