@@ -55,6 +55,7 @@ const OtherAppsSection = props => {
     {
       key: "autolock",
       name: "autoLock | Tag Page Lock",
+      logo: "https://cdn.shopify.com/app-store/listing_images/b5de31ee0c8bd157e5c11238fd7bcfd3/icon/CI_Kvrz21pQDEAE=.png",
       description: "Lock or hide Shopify pages, products, and collections by customer tag for members-only, wholesale, VIP, and B2B access.",
       cta: {
         href: "https://apps.shopify.com/autolock",
