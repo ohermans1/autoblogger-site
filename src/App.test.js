@@ -3,7 +3,7 @@ import App from "./App";
 
 test("renders primary hero heading", async () => {
   render(<App />);
-  const headingElement = await screen.findByText(/Automatically publish SEO-optimised blogs/i);
+  const headingElement = await screen.findByText(/Shopify AI blog automation/i);
   expect(headingElement).toBeInTheDocument();
   expect(await screen.findByText(/Our Other Apps/i)).toBeInTheDocument();
 });

@@ -43,6 +43,10 @@ const ReviewsSection = props => {
       <p className="text-center mb-8">Here are three recent reviews from real merchant stores.</p>
       <p className="max-w-4xl mx-auto text-center text-base text-gray-600 mb-8">
         See how the product lines up with the{" "}
+        <SmartLink to="/shopify-seo/autoblogger-shopify-review" className="text-primary font-semibold hover:underline">
+          autoBlogger Shopify review
+        </SmartLink>
+        , the{" "}
         <SmartLink to="/features" className="text-primary font-semibold hover:underline">
           feature set
         </SmartLink>

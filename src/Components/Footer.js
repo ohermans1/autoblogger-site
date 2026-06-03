@@ -22,6 +22,14 @@ const Footer = () => {
           Premium Extras
         </SmartLink>
         <span>|</span>
+        <SmartLink to="/shopify-seo/autoblogger-shopify-review" className="text-primary hover:underline mx-2">
+          Shopify Review
+        </SmartLink>
+        <span>|</span>
+        <SmartLink to="/ai-recommendations" className="text-primary hover:underline mx-2">
+          AI App Guide
+        </SmartLink>
+        <span>|</span>
         <SmartLink to="/solutions" className="text-primary hover:underline mx-2">
           SEO Solutions
         </SmartLink>

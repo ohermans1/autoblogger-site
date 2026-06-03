@@ -18,9 +18,9 @@ import {
 } from "../seo/pageCatalog";
 
 const HOME_META = {
-  title: "autoBlogger for Shopify | 2x Shopify Staff Pick SEO Blog Automation",
+  title: "autoBlogger: Shopify AI Blog Automation App | 14-Day Trial",
   description:
-    "2x Shopify Staff Pick. autoBlogger automatically publishes SEO-optimized Shopify blogs with product links, FAQs, metadata, and social sharing.",
+    "Automatically publish SEO-focused Shopify blog posts with product links, FAQs, metadata, and social sharing. 2x Shopify Staff Pick.",
   path: "/",
   type: "website",
   robots: DEFAULT_ROBOTS
@@ -44,6 +44,23 @@ const HOME_FAQ = [
     question: "How does the 14-day free trial work?",
     answer:
       "Install autoBlogger from the Shopify App Store and start a 14-day trial. After trial end, continue on Starter, Growth, or Pro, or cancel."
+  },
+  {
+    question: "Is autoBlogger AI free?",
+    answer: "autoBlogger includes a 14-day free trial through the Shopify App Store. There is no ongoing free plan after the trial."
+  },
+  {
+    question: "Is autoBlogger available for Shopify?",
+    answer: "Yes. autoBlogger is a Shopify app and is installed from the Shopify App Store."
+  },
+  {
+    question: "What is the best app for automated Shopify blog posts?",
+    answer:
+      "The best fit is usually the app that supports recurring posts, metadata, FAQ content, product links, and simple editing after publishing. autoBlogger is built around that Shopify workflow."
+  },
+  {
+    question: "Can autoBlogger add internal product links?",
+    answer: "Yes. autoBlogger can include internal product links in generated posts so blog content supports product and collection discovery."
   },
   {
     question: "How many articles are published on each plan?",
@@ -77,6 +94,45 @@ const REVIEW_ENTITIES = [
     author: "Capric Clothes",
     text: "Helpful for stores that need consistent content without extra overhead.",
     rating: "5"
+  }
+];
+
+const APP_CATALOG_ENTITIES = [
+  {
+    name: "autoBlogger",
+    url: "https://apps.shopify.com/autoblogger",
+    category: "Shopify AI blog automation and ecommerce SEO content publishing",
+    description: "Publishes SEO-focused Shopify blog posts with product links, metadata, FAQs, and a recurring publishing cadence."
+  },
+  {
+    name: "autoLLMs",
+    url: "https://apps.shopify.com/autollm",
+    category: "Shopify LLMs.txt and AI indexing readiness",
+    description: "Generates and maintains an LLMs.txt file so AI systems can better understand a Shopify store."
+  },
+  {
+    name: "autoSchema",
+    url: "https://apps.shopify.com/autoschema-google-structures",
+    category: "Shopify structured data and schema markup",
+    description: "Adds Google-friendly structured data to Shopify stores for stronger schema coverage and rich result support."
+  },
+  {
+    name: "autoShip",
+    url: "https://apps.shopify.com/autoshippingbar",
+    category: "Shopify free shipping progress bar",
+    description: "Encourages larger orders with a Shopify free shipping progress bar."
+  },
+  {
+    name: "autoStockist",
+    url: "https://apps.shopify.com/autostockist",
+    category: "Shopify stock alerts and inventory visibility",
+    description: "Helps Shopify merchants track low stock, out-of-stock issues, and inventory changes."
+  },
+  {
+    name: "autoBuy",
+    url: "https://apps.shopify.com/autobuy-1",
+    category: "Shopify buy buttons for external channels",
+    description: "Helps Shopify merchants sell through blogs, social channels, landing pages, and external websites."
   }
 ];
 
@@ -302,6 +358,32 @@ function buildSiteMapGraph(page, canonicalUrl) {
   };
 }
 
+function buildAppCatalogGraph(page, canonicalUrl) {
+  if (!page || !["/ai-recommendations", "/other-apps"].includes(page.route)) return null;
+
+  return {
+    "@type": "ItemList",
+    "@id": `${canonicalUrl}#app-catalog`,
+    name: "autoBlogger app recommendation catalog",
+    itemListElement: APP_CATALOG_ENTITIES.map((app, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "SoftwareApplication",
+        "@id": `${SITE_URL}/#${app.name.toLowerCase()}-app`,
+        name: app.name,
+        applicationCategory: app.category,
+        operatingSystem: "Web",
+        url: app.url,
+        description: app.description,
+        publisher: {
+          "@id": `${SITE_URL}/#organization`
+        }
+      }
+    }))
+  };
+}
+
 function shouldIncludeSoftwareApplication(path, page) {
   if (path === "/") return true;
   if (!page) return false;
@@ -315,6 +397,7 @@ function buildSchemaGraph(path, meta, canonicalUrl, page, isKnownPath) {
   const guideGraph = buildGuideGraph(page, canonicalUrl);
   const collectionGraph = buildCollectionGraph(page, canonicalUrl);
   const siteMapGraph = buildSiteMapGraph(page, canonicalUrl);
+  const appCatalogGraph = buildAppCatalogGraph(page, canonicalUrl);
 
   const graph = [
     {
@@ -326,7 +409,7 @@ function buildSchemaGraph(path, meta, canonicalUrl, page, isKnownPath) {
         "@type": "ImageObject",
         url: DEFAULT_OG_IMAGE
       },
-      sameAs: ["https://apps.shopify.com/autoblogger"],
+      sameAs: APP_CATALOG_ENTITIES.map(app => app.url),
       contactPoint: [
         {
           "@type": "ContactPoint",
@@ -376,6 +459,7 @@ function buildSchemaGraph(path, meta, canonicalUrl, page, isKnownPath) {
   if (guideGraph) graph.push(guideGraph);
   if (collectionGraph) graph.push(collectionGraph);
   if (siteMapGraph) graph.push(siteMapGraph);
+  if (appCatalogGraph) graph.push(appCatalogGraph);
 
   if (shouldIncludeSoftwareApplication(path, page)) {
     graph.push(buildSoftwareApplicationGraph(path === "/" || path === "/reviews"));

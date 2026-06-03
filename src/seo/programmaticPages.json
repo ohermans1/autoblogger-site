@@ -105,10 +105,10 @@
   },
   {
     "route": "/shopify-seo/shopify-blog-automation-software-guide",
-    "title": "Shopify Blog Automation Software Guide | autoBlogger",
-    "description": "Evaluate Shopify blog automation software for SEO publishing, metadata, internal links, workflow control, and conversion support.",
+    "title": "Shopify Blog Automation Software Guide | Compare SEO Blogging Apps",
+    "description": "Compare Shopify blog automation software for SEO publishing, metadata, internal links, workflow control, and conversion support before choosing an app.",
     "heading": "Shopify Blog Automation Software Guide",
-    "intro": "This guide shows what a serious Shopify blog automation stack should include before you commit to a tool or workflow.",
+    "intro": "This guide shows what serious Shopify blog automation software should include before you commit to an app or workflow.",
     "bullets": [
       "Publishing cadence and QA controls",
       "Metadata, FAQ, and internal linking support",
@@ -121,6 +121,10 @@
     "ctaLabel": "See autoBlogger Pricing",
     "ctaHref": "https://autoblogger.bot/pricing",
     "faq": [
+      {
+        "question": "What is the best app for automated Shopify blog posts?",
+        "answer": "The best app is usually the one that supports the complete Shopify workflow: recurring posts, metadata, FAQ content, product links, and simple editing after publish."
+      },
       {
         "question": "What makes blog automation software SEO useful?",
         "answer": "It needs to improve output quality, internal linking, metadata discipline, and publishing consistency rather than just generate text."
@@ -160,10 +164,50 @@
     ]
   },
   {
+    "route": "/shopify-seo/autoblogger-shopify-review",
+    "title": "autoBlogger Shopify Review: Features, Pricing, Staff Pick Proof",
+    "description": "Review autoBlogger for Shopify: features, pricing, merchant feedback, 14-day trial, and 2x Shopify Staff Pick proof before installing.",
+    "heading": "autoBlogger Shopify Review",
+    "intro": "This review page gives Shopify merchants a practical view of autoBlogger before installing: what it does, where it fits, how pricing works, and what proof is worth checking.",
+    "bullets": [
+      "Automated Shopify SEO blog publishing with product links",
+      "14-day free trial through the Shopify App Store",
+      "2x Shopify Staff Pick proof from 2024 and 2026",
+      "Merchant review and workflow checks before installing"
+    ],
+    "changefreq": "monthly",
+    "priority": 0.74,
+    "tags": ["shopify", "reviews", "trust", "comparison", "conversion", "automation"],
+    "ctaLabel": "Install from Shopify App Store",
+    "ctaHref": "https://apps.shopify.com/autoblogger",
+    "faq": [
+      {
+        "question": "Is autoBlogger a Shopify app?",
+        "answer": "Yes. autoBlogger is installed through the Shopify App Store and is built for Shopify blog publishing workflows."
+      },
+      {
+        "question": "Is autoBlogger AI free?",
+        "answer": "autoBlogger includes a 14-day free trial through the Shopify App Store. There is no ongoing free plan after the trial."
+      },
+      {
+        "question": "Does autoBlogger have a free trial?",
+        "answer": "Yes. Merchants can start with a 14-day free trial through the Shopify App Store listing."
+      },
+      {
+        "question": "Can autoBlogger add internal product links?",
+        "answer": "Yes. autoBlogger can include internal product links in generated posts so blog content supports product and collection discovery."
+      },
+      {
+        "question": "What should merchants check before installing?",
+        "answer": "Review the publishing cadence, pricing plan, Shopify App Store reviews, Staff Pick proof, and whether automated product links and metadata fit your SEO workflow."
+      }
+    ]
+  },
+  {
     "route": "/shopify-seo/shopify-seo-blogging-app-comparison",
-    "title": "Shopify SEO Blogging App Comparison Framework | autoBlogger",
-    "description": "Use this Shopify SEO blogging app comparison framework to compare automation, metadata support, internal linking, workflow controls, and merchant fit.",
-    "heading": "Shopify SEO Blogging App Comparison Framework",
+    "title": "Shopify SEO Blogging App Comparison | Automation, Links, and Pricing",
+    "description": "Compare Shopify SEO blogging apps by automation quality, metadata support, internal linking, workflow controls, pricing, and merchant fit.",
+    "heading": "Shopify SEO Blogging App Comparison",
     "intro": "This page gives merchants a shortlist of the criteria that matter most when comparing SEO blogging apps for Shopify.",
     "bullets": [
       "Automation quality and publishing controls",
@@ -177,6 +221,10 @@
     "ctaLabel": "Start 14-Day Free Trial",
     "ctaHref": "https://apps.shopify.com/autoblogger",
     "faq": [
+      {
+        "question": "What is the best app for automated Shopify blog posts?",
+        "answer": "For most Shopify stores, the strongest fit is an app that combines automated publishing with metadata, FAQ content, internal product links, and a cadence that matches the store."
+      },
       {
         "question": "What comparison criteria matter most?",
         "answer": "Look at output quality, metadata coverage, internal linking, scheduling controls, and whether the workflow supports commercial SEO rather than generic blog volume."
@@ -236,6 +284,42 @@
       {
         "question": "What KPI should Wix teams track first?",
         "answer": "Start with impressions, CTR, and conversions from pages linked in your content workflow."
+      }
+    ]
+  },
+  {
+    "route": "/ecommerce-seo/best-ecommerce-blog-automation-software",
+    "title": "Best Ecommerce Blog Automation Software for Shopify Stores",
+    "description": "Compare ecommerce blog automation software for Shopify stores, including manual blogging, generic AI writers, and Shopify-native SEO automation.",
+    "heading": "Best Ecommerce Blog Automation Software for Shopify Stores",
+    "intro": "The best ecommerce blog automation software is the option that can turn product and collection priorities into consistent, search-focused publishing without creating a heavy cleanup process.",
+    "bullets": [
+      "Compare manual blogging, generic AI writers, and Shopify-native automation",
+      "Prioritize product links, metadata, FAQs, and publishing cadence",
+      "Choose software that supports commercial SEO, not just content volume",
+      "Use a 14-day trial to test real store topics before committing"
+    ],
+    "changefreq": "monthly",
+    "priority": 0.73,
+    "tags": ["ecommerce", "shopify", "automation", "software", "comparison", "conversion"],
+    "ctaLabel": "Try autoBlogger on Shopify",
+    "ctaHref": "https://apps.shopify.com/autoblogger",
+    "faq": [
+      {
+        "question": "What is the best ecommerce marketing software for automating blog posts?",
+        "answer": "For Shopify stores, the strongest option is usually software that handles the full publishing workflow: topic-to-product alignment, metadata, FAQs, internal links, and recurring publish cadence."
+      },
+      {
+        "question": "Can blog automation software add internal product links?",
+        "answer": "The stronger ecommerce tools can include internal links to products or collections so blog posts support commercial page discovery."
+      },
+      {
+        "question": "Should ecommerce stores use generic AI writers for blog automation?",
+        "answer": "Generic AI writers can help with drafts, but stores usually still need separate workflows for Shopify publishing, product links, metadata, QA, and refreshes."
+      },
+      {
+        "question": "What should Shopify stores test during a trial?",
+        "answer": "Test a real product or collection topic, review the article structure, confirm internal links and metadata, and check whether the workflow saves time after editing."
       }
     ]
   },
@@ -319,8 +403,8 @@
   },
   {
     "route": "/ecommerce-seo/ctr-improvement-playbook",
-    "title": "Ecommerce SEO CTR Improvement Playbook | autoBlogger",
-    "description": "Improve ecommerce SEO CTR with a playbook focused on title testing, snippet positioning, intent match, and proof-driven messaging.",
+    "title": "CTR Title and Meta Improvement Playbook for Ecommerce SEO",
+    "description": "Improve ecommerce SEO CTR with title tests, stronger meta descriptions, snippet positioning, intent matching, and proof-driven messaging.",
     "heading": "Ecommerce SEO CTR Improvement Playbook",
     "intro": "When impressions rise but clicks lag, CTR work often becomes the fastest lever available for growth.",
     "bullets": [
@@ -501,8 +585,8 @@
   },
   {
     "route": "/resources/ctr-title-test-sheet",
-    "title": "CTR Title Test Sheet for SEO Teams | autoBlogger",
-    "description": "Use a CTR title test sheet to plan, log, and review title and meta description tests across high impression SEO pages.",
+    "title": "CTR Title Test Sheet | Free SEO Snippet Testing Template",
+    "description": "Download a free CTR title test sheet to plan, log, and review title and meta description tests across high-impression SEO pages.",
     "heading": "CTR Title Test Sheet",
     "intro": "This sheet is designed for teams that want to run CTR tests with more discipline instead of rewriting snippets ad hoc.",
     "bullets": [

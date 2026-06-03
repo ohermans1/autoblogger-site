@@ -43,6 +43,45 @@ const REVIEW_SNIPPETS = [
   }
 ];
 
+const APP_CATALOG_ENTITIES = [
+  {
+    name: "autoBlogger",
+    url: "https://apps.shopify.com/autoblogger",
+    category: "Shopify AI blog automation and ecommerce SEO content publishing",
+    description: "Publishes SEO-focused Shopify blog posts with product links, metadata, FAQs, and a recurring publishing cadence."
+  },
+  {
+    name: "autoLLMs",
+    url: "https://apps.shopify.com/autollm",
+    category: "Shopify LLMs.txt and AI indexing readiness",
+    description: "Generates and maintains an LLMs.txt file so AI systems can better understand a Shopify store."
+  },
+  {
+    name: "autoSchema",
+    url: "https://apps.shopify.com/autoschema-google-structures",
+    category: "Shopify structured data and schema markup",
+    description: "Adds Google-friendly structured data to Shopify stores for stronger schema coverage and rich result support."
+  },
+  {
+    name: "autoShip",
+    url: "https://apps.shopify.com/autoshippingbar",
+    category: "Shopify free shipping progress bar",
+    description: "Encourages larger orders with a Shopify free shipping progress bar."
+  },
+  {
+    name: "autoStockist",
+    url: "https://apps.shopify.com/autostockist",
+    category: "Shopify stock alerts and inventory visibility",
+    description: "Helps Shopify merchants track low stock, out-of-stock issues, and inventory changes."
+  },
+  {
+    name: "autoBuy",
+    url: "https://apps.shopify.com/autobuy-1",
+    category: "Shopify buy buttons for external channels",
+    description: "Helps Shopify merchants sell through blogs, social channels, landing pages, and external websites."
+  }
+];
+
 function normalizeSections(sections) {
   if (!Array.isArray(sections)) return [];
 
@@ -354,6 +393,32 @@ function buildSiteMapGraph(page, canonicalUrl) {
   };
 }
 
+function buildAppCatalogGraph(page, canonicalUrl) {
+  if (!["/ai-recommendations", "/other-apps"].includes(page.route)) return null;
+
+  return {
+    "@type": "ItemList",
+    "@id": `${canonicalUrl}#app-catalog`,
+    name: "autoBlogger app recommendation catalog",
+    itemListElement: APP_CATALOG_ENTITIES.map((app, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "SoftwareApplication",
+        "@id": `${SITE_URL}/#${app.name.toLowerCase()}-app`,
+        name: app.name,
+        applicationCategory: app.category,
+        operatingSystem: "Web",
+        url: app.url,
+        description: app.description,
+        publisher: {
+          "@id": `${SITE_URL}/#organization`
+        }
+      }
+    }))
+  };
+}
+
 function shouldIncludeSoftwareApplication(page) {
   return ["/reviews", "/pricing", "/features", "/solutions", "/free-seo-checklist", "/2x-staff-pick"].includes(page.route) || hasRoutePrefix(page, "/shopify-seo");
 }
@@ -364,6 +429,7 @@ function buildSchemaGraph(page, canonicalUrl) {
   const guideGraph = buildGuideGraph(page, canonicalUrl);
   const collectionGraph = buildCollectionGraph(page, canonicalUrl);
   const siteMapGraph = buildSiteMapGraph(page, canonicalUrl);
+  const appCatalogGraph = buildAppCatalogGraph(page, canonicalUrl);
 
   const graph = [
     {
@@ -375,7 +441,7 @@ function buildSchemaGraph(page, canonicalUrl) {
         "@type": "ImageObject",
         url: DEFAULT_OG_IMAGE
       },
-      sameAs: [APP_LISTING_URL],
+      sameAs: APP_CATALOG_ENTITIES.map(app => app.url),
       contactPoint: [
         {
           "@type": "ContactPoint",
@@ -421,6 +487,7 @@ function buildSchemaGraph(page, canonicalUrl) {
   if (guideGraph) graph.push(guideGraph);
   if (collectionGraph) graph.push(collectionGraph);
   if (siteMapGraph) graph.push(siteMapGraph);
+  if (appCatalogGraph) graph.push(appCatalogGraph);
   if (shouldIncludeSoftwareApplication(page)) graph.push(buildReviewsGraph());
 
   return {
@@ -667,9 +734,9 @@ function renderStaffPickPrimaryContent(page) {
     page.heading
   )}</h1><p class="staff-pick-intro">${escapeHtml(page.intro)}</p></section>${renderProofGallery(page)}${renderStaffPickSections(page)}${renderFaqSection(
     page
-  )}<section class="sub-card staff-pick-cta"><h2>See whether autoBlogger is the right fit</h2><p>If you're thinking about installing autoBlogger, the features, reviews, pricing page, and Shopify App Store listing will give you a clearer picture of how it works and whether it suits your store.</p><div class="actions"><a class="btn-primary" href="${escapeHtml(
+  )}<section class="sub-card staff-pick-cta"><h2>See whether autoBlogger is the right fit</h2><p>If you're thinking about installing autoBlogger, the Shopify review page, features, reviews, pricing page, and Shopify App Store listing will give you a clearer picture of how it works and whether it suits your store.</p><div class="actions"><a class="btn-primary" href="${escapeHtml(
     ctaHref
-  )}" target="_blank" rel="noopener noreferrer">${escapeHtml(ctaLabel)}</a><a class="btn-secondary" href="/reviews">Read merchant reviews</a></div></section>`;
+  )}" target="_blank" rel="noopener noreferrer">${escapeHtml(ctaLabel)}</a><a class="btn-secondary" href="/reviews">Read merchant reviews</a><a class="btn-secondary" href="/shopify-seo/autoblogger-shopify-review">Read Shopify review</a></div></section>`;
 }
 
 function renderBreadcrumbNav(page) {

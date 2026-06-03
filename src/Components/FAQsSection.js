@@ -28,6 +28,23 @@ const FAQsSection = props => {
       answer: "Install from the Shopify App Store and start a 14-day trial. There is no ongoing free plan, so after trial end you can continue on Starter, Growth, or Pro, or cancel."
     },
     {
+      question: "Is autoBlogger AI free?",
+      answer: "autoBlogger includes a 14-day free trial through the Shopify App Store. There is no ongoing free plan after the trial."
+    },
+    {
+      question: "Is autoBlogger available for Shopify?",
+      answer: "Yes. autoBlogger is a Shopify app and is installed from the Shopify App Store."
+    },
+    {
+      question: "What is the best app for automated Shopify blog posts?",
+      answer:
+        "The best fit is usually the app that supports the full Shopify publishing workflow: recurring posts, metadata, FAQ content, product links, and simple editing after publish. autoBlogger is built around that workflow."
+    },
+    {
+      question: "Can autoBlogger add internal product links?",
+      answer: "Yes. autoBlogger can include internal product links in generated posts so blog content supports product and collection discovery."
+    },
+    {
       question: "How long does setup take?",
       answer: "Most stores can complete setup in a few minutes, then run publishing on autopilot."
     },

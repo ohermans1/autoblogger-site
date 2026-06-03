@@ -17,7 +17,7 @@ const HeroSection = () => {
   return (
     <section className="text-center pt-12 pb-24 relative">
       <h1 className="text-4xl md:text-5xl font-bold mb-10 text-gray-800">
-        Automatically publish SEO-optimised blogs that link products, build authority, and drive traffic
+        Shopify AI blog automation that publishes SEO-focused posts with product links
       </h1>
 
       <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-gray-700">
@@ -46,7 +46,15 @@ const HeroSection = () => {
       </p>
       <p className="mb-6 text-lg md:text-xl text-gray-600">Edit directly in Shopify, auto-share to social channels, and set and forget your blogging strategy.</p>
       <p className="mb-6 text-base md:text-lg text-gray-600">
-        Need implementation frameworks? Start with our{" "}
+        Comparing tools first? Read the{" "}
+        <SmartLink to="/shopify-seo/autoblogger-shopify-review" className="text-primary hover:underline">
+          autoBlogger Shopify review
+        </SmartLink>
+        , compare the{" "}
+        <SmartLink to="/ecommerce-seo/best-ecommerce-blog-automation-software" className="text-primary hover:underline">
+          best ecommerce blog automation software
+        </SmartLink>
+        , then use our{" "}
         <SmartLink to="/solutions" className="text-primary hover:underline">
           SEO solutions hub
         </SmartLink>{" "}
@@ -58,7 +66,7 @@ const HeroSection = () => {
       </p>
 
       {/* Call-to-action text */}
-      <p className="text-xl font-semibold text-gray-700 mb-4">Start your 14-day free trial now:</p>
+      <p className="text-xl font-semibold text-gray-700 mb-4">Start your 14-day free trial on Shopify:</p>
 
       <div className="flex justify-center items-center">
         {/* Shopify Badge */}
