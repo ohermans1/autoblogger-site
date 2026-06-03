@@ -51,6 +51,15 @@ const OtherAppsSection = props => {
         href: "https://apps.shopify.com/autobuy-1",
         label: "View on Shopify App Store"
       }
+    },
+    {
+      key: "autolock",
+      name: "autoLock | Tag Page Lock",
+      description: "Lock or hide Shopify pages, products, and collections by customer tag for members-only, wholesale, VIP, and B2B access.",
+      cta: {
+        href: "https://apps.shopify.com/autolock",
+        label: "View on Shopify App Store"
+      }
     }
   ];
 
@@ -67,7 +76,7 @@ const OtherAppsSection = props => {
                   {app.logo ? (
                     <img src={app.logo} alt={`${app.name} logo`} className="h-10 w-10 object-contain" loading="lazy" decoding="async" width="40" height="40" />
                   ) : (
-                    <span className="text-sm">AE</span>
+                    <span className="text-sm">{app.name.replace(/^auto/i, "A").slice(0, 2).toUpperCase()}</span>
                   )}
                 </div>
                 <h2 className="text-xl font-semibold text-gray-900">{app.name}</h2>

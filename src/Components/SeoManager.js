@@ -117,6 +117,12 @@ const APP_CATALOG_ENTITIES = [
     description: "Adds Google-friendly structured data to Shopify stores for stronger schema coverage and rich result support."
   },
   {
+    name: "autoLock",
+    url: "https://apps.shopify.com/autolock",
+    category: "Shopify customer tag access control and page locking",
+    description: "Locks or hides Shopify pages, products, and collections by customer tag for members-only, wholesale, VIP, B2B, and gated access."
+  },
+  {
     name: "autoShip",
     url: "https://apps.shopify.com/autoshippingbar",
     category: "Shopify free shipping progress bar",
