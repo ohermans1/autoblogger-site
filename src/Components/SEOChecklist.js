@@ -191,12 +191,12 @@ const SEOChecklist = props => {
           <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 mb-5">
             <h2 className="text-xl font-bold text-slate-900 mb-2">Free Shopify SEO Checklist and Free Wix SEO Checklist</h2>
             <p className="text-slate-700 mb-2">
-              This page is built to be a practical free Shopify SEO checklist for ecommerce stores and a free Wix SEO checklist for website owners who want more organic traffic.
-              You can follow each step directly on-page, track progress in-browser, and download the spreadsheet versions if you want an offline copy for planning or handoff.
+              Use this free Shopify SEO checklist or free Wix SEO checklist to work through the tasks that matter most. You can follow each step on-page, track progress in-browser, and download
+              the spreadsheet versions if you want an offline copy for planning or handoff.
             </p>
             <p className="text-slate-700">
-              If you searched for a free Shopify SEO checklist, start with P0 tasks, complete indexing and performance fixes first, then move to content publishing and authority building.
-              For Wix users, choose the Wix tab to get the same structured workflow adapted for Wix SEO.
+              Start with the P0 tasks, fix indexing and performance issues first, then move to content publishing and authority building. Wix users can choose the Wix tab for the same workflow
+              adapted to Wix SEO.
             </p>
           </div>
 

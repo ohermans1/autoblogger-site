@@ -34,11 +34,11 @@
   {
     "route": "/other-apps",
     "title": "Other Shopify Apps by autoBlogger | autoLLMs and autoSchema",
-    "description": "Discover related Shopify apps from the autoBlogger team, including autoLLMs, autoSchema, autoLock, autoShip, autoStockist, and autoBuy.",
+    "description": "Explore related Shopify apps including autoLLMs, autoSchema, autoLock, autoShip, autoStockist, and autoBuy.",
     "heading": "Other Apps by autoBlogger",
-    "intro": "The autoBlogger team builds related Shopify tools for structured data, AI visibility, access control, inventory, shipping prompts, and storefront conversion workflows.",
+    "intro": "Explore related Shopify tools for structured data, AI visibility, access control, inventory, shipping prompts, and storefront conversion workflows.",
     "bullets": [
-      "autoLLMs for AI-focused indexing readiness",
+      "autoLLMs for LLMs.txt and AI discovery support",
       "autoSchema for structured data automation",
       "autoLock for customer tag access control and members-only content",
       "autoShip, autoStockist, and autoBuy for storefront operations",
@@ -69,7 +69,7 @@
         "answer": "Most merchants can complete setup quickly and prepare their first automated publishing workflow the same day."
       },
       {
-        "question": "Is autoBlogger AI free?",
+        "question": "Is there a free plan?",
         "answer": "autoBlogger includes a 14-day free trial through the Shopify App Store. There is no ongoing free plan after the trial."
       },
       {
@@ -93,13 +93,13 @@
   {
     "route": "/reviews",
     "title": "autoBlogger Reviews: Shopify Feedback and Staff Pick Proof",
-    "description": "Read autoBlogger Shopify reviews, merchant feedback, Staff Pick proof, and practical notes before installing the automated SEO blogging app.",
+    "description": "Read autoBlogger Shopify reviews, merchant feedback, Staff Pick proof, and practical notes before installing the SEO blogging app.",
     "heading": "autoBlogger Reviews and Shopify App Store Proof",
-    "intro": "See how merchants use autoBlogger to reduce content workload and support search visibility across product and blog pages, then review the Shopify App Store proof before installing.",
+    "intro": "See how merchants use autoBlogger to reduce content workload and support search visibility across product and blog pages before installing.",
     "bullets": [
       "Recent merchant feedback from Shopify stores",
       "Examples of recurring SEO publishing workflows",
-      "Use cases for supporting organic discovery",
+      "Use cases for supporting search visibility",
       "Links to full Shopify App Store reviews"
     ],
     "changefreq": "monthly",
@@ -109,13 +109,13 @@
   {
     "route": "/blog",
     "title": "autoBlogger Blog | Shopify SEO and App Store Trust",
-    "description": "Read practical notes from Ollie on Shopify SEO, app store trust, reviews, product updates, and building better merchant tools.",
+    "description": "Read practical notes on Shopify SEO, App Store trust, reviews, product updates, and building better merchant tools.",
     "heading": "autoBlogger Blog",
-    "intro": "Notes from Ollie on Shopify SEO, app store trust, product updates, and the work behind building useful tools for merchants.",
+    "intro": "Practical notes on Shopify SEO, App Store trust, product updates, and building useful tools for merchants.",
     "bullets": [
       "Shopify App Store trust and review quality",
       "Practical SEO publishing thoughts for merchants",
-      "Product notes from the autoBlogger team"
+      "Product notes for Shopify merchants"
     ],
     "changefreq": "weekly",
     "priority": 0.7,
@@ -125,10 +125,10 @@
   },
   {
     "route": "/blog/shopify-app-store-review-trust",
-    "title": "Shopify Fake Review Update: Why Honest Developers Are Excited",
-    "description": "Ollie, owner and developer of the autoBlogger apps, reacts to Shopify's fake and incentivized review update for the App Store.",
-    "heading": "Shopify's Fake Review Update Is the Movement Honest App Developers Needed",
-    "intro": "By Ollie Hermans, owner and developer of the autoBlogger apps. After years of raising concerns about fake and incentivized Shopify App Store reviews, I am excited to see Shopify moving on this.",
+    "title": "Shopify Fake Review Update: A Step Forward for Honest Developers",
+    "description": "A Shopify app developer's take on Shopify's fake and incentivized review update, and why it matters for App Store trust.",
+    "heading": "Shopify's Fake Review Update Is a Step Forward for Honest App Developers",
+    "intro": "After years of raising concerns about fake and incentivized Shopify App Store reviews, it is good to see Shopify taking clearer action.",
     "authorName": "Ollie Hermans",
     "authorUrl": "https://autoblogger.bot/",
     "datePublished": "2026-07-06",
@@ -136,12 +136,12 @@
     "bullets": [
       "Shopify is tightening rules around incentivized app reviews",
       "Fake-review detection is being expanded across old and new Shopify App Store reviews",
-      "Honest developers finally have real movement to watch"
+      "Honest developers finally have a clearer enforcement path to watch"
     ],
     "changefreq": "monthly",
     "priority": 0.72,
     "tags": ["blog", "shopify", "trust", "reviews", "app-store"],
-    "ctaLabel": "Read More From Ollie",
+    "ctaLabel": "Read More Articles",
     "ctaHref": "/blog",
     "faq": [
       {
@@ -153,8 +153,8 @@
         "answer": "Merchants use reviews to decide which apps to trust. Cleaner review signals should make it easier to compare apps on real merchant experience."
       },
       {
-        "question": "Why is Ollie writing about Shopify fake reviews?",
-        "answer": "Ollie owns and develops the autoBlogger apps and has spent years raising concerns about fake and incentivized reviews on the Shopify App Store."
+        "question": "Why write about Shopify fake reviews?",
+        "answer": "As the owner and developer of several Shopify apps, I have spent years raising concerns about fake and incentivized reviews on the Shopify App Store."
       }
     ]
   },
@@ -190,7 +190,7 @@
     "title": "Free Shopify SEO Checklist Template | Download XLSX",
     "description": "Use the free Shopify SEO checklist template to track technical SEO, content, internal links, and weekly optimization tasks. Wix checklist included.",
     "heading": "Free Shopify SEO Checklist and Free Wix SEO Checklist",
-    "intro": "Use the interactive checklist to track high-impact SEO tasks across technical SEO, on-page optimization, content publishing, and link building.",
+    "intro": "Use the interactive checklist to track technical SEO, on-page optimization, content publishing, internal links, and authority tasks.",
     "bullets": [
       "Shopify and Wix-specific SEO task sets",
       "Status tracking and notes for each action",

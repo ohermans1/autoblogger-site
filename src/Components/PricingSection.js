@@ -68,7 +68,7 @@ const PricingSection = props => {
       )}
       <p className="text-center text-gray-700 mb-8">No ongoing free plan. Start with a 14-day free trial, then choose Starter, Growth, or Pro.</p>
       <p className="max-w-4xl mx-auto text-center text-base text-gray-600 mb-8">
-        Compare plan depth with the{" "}
+        Compare what each plan includes with the{" "}
         <SmartLink to="/features" className="text-primary font-semibold hover:underline">
           features overview
         </SmartLink>

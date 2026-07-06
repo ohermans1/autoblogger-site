@@ -10,8 +10,8 @@ const PremiumExtras = () => {
           <section>
             <h2 className="text-2xl font-bold text-center mb-5 text-gray-800">Priority Setup Support</h2>
             <p className="text-center text-gray-700 mb-4">
-              Premium plans may include additional support beyond automated blog publishing. These extras are designed to help merchants set up cleaner content workflows, review settings, and
-              understand how the app fits their store.
+              Premium plans may include additional support beyond automated blog publishing. These extras help merchants set up cleaner content workflows, review app settings, and understand how
+              autoBlogger fits their store.
             </p>
             <p className="text-center text-gray-700">
               autoBlogger does not guarantee rankings, traffic, or search placement. The goal is to make publishing easier and keep the setup aligned with good SEO practice.
@@ -21,7 +21,7 @@ const PremiumExtras = () => {
           <section>
             <h2 className="text-2xl font-bold text-center mb-5 text-gray-800">Content Workflow Review</h2>
             <p className="text-center text-gray-700 mb-4">
-              Eligible users may receive practical guidance on topic setup, article structure, product-linking choices, metadata, and publishing frequency.
+              Some plans may include practical guidance on topic setup, article structure, product-linking choices, metadata, and publishing frequency.
             </p>
             <p className="text-center text-gray-700">
               This support is focused on your own store content and app configuration rather than third-party link placement.
@@ -31,7 +31,7 @@ const PremiumExtras = () => {
           <section>
             <h2 className="text-2xl font-bold text-center mb-5 text-gray-800">autoSchema Bonus</h2>
             <p className="text-center text-gray-700 mb-4">
-              Premium subscribers may receive complimentary access to autoSchema, a Shopify app that helps add structured data so search engines can better understand store pages.
+              Premium subscribers may receive complimentary access to autoSchema, a Shopify app that helps add structured data so search engines can better understand product and content pages.
             </p>
             <p className="text-center text-gray-700 mb-4">
               To learn more about structured data, visit{" "}

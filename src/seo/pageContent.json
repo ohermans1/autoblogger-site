@@ -1,17 +1,17 @@
 {
   "/blog": {
     "resourceSectionTitle": "Latest posts",
-    "resourceSectionIntro": "Read the latest notes from Ollie and the autoBlogger team.",
+    "resourceSectionIntro": "Read the latest notes on Shopify SEO, App Store trust, and building better merchant tools.",
     "resourceCards": [
       {
         "eyebrow": "App Store trust",
-        "title": "Shopify Fake Review Update: Why Honest Developers Are Excited",
-        "description": "Ollie's reaction to Shopify's fake and incentivized review update after years of pushing for a more trustworthy App Store.",
-        "meta": "By Ollie",
+        "title": "Shopify Fake Review Update: A Step Forward for Honest Developers",
+        "description": "A practical reaction to Shopify's fake and incentivized review update after years of concern from the developer community.",
+        "meta": "Opinion",
         "items": [
           "Review incentivization policy",
           "Fake-review detection",
-          "Why honest developers are excited"
+          "What this means for honest developers"
         ],
         "href": "/blog/shopify-app-store-review-trust",
         "label": "Read post"
@@ -21,7 +21,7 @@
       {
         "title": "What this blog is for",
         "paragraphs": [
-          "This blog is where I share practical notes on Shopify SEO, app quality, review trust, product updates, and the day-to-day work of building useful tools for merchants.",
+          "This blog shares practical notes on Shopify SEO, app quality, review trust, product updates, and the day-to-day work of building useful tools for merchants.",
           "The focus is simple: useful context, honest opinions, and clear takeaways for store owners and app developers."
         ],
         "items": []
@@ -102,7 +102,7 @@
   },
   "/blog/shopify-app-store-review-trust": {
     "resourceSectionTitle": "Sources and context",
-    "resourceSectionIntro": "The post below is my reaction to Shopify's announcement and the community discussions that helped push this issue forward.",
+    "resourceSectionIntro": "This article is based on Shopify's announcement and the community discussions that helped push this issue forward.",
     "resourceCards": [
       {
         "eyebrow": "Shopify announcement",
@@ -118,9 +118,9 @@
         "label": "Read Shopify's post"
       },
       {
-        "eyebrow": "Ollie's reply",
+        "eyebrow": "Community reply",
         "title": "Let's get this to a place where the best apps can win",
-        "description": "My reply thanking Shopify for listening to the developer community after years of concern around fake and incentivized reviews.",
+        "description": "A reply thanking Shopify for listening to the developer community after years of concern around fake and incentivized reviews.",
         "meta": "Ollie_autoBlogger",
         "items": [
           "Developer community feedback",
@@ -174,9 +174,9 @@
       {
         "title": "Why I am writing about Shopify fake reviews",
         "paragraphs": [
-          "I am Ollie Hermans, owner and developer of autoBlogger, autoLLMs, autoSchema, autoLock, autoShip, autoStockist, and autoBuy. I have spent years raising concerns about fake Shopify App Store reviews, incentivized reviews, and the way manipulated review signals can distort which apps merchants trust.",
-          "This has never been about knocking honest competition. It has been about fairness. Real merchants should be able to compare Shopify apps using real feedback, and developers who build properly should not be pushed down by inflated or artificial review activity.",
-          "That is why Shopify's announcement feels important. It is the first clear movement in the direction many of us in the developer community have been asking for."
+          "I am Ollie Hermans, owner and developer of autoBlogger, autoLLMs, autoSchema, autoLock, autoShip, autoStockist, and autoBuy. For years I have been raising concerns about fake Shopify App Store reviews, incentivized reviews, and the way manipulated review signals can affect which apps merchants trust.",
+          "This has never been about knocking genuine competition. It has been about fairness. Merchants should be able to compare Shopify apps using real feedback, and developers who build carefully should not be competing against inflated review activity.",
+          "That is why Shopify's announcement matters. It is a clear step in the direction many people in the developer community have been asking for."
         ],
         "items": []
       },
@@ -194,11 +194,11 @@
         ]
       },
       {
-        "title": "Why this feels like real movement",
+        "title": "Why this feels like a useful step forward",
         "paragraphs": [
-          "For a few years now, I have been one of the people consistently making noise about this issue, sharing examples, drumming up support, and pushing for the Shopify App Store review system to be taken seriously. A lot of honest developers have felt the same frustration.",
-          "Fake reviews and incentivized reviews create an uneven playing field. They make weaker apps look stronger than they are, make honest developers work uphill, and make merchants spend more time trying to judge which reviews are real.",
-          "So yes, I am genuinely excited to see Shopify mention stronger enforcement publicly. This is exactly the kind of movement the developer community has been hoping for."
+          "For a few years now, I have been sharing examples, starting conversations, and encouraging other developers to speak up about review quality on the Shopify App Store. Plenty of developers who build honestly have been frustrated by the same issue.",
+          "Fake reviews and incentivized reviews create an uneven playing field. They can make weaker apps look stronger than they are, make honest developers work uphill, and make merchants spend more time trying to judge which reviews are real.",
+          "So yes, I am genuinely pleased to see Shopify talk publicly about stronger enforcement. It is the kind of progress many of us have been hoping to see."
         ],
         "items": []
       },
@@ -218,17 +218,17 @@
       {
         "title": "What I hope happens next",
         "paragraphs": [
-          "I hope this leads to a Shopify App Store where the best apps really can win. Not the loudest apps, not the most manipulated listings, and not the apps with the most questionable review patterns.",
-          "The rollout will be worth watching closely. Review counts may change, some removals may be noisy, and Shopify will need to keep refining the signals. But if the end result is a review system merchants can trust more, that is a win for the whole ecosystem.",
-          "For my part, I will keep building the autoBlogger app family the right way: useful products, real support, honest feedback, and a long-term focus on helping Shopify merchants grow with better content, clearer data, and more trustworthy tools."
+          "I hope this leads to a Shopify App Store where stronger products, better support, and genuine merchant feedback carry more weight than questionable review patterns.",
+          "The rollout will be worth watching closely. Review counts may change, some removals may be noisy, and Shopify will need to keep refining the signals. But if the result is a review system merchants can trust more, that is good for the whole ecosystem.",
+          "For my part, I will keep building the autoBlogger app family with the same focus: useful products, real support, honest feedback, and practical tools that help Shopify merchants grow."
         ],
         "items": []
       }
     ],
     "faq": [
       {
-        "question": "Why is Ollie writing about Shopify App Store reviews?",
-        "answer": "Ollie owns and develops the autoBlogger app family and has spent years pushing publicly for Shopify to address fake and incentivized App Store reviews."
+        "question": "Why write about Shopify App Store reviews?",
+        "answer": "As the owner and developer of the autoBlogger app family, I have spent years raising concerns about fake and incentivized reviews on the Shopify App Store."
       },
       {
         "question": "What did Shopify announce about fake reviews?",

@@ -45,7 +45,7 @@ const HOME_FAQ = [
       "Install autoBlogger from the Shopify App Store and start a 14-day trial. After trial end, continue on Starter, Growth, or Pro, or cancel."
   },
   {
-    question: "Is autoBlogger AI free?",
+    question: "Is there a free plan?",
     answer: "autoBlogger includes a 14-day free trial through the Shopify App Store. There is no ongoing free plan after the trial."
   },
   {

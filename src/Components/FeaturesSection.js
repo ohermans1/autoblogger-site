@@ -9,8 +9,8 @@ const FeaturesSection = props => {
     { title: "Consistent publishing", description: "Automated SEO publishing with structured, search-ready articles." },
     { title: "Article modes", description: "Topic and product-focused SEO content built for Shopify stores." },
     { title: "SEO-ready", description: "Optimized HTML, overviews, FAQs, metadata, and structured formatting." },
-    { title: "Easy blog management", description: "Plan, schedule, and manage your publishing calendar easily." },
-    { title: "Premium extras", description: "Optional spotlight and structured data bonuses for stores that want more support." },
+    { title: "Easy blog management", description: "Plan, schedule, and manage your publishing calendar without extra admin." },
+    { title: "Premium extras", description: "Setup support, content workflow guidance, and structured data bonuses for stores that want more help." },
     { title: "Built for Shopify workflows", description: "Edit directly in Shopify and automatically share to social channels." },
     { title: "14-day free trial", description: "Try autoBlogger before choosing a paid plan." }
   ];
@@ -27,7 +27,7 @@ const FeaturesSection = props => {
         autoBlogger turns your Shopify blog into a repeatable SEO publishing workflow with content designed for topical coverage and product discovery.
       </p>
       <p className="max-w-4xl mx-auto text-center text-base text-gray-600 mb-8">
-        Need the implementation side too? Use the{" "}
+        Want a practical next step? Use the{" "}
         <SmartLink to="/free-seo-checklist" className="text-primary font-semibold hover:underline">
           free SEO checklist
         </SmartLink>

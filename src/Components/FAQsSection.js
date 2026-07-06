@@ -28,7 +28,7 @@ const FAQsSection = props => {
       answer: "Install from the Shopify App Store and start a 14-day trial. There is no ongoing free plan, so after trial end you can continue on Starter, Growth, or Pro, or cancel."
     },
     {
-      question: "Is autoBlogger AI free?",
+      question: "Is there a free plan?",
       answer: "autoBlogger includes a 14-day free trial through the Shopify App Store. There is no ongoing free plan after the trial."
     },
     {
@@ -66,7 +66,7 @@ const FAQsSection = props => {
     },
     {
       question: "What AI model is used?",
-      answer: "Growth and Pro include more advanced AI generation features than the Starter plan. Check the Shopify App Store listing for the latest model and feature details."
+      answer: "Growth and Pro include more advanced generation features than the Starter plan. Check the Shopify App Store listing for the latest model and feature details."
     },
     {
       question: "What premium extras are available?",
@@ -101,7 +101,7 @@ const FAQsSection = props => {
       question: "How do I contact support?",
       answer: (
         <>
-          Email Ollie (developer and owner) at{" "}
+          Email support at{" "}
           <a href={supportMailto} className="text-primary underline">
             {supportEmail}
           </a>

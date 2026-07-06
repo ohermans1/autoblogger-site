@@ -13,7 +13,7 @@ const ContactSection = props => {
         <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Get in Touch with autoBlogger Support</h1>
       )}
 
-      <p className="text-center text-gray-700 mb-6">If you have any questions, feel free to reach out. We'd love to hear from you.</p>
+      <p className="text-center text-gray-700 mb-6">Have a setup, billing, or product question? Send a message and we will help.</p>
       <p className="max-w-3xl mx-auto text-center text-base text-gray-600 mb-8">
         You can also browse the{" "}
         <SmartLink to="/faqs" className="text-primary font-semibold hover:underline">
@@ -32,7 +32,7 @@ const ContactSection = props => {
 
       <div className="max-w-lg mx-auto bg-white rounded-lg shadow-lg p-6 text-center">
         <p className="text-lg text-gray-800">
-          You can reach us at{" "}
+          Contact support at{" "}
           <a href={mailto} className="text-primary font-semibold hover:underline">
             {email}
           </a>
