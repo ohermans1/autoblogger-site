@@ -20,6 +20,9 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
         <SmartNavLink to="/reviews" onClick={toggleMenu} className={({ isActive }) => `block px-4 py-2 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:bg-gray-200`}>
           Reviews
         </SmartNavLink>
+        <SmartNavLink to="/blog" onClick={toggleMenu} className={({ isActive }) => `block px-4 py-2 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:bg-gray-200`}>
+          Blog
+        </SmartNavLink>
         <SmartNavLink to="/2x-staff-pick" onClick={toggleMenu} className={({ isActive }) => `block px-4 py-2 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:bg-gray-200`}>
           2x Staff Pick
         </SmartNavLink>

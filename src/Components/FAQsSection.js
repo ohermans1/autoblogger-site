@@ -9,7 +9,7 @@ const FAQsSection = props => {
   const faqs = [
     {
       question: "What is autoBlogger?",
-      answer: "autoBlogger is a Shopify app that automates SEO blog publishing to help build topical authority, improve product discovery, and drive organic traffic."
+      answer: "autoBlogger is a Shopify app that automates SEO blog publishing to help build topical coverage, improve product discovery, and support organic search growth."
     },
     {
       question: "What does 2x Shopify Staff Pick mean?",
@@ -36,9 +36,9 @@ const FAQsSection = props => {
       answer: "Yes. autoBlogger is a Shopify app and is installed from the Shopify App Store."
     },
     {
-      question: "What is the best app for automated Shopify blog posts?",
+      question: "What should I look for in a Shopify blog automation app?",
       answer:
-        "The best fit is usually the app that supports the full Shopify publishing workflow: recurring posts, metadata, FAQ content, product links, and simple editing after publish. autoBlogger is built around that workflow."
+        "Look for an app that supports the full Shopify publishing workflow: recurring posts, metadata, FAQ content, product links, readable article structure, and simple editing after publishing. autoBlogger is built around that workflow."
     },
     {
       question: "Can autoBlogger add internal product links?",
@@ -46,7 +46,7 @@ const FAQsSection = props => {
     },
     {
       question: "How long does setup take?",
-      answer: "Most stores can complete setup in a few minutes, then run publishing on autopilot."
+      answer: "Most stores can complete setup in a few minutes, then prepare a recurring publishing schedule."
     },
     {
       question: "How many articles are published on each plan?",
@@ -54,7 +54,7 @@ const FAQsSection = props => {
     },
     {
       question: "What does each generated article include?",
-      answer: "Posts include optimised HTML, metadata, overviews, FAQs, table of contents, internal product links, and relevant imagery."
+      answer: "Posts include optimized HTML, metadata, overviews, FAQs, table of contents, internal product links, and relevant imagery."
     },
     {
       question: "Can I edit content before or after publishing?",
@@ -66,15 +66,15 @@ const FAQsSection = props => {
     },
     {
       question: "What AI model is used?",
-      answer: "Growth and Pro include an advanced ChatGPT-5.2 AI model."
+      answer: "Growth and Pro include more advanced AI generation features than the Starter plan. Check the Shopify App Store listing for the latest model and feature details."
     },
     {
-      question: "What is the Backlink Program?",
-      answer: "The Backlink Program is an optional network that helps participating stores strengthen search authority through relevant backlink opportunities."
+      question: "What premium extras are available?",
+      answer: "Premium extras may include setup support, content workflow guidance, and complimentary access to related tools such as autoSchema. Availability can change, so check the pricing page and app listing for current details."
     },
     {
       question: "What does autoBlogger work with?",
-      answer: "autoBlogger works with Shopify Admin, ChatGPT, AI Backlinks, Facebook, Instagram, and Unsplash."
+      answer: "autoBlogger works with Shopify Admin and supports workflows around AI-assisted article generation, Facebook, Instagram, and Unsplash imagery."
     },
     {
       question: "Which languages are supported?",

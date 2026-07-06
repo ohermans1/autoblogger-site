@@ -12,10 +12,9 @@ export const SITE_NAV_ITEMS = [
   { name: "Home", path: "/" },
   { name: "Features", path: "/features" },
   { name: "Pricing", path: "/pricing" },
-  { name: "Solutions", path: "/solutions" },
-  { name: "Resources", path: "/resources" },
   { name: "FAQs", path: "/faqs" },
   { name: "Reviews", path: "/reviews" },
+  { name: "Blog", path: "/blog" },
   { name: "2x Staff Pick", path: "/2x-staff-pick" },
   { name: "Contact", path: "/contact" },
   { name: "Other Apps", path: "/other-apps" },
@@ -144,18 +143,17 @@ export function hasRoutePrefix(pageOrRoute, prefix) {
 
 export function isHubPage(pageOrRoute) {
   const route = typeof pageOrRoute === "string" ? pageOrRoute : pageOrRoute?.route;
-  return route === "/solutions" || route === "/resources";
+  return route === "/blog";
 }
 
 export function isGuidePage(pageOrRoute) {
-  return ["/shopify-seo", "/wix-seo", "/ecommerce-seo", "/resources"].some(prefix => hasRoutePrefix(pageOrRoute, prefix)) && !isHubPage(pageOrRoute);
+  return hasRoutePrefix(pageOrRoute, "/blog") && !isHubPage(pageOrRoute);
 }
 
 export function getPageSection(page) {
   if (page.route === "/site-map") return "Site";
-  if (page.route === "/solutions" || hasRoutePrefix(page, "/shopify-seo") || hasRoutePrefix(page, "/wix-seo") || hasRoutePrefix(page, "/ecommerce-seo")) return "Solutions";
-  if (page.route === "/resources" || hasRoutePrefix(page, "/resources")) return "Resources";
-  if (["/privacy", "/terms", "/autoschema-terms", "/autoschema-privacy", "/backlink-terms"].includes(page.route)) return "Legal";
+  if (page.route === "/blog" || hasRoutePrefix(page, "/blog")) return "Blog";
+  if (["/privacy", "/terms", "/autoschema-terms", "/autoschema-privacy"].includes(page.route)) return "Legal";
   return "Core";
 }
 
@@ -178,12 +176,8 @@ export function getBreadcrumbTrail(page) {
     return trail;
   }
 
-  if (isGuidePage(page) && !hasRoutePrefix(page, "/resources")) {
-    trail.push({ label: "Solutions", path: "/solutions" });
-  }
-
-  if (hasRoutePrefix(page, "/resources") && page.route !== "/resources") {
-    trail.push({ label: "Resources", path: "/resources" });
+  if (hasRoutePrefix(page, "/blog") && page.route !== "/blog") {
+    trail.push({ label: "Blog", path: "/blog" });
   }
 
   trail.push({
@@ -205,16 +199,12 @@ function scoreRelatedness(source, candidate) {
 export function findRelatedPages(page, pages = STATIC_SEO_PAGES) {
   const candidates = pages.filter(candidate => candidate.route !== page.route && isIndexablePage(candidate));
 
-  if (page.route === "/solutions") {
-    return candidates.filter(candidate => ["/shopify-seo", "/wix-seo", "/ecommerce-seo"].some(prefix => hasRoutePrefix(candidate, prefix))).slice(0, 6);
+  if (page.route === "/blog") {
+    return candidates.filter(candidate => hasRoutePrefix(candidate, "/blog") && candidate.route !== "/blog").slice(0, 6);
   }
 
-  if (page.route === "/resources") {
-    return candidates.filter(candidate => hasRoutePrefix(candidate, "/resources") && candidate.route !== "/resources").slice(0, 6);
-  }
-
-  if (hasRoutePrefix(page, "/resources")) {
-    return candidates.filter(candidate => hasRoutePrefix(candidate, "/resources") && candidate.route !== page.route).slice(0, 4);
+  if (hasRoutePrefix(page, "/blog")) {
+    return candidates.filter(candidate => hasRoutePrefix(candidate, "/blog")).slice(0, 4);
   }
 
   const scored = candidates
@@ -226,6 +216,6 @@ export function findRelatedPages(page, pages = STATIC_SEO_PAGES) {
 
   if (scored.length >= 3) return scored;
 
-  const fallback = candidates.filter(candidate => ["/free-seo-checklist", "/solutions", "/resources"].includes(candidate.route)).slice(0, 4);
+  const fallback = candidates.filter(candidate => ["/features", "/pricing", "/reviews", "/free-seo-checklist"].includes(candidate.route)).slice(0, 4);
   return [...scored, ...fallback].slice(0, 4);
 }

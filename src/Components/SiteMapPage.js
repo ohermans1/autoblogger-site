@@ -2,11 +2,10 @@ import React from "react";
 import { STATIC_SEO_PAGES, groupPagesBySection, isIndexablePage } from "../seo/pageCatalog";
 import { SmartLink } from "./SmartLink";
 
-const SECTION_ORDER = ["Core", "Solutions", "Resources", "Legal", "Site"];
+const SECTION_ORDER = ["Core", "Blog", "Legal", "Site"];
 const SECTION_LABELS = {
   Core: "Core Pages",
-  Solutions: "Solutions and Playbooks",
-  Resources: "Resources and Templates",
+  Blog: "Blog",
   Legal: "Legal Pages",
   Site: "Site Utilities"
 };

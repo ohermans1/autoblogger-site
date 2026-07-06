@@ -120,7 +120,7 @@ const StaffPickPage = () => {
         <div className="mx-auto max-w-4xl rounded-[32px] border border-gray-200 bg-white p-8 text-center shadow-sm md:p-10">
           <h2 className="mb-3 text-2xl font-semibold text-gray-900 md:text-3xl">See whether autoBlogger is the right fit</h2>
           <p className="mx-auto mb-6 max-w-3xl text-base leading-7 text-gray-700 md:text-lg">
-            If you're thinking about installing autoBlogger, the Shopify review page, features, reviews, pricing page, and Shopify App Store listing will give you a clearer picture of how it works and whether it suits your store.
+            If you're thinking about installing autoBlogger, the features, reviews, pricing page, and Shopify App Store listing will give you a clearer picture of how it works and whether it suits your store.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3">
@@ -136,10 +136,10 @@ const StaffPickPage = () => {
               Read merchant reviews
             </SmartLink>
             <SmartLink
-              to="/shopify-seo/autoblogger-shopify-review"
+              to="/features"
               className="inline-flex items-center justify-center rounded-lg border border-gray-300 px-6 py-3 font-semibold text-gray-700 transition hover:bg-gray-50"
             >
-              Read Shopify review
+              Review features
             </SmartLink>
           </div>
         </div>

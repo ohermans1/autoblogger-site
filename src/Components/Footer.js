@@ -14,28 +14,16 @@ const Footer = () => {
           Terms and Conditions
         </SmartLink>
         <span>|</span>
-        <SmartLink to="/backlink-terms" className="text-primary hover:underline mx-2">
-          Backlink Program Terms
-        </SmartLink>
-        <span>|</span>
         <SmartLink to="/premium-extras" className="text-primary hover:underline mx-2">
           Premium Extras
         </SmartLink>
         <span>|</span>
-        <SmartLink to="/shopify-seo/autoblogger-shopify-review" className="text-primary hover:underline mx-2">
-          Shopify Review
+        <SmartLink to="/blog" className="text-primary hover:underline mx-2">
+          Blog
         </SmartLink>
         <span>|</span>
-        <SmartLink to="/ai-recommendations" className="text-primary hover:underline mx-2">
-          AI App Guide
-        </SmartLink>
-        <span>|</span>
-        <SmartLink to="/solutions" className="text-primary hover:underline mx-2">
-          SEO Solutions
-        </SmartLink>
-        <span>|</span>
-        <SmartLink to="/resources" className="text-primary hover:underline mx-2">
-          SEO Resources
+        <SmartLink to="/free-seo-checklist" className="text-primary hover:underline mx-2">
+          Free SEO Checklist
         </SmartLink>
         <span>|</span>
         <SmartLink to="/site-map" className="text-primary hover:underline mx-2">

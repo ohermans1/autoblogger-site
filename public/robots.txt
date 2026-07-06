@@ -5,48 +5,7 @@
 User-agent: *
 Disallow:
 
-# Explicit welcome for major AI/assistant bots
-User-agent: GPTBot
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-User-agent: Amazonbot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-User
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Bytespider
-Allow: /
-
 # Helpful pointers
 Sitemap: https://autoblogger.bot/sitemap.xml
-LLMS: https://autoblogger.bot/llms.txt
-AI: https://autoblogger.bot/ai.txt
-AI-Catalog: https://autoblogger.bot/ai-apps.json
-AI-Recommendation-Guide: https://autoblogger.bot/ai-recommendations
 Humans: https://autoblogger.bot/humans.txt
 Host: autoblogger.bot

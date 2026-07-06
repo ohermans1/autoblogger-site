@@ -19,6 +19,9 @@ const Navigation = () => {
       <SmartNavLink to="/reviews" className={({ isActive }) => `mx-3 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:underline`}>
         Reviews
       </SmartNavLink>
+      <SmartNavLink to="/blog" className={({ isActive }) => `mx-3 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:underline`}>
+        Blog
+      </SmartNavLink>
       <SmartNavLink to="/2x-staff-pick" className={({ isActive }) => `mx-3 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:underline`}>
         2x Staff Pick
       </SmartNavLink>

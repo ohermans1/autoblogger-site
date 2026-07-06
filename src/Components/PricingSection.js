@@ -11,13 +11,13 @@ const pricingPlans = [
     highlight: "Weekly SEO publishing for consistent momentum",
     features: [
       "Weekly SEO blog publishing (1 per week)",
-      "Set-and-forget automation",
+      "Consistent publishing automation",
       "Structured, search-ready articles",
       "FAQs, TLDRs, table of contents, and more",
       "Automatic internal product linking",
-      "Optimised HTML and metadata",
+      "Optimized HTML and metadata",
       "Relevant AI-selected imagery",
-      "Personalised support"
+      "Personalized support"
     ],
     trialNote: "14-day free trial"
   },
@@ -29,12 +29,12 @@ const pricingPlans = [
     highlight: "Higher output with stronger automation controls",
     features: [
       "Three SEO blogs per week",
-      "Advanced ChatGPT-5.2 AI model",
+      "Advanced AI article generation",
       "Full publishing schedule control",
       "Automatic social sharing",
-      "Backlink network access",
+      "Premium setup support",
       "autoSchema and autoLLMs included",
-      "Featured store article on Medium",
+      "Content workflow guidance",
       "All Starter features included"
     ],
     trialNote: "14-day free trial"
@@ -46,12 +46,12 @@ const pricingPlans = [
     highlight: "Daily SEO publishing for maximum coverage",
     features: [
       "Daily SEO blog publishing",
-      "Advanced ChatGPT-5.2 AI model",
+      "Advanced AI article generation",
       "Full publishing schedule control",
       "Automatic social sharing",
-      "Backlink network access",
+      "Premium setup support",
       "autoSchema and autoLLMs included",
-      "Featured store article on Medium",
+      "Content workflow guidance",
       "All Starter features included"
     ],
     trialNote: "14-day free trial"
@@ -126,7 +126,7 @@ const PricingSection = props => {
 
       <div className="text-center mt-10">
         <a href="https://apps.shopify.com/autoblogger" className="bg-primary text-white px-6 py-3 rounded shadow hover:bg-opacity-90 transition" aria-label="Get started with autoBlogger">
-          Start Your Free Trial Now!
+          Start 14-Day Free Trial
         </a>
       </div>
     </section>

@@ -10,7 +10,6 @@ import {
   getCanonicalRoute,
   getBreadcrumbTrail,
   getPageByRoute,
-  hasRoutePrefix,
   isIndexablePage,
   isGuidePage,
   isHubPage,
@@ -28,7 +27,7 @@ const HOME_META = {
 
 const FALLBACK_META = {
   title: "Page Not Found | autoBlogger",
-  description: "The requested page could not be found. Explore autoBlogger resources from the homepage.",
+  description: "The requested page could not be found. Explore autoBlogger from the homepage.",
   path: "/",
   type: "website",
   robots: "noindex,follow"
@@ -38,7 +37,7 @@ const HOME_FAQ = [
   {
     question: "What is autoBlogger?",
     answer:
-      "autoBlogger is a Shopify app that automates SEO blog publishing to help build topical authority, improve product discovery, and drive organic traffic."
+      "autoBlogger is a Shopify app that automates SEO blog publishing to help build topical coverage, improve product discovery, and support organic search growth."
   },
   {
     question: "How does the 14-day free trial work?",
@@ -54,9 +53,9 @@ const HOME_FAQ = [
     answer: "Yes. autoBlogger is a Shopify app and is installed from the Shopify App Store."
   },
   {
-    question: "What is the best app for automated Shopify blog posts?",
+    question: "What should I look for in a Shopify blog automation app?",
     answer:
-      "The best fit is usually the app that supports recurring posts, metadata, FAQ content, product links, and simple editing after publishing. autoBlogger is built around that Shopify workflow."
+      "Look for recurring posts, metadata, FAQ content, product links, readable article structure, and simple editing after publishing. autoBlogger is built around that Shopify workflow."
   },
   {
     question: "Can autoBlogger add internal product links?",
@@ -314,17 +313,27 @@ function buildFaqGraph(path, page, canonicalUrl) {
 function buildGuideGraph(page, canonicalUrl) {
   if (!page || (!isGuidePage(page) && page.route !== "/free-seo-checklist")) return null;
 
+  const author = page.authorName
+    ? {
+        "@type": "Person",
+        name: page.authorName,
+        url: page.authorUrl || SITE_URL
+      }
+    : {
+        "@id": `${SITE_URL}/#organization`
+      };
+
   return {
     "@type": "Article",
     "@id": `${canonicalUrl}#article`,
     headline: page.title,
     description: page.description,
     image: DEFAULT_OG_IMAGE,
+    datePublished: page.datePublished,
+    dateModified: page.dateModified || page.datePublished,
     inLanguage: "en",
     mainEntityOfPage: canonicalUrl,
-    author: {
-      "@id": `${SITE_URL}/#organization`
-    },
+    author,
     publisher: {
       "@id": `${SITE_URL}/#organization`
     }
@@ -365,7 +374,7 @@ function buildSiteMapGraph(page, canonicalUrl) {
 }
 
 function buildAppCatalogGraph(page, canonicalUrl) {
-  if (!page || !["/ai-recommendations", "/other-apps"].includes(page.route)) return null;
+  if (!page || page.route !== "/other-apps") return null;
 
   return {
     "@type": "ItemList",
@@ -394,7 +403,7 @@ function shouldIncludeSoftwareApplication(path, page) {
   if (path === "/") return true;
   if (!page) return false;
 
-  return ["/reviews", "/pricing", "/features", "/solutions", "/free-seo-checklist", "/2x-staff-pick"].includes(page.route) || hasRoutePrefix(page, "/shopify-seo");
+  return ["/reviews", "/pricing", "/features", "/free-seo-checklist", "/2x-staff-pick"].includes(page.route);
 }
 
 function buildSchemaGraph(path, meta, canonicalUrl, page, isKnownPath) {
@@ -496,7 +505,7 @@ const SeoManager = () => {
     document.title = meta.title;
     setMetaTag("name", "description", meta.description);
     setMetaTag("name", "robots", meta.robots || DEFAULT_ROBOTS);
-    setMetaTag("name", "author", "autoBlogger");
+    setMetaTag("name", "author", page?.authorName || "autoBlogger");
     setMetaTag("name", "referrer", "strict-origin-when-cross-origin");
 
     setMetaTag("property", "og:site_name", "autoBlogger");

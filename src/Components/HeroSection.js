@@ -41,26 +41,26 @@ const HeroSection = () => {
         <a href={shopifyUrl} target="_blank" rel="noopener noreferrer" className="text-primary no-underline" aria-label="Visit Shopify">
           Shopify
         </a>{" "}
-        blog into an automated SEO engine. After a quick setup, it publishes fresh, engaging, search-engine-friendly articles with optimised HTML, metadata, FAQs, table of contents, internal
+        blog into a steady SEO publishing workflow. After a quick setup, it publishes fresh, useful, search-friendly articles with optimized HTML, metadata, FAQs, table of contents, internal
         product links, and relevant imagery.
       </p>
-      <p className="mb-6 text-lg md:text-xl text-gray-600">Edit directly in Shopify, auto-share to social channels, and set and forget your blogging strategy.</p>
+      <p className="mb-6 text-lg md:text-xl text-gray-600">Edit directly in Shopify, share to social channels, and keep a consistent publishing schedule without rebuilding the process each week.</p>
       <p className="mb-6 text-base md:text-lg text-gray-600">
-        Comparing tools first? Read the{" "}
-        <SmartLink to="/shopify-seo/autoblogger-shopify-review" className="text-primary hover:underline">
-          autoBlogger Shopify review
+        Want to check the fit first? Review the{" "}
+        <SmartLink to="/features" className="text-primary hover:underline">
+          feature overview
         </SmartLink>
-        , compare the{" "}
-        <SmartLink to="/ecommerce-seo/best-ecommerce-blog-automation-software" className="text-primary hover:underline">
-          best ecommerce blog automation software
+        , compare{" "}
+        <SmartLink to="/pricing" className="text-primary hover:underline">
+          pricing
         </SmartLink>
-        , then use our{" "}
-        <SmartLink to="/solutions" className="text-primary hover:underline">
-          SEO solutions hub
-        </SmartLink>{" "}
-        and{" "}
-        <SmartLink to="/resources" className="text-primary hover:underline">
-          free resource library
+        , read{" "}
+        <SmartLink to="/reviews" className="text-primary hover:underline">
+          merchant reviews
+        </SmartLink>
+        , or use the{" "}
+        <SmartLink to="/free-seo-checklist" className="text-primary hover:underline">
+          free SEO checklist
         </SmartLink>
         .
       </p>

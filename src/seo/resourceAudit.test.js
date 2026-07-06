@@ -2,13 +2,8 @@ import fs from "fs";
 import path from "path";
 import { STATIC_SEO_PAGES } from "./pageCatalog";
 
-const RESOURCE_PAGES = STATIC_SEO_PAGES.filter(
-  page =>
-    page.route === "/free-seo-checklist" ||
-    page.route === "/resources" ||
-    page.route.startsWith("/resources/") ||
-    page.canonicalRoute === "/free-seo-checklist"
-);
+const REMOVED_ROUTE_PREFIXES = ["/ai-recommendations", "/solutions", "/shopify-seo", "/wix-seo", "/ecommerce-seo", "/resources"];
+const CHECKLIST_ROUTES = ["/free-seo-checklist", "/seo-checklist"];
 
 function isLocalFileHref(href = "") {
   return href.startsWith("/") && /\.[a-z0-9]+$/i.test(href);
@@ -22,37 +17,26 @@ function toPublicPath(href) {
   return path.join(process.cwd(), "public", href.replace(/^\/+/, ""));
 }
 
-test("every resource page has a real asset or tool", () => {
-  RESOURCE_PAGES.forEach(page => {
-    expect(page.resourceCards.length > 0 || page.tool).toBe(true);
+test("removed programmatic and AI recommendation routes are not in the static catalog", () => {
+  const routes = STATIC_SEO_PAGES.map(page => page.route);
+
+  REMOVED_ROUTE_PREFIXES.forEach(prefix => {
+    expect(routes.some(route => route === prefix || route.startsWith(`${prefix}/`))).toBe(false);
   });
 });
 
-test("every local resource asset exists on disk and every internal tool link resolves to a page", () => {
-  const knownRoutes = new Set(STATIC_SEO_PAGES.map(page => page.route));
+test("checklist download assets exist", () => {
+  CHECKLIST_ROUTES.forEach(route => {
+    const page = STATIC_SEO_PAGES.find(item => item.route === route);
+    expect(page?.resourceCards.length).toBeGreaterThan(0);
 
-  RESOURCE_PAGES.forEach(page => {
     page.resourceCards.forEach(card => {
       [card.href, card.secondaryHref].forEach(href => {
-        if (!href) return;
-
-        if (isLocalFileHref(href)) {
-          expect(fs.existsSync(toPublicPath(href))).toBe(true);
-          return;
-        }
-
-        if (isInternalRouteHref(href)) {
-          expect(knownRoutes.has(href)).toBe(true);
-        }
+        if (!isLocalFileHref(href)) return;
+        expect(fs.existsSync(toPublicPath(href))).toBe(true);
       });
     });
   });
-});
-
-test("the ROI resource page includes an actual calculator tool config", () => {
-  const roiPage = STATIC_SEO_PAGES.find(page => page.route === "/resources/ecommerce-seo-roi-calculator");
-
-  expect(roiPage?.tool?.key).toBe("seo-roi-calculator");
 });
 
 test("the checklist alias inherits the same downloads as the canonical checklist page", () => {
@@ -62,13 +46,24 @@ test("the checklist alias inherits the same downloads as the canonical checklist
   expect(aliasPage?.resourceCards).toEqual(canonicalPage?.resourceCards);
 });
 
-test("the resources hub covers every resource detail page", () => {
-  const hubPage = STATIC_SEO_PAGES.find(page => page.route === "/resources");
-  const childRoutes = STATIC_SEO_PAGES.filter(page => page.route.startsWith("/resources/")).map(page => page.route).sort();
-  const linkedRoutes = hubPage?.resourceCards
-    .flatMap(card => [card.href, card.secondaryHref])
-    .filter(href => href && href.startsWith("/resources/") && !href.startsWith("/resources/downloads/"))
-    .sort();
+test("internal SEO catalog links resolve to known routes or local files", () => {
+  const knownRoutes = new Set(STATIC_SEO_PAGES.map(page => page.route));
 
-  expect(linkedRoutes).toEqual(childRoutes);
+  STATIC_SEO_PAGES.forEach(page => {
+    const hrefs = [
+      page.ctaHref,
+      ...page.resourceCards.flatMap(card => [card.href, card.secondaryHref])
+    ].filter(Boolean);
+
+    hrefs.forEach(href => {
+      if (isLocalFileHref(href)) {
+        expect(fs.existsSync(toPublicPath(href))).toBe(true);
+        return;
+      }
+
+      if (isInternalRouteHref(href)) {
+        expect(knownRoutes.has(href)).toBe(true);
+      }
+    });
+  });
 });

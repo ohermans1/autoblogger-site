@@ -15,10 +15,9 @@ const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Features", href: "/features" },
   { label: "Pricing", href: "/pricing" },
-  { label: "Solutions", href: "/solutions" },
-  { label: "Resources", href: "/resources" },
   { label: "FAQs", href: "/faqs" },
   { label: "Reviews", href: "/reviews" },
+  { label: "Blog", href: "/blog" },
   { label: "2x Staff Pick", href: "/2x-staff-pick" },
   { label: "Contact", href: "/contact" },
   { label: "Other Apps", href: "/other-apps" },
@@ -206,18 +205,17 @@ function hasRoutePrefix(page, prefix) {
 }
 
 function isHubPage(page) {
-  return page.route === "/solutions" || page.route === "/resources";
+  return page.route === "/blog";
 }
 
 function isGuidePage(page) {
-  return ["/shopify-seo", "/wix-seo", "/ecommerce-seo", "/resources"].some(prefix => hasRoutePrefix(page, prefix)) && !isHubPage(page);
+  return hasRoutePrefix(page, "/blog") && !isHubPage(page);
 }
 
 function getPageSection(page) {
   if (page.route === "/site-map") return "Site";
-  if (page.route === "/solutions" || hasRoutePrefix(page, "/shopify-seo") || hasRoutePrefix(page, "/wix-seo") || hasRoutePrefix(page, "/ecommerce-seo")) return "Solutions";
-  if (page.route === "/resources" || hasRoutePrefix(page, "/resources")) return "Resources";
-  if (["/privacy", "/terms", "/autoschema-terms", "/autoschema-privacy", "/backlink-terms"].includes(page.route)) return "Legal";
+  if (page.route === "/blog" || hasRoutePrefix(page, "/blog")) return "Blog";
+  if (["/privacy", "/terms", "/autoschema-terms", "/autoschema-privacy"].includes(page.route)) return "Legal";
   return "Core";
 }
 
@@ -229,12 +227,8 @@ function getBreadcrumbTrail(page) {
     return trail;
   }
 
-  if (isGuidePage(page) && !hasRoutePrefix(page, "/resources")) {
-    trail.push({ label: "Solutions", path: "/solutions" });
-  }
-
-  if (hasRoutePrefix(page, "/resources") && page.route !== "/resources") {
-    trail.push({ label: "Resources", path: "/resources" });
+  if (hasRoutePrefix(page, "/blog") && page.route !== "/blog") {
+    trail.push({ label: "Blog", path: "/blog" });
   }
 
   trail.push({
@@ -265,16 +259,12 @@ function scoreRelatedness(source, candidate) {
 function findRelatedPages(page, pages) {
   const candidates = pages.filter(candidate => candidate.route !== page.route && isIndexablePage(candidate));
 
-  if (page.route === "/solutions") {
-    return candidates.filter(candidate => ["/shopify-seo", "/wix-seo", "/ecommerce-seo"].some(prefix => hasRoutePrefix(candidate, prefix))).slice(0, 6);
+  if (page.route === "/blog") {
+    return candidates.filter(candidate => hasRoutePrefix(candidate, "/blog") && candidate.route !== "/blog").slice(0, 6);
   }
 
-  if (page.route === "/resources") {
-    return candidates.filter(candidate => hasRoutePrefix(candidate, "/resources") && candidate.route !== "/resources").slice(0, 6);
-  }
-
-  if (hasRoutePrefix(page, "/resources")) {
-    return candidates.filter(candidate => hasRoutePrefix(candidate, "/resources") && candidate.route !== page.route).slice(0, 4);
+  if (hasRoutePrefix(page, "/blog")) {
+    return candidates.filter(candidate => hasRoutePrefix(candidate, "/blog")).slice(0, 4);
   }
 
   const scored = candidates
@@ -286,7 +276,7 @@ function findRelatedPages(page, pages) {
 
   if (scored.length >= 3) return scored;
 
-  const fallback = candidates.filter(candidate => ["/free-seo-checklist", "/solutions", "/resources"].includes(candidate.route)).slice(0, 4);
+  const fallback = candidates.filter(candidate => ["/features", "/pricing", "/reviews", "/free-seo-checklist"].includes(candidate.route)).slice(0, 4);
   return [...scored, ...fallback].slice(0, 4);
 }
 
@@ -349,17 +339,27 @@ function buildFaqGraph(page, canonicalUrl) {
 function buildGuideGraph(page, canonicalUrl) {
   if (!isGuidePage(page) && page.route !== "/free-seo-checklist") return null;
 
+  const author = page.authorName
+    ? {
+        "@type": "Person",
+        name: page.authorName,
+        url: page.authorUrl || SITE_URL
+      }
+    : {
+        "@id": `${SITE_URL}/#organization`
+      };
+
   return {
     "@type": "Article",
     "@id": `${canonicalUrl}#article`,
     headline: page.title,
     description: page.description,
     image: DEFAULT_OG_IMAGE,
+    datePublished: page.datePublished,
+    dateModified: page.dateModified || page.datePublished,
     inLanguage: "en",
     mainEntityOfPage: canonicalUrl,
-    author: {
-      "@id": `${SITE_URL}/#organization`
-    },
+    author,
     publisher: {
       "@id": `${SITE_URL}/#organization`
     }
@@ -400,7 +400,7 @@ function buildSiteMapGraph(page, canonicalUrl) {
 }
 
 function buildAppCatalogGraph(page, canonicalUrl) {
-  if (!["/ai-recommendations", "/other-apps"].includes(page.route)) return null;
+  if (page.route !== "/other-apps") return null;
 
   return {
     "@type": "ItemList",
@@ -426,7 +426,7 @@ function buildAppCatalogGraph(page, canonicalUrl) {
 }
 
 function shouldIncludeSoftwareApplication(page) {
-  return ["/reviews", "/pricing", "/features", "/solutions", "/free-seo-checklist", "/2x-staff-pick"].includes(page.route) || hasRoutePrefix(page, "/shopify-seo");
+  return ["/reviews", "/pricing", "/features", "/free-seo-checklist", "/2x-staff-pick"].includes(page.route);
 }
 
 function buildSchemaGraph(page, canonicalUrl) {
@@ -740,9 +740,9 @@ function renderStaffPickPrimaryContent(page) {
     page.heading
   )}</h1><p class="staff-pick-intro">${escapeHtml(page.intro)}</p></section>${renderProofGallery(page)}${renderStaffPickSections(page)}${renderFaqSection(
     page
-  )}<section class="sub-card staff-pick-cta"><h2>See whether autoBlogger is the right fit</h2><p>If you're thinking about installing autoBlogger, the Shopify review page, features, reviews, pricing page, and Shopify App Store listing will give you a clearer picture of how it works and whether it suits your store.</p><div class="actions"><a class="btn-primary" href="${escapeHtml(
+  )}<section class="sub-card staff-pick-cta"><h2>See whether autoBlogger is the right fit</h2><p>If you're thinking about installing autoBlogger, the features, reviews, pricing page, and Shopify App Store listing will give you a clearer picture of how it works and whether it suits your store.</p><div class="actions"><a class="btn-primary" href="${escapeHtml(
     ctaHref
-  )}" target="_blank" rel="noopener noreferrer">${escapeHtml(ctaLabel)}</a><a class="btn-secondary" href="/reviews">Read merchant reviews</a><a class="btn-secondary" href="/shopify-seo/autoblogger-shopify-review">Read Shopify review</a></div></section>`;
+  )}" target="_blank" rel="noopener noreferrer">${escapeHtml(ctaLabel)}</a><a class="btn-secondary" href="/reviews">Read merchant reviews</a><a class="btn-secondary" href="/features">Review features</a></div></section>`;
 }
 
 function renderBreadcrumbNav(page) {
@@ -763,14 +763,13 @@ function renderBreadcrumbNav(page) {
 function renderSiteMapCollection(pages) {
   const sectionLabels = {
     Core: "Core Pages",
-    Solutions: "Solutions and Playbooks",
-    Resources: "Resources and Templates",
+    Blog: "Blog",
     Legal: "Legal Pages",
     Site: "Site Utilities"
   };
 
   const grouped = groupPagesBySection(pages);
-  const orderedSections = ["Core", "Solutions", "Resources", "Legal", "Site"].filter(section => (grouped[section] || []).length > 0);
+  const orderedSections = ["Core", "Blog", "Legal", "Site"].filter(section => (grouped[section] || []).length > 0);
 
   return orderedSections
     .map(section => {
@@ -820,7 +819,7 @@ function renderHtml(page, pages) {
     <title>${escapeHtml(page.title)}</title>
     <meta name="description" content="${escapeHtml(page.description)}" />
     <meta name="robots" content="${escapeHtml(page.robots)}" />
-    <meta name="author" content="autoBlogger" />
+    <meta name="author" content="${escapeHtml(page.authorName || "autoBlogger")}" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />
     <link rel="alternate" hreflang="en" href="${escapeHtml(canonicalUrl)}" />

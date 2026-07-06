@@ -16,12 +16,10 @@ const SEOChecklist = lazy(() => import("./Components/SEOChecklist"));
 const PricingSection = lazy(() => import("./Components/PricingSection"));
 const PrivacyPolicy = lazy(() => import("./Components/PrivacyPolicy"));
 const TermsAndConditions = lazy(() => import("./Components/TermsAndConditions"));
-const BacklinkProgramTerms = lazy(() => import("./Components/BacklinkProgramTerms"));
 const PremiumExtras = lazy(() => import("./Components/PremiumExtras"));
 const AutoSchemaTerms = lazy(() => import("./Components/AutoSchemaTerms"));
 const AutoSchemaPrivacy = lazy(() => import("./Components/AutoSchemaPrivacy"));
 const OtherAppsSection = lazy(() => import("./Components/OtherAppsSection"));
-// const SEOPlaybooksSection = lazy(() => import("./Components/SEOPlaybooksSection"));
 const SeoLandingPage = lazy(() => import("./Components/SeoLandingPage"));
 const SiteMapPage = lazy(() => import("./Components/SiteMapPage"));
 
@@ -39,7 +37,6 @@ const CUSTOM_ROUTE_PATHS = new Set([
   "/terms",
   "/autoschema-terms",
   "/autoschema-privacy",
-  "/backlink-terms",
   "/premium-extras",
   "/site-map"
 ]);
@@ -97,7 +94,6 @@ const App = () => {
                   {lazySection(<PricingSection home={true} />)}
                   {lazySection(<FAQsSection home={true} />)}
                   {lazySection(<ReviewsSection home={true} />)}
-                  {/* {lazySection(<SEOPlaybooksSection home={true} />)} */}
                   {lazySection(<ContactSection home={true} />)}
                   {lazySection(<OtherAppsSection home={true} />)}
                 </>
@@ -116,7 +112,6 @@ const App = () => {
             <Route path="/terms" element={lazySection(<TermsAndConditions />)} />
             <Route path="/autoschema-terms" element={lazySection(<AutoSchemaTerms />)} />
             <Route path="/autoschema-privacy" element={lazySection(<AutoSchemaPrivacy />)} />
-            <Route path="/backlink-terms" element={lazySection(<BacklinkProgramTerms />)} />
             <Route path="/premium-extras" element={lazySection(<PremiumExtras />)} />
             <Route path="/site-map" element={lazySection(<SiteMapPage />)} />
             {generatedRoutePages.map(page => (

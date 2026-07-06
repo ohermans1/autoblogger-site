@@ -24,8 +24,8 @@ const ContactSection = props => {
           HTML sitemap
         </SmartLink>
         , or the{" "}
-        <SmartLink to="/resources" className="text-primary font-semibold hover:underline">
-          SEO resource library
+        <SmartLink to="/free-seo-checklist" className="text-primary font-semibold hover:underline">
+          free SEO checklist
         </SmartLink>
         .
       </p>

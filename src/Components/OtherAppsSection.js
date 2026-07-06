@@ -6,7 +6,7 @@ const OtherAppsSection = props => {
       key: "autollms",
       name: "autoLLMs",
       logo: "/autollms-logo.png",
-      description: "Create and maintain an LLMs.txt so AI tools can easily read and index your store. Simple, automated, SEO-friendly.",
+      description: "Create and maintain an LLMs.txt file so AI tools can understand the important pages on your store.",
       cta: {
         href: "https://apps.shopify.com/autollm",
         label: "View on Shopify App Store"
@@ -16,7 +16,7 @@ const OtherAppsSection = props => {
       key: "autoschema",
       name: "autoSchema",
       logo: "/autoschema-logo.png",
-      description: "Automatically add Google-friendly structured data (schema) to your store for richer search results and improved SEO.",
+      description: "Add Google-friendly structured data to your store so search engines can better understand products, pages, and content.",
       cta: {
         href: "https://apps.shopify.com/autoschema-google-structures",
         label: "View on Shopify App Store"
@@ -26,7 +26,7 @@ const OtherAppsSection = props => {
       key: "autoship",
       name: "autoShip | Free Shipping Bar",
       logo: "https://cdn.shopify.com/app-store/listing_images/5b39da04a16faa71e05dd785528d696e/icon/CO_Rmqzsq5IDEAE=.png",
-      description: "Free shipping progress bar for your store.",
+      description: "Show shoppers how close they are to a free shipping threshold.",
       cta: {
         href: "https://apps.shopify.com/autoshippingbar",
         label: "View on Shopify App Store"
@@ -36,7 +36,7 @@ const OtherAppsSection = props => {
       key: "autostockist",
       name: "autoStockist | Stock Alerts",
       logo: "https://cdn.shopify.com/app-store/listing_images/833ea1c9a3d52e5b7f6a9de05a187a88/icon/CMCWirLsq5IDEAE=.png",
-      description: "Instant low and out-of-stock alerts, tracking, and forecasting.",
+      description: "Monitor low-stock and out-of-stock issues so inventory problems are easier to catch.",
       cta: {
         href: "https://apps.shopify.com/autostockist",
         label: "View on Shopify App Store"
@@ -46,7 +46,7 @@ const OtherAppsSection = props => {
       key: "autobuy",
       name: "autoBuy | Buy Button Anywhere",
       logo: "https://cdn.shopify.com/app-store/listing_images/d6b0d14db59c4b0805d9b9e0a14b8c8d/icon/CMvYl5Gn6JIDEAE=.png",
-      description: "Sell on any blog, social channel, or website in minutes.",
+      description: "Add Shopify buy buttons to blogs, landing pages, social posts, and external websites.",
       cta: {
         href: "https://apps.shopify.com/autobuy-1",
         label: "View on Shopify App Store"

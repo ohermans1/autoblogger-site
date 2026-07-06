@@ -29,9 +29,9 @@ const ReviewsSection = props => {
   return (
     <section className="py-16 md:bg-gradient-to-b md:from-gray-100 md:to-white">
       {props.home ? (
-        <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">Latest Reviews from Our Happy autoBlogger Users</h3>
+        <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">Latest autoBlogger Reviews from Shopify Merchants</h3>
       ) : (
-        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Latest Reviews from Our Happy autoBlogger Users</h1>
+        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Latest autoBlogger Reviews from Shopify Merchants</h1>
       )}
 
       <h4 className="text-2xl font-semibold mb-4 text-center">
@@ -43,8 +43,8 @@ const ReviewsSection = props => {
       <p className="text-center mb-8">Here are three recent reviews from real merchant stores.</p>
       <p className="max-w-4xl mx-auto text-center text-base text-gray-600 mb-8">
         See how the product lines up with the{" "}
-        <SmartLink to="/shopify-seo/autoblogger-shopify-review" className="text-primary font-semibold hover:underline">
-          autoBlogger Shopify review
+        <SmartLink to="/2x-staff-pick" className="text-primary font-semibold hover:underline">
+          2x Shopify Staff Pick proof
         </SmartLink>
         , the{" "}
         <SmartLink to="/features" className="text-primary font-semibold hover:underline">
