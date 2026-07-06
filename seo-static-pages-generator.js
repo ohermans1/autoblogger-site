@@ -745,6 +745,70 @@ function renderStaffPickPrimaryContent(page) {
   )}" target="_blank" rel="noopener noreferrer">${escapeHtml(ctaLabel)}</a><a class="btn-secondary" href="/reviews">Read merchant reviews</a><a class="btn-secondary" href="/features">Review features</a></div></section>`;
 }
 
+function renderBlogIndexContent(page) {
+  const posts = page.resourceCards
+    .map(card => {
+      const eyebrow = card.eyebrow ? `<p class="blog-kicker">${escapeHtml(card.eyebrow)}</p>` : "";
+      const meta = card.meta ? `<p class="blog-meta">${escapeHtml(card.meta)}</p>` : "";
+      const description = card.description ? `<p>${escapeHtml(card.description)}</p>` : "";
+      const label = card.label || "Read article";
+
+      return `<article class="blog-list-item">${eyebrow}<h2><a href="${escapeHtml(card.href)}">${escapeHtml(card.title)}</a></h2>${meta}${description}<a class="blog-read-more" href="${escapeHtml(card.href)}">${escapeHtml(label)}</a></article>`;
+    })
+    .join("");
+  const sections = page.sections
+    .map(section => {
+      const paragraphs = section.paragraphs.map(paragraph => `<p>${escapeHtml(paragraph)}</p>`).join("");
+      return `<section class="blog-index-section"><h2>${escapeHtml(section.title)}</h2>${paragraphs}</section>`;
+    })
+    .join("");
+
+  return `${renderBreadcrumbNav(page)}<header class="blog-header"><p class="blog-kicker">Blog</p><h1>${escapeHtml(page.heading)}</h1><p class="blog-intro">${escapeHtml(page.intro)}</p></header>${
+    posts ? `<section class="blog-list" aria-labelledby="latest-articles"><h2 id="latest-articles">Latest articles</h2>${posts}</section>` : ""
+  }${sections}`;
+}
+
+function formatArticleDate(dateString) {
+  if (!dateString) return "";
+
+  try {
+    return new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${dateString}T00:00:00Z`));
+  } catch (_error) {
+    return dateString;
+  }
+}
+
+function renderBlogArticleContent(page) {
+  const published = page.datePublished
+    ? `<span aria-hidden="true">|</span><time datetime="${escapeHtml(page.datePublished)}">${escapeHtml(formatArticleDate(page.datePublished))}</time>`
+    : "";
+  const sections = page.sections
+    .map(section => {
+      const paragraphs = section.paragraphs.map(paragraph => `<p>${escapeHtml(paragraph)}</p>`).join("");
+      const items = section.items.length > 0 ? renderList(section.items, section.ordered, "article-list") : "";
+      return `<section class="article-section"><h2>${escapeHtml(section.title)}</h2>${paragraphs}${items}</section>`;
+    })
+    .join("");
+  const sources = page.resourceCards.length
+    ? `<section class="article-sources"><h2>${escapeHtml(page.resourceSectionTitle || "Sources")}</h2>${
+        page.resourceSectionIntro ? `<p>${escapeHtml(page.resourceSectionIntro)}</p>` : ""
+      }<ol>${page.resourceCards
+        .map(card => `<li><a href="${escapeHtml(card.href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(card.title)}</a>${card.description ? `<span>${escapeHtml(card.description)}</span>` : ""}</li>`)
+        .join("")}</ol></section>`
+    : "";
+  const faqs = page.faq.length
+    ? `<section class="article-faq"><h2>Common questions</h2>${page.faq
+        .map(item => `<details><summary>${escapeHtml(item.question)}</summary><p>${escapeHtml(item.answer)}</p></details>`)
+        .join("")}</section>`
+    : "";
+
+  return `${renderBreadcrumbNav(page)}<header class="article-header"><p class="blog-kicker">Shopify App Store trust</p><h1>${escapeHtml(
+    page.heading
+  )}</h1><p class="article-byline"><span>By ${escapeHtml(page.authorName || "Ollie Hermans")}</span>${published}</p><p class="blog-intro">${escapeHtml(
+    page.intro
+  )}</p></header><div class="article-body">${sections}</div>${sources}${faqs}<footer class="article-footer"><a href="/blog">Back to the blog</a></footer>`;
+}
+
 function renderBreadcrumbNav(page) {
   const trail = getBreadcrumbTrail(page);
   if (trail.length <= 1) return "";
@@ -795,20 +859,27 @@ function renderHtml(page, pages) {
   const ctaLabel = page.ctaLabel || "Start 14-Day Free Trial";
   const ctaHref = page.ctaHref || APP_LISTING_URL;
   const isStaffPickPage = page.route === "/2x-staff-pick";
+  const isBlogIndexPage = page.route === "/blog";
+  const isBlogArticlePage = hasRoutePrefix(page, "/blog") && page.route !== "/blog";
   const primaryContent =
     page.route === "/site-map"
       ? `<p>${escapeHtml(page.intro)}</p>${renderSiteMapCollection(pages)}`
       : isStaffPickPage
         ? renderStaffPickPrimaryContent(page)
-        : `${renderBreadcrumbNav(page)}<p>${escapeHtml(page.intro)}</p>${renderQuickTakeaways(page)}${renderResourceCards(page)}${renderToolSection(page)}${renderComparisonTable(page)}${renderProofGallery(page)}${renderContentSections(page)}${renderChecklist(page)}`;
+        : isBlogIndexPage
+          ? renderBlogIndexContent(page)
+          : isBlogArticlePage
+            ? renderBlogArticleContent(page)
+            : `${renderBreadcrumbNav(page)}<p>${escapeHtml(page.intro)}</p>${renderQuickTakeaways(page)}${renderResourceCards(page)}${renderToolSection(page)}${renderComparisonTable(page)}${renderProofGallery(page)}${renderContentSections(page)}${renderChecklist(page)}`;
   const toolScript = renderToolScript(page);
-  const mainLayoutClass = isStaffPickPage ? "container staff-pick-layout" : "container grid";
-  const articleClass = isStaffPickPage ? "card staff-pick-card" : "card";
-  const articleHeading = page.route === "/site-map" || isStaffPickPage ? "" : `<h1>${escapeHtml(page.heading)}</h1>`;
-  const articleActions = isStaffPickPage
+  const isBlogPage = isBlogIndexPage || isBlogArticlePage;
+  const mainLayoutClass = isStaffPickPage ? "container staff-pick-layout" : isBlogPage ? "container blog-layout" : "container grid";
+  const articleClass = isStaffPickPage ? "card staff-pick-card" : isBlogPage ? "blog-shell" : "card";
+  const articleHeading = page.route === "/site-map" || isStaffPickPage || isBlogPage ? "" : `<h1>${escapeHtml(page.heading)}</h1>`;
+  const articleActions = isStaffPickPage || isBlogPage
     ? ""
     : `<div class="actions"><a class="btn-primary" href="${escapeHtml(ctaHref)}">${escapeHtml(ctaLabel)}</a><a class="btn-secondary" href="/contact">Contact Support</a></div>`;
-  const asideContent = isStaffPickPage ? "" : `<aside>${renderRelatedLinks(page, pages)}${renderFaqSection(page)}</aside>`;
+  const asideContent = isStaffPickPage || isBlogPage ? "" : `<aside>${renderRelatedLinks(page, pages)}${renderFaqSection(page)}</aside>`;
   const ogType = isGuidePage(page) || isStaffPickPage ? "article" : "website";
 
   return `<!DOCTYPE html>
@@ -849,13 +920,44 @@ function renderHtml(page, pages) {
       main { padding: 2rem 0 3rem; }
       .grid { display: grid; gap: 1rem; grid-template-columns: 2fr 1fr; }
       .staff-pick-layout { display: block; }
+      .blog-layout { display: block; }
       .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 1.4rem 1.3rem; }
+      .blog-shell { max-width: 760px; margin: 0 auto; background: #ffffff; }
       .staff-pick-card { max-width: 960px; margin: 0 auto; padding: 2rem; border-radius: 28px; box-shadow: 0 6px 24px rgba(15, 23, 42, 0.06); }
       .sub-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; margin-top: 1rem; }
       .breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; font-size: 0.95rem; margin-bottom: 1rem; color: #4b5563; }
       .breadcrumb a { color: #0f766e; font-weight: 600; text-decoration: none; }
       h1 { margin-top: 0; line-height: 1.25; }
       h2 { margin-top: 0; font-size: 1.1rem; }
+      .blog-shell .breadcrumb { margin-bottom: 2rem; color: #6b7280; }
+      .blog-header, .article-header { border-bottom: 1px solid #e5e7eb; padding-bottom: 2rem; margin-bottom: 2.4rem; }
+      .blog-kicker { margin: 0 0 0.7rem; color: #0f766e; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+      .blog-header h1, .article-header h1 { margin: 0; color: #0f172a; font-size: clamp(2.35rem, 5vw, 3.5rem); line-height: 1.08; letter-spacing: 0; }
+      .blog-intro { margin: 1.25rem 0 0; color: #374151; font-size: 1.25rem; line-height: 1.75; }
+      .blog-list { margin-top: 2.5rem; }
+      .blog-list > h2, .blog-index-section h2, .article-section h2, .article-sources h2, .article-faq h2 { color: #0f172a; font-size: 1.65rem; line-height: 1.25; }
+      .blog-list-item { border-top: 1px solid #e5e7eb; padding: 1.9rem 0; }
+      .blog-list-item:first-of-type { border-top: 0; padding-top: 1.2rem; }
+      .blog-list-item h2 { margin: 0; font-size: 1.75rem; line-height: 1.25; }
+      .blog-list-item h2 a, .blog-read-more, .article-footer a, .article-sources a { color: #0f766e; text-decoration: none; }
+      .blog-list-item h2 a:hover, .blog-read-more:hover, .article-footer a:hover, .article-sources a:hover { text-decoration: underline; }
+      .blog-list-item p { margin: 0.8rem 0 0; color: #374151; font-size: 1.05rem; line-height: 1.75; }
+      .blog-list-item .blog-meta { color: #6b7280; font-size: 0.95rem; }
+      .blog-read-more { display: inline-flex; margin-top: 1rem; font-weight: 700; }
+      .blog-index-section, .article-sources, .article-faq, .article-footer { border-top: 1px solid #e5e7eb; margin-top: 2.5rem; padding-top: 2rem; }
+      .blog-index-section p, .article-section p { color: #374151; font-size: 1.08rem; line-height: 1.85; }
+      .article-byline { display: flex; flex-wrap: wrap; gap: 0.7rem; margin: 1.25rem 0 0; color: #6b7280; font-size: 0.98rem; }
+      .article-body { display: grid; gap: 2.6rem; }
+      .article-section p { margin: 1rem 0 0; }
+      .article-list { color: #374151; font-size: 1.06rem; line-height: 1.75; }
+      .article-sources p { color: #4b5563; }
+      .article-sources ol { padding-left: 1.25rem; }
+      .article-sources li + li { margin-top: 1rem; }
+      .article-sources span { display: block; margin-top: 0.25rem; color: #4b5563; font-size: 0.95rem; line-height: 1.55; }
+      .article-faq details { border-top: 1px solid #e5e7eb; padding: 1rem 0; }
+      .article-faq details:first-of-type { border-top: 0; }
+      .article-faq summary { cursor: pointer; color: #0f172a; font-weight: 700; }
+      .article-faq p { margin: 0.8rem 0 0; color: #374151; }
       ul { margin: 1rem 0 0; padding-left: 1.1rem; }
       ol { margin: 1rem 0 0; padding-left: 1.2rem; }
       li + li { margin-top: 0.45rem; }
@@ -926,7 +1028,7 @@ function renderHtml(page, pages) {
       .btn-primary { background: #0f766e; color: #ffffff; }
       .btn-secondary { background: #ffffff; color: #0f766e; border: 1px solid #99f6e4; }
       @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results, .staff-pick-sections { grid-template-columns: 1fr; } .staff-pick-card .proof-grid { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } .staff-pick-title { font-size: 2.4rem; } }
-      @media (max-width: 640px) { .tool-grid { grid-template-columns: 1fr; } .staff-pick-card { padding: 1.25rem; } .staff-pick-hero { padding: 2rem 1.25rem; } .staff-pick-title { font-size: 2rem; } .staff-pick-card .sub-card { padding: 1.25rem; } }
+      @media (max-width: 640px) { .tool-grid { grid-template-columns: 1fr; } .staff-pick-card { padding: 1.25rem; } .staff-pick-hero { padding: 2rem 1.25rem; } .staff-pick-title { font-size: 2rem; } .staff-pick-card .sub-card { padding: 1.25rem; } .blog-shell { width: 100%; } .blog-intro { font-size: 1.1rem; } .blog-list-item h2 { font-size: 1.45rem; } }
     </style>
   </head>
   <body>

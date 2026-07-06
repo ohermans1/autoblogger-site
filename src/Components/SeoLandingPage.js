@@ -35,6 +35,165 @@ const ContentSection = ({ section }) => (
   </section>
 );
 
+const BlogBreadcrumb = ({ trail }) => {
+  if (trail.length <= 1) {
+    return null;
+  }
+
+  return (
+    <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-gray-500" aria-label="Breadcrumb">
+      {trail.map((item, index) => {
+        const isLast = index === trail.length - 1;
+
+        return (
+          <React.Fragment key={item.path}>
+            {isLast ? (
+              <span className="text-gray-700">{item.label}</span>
+            ) : (
+              <SmartLink to={item.path} className="hover:text-primary hover:underline">
+                {item.label}
+              </SmartLink>
+            )}
+            {!isLast && <span aria-hidden="true">/</span>}
+          </React.Fragment>
+        );
+      })}
+    </nav>
+  );
+};
+
+const BlogIndexPage = ({ page, breadcrumbTrail }) => (
+  <section className="bg-white py-16">
+    <div className="mx-auto max-w-4xl px-5">
+      <BlogBreadcrumb trail={breadcrumbTrail} />
+      <header className="border-b border-gray-200 pb-8">
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary">Blog</p>
+        <h1 className="text-4xl font-bold leading-tight text-gray-950 md:text-5xl">{page.heading}</h1>
+        <p className="mt-5 max-w-3xl text-xl leading-8 text-gray-700">{page.intro}</p>
+      </header>
+
+      {page.resourceCards.length > 0 && (
+        <section className="py-10" aria-labelledby="latest-posts">
+          <h2 id="latest-posts" className="text-2xl font-semibold text-gray-950">
+            Latest articles
+          </h2>
+          <div className="mt-6 divide-y divide-gray-200">
+            {page.resourceCards.map(card => (
+              <article key={`${card.title}-${card.href}`} className="py-7 first:pt-0">
+                {card.eyebrow && <p className="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-primary">{card.eyebrow}</p>}
+                <h3 className="text-2xl font-semibold leading-snug text-gray-950">
+                  <SmartLink to={card.href} className="hover:text-primary hover:underline">
+                    {card.title}
+                  </SmartLink>
+                </h3>
+                {card.meta && <p className="mt-2 text-sm text-gray-500">{card.meta}</p>}
+                {card.description && <p className="mt-3 text-lg leading-8 text-gray-700">{card.description}</p>}
+                <SmartLink to={card.href} className="mt-4 inline-flex font-semibold text-primary hover:underline">
+                  {card.label || "Read article"}
+                </SmartLink>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {page.sections.map(section => (
+        <section key={section.title} className="border-t border-gray-200 py-8">
+          <h2 className="text-2xl font-semibold text-gray-950">{section.title}</h2>
+          <div className="mt-4 space-y-4 text-lg leading-8 text-gray-700">
+            {section.paragraphs.map(paragraph => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </section>
+);
+
+const formatArticleDate = dateString => {
+  if (!dateString) return "";
+
+  try {
+    return new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${dateString}T00:00:00Z`));
+  } catch (_error) {
+    return dateString;
+  }
+};
+
+const BlogArticlePage = ({ page, breadcrumbTrail }) => (
+  <section className="bg-white py-16">
+    <article className="mx-auto max-w-3xl px-5">
+      <BlogBreadcrumb trail={breadcrumbTrail} />
+      <header className="mb-10 border-b border-gray-200 pb-8">
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary">Shopify App Store trust</p>
+        <h1 className="text-4xl font-bold leading-tight text-gray-950 md:text-5xl">{page.heading}</h1>
+        <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-gray-500">
+          <span>By {page.authorName || "Ollie Hermans"}</span>
+          {page.datePublished && (
+            <>
+              <span aria-hidden="true">|</span>
+              <time dateTime={page.datePublished}>{formatArticleDate(page.datePublished)}</time>
+            </>
+          )}
+        </div>
+        <p className="mt-6 text-xl leading-8 text-gray-700">{page.intro}</p>
+      </header>
+
+      <div className="space-y-10">
+        {page.sections.map(section => (
+          <section key={section.title}>
+            <h2 className="text-2xl font-semibold leading-snug text-gray-950">{section.title}</h2>
+            <div className="mt-4 space-y-5 text-lg leading-8 text-gray-700">
+              {section.paragraphs.map(paragraph => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+            {section.items.length > 0 && <div className="mt-5 text-lg leading-8">{renderSectionList(section.items, section.ordered)}</div>}
+          </section>
+        ))}
+      </div>
+
+      {page.resourceCards.length > 0 && (
+        <section className="mt-12 border-t border-gray-200 pt-8">
+          <h2 className="text-2xl font-semibold text-gray-950">{page.resourceSectionTitle || "Sources"}</h2>
+          {page.resourceSectionIntro && <p className="mt-3 text-gray-700">{page.resourceSectionIntro}</p>}
+          <ol className="mt-5 space-y-4">
+            {page.resourceCards.map(card => (
+              <li key={`${card.title}-${card.href}`} className="pl-1">
+                <a href={card.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">
+                  {card.title}
+                </a>
+                {card.description && <p className="mt-1 text-sm leading-6 text-gray-600">{card.description}</p>}
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
+
+      {page.faq.length > 0 && (
+        <section className="mt-12 border-t border-gray-200 pt-8">
+          <h2 className="text-2xl font-semibold text-gray-950">Common questions</h2>
+          <div className="mt-5 divide-y divide-gray-200">
+            {page.faq.map(item => (
+              <details key={item.question} className="py-4">
+                <summary className="cursor-pointer font-semibold text-gray-950">{item.question}</summary>
+                <p className="mt-3 leading-7 text-gray-700">{item.answer}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <footer className="mt-12 border-t border-gray-200 pt-8">
+        <SmartLink to="/blog" className="font-semibold text-primary hover:underline">
+          Back to the blog
+        </SmartLink>
+      </footer>
+    </article>
+  </section>
+);
+
 const ComparisonTable = ({ table }) => (
   <section className="rounded-2xl border border-gray-200 bg-gray-50 p-6">
     <h2 className="text-2xl font-semibold text-gray-900 mb-4">{table.title}</h2>
@@ -102,6 +261,14 @@ const SeoLandingPage = ({ page }) => {
 
   if (!page) {
     return null;
+  }
+
+  if (page.route === "/blog") {
+    return <BlogIndexPage page={page} breadcrumbTrail={breadcrumbTrail} />;
+  }
+
+  if (page.route.startsWith("/blog/")) {
+    return <BlogArticlePage page={page} breadcrumbTrail={breadcrumbTrail} />;
   }
 
   return (
