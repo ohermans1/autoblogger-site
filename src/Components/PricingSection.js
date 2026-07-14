@@ -1,7 +1,6 @@
 import React from "react";
+import { FiCheck } from "react-icons/fi";
 import { SmartLink } from "./SmartLink";
-
-const themeColor = "bg-primary text-white";
 
 const pricingPlans = [
   {
@@ -60,14 +59,14 @@ const pricingPlans = [
 
 const PricingSection = props => {
   return (
-    <section className="py-16 md:bg-gradient-to-b md:from-gray-100 md:to-white">
+    <section className="content-section pricing-section">
       {props.home ? (
-        <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">Pricing for autoBlogger</h3>
+        <h3 className="section-title">Simple pricing that scales with you</h3>
       ) : (
-        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Pricing for autoBlogger</h1>
+        <h1 className="section-title">Pricing for autoBlogger</h1>
       )}
-      <p className="text-center text-gray-700 mb-8">No ongoing free plan. Start with a 14-day free trial, then choose Starter, Growth, or Pro.</p>
-      <p className="max-w-4xl mx-auto text-center text-base text-gray-600 mb-8">
+      <p className="section-lead">Start with a 14-day free trial, then choose the publishing pace that fits your store.</p>
+      <p className="section-supporting">
         Compare what each plan includes with the{" "}
         <SmartLink to="/features" className="text-primary font-semibold hover:underline">
           features overview
@@ -83,49 +82,43 @@ const PricingSection = props => {
         .
       </p>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="pricing-grid">
         {pricingPlans.map((plan, index) => {
           const isPopular = plan.badge === "Popular";
 
           return (
-            <div key={index} className="relative bg-white rounded-lg shadow-lg ring-1 ring-gray-200">
+            <div key={index} className={`pricing-card ${isPopular ? "pricing-card--popular" : ""}`}>
               {plan.badge && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className={`inline-block rounded-full px-3 py-1 text-xs font-semibold shadow ${isPopular ? themeColor : "bg-gray-900 text-white"}`}>{plan.badge}</span>
-                </div>
+                <span className="pricing-card__badge">{plan.badge}</span>
               )}
 
-              <div className={`${themeColor} p-6 text-center rounded-t-lg ${isPopular ? "pt-8" : ""}`}>
+              <div className="pricing-card__header">
                 <h4 className="text-xl font-bold mb-2">{plan.title}</h4>
                 <p className="text-2xl font-semibold">{plan.monthlyPrice}</p>
                 {plan.yearlyPriceNote && <p className="mt-1 text-sm opacity-90">{plan.yearlyPriceNote}</p>}
               </div>
 
-              <div className="p-6 text-center">
-                <p className="text-lg font-medium mb-3">{plan.highlight}</p>
+              <div className="pricing-card__body">
+                <p className="pricing-card__highlight">{plan.highlight}</p>
 
-                <div className="flex items-center justify-center my-4" aria-hidden="true">
-                  <span className="mx-2 select-none">---</span>
-                </div>
-
-                <ul className="text-left space-y-3">
+                <ul className="pricing-card__features">
                   {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="mt-[6px] h-2 w-2 rounded-full bg-gray-300" />
+                    <li key={i}>
+                      <span className="pricing-check"><FiCheck aria-hidden="true" /></span>
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
 
-                {plan.trialNote && <p className="mt-6 font-light text-gray-600">{plan.trialNote}</p>}
+                {plan.trialNote && <p className="pricing-card__trial">{plan.trialNote}</p>}
               </div>
             </div>
           );
         })}
       </div>
 
-      <div className="text-center mt-10">
-        <a href="https://apps.shopify.com/autoblogger" className="bg-primary text-white px-6 py-3 rounded shadow hover:bg-opacity-90 transition" aria-label="Get started with autoBlogger">
+      <div className="section-action">
+        <a href="https://apps.shopify.com/autoblogger" className="button-primary" aria-label="Get started with autoBlogger">
           Start 14-Day Free Trial
         </a>
       </div>

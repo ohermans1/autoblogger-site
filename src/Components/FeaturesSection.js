@@ -16,17 +16,17 @@ const FeaturesSection = props => {
   ];
 
   return (
-    <section id="features" className="py-16 md:bg-gradient-to-b md:from-white md:to-gray-100">
+    <section id="features" className="content-section content-section--tint">
       {props.home ? (
-        <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">autoBlogger Features for Shopify SEO Publishing</h3>
+        <h3 className="section-title">Everything you need to publish consistently</h3>
       ) : (
-        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">autoBlogger Features for Shopify SEO Publishing</h1>
+        <h1 className="section-title">autoBlogger Features for Shopify SEO Publishing</h1>
       )}
 
-      <p className="max-w-4xl mx-auto text-center text-lg text-gray-700 mb-8">
+      <p className="section-lead">
         autoBlogger turns your Shopify blog into a repeatable SEO publishing workflow with content designed for topical coverage and product discovery.
       </p>
-      <p className="max-w-4xl mx-auto text-center text-base text-gray-600 mb-8">
+      <p className="section-supporting">
         Want a practical next step? Use the{" "}
         <SmartLink to="/free-seo-checklist" className="text-primary font-semibold hover:underline">
           free SEO checklist
@@ -42,24 +42,24 @@ const FeaturesSection = props => {
         .
       </p>
 
-      <div className="max-w-4xl mx-auto">
-        <ul className="list-disc list-inside space-y-6 text-lg text-gray-700">
+      <div className="feature-grid">
+        <ul>
           {features.map((feature, index) => (
-            <li key={index} className="flex items-start space-x-4">
-              <span className="text-primary text-2xl">
+            <li key={index} className="feature-card">
+              <span className="feature-card__icon">
                 <FaCheckCircle />
               </span>
               <span>
-                <strong>{feature.title}:</strong> {feature.description}
+                <strong>{feature.title}</strong><small>{feature.description}</small>
               </span>
             </li>
           ))}
         </ul>
       </div>
 
-      <div className="text-center mt-8">
-        <a href={appStoreUrl} className="bg-primary text-white px-6 py-3 rounded shadow hover:bg-opacity-90 transition" aria-label="Get started with autoBlogger">
-          Start 14-Day Free Trial
+      <div className="section-action">
+        <a href={appStoreUrl} className="button-primary" aria-label="Get started with autoBlogger">
+          Start 14-day free trial
         </a>
       </div>
     </section>

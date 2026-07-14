@@ -6,15 +6,15 @@ const ContactSection = props => {
   const { email, mailto } = obfuscateEmail("support", "autoblogger.bot");
 
   return (
-    <section className="py-16 md:bg-gradient-to-b md:from-gray-100 md:to-white">
+    <section className="content-section contact-section">
       {props.home ? (
-        <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">Get in Touch with autoBlogger Support</h3>
+        <h3 className="section-title">Need a hand? We’re here.</h3>
       ) : (
-        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Get in Touch with autoBlogger Support</h1>
+        <h1 className="section-title">Get in Touch with autoBlogger Support</h1>
       )}
 
-      <p className="text-center text-gray-700 mb-6">Have a setup, billing, or product question? Send a message and we will help.</p>
-      <p className="max-w-3xl mx-auto text-center text-base text-gray-600 mb-8">
+      <p className="section-lead">Have a setup, billing, or product question? Send a message and we’ll help.</p>
+      <p className="section-supporting">
         You can also browse the{" "}
         <SmartLink to="/faqs" className="text-primary font-semibold hover:underline">
           FAQs
@@ -30,7 +30,7 @@ const ContactSection = props => {
         .
       </p>
 
-      <div className="max-w-lg mx-auto bg-white rounded-lg shadow-lg p-6 text-center">
+      <div className="contact-card">
         <p className="text-lg text-gray-800">
           Contact support at{" "}
           <a href={mailto} className="text-primary font-semibold hover:underline">
@@ -40,12 +40,12 @@ const ContactSection = props => {
         </p>
       </div>
 
-      <div className="text-center mt-8">
+      <div className="section-action">
         <a
           href="https://apps.shopify.com/autoblogger"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-primary text-white px-6 py-3 rounded shadow hover:bg-opacity-90 transition"
+          className="button-primary"
           aria-label="Explore autoBlogger on the Shopify App Store"
         >
           View Shopify App Listing

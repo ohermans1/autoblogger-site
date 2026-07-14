@@ -65,15 +65,16 @@ const OtherAppsSection = props => {
   ];
 
   return (
-    <section id="other-apps" className="py-16 md:bg-gradient-to-b md:from-white md:to-gray-100">
-      {props.home ? <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">Our Other Apps</h3> : <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Our Other Apps</h1>}
+    <section id="other-apps" className="content-section content-section--tint other-apps-section">
+      {props.home ? <h3 className="section-title">More tools for Shopify growth</h3> : <h1 className="section-title">Our Other Apps</h1>}
+      <p className="section-lead">A focused collection of practical apps built to make running your store easier.</p>
 
       <div className="max-w-6xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {apps.map(app => (
-          <article key={app.key} className="bg-white rounded-lg shadow hover:shadow-md transition p-6 flex flex-col">
+          <article key={app.key} className="app-card">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center space-x-3">
-                <div className="h-10 w-10 rounded bg-gray-100 flex items-center justify-center overflow-hidden text-gray-500 font-bold">
+                <div className="app-card__logo">
                   {app.logo ? (
                     <img src={app.logo} alt={`${app.name} logo`} className="h-10 w-10 object-contain" loading="lazy" decoding="async" width="40" height="40" />
                   ) : (
@@ -94,7 +95,7 @@ const OtherAppsSection = props => {
                   href={app.cta.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-primary text-white px-4 py-2 rounded hover:bg-opacity-90 transition"
+                  className="app-card__link"
                   aria-label={`${app.name} - ${app.cta.label}`}
                 >
                   {app.cta.label}

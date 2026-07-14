@@ -27,21 +27,21 @@ const ReviewsSection = props => {
   ];
 
   return (
-    <section className="py-16 md:bg-gradient-to-b md:from-gray-100 md:to-white">
+    <section className="content-section content-section--tint reviews-section">
       {props.home ? (
-        <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">Latest autoBlogger Reviews from Shopify Merchants</h3>
+        <h3 className="section-title">Loved by Shopify merchants</h3>
       ) : (
-        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Latest autoBlogger Reviews from Shopify Merchants</h1>
+        <h1 className="section-title">Latest autoBlogger Reviews from Shopify Merchants</h1>
       )}
 
-      <h4 className="text-2xl font-semibold mb-4 text-center">
-        Current Rating: 4.9 out of 5 stars on the{" "}
+      <h4 className="rating-line">
+        <span aria-hidden="true">★★★★★</span> 4.9 out of 5 on the{" "}
         <a href={fullReviewsLink} target="_blank" rel="noopener noreferrer" aria-label="Visit the Shopify App Store to read more reviews">
           Shopify App Store
         </a>
       </h4>
-      <p className="text-center mb-8">Here are three recent reviews from real merchant stores.</p>
-      <p className="max-w-4xl mx-auto text-center text-base text-gray-600 mb-8">
+      <p className="section-lead">Real feedback from merchants building a more consistent content workflow.</p>
+      <p className="section-supporting">
         See how the product lines up with the{" "}
         <SmartLink to="/2x-staff-pick" className="text-primary font-semibold hover:underline">
           2x Shopify Staff Pick proof
@@ -61,16 +61,17 @@ const ReviewsSection = props => {
         .
       </p>
 
-      <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="review-grid">
         {reviews.map(review => (
-          <article key={review.site} className="bg-white rounded-lg shadow-lg p-6">
+          <article key={review.site} className="review-card">
+            <span className="review-card__quote" aria-hidden="true">“</span>
             <h2 className="text-lg font-bold mb-2">
               <a href={review.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline" aria-label={`Visit ${review.site}`}>
                 {review.site}
               </a>
             </h2>
-            <p className="text-amber-600 mb-2 font-semibold" aria-label={`${review.rating} rating`}>
-              {review.rating}
+            <p className="review-card__stars" aria-label={`${review.rating} rating`}>
+              ★★★★★
             </p>
             <p className="text-gray-700">
               {review.text.slice(0, trimmedLength)}
@@ -80,8 +81,8 @@ const ReviewsSection = props => {
         ))}
       </div>
 
-      <div className="text-center mt-8">
-        <a href={fullReviewsLink} target="_blank" rel="noopener noreferrer" className="bg-primary text-white px-6 py-3 rounded shadow hover:bg-opacity-90 transition" aria-label="Visit the Shopify App Store to read more reviews">
+      <div className="section-action">
+        <a href={fullReviewsLink} target="_blank" rel="noopener noreferrer" className="button-secondary" aria-label="Visit the Shopify App Store to read more reviews">
           See full reviews
         </a>
       </div>

@@ -1,39 +1,39 @@
 import React from "react";
+import { FiChevronDown } from "react-icons/fi";
 import { SmartNavLink } from "./SmartLink";
 
 const Navigation = () => {
+  const navClass = ({ isActive }) => `nav-link ${isActive ? "nav-link--active" : ""}`;
+
   return (
-    <nav className="hidden md:flex ml-auto" aria-label="Primary">
-      <SmartNavLink to="/" className={({ isActive }) => `mx-3 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:underline`}>
-        Home
-      </SmartNavLink>
-      <SmartNavLink to="/features" className={({ isActive }) => `mx-3 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:underline`}>
+    <nav className="desktop-nav hidden md:flex" aria-label="Primary">
+      <SmartNavLink to="/features" className={navClass}>
         Features
       </SmartNavLink>
-      <SmartNavLink to="/pricing" className={({ isActive }) => `mx-3 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:underline`}>
+      <SmartNavLink to="/pricing" className={navClass}>
         Pricing
       </SmartNavLink>
-      <SmartNavLink to="/faqs" className={({ isActive }) => `mx-3 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:underline`}>
-        FAQs
-      </SmartNavLink>
-      <SmartNavLink to="/reviews" className={({ isActive }) => `mx-3 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:underline`}>
+      <SmartNavLink to="/reviews" className={navClass}>
         Reviews
       </SmartNavLink>
-      <SmartNavLink to="/blog" className={({ isActive }) => `mx-3 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:underline`}>
+      <SmartNavLink to="/blog" className={navClass}>
         Blog
       </SmartNavLink>
-      <SmartNavLink to="/2x-staff-pick" className={({ isActive }) => `mx-3 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:underline`}>
-        2x Staff Pick
-      </SmartNavLink>
-      <SmartNavLink to="/contact" className={({ isActive }) => `mx-3 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:underline`}>
-        Contact Us
-      </SmartNavLink>
-      <SmartNavLink to="/other-apps" className={({ isActive }) => `mx-3 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:underline`}>
-        Other Apps
-      </SmartNavLink>
-      <SmartNavLink to="/free-seo-checklist" className={({ isActive }) => `mx-3 ${isActive ? "font-semibold text-primary" : "text-gray-600"} hover:underline`}>
-        Free SEO Checklist
-      </SmartNavLink>
+      <details className="nav-dropdown">
+        <summary className="nav-link">
+          Resources <FiChevronDown aria-hidden="true" />
+        </summary>
+        <div className="nav-dropdown__menu">
+          <SmartNavLink to="/free-seo-checklist" className={navClass}>Free SEO checklist</SmartNavLink>
+          <SmartNavLink to="/2x-staff-pick" className={navClass}>2x Staff Pick</SmartNavLink>
+          <SmartNavLink to="/faqs" className={navClass}>FAQs</SmartNavLink>
+          <SmartNavLink to="/other-apps" className={navClass}>Other apps</SmartNavLink>
+          <SmartNavLink to="/contact" className={navClass}>Contact</SmartNavLink>
+        </div>
+      </details>
+      <a className="header-cta" href="https://apps.shopify.com/autoblogger" target="_blank" rel="noopener noreferrer">
+        Start free trial
+      </a>
     </nav>
   );
 };

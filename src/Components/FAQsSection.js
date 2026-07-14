@@ -116,31 +116,31 @@ const FAQsSection = props => {
   };
 
   return (
-    <section className="py-16 md:bg-gradient-to-b md:from-white md:to-gray-100">
+    <section className="content-section faq-section">
       {props.home ? (
-        <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">Frequently Asked Questions about autoBlogger</h3>
+        <h3 className="section-title">Questions, answered</h3>
       ) : (
-        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Frequently Asked Questions about autoBlogger</h1>
+        <h1 className="section-title">Frequently Asked Questions about autoBlogger</h1>
       )}
 
       <div className="max-w-3xl mx-auto">
-        <p className="text-lg text-gray-700 mb-6">Find answers to the most common setup, content, and plan questions below.</p>
+        <p className="section-lead">Everything you need to know about setup, content, and plans.</p>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-white rounded shadow">
+            <div key={index} className={`faq-item ${openIndex === index ? "faq-item--open" : ""}`}>
               <button
-                className="flex justify-between items-center w-full p-4 text-left text-lg font-semibold text-gray-800 bg-gray-200 rounded hover:bg-gray-300 transition"
+                className="faq-question"
                 onClick={() => toggleFAQ(index)}
                 aria-expanded={openIndex === index}
                 aria-controls={`faq-panel-${index}`}
               >
                 {faq.question}
-                <span aria-hidden="true">{openIndex === index ? "-" : "+"}</span>
+                <span aria-hidden="true">{openIndex === index ? "−" : "+"}</span>
               </button>
 
               {openIndex === index && (
-                <div id={`faq-panel-${index}`} className="p-4 border-t border-gray-200">
+                <div id={`faq-panel-${index}`} className="faq-answer">
                   {typeof faq.answer === "string" ? <p className="text-gray-700">{faq.answer}</p> : <div className="text-gray-700">{faq.answer}</div>}
                 </div>
               )}

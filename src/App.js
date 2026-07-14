@@ -74,7 +74,7 @@ const App = () => {
     <Router>
       <ScrollToTop />
       <SeoManager />
-      <div className="font-sans text-gray-800 bg-white">
+      <div className="site-shell font-sans text-gray-800">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:text-primary focus:shadow"
@@ -83,7 +83,7 @@ const App = () => {
         </a>
         <PageHeader toggleMobileMenu={toggleMobileMenu} isMobileMenuOpen={isMobileMenuOpen} />
 
-        <main id="main-content" className="px-5 mt-20">
+        <main id="main-content" className="site-main">
           <Routes>
             <Route
               path="/"
