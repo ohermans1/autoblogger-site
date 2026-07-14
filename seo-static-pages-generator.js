@@ -802,11 +802,11 @@ function renderBlogArticleContent(page) {
         .join("")}</section>`
     : "";
 
-  return `${renderBreadcrumbNav(page)}<header class="article-header"><p class="blog-kicker">Shopify App Store trust</p><h1>${escapeHtml(
+  return `${renderBreadcrumbNav(page)}<header class="article-header"><p class="blog-kicker">${escapeHtml(page.articleKicker || "Blog")}</p><h1>${escapeHtml(
     page.heading
   )}</h1><p class="article-byline"><span>By ${escapeHtml(page.authorName || "Ollie Hermans")}</span>${published}</p><p class="blog-intro">${escapeHtml(
     page.intro
-  )}</p></header><div class="article-body">${sections}</div>${sources}${faqs}<footer class="article-footer"><a href="/blog">Back to the blog</a></footer>`;
+  )}</p></header><div class="article-body">${sections}</div>${sources}${faqs}<footer class="article-footer"><a href="/blog">Back to the blog</a><span aria-hidden="true"> · </span><a href="/features">Explore autoBlogger features</a><span aria-hidden="true"> · </span><a href="/pricing">View pricing</a></footer>`;
 }
 
 function renderBreadcrumbNav(page) {

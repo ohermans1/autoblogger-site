@@ -121,7 +121,51 @@
     "priority": 0.7,
     "tags": ["blog", "shopify", "trust", "reviews"],
     "ctaLabel": "Read Latest Post",
-    "ctaHref": "/blog/shopify-app-store-review-trust"
+    "ctaHref": "/blog/does-autoblogging-work"
+  },
+  {
+    "route": "/blog/does-autoblogging-work",
+    "title": "Does Autoblogging Work? Honest Benefits of AI Auto Blogging",
+    "description": "Does autoblogging work? Learn the honest benefits and limits of autoblogging AI, plus how Shopify blog automation can support consistent SEO content.",
+    "heading": "Does Autoblogging Work? The Honest Benefits of AI Auto Blogging",
+    "intro": "Yes, autoblogging can work when it helps a store publish useful, accurate content consistently. It is a practical workflow, not a shortcut to guaranteed rankings.",
+    "articleKicker": "AI blog automation",
+    "authorName": "Ollie Hermans",
+    "authorUrl": "https://autoblogger.bot/",
+    "datePublished": "2026-07-13",
+    "dateModified": "2026-07-13",
+    "bullets": [
+      "Autoblogging saves time and makes consistent publishing easier",
+      "Useful, accurate, people-first articles matter more than whether AI helped create them",
+      "Shopify blog automation works best with relevant topics, product context, internal links, and human oversight"
+    ],
+    "changefreq": "monthly",
+    "priority": 0.74,
+    "tags": ["blog", "shopify", "seo", "autoblogging", "ai", "automation"],
+    "ctaLabel": "Explore autoBlogger Features",
+    "ctaHref": "/features",
+    "faq": [
+      {
+        "question": "Does autoblogging work for SEO?",
+        "answer": "Autoblogging can support SEO by helping a store publish useful content consistently, but automation alone does not guarantee rankings, traffic, or sales. Topic relevance, accuracy, originality, site quality, competition, and time all affect results."
+      },
+      {
+        "question": "Does Google penalize AI autoblogging?",
+        "answer": "Google says it focuses on content quality rather than whether AI helped produce it. Using automation primarily to manipulate rankings or publishing many low-value pages can violate its spam policies."
+      },
+      {
+        "question": "What are the main benefits of auto blogging?",
+        "answer": "The main benefits are time savings, a more reliable publishing schedule, broader coverage of relevant customer questions, and an easier way to create content that links readers to useful products and collections."
+      },
+      {
+        "question": "Is Shopify blog automation suitable for a small store?",
+        "answer": "It can be especially useful for a small store that has product knowledge but limited time for writing. The store should still review facts, brand voice, product details, and published posts."
+      },
+      {
+        "question": "How long does autoblogging take to produce results?",
+        "answer": "There is no fixed timeline. Search engines need time to discover and assess pages, and results depend on the site, topic, competition, content quality, and demand. Measure progress over months rather than expecting immediate rankings."
+      }
+    ]
   },
   {
     "route": "/blog/shopify-app-store-review-trust",
@@ -129,6 +173,7 @@
     "description": "A Shopify app developer's take on Shopify's fake and incentivized review update, and why it matters for App Store trust.",
     "heading": "Shopify's Fake Review Update Is a Step Forward for Honest App Developers",
     "intro": "After years of raising concerns about fake and incentivized Shopify App Store reviews, it is good to see Shopify taking clearer action.",
+    "articleKicker": "Shopify App Store trust",
     "authorName": "Ollie Hermans",
     "authorUrl": "https://autoblogger.bot/",
     "datePublished": "2026-07-06",
@@ -155,6 +200,114 @@
       {
         "question": "Why write about Shopify fake reviews?",
         "answer": "As the owner and developer of several Shopify apps, I have spent years raising concerns about fake and incentivized reviews on the Shopify App Store."
+      }
+    ]
+  },
+  {
+    "route": "/blog/shopify-blog-seo-guide",
+    "title": "Shopify Blog SEO: A Practical Guide for Store Owners",
+    "description": "Learn how to improve Shopify blog SEO with useful topics, clear titles, internal links, metadata, and a repeatable publishing workflow.",
+    "heading": "Shopify Blog SEO: A Practical Guide for Store Owners",
+    "intro": "A Shopify blog can support organic discovery when every post answers a real customer question and creates a useful path back to the store.",
+    "articleKicker": "Shopify blog SEO",
+    "authorName": "Ollie Hermans",
+    "authorUrl": "https://autoblogger.bot/",
+    "datePublished": "2026-04-24",
+    "dateModified": "2026-04-24",
+    "bullets": [
+      "Choose topics that connect search intent with products and customer questions",
+      "Use descriptive titles, headings, metadata, and internal links",
+      "Measure impressions, clicks, and conversions before deciding what to update"
+    ],
+    "changefreq": "monthly",
+    "priority": 0.72,
+    "tags": ["blog", "shopify", "seo", "content", "internal-links"],
+    "ctaLabel": "Explore autoBlogger Features",
+    "ctaHref": "/features",
+    "faq": [
+      {
+        "question": "Is blogging good for Shopify SEO?",
+        "answer": "Blogging can help a Shopify store answer relevant searches, demonstrate product knowledge, and create internal links to products and collections. Results still depend on content quality, competition, site health, and demand."
+      },
+      {
+        "question": "How often should a Shopify store publish blog posts?",
+        "answer": "Choose a pace you can sustain while maintaining quality. One useful post every week or two is generally more valuable than frequent thin posts published only to increase page count."
+      },
+      {
+        "question": "What should a Shopify blog post link to?",
+        "answer": "Link naturally to products, collections, related guides, FAQs, and other pages that help the reader take the next step. Use anchor text that describes the destination."
+      }
+    ]
+  },
+  {
+    "route": "/blog/shopify-blog-post-ideas",
+    "title": "25 Shopify Blog Post Ideas That Attract Relevant Shoppers",
+    "description": "Find 25 practical Shopify blog post ideas for product discovery, long-tail SEO, seasonal demand, customer education, and internal linking.",
+    "heading": "25 Shopify Blog Post Ideas That Attract Relevant Shoppers",
+    "intro": "The best ecommerce blog ideas sit between what customers want to know and what a store is genuinely qualified to explain.",
+    "articleKicker": "Content ideas",
+    "authorName": "Ollie Hermans",
+    "authorUrl": "https://autoblogger.bot/",
+    "datePublished": "2026-01-15",
+    "dateModified": "2026-01-15",
+    "bullets": [
+      "Use buying guides, comparisons, how-to posts, care guides, and seasonal content",
+      "Build each idea around a specific customer question rather than a broad keyword",
+      "Connect informational posts to relevant products and collections"
+    ],
+    "changefreq": "monthly",
+    "priority": 0.71,
+    "tags": ["blog", "shopify", "seo", "content-ideas", "ecommerce"],
+    "ctaLabel": "Explore autoBlogger Features",
+    "ctaHref": "/features",
+    "faq": [
+      {
+        "question": "What should a Shopify store blog about?",
+        "answer": "Start with questions customers ask before and after buying: how to choose, compare, use, style, care for, troubleshoot, or replace the products you sell."
+      },
+      {
+        "question": "How do I find blog topics with SEO potential?",
+        "answer": "Combine support questions, on-site search terms, product reviews, Google Search Console queries, seasonality, and your own product expertise. Validate that each topic is relevant to the store before publishing."
+      },
+      {
+        "question": "Should every blog post promote a product?",
+        "answer": "A post should help the reader first. Include a product or collection link when it is a natural next step, but avoid forcing a sales pitch into topics where it does not belong."
+      }
+    ]
+  },
+  {
+    "route": "/blog/shopify-internal-linking-guide",
+    "title": "Shopify Internal Linking: A Simple SEO Guide",
+    "description": "Build a practical Shopify internal linking strategy that connects blog posts, collections, and products using useful, descriptive links.",
+    "heading": "Shopify Internal Linking: A Simple SEO Guide",
+    "intro": "Internal links help shoppers discover the next useful page and help search engines understand how products, collections, and articles relate to one another.",
+    "articleKicker": "Internal linking",
+    "authorName": "Ollie Hermans",
+    "authorUrl": "https://autoblogger.bot/",
+    "datePublished": "2025-09-18",
+    "dateModified": "2025-09-18",
+    "bullets": [
+      "Link related blog posts, collections, and products in both directions",
+      "Use concise anchor text that describes the destination page",
+      "Review orphaned and outdated content as the catalogue changes"
+    ],
+    "changefreq": "monthly",
+    "priority": 0.7,
+    "tags": ["blog", "shopify", "seo", "internal-links", "site-structure"],
+    "ctaLabel": "Explore autoBlogger Features",
+    "ctaHref": "/features",
+    "faq": [
+      {
+        "question": "What is an internal link in Shopify?",
+        "answer": "An internal link points from one page on your Shopify store to another page on the same store, such as a blog post linking to a product, collection, or related guide."
+      },
+      {
+        "question": "How many internal links should a blog post contain?",
+        "answer": "There is no useful fixed number. Add links where they genuinely help a reader understand the topic or continue their journey, and avoid repetitive or unrelated links."
+      },
+      {
+        "question": "What anchor text should I use for internal links?",
+        "answer": "Use short, natural wording that describes the destination, such as 'winter running collection' instead of vague phrases such as 'click here'."
       }
     ]
   },
