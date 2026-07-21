@@ -121,7 +121,47 @@
     "priority": 0.7,
     "tags": ["blog", "shopify", "trust", "reviews"],
     "ctaLabel": "Read Latest Post",
-    "ctaHref": "/blog/does-autoblogging-work"
+    "ctaHref": "/blog/shopify-review-removals"
+  },
+  {
+    "route": "/blog/shopify-review-removals",
+    "title": "Shopify Review Removals: When Genuine Reviews Get Caught",
+    "description": "Shopify's app review cleanup has caught genuine reviews too. Learn how developers can find removed reviews, document real customer relationships, and appeal.",
+    "heading": "Shopify Is Removing App Reviews—and Some Genuine Reviews Have Been Caught",
+    "intro": "Shopify's effort to clean up fake and incentivized App Store reviews is welcome, but the rollout has also removed genuine feedback from long-standing, paying merchants.",
+    "articleKicker": "Shopify App Store reviews",
+    "authorName": "Ollie Hermans",
+    "authorUrl": "https://autoblogger.bot/",
+    "datePublished": "2026-07-21",
+    "dateModified": "2026-07-21",
+    "bullets": [
+      "Some genuine reviews appear to have been removed during Shopify's wider review cleanup",
+      "Developers should identify affected reviews and send Shopify evidence of real support and subscription history",
+      "A few false positives are painful, but a fairer App Store is still worth working toward"
+    ],
+    "changefreq": "weekly",
+    "priority": 0.76,
+    "tags": ["blog", "shopify", "trust", "reviews", "app-store", "developers"],
+    "ctaLabel": "Read More Articles",
+    "ctaHref": "/blog",
+    "faq": [
+      {
+        "question": "How can I find reviews removed from my Shopify app listing?",
+        "answer": "One option is the independent Let's Metrix developer tool. Search for your app, open its reviews, and change the filter to Deleted. Confirm the results against your own records because it is a third-party service and is not connected with autoBlogger or Shopify."
+      },
+      {
+        "question": "Can a Shopify app review removal be appealed?",
+        "answer": "Shopify says developers who believe a review was unpublished by mistake can reply to the removal notification email with a detailed explanation and evidence. Shopify currently says archived review decisions cannot be appealed, so first confirm whether a review was unpublished or archived."
+      },
+      {
+        "question": "What evidence should I send Shopify?",
+        "answer": "Useful evidence can include dated customer-support conversations, app subscription and billing history, install history, and other records showing that the store owner genuinely used and paid for the app. Protect merchant privacy and send the evidence only through an official Shopify support channel."
+      },
+      {
+        "question": "Does losing a review mean the app developer did something wrong?",
+        "answer": "Not necessarily. Shopify has said that genuine apps may also see reviews unpublished when those reviews are connected to activity its systems consider untrustworthy."
+      }
+    ]
   },
   {
     "route": "/blog/does-autoblogging-work",
