@@ -4,6 +4,26 @@ import { SmartLink } from "./SmartLink";
 import PageResourceSection from "./PageResourceSection";
 import SeoRoiCalculator from "./SeoRoiCalculator";
 
+const renderInlineLinks = text => {
+  const linkPattern = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g;
+  const parts = [];
+  let cursor = 0;
+  let match;
+
+  while ((match = linkPattern.exec(text)) !== null) {
+    parts.push(text.slice(cursor, match.index));
+    parts.push(
+      <a key={`${match[2]}-${match.index}`} href={match[2]} target="_blank" rel="noopener noreferrer" className="font-medium text-primary hover:underline">
+        {match[1]}
+      </a>
+    );
+    cursor = match.index + match[0].length;
+  }
+
+  parts.push(text.slice(cursor));
+  return parts;
+};
+
 const renderSectionList = (items, ordered = false) => {
   if (!items.length) {
     return null;
@@ -146,7 +166,7 @@ const BlogArticlePage = ({ page, breadcrumbTrail }) => (
             <h2 className="text-2xl font-semibold leading-snug text-gray-950">{section.title}</h2>
             <div className="mt-4 space-y-5 text-lg leading-8 text-gray-700">
               {section.paragraphs.map(paragraph => (
-                <p key={paragraph}>{paragraph}</p>
+                <p key={paragraph}>{renderInlineLinks(paragraph)}</p>
               ))}
             </div>
             {section.items.length > 0 && <div className="mt-5 text-lg leading-8">{renderSectionList(section.items, section.ordered)}</div>}

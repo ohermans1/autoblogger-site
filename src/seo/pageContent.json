@@ -118,7 +118,7 @@
       {
         "eyebrow": "Shopify follow-up",
         "title": "A public update on rollout mistakes",
-        "description": "A public post from Shopify's Jack Zazove discussing mistakes in the review-removal rollout and work to investigate affected reviews.",
+        "description": "A public post from Shopify's Jonathan Zazove discussing mistakes in the review-removal rollout and work to investigate affected reviews.",
         "meta": "X",
         "items": ["Public rollout update", "False-positive concern", "Investigation in progress"],
         "href": "https://x.com/jzazove/status/2078284775459000349?s=20",
@@ -139,7 +139,7 @@
         "title": "A good idea has had a rough rollout",
         "paragraphs": [
           "Shopify has started removing App Store reviews as part of a wider effort to tackle fake, incentivized, and otherwise untrusted feedback. I support that goal. Reviews influence which apps merchants install, so cleaning up manipulation is important for store owners and for developers who play by the rules.",
-          "The problem is that the rollout has made mistakes. Genuine reviews appear to have been caught alongside the reviews Shopify intended to remove. Shopify warned that this could happen when it announced the stronger detection system, and a public follow-up from Shopify's Jack Zazove indicates that the team is looking into problems with the rollout.",
+          "The problem is that the rollout has made mistakes. Genuine reviews appear to have been caught alongside the reviews Shopify intended to remove. Shopify warned that this could happen when it announced the stronger detection system, and a [public follow-up](https://x.com/jzazove/status/2078284775459000349?s=20) from Shopify's [Jonathan Zazove](https://x.com/jzazove) indicates that the team is looking into problems with the rollout.",
           "That distinction matters: a removed review is not proof that an app developer did anything wrong. Sometimes the detection system has simply made the wrong call."
         ],
         "items": []
@@ -157,8 +157,8 @@
         "title": "How to find reviews that may have been removed",
         "paragraphs": [
           "Shopify does not provide developers with every detail behind its detection systems. An independent tool can still help you build an initial list of reviews that have disappeared.",
-          "Go to the Let's Metrix developer page, search for your app, open the Reviews view, and switch the filter to Deleted. Let's Metrix has no connection to me or autoBlogger; it is simply a useful third-party place to start.",
-          "Treat that list as a lead rather than definitive proof. Compare it with your own support, billing, install, and customer records before contacting Shopify. Also check whether each review was unpublished or archived: Shopify allows developers to challenge a mistaken unpublishing, but its current policy says archived reviews cannot be appealed."
+          "Go to the [Let's Metrix developer page](https://letsmetrix.com/for-developers), search for your app, open the Reviews view, and switch the filter to Deleted. Let's Metrix has no connection to me or autoBlogger; it is simply a useful third-party place to start.",
+          "Treat that list as a lead rather than definitive proof. Compare it with your own support, billing, install, and customer records before contacting Shopify. Also check whether each review was unpublished or archived: [Shopify's review policy](https://help.shopify.com/partners/faq/reviews) allows developers to challenge a mistaken unpublishing, but says archived reviews cannot be appealed."
         ],
         "items": [
           "Open Let's Metrix for developers and find your app.",
@@ -172,7 +172,7 @@
       {
         "title": "Send Shopify evidence, not just a review count",
         "paragraphs": [
-          "If you believe a review was removed incorrectly, contact Shopify through the official route. Shopify's help page says to reply directly to the removal notification email and include a detailed explanation plus supporting evidence. If you need help locating the case, contact Shopify Partner Support.",
+          "If you believe a review was removed incorrectly, contact Shopify through the official route. [Shopify's help page](https://help.shopify.com/partners/faq/reviews) says to reply directly to the removal notification email and include a detailed explanation plus supporting evidence. If you need help locating the case, contact Shopify Partner Support.",
           "For each affected store, explain the genuine relationship clearly. Include dated customer-support conversations, app install history, subscription or billing records, and the length of time the merchant used the app. In autoBlogger's case, the strongest evidence is straightforward: some affected reviewers have used and paid for the app for over two years.",
           "Only send information that is relevant, protect merchant privacy, and use an official Shopify channel. A tidy table with one row per store will be easier to assess than a long emotional email."
         ],

@@ -187,6 +187,22 @@ function escapeHtml(value) {
     .replace(/'/g, "&#39;");
 }
 
+function renderInlineLinks(value) {
+  const text = String(value);
+  const linkPattern = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g;
+  let output = "";
+  let cursor = 0;
+  let match;
+
+  while ((match = linkPattern.exec(text)) !== null) {
+    output += escapeHtml(text.slice(cursor, match.index));
+    output += `<a href="${escapeHtml(match[2])}" target="_blank" rel="noopener noreferrer">${escapeHtml(match[1])}</a>`;
+    cursor = match.index + match[0].length;
+  }
+
+  return output + escapeHtml(text.slice(cursor));
+}
+
 function toAbsolute(route) {
   if (!route || route === "/") return `${SITE_URL}/`;
   return `${SITE_URL}${route}`;
@@ -784,7 +800,7 @@ function renderBlogArticleContent(page) {
     : "";
   const sections = page.sections
     .map(section => {
-      const paragraphs = section.paragraphs.map(paragraph => `<p>${escapeHtml(paragraph)}</p>`).join("");
+      const paragraphs = section.paragraphs.map(paragraph => `<p>${renderInlineLinks(paragraph)}</p>`).join("");
       const items = section.items.length > 0 ? renderList(section.items, section.ordered, "article-list") : "";
       return `<section class="article-section"><h2>${escapeHtml(section.title)}</h2>${paragraphs}${items}</section>`;
     })
