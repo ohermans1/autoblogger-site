@@ -24,12 +24,12 @@ const FAQsSection = props => {
       )
     },
     {
-      question: "How does the 14-day free trial work?",
-      answer: "Install from the Shopify App Store and start a 14-day trial. There is no ongoing free plan, so after trial end you can continue on Starter, Growth, or Pro, or cancel."
+      question: "How does the free trial work?",
+      answer: "Install from the Shopify App Store and choose a plan. Starter, Growth, and Volume include a 14-day free trial, while Authority includes a 7-day free trial. There is no ongoing free plan."
     },
     {
       question: "Is there a free plan?",
-      answer: "autoBlogger includes a 14-day free trial through the Shopify App Store. There is no ongoing free plan after the trial."
+      answer: "autoBlogger includes a free trial through the Shopify App Store: 14 days on Starter, Growth, and Volume, or 7 days on Authority. There is no ongoing free plan after the trial."
     },
     {
       question: "Is autoBlogger available for Shopify?",
@@ -50,7 +50,7 @@ const FAQsSection = props => {
     },
     {
       question: "How many articles are published on each plan?",
-      answer: "Starter publishes one SEO blog each week, Growth publishes three per week, and Pro publishes daily."
+      answer: "Starter publishes one SEO blog each week, Growth publishes three SEO blogs each week, Volume publishes daily, and Authority publishes three premium SEO articles each week."
     },
     {
       question: "What does each generated article include?",
@@ -62,15 +62,15 @@ const FAQsSection = props => {
     },
     {
       question: "Does autoBlogger support social sharing?",
-      answer: "Yes. Automatic social sharing is included on Growth and Pro plans."
+      answer: "Yes. Automatic social sharing is included on Growth, Volume, and Authority."
     },
     {
       question: "What AI model is used?",
-      answer: "Growth and Pro include more advanced generation features than the Starter plan. Check the Shopify App Store listing for the latest model and feature details."
+      answer: "Growth and Volume use the advanced ChatGPT-5.6 model. Authority adds access to the most advanced available models plus multi-pass writing and editing. Check the Shopify App Store listing for the latest model details."
     },
     {
       question: "What premium extras are available?",
-      answer: "Premium extras may include setup support, content workflow guidance, and complimentary access to related tools such as autoSchema. Availability can change, so check the pricing page and app listing for current details."
+      answer: "Growth and Volume add schedule control, social sharing, backlink network access, autoSchema, autoLLMs, and a featured store article on Medium. Authority adds premium multi-pass articles, four premium images per article, enhanced SEO review, and priority fine-tuning."
     },
     {
       question: "What does autoBlogger work with?",
@@ -85,7 +85,7 @@ const FAQsSection = props => {
       question: "What is the pricing after the trial?",
       answer: (
         <>
-          Starter is $9.95/month (or $99.95/year), Growth is $19.95/month (or $199.95/year), and Pro is $29.95/month (or $299.95/year). See the{" "}
+          Starter is $9.95/month (or $99.95/year), Growth is $19.95/month (or $199.95/year), Volume is $29.95/month (or $299.95/year), and Authority is $59.95/month (or $599.95/year). See the{" "}
           <a href="https://apps.shopify.com/autoblogger" target="_blank" rel="noopener noreferrer" className="text-primary underline">
             app listing
           </a>{" "}

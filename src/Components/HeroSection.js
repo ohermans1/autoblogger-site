@@ -30,7 +30,7 @@ const HeroSection = () => {
           </p>
           <div className="hero-actions">
             <a href={shopifyUrl} target="_blank" rel="noopener noreferrer" className="button-primary" onClick={() => handleAppStoreClick("Shopify")}>
-              Start 14-day free trial <FiArrowRight aria-hidden="true" />
+              Start free trial <FiArrowRight aria-hidden="true" />
             </a>
             <SmartLink to="/features" className="button-secondary">See how it works</SmartLink>
           </div>

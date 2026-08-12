@@ -4,34 +4,36 @@ const PremiumExtras = () => {
   return (
     <section className="py-16 md:bg-gradient-to-b md:from-white md:to-gray-100 px-4 md:px-16">
       <div className="mx-auto max-w-4xl">
-        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Premium Extras</h1>
+        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Premium Plan Extras</h1>
 
         <div className="space-y-12">
           <section>
-            <h2 className="text-2xl font-bold text-center mb-5 text-gray-800">Priority Setup Support</h2>
+            <h2 className="text-2xl font-bold text-center mb-5 text-gray-800">Growth and Volume Extras</h2>
             <p className="text-center text-gray-700 mb-4">
-              Premium plans may include additional support beyond automated blog publishing. These extras help merchants set up cleaner content workflows, review app settings, and understand how
-              autoBlogger fits their store.
+              Growth and Volume include the Starter feature set plus the advanced ChatGPT-5.6 model, full publishing schedule control, automatic social sharing, backlink network access, autoSchema,
+              autoLLMs, and a featured store article on Medium.
             </p>
             <p className="text-center text-gray-700">
-              autoBlogger does not guarantee rankings, traffic, or search placement. The goal is to make publishing easier and keep the setup aligned with good SEO practice.
+              Growth publishes three SEO blogs each week, while Volume publishes daily. Both plans include a 14-day free trial.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-center mb-5 text-gray-800">Content Workflow Review</h2>
+            <h2 className="text-2xl font-bold text-center mb-5 text-gray-800">Authority Upgrades</h2>
             <p className="text-center text-gray-700 mb-4">
-              Some plans may include practical guidance on topic setup, article structure, product-linking choices, metadata, and publishing frequency.
+              Authority includes every Growth feature and publishes three premium SEO articles each week. Articles receive multi-pass AI writing and editing, four premium AI images, access to the most
+              advanced available models, greater depth, and enhanced SEO review.
             </p>
             <p className="text-center text-gray-700">
-              This support is focused on your own store content and app configuration rather than third-party link placement.
+              Authority also includes priority support and article fine-tuning, with a 7-day free trial.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-center mb-5 text-gray-800">autoSchema Bonus</h2>
+            <h2 className="text-2xl font-bold text-center mb-5 text-gray-800">Included Companion Apps</h2>
             <p className="text-center text-gray-700 mb-4">
-              Premium subscribers may receive complimentary access to autoSchema, a Shopify app that helps add structured data so search engines can better understand product and content pages.
+              Growth, Volume, and Authority include autoSchema and autoLLMs. autoSchema adds structured data to help search engines understand store pages, while autoLLMs supports AI discovery with an
+              automatically maintained LLMs.txt file.
             </p>
             <p className="text-center text-gray-700 mb-4">
               To learn more about structured data, visit{" "}
@@ -46,11 +48,15 @@ const PremiumExtras = () => {
               .
             </p>
             <p className="text-center text-gray-700">
-              To review autoSchema, visit{" "}
+              Review{" "}
               <a href="https://apps.shopify.com/autoschema-google-structures" className="text-primary font-semibold hover:underline" target="_blank" rel="noopener noreferrer">
-                the Shopify App Store listing
+                autoSchema on the Shopify App Store
               </a>
-              .
+              {" "}or{" "}
+              <a href="https://apps.shopify.com/autollm" className="text-primary font-semibold hover:underline" target="_blank" rel="noopener noreferrer">
+                view autoLLMs
+              </a>
+              . Check the autoBlogger listing for the latest plan details.
             </p>
           </section>
         </div>

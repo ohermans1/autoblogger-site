@@ -872,7 +872,7 @@ function renderHtml(page, pages) {
   const canonicalUrl = toAbsolute(canonicalRoute);
   const schema = serializeJsonForScript(buildSchemaGraph(page, canonicalUrl));
   const nav = NAV_LINKS.map(link => `<a href="${link.href}">${escapeHtml(link.label)}</a>`).join("");
-  const ctaLabel = page.ctaLabel || "Start 14-Day Free Trial";
+  const ctaLabel = page.ctaLabel || "Start Free Trial";
   const ctaHref = page.ctaHref || APP_LISTING_URL;
   const isStaffPickPage = page.route === "/2x-staff-pick";
   const isBlogIndexPage = page.route === "/blog";

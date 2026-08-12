@@ -17,7 +17,7 @@ import {
 } from "../seo/pageCatalog";
 
 const HOME_META = {
-  title: "autoBlogger: Shopify AI Blog Automation App | 14-Day Trial",
+  title: "autoBlogger: Shopify AI Blog Automation App | Free Trial",
   description:
     "Automatically publish SEO-focused Shopify blog posts with product links, FAQs, metadata, and social sharing. 2x Shopify Staff Pick.",
   path: "/",
@@ -40,13 +40,13 @@ const HOME_FAQ = [
       "autoBlogger is a Shopify app that automates SEO blog publishing to help build topical coverage, improve product discovery, and support organic search growth."
   },
   {
-    question: "How does the 14-day free trial work?",
+    question: "How does the free trial work?",
     answer:
-      "Install autoBlogger from the Shopify App Store and start a 14-day trial. After trial end, continue on Starter, Growth, or Pro, or cancel."
+      "Install autoBlogger from the Shopify App Store and choose a plan. Starter, Growth, and Volume include a 14-day free trial; Authority includes a 7-day free trial."
   },
   {
     question: "Is there a free plan?",
-    answer: "autoBlogger includes a 14-day free trial through the Shopify App Store. There is no ongoing free plan after the trial."
+    answer: "autoBlogger includes a 14-day free trial on Starter, Growth, and Volume, or a 7-day free trial on Authority. There is no ongoing free plan after the trial."
   },
   {
     question: "Is autoBlogger available for Shopify?",
@@ -63,7 +63,7 @@ const HOME_FAQ = [
   },
   {
     question: "How many articles are published on each plan?",
-    answer: "Starter publishes one SEO blog each week, Growth publishes three per week, and Pro publishes daily."
+    answer: "Starter publishes one SEO blog each week, Growth publishes three per week, Volume publishes daily, and Authority publishes three premium SEO articles per week."
   },
   {
     question: "How do I contact support?",

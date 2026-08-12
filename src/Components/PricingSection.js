@@ -4,19 +4,19 @@ import { SmartLink } from "./SmartLink";
 
 const pricingPlans = [
   {
-    title: "Starter",
+    title: "Starter (Core)",
     monthlyPrice: "$9.95 / month",
     yearlyPriceNote: "or $99.95/year and save 16%",
-    highlight: "Weekly SEO publishing for consistent momentum",
+    highlight: "Core weekly SEO publishing",
     features: [
       "Weekly SEO blog publishing (1 per week)",
-      "Consistent publishing automation",
+      "Set-and-forget automation",
       "Structured, search-ready articles",
       "FAQs, TLDRs, table of contents, and more",
       "Automatic internal product linking",
       "Optimized HTML and metadata",
       "Relevant AI-selected imagery",
-      "Personalized support"
+      "Automated holiday and sales articles"
     ],
     trialNote: "14-day free trial"
   },
@@ -25,35 +25,52 @@ const pricingPlans = [
     badge: "Popular",
     monthlyPrice: "$19.95 / month",
     yearlyPriceNote: "or $199.95/year and save 16%",
-    highlight: "Higher output with stronger automation controls",
+    highlight: "Three SEO blogs each week",
     features: [
-      "Three SEO blogs per week",
-      "Advanced AI article generation",
+      "All Starter features included",
+      "Three SEO blogs each week",
+      "Advanced ChatGPT-5.6 AI model",
       "Full publishing schedule control",
       "Automatic social sharing",
-      "Premium setup support",
+      "Backlink network access",
       "autoSchema and autoLLMs included",
-      "Content workflow guidance",
-      "All Starter features included"
+      "Featured store article on Medium"
     ],
     trialNote: "14-day free trial"
   },
   {
-    title: "Pro",
+    title: "Volume (Daily)",
     monthlyPrice: "$29.95 / month",
     yearlyPriceNote: "or $299.95/year and save 17%",
-    highlight: "Daily SEO publishing for maximum coverage",
+    highlight: "Daily SEO blog publishing",
     features: [
+      "All Starter features included",
       "Daily SEO blog publishing",
-      "Advanced AI article generation",
+      "Advanced ChatGPT-5.6 AI model",
       "Full publishing schedule control",
       "Automatic social sharing",
-      "Premium setup support",
+      "Backlink network access",
       "autoSchema and autoLLMs included",
-      "Content workflow guidance",
-      "All Starter features included"
+      "Featured store article on Medium"
     ],
     trialNote: "14-day free trial"
+  },
+  {
+    title: "Authority (Pro)",
+    monthlyPrice: "$59.95 / month",
+    yearlyPriceNote: "or $599.95/year and save 17%",
+    highlight: "Premium SEO content with advanced review",
+    features: [
+      "All Growth plan features included",
+      "Three premium SEO articles each week",
+      "Multi-pass AI writing and editing",
+      "Four premium AI images per article",
+      "Access to our most advanced AI models",
+      "Longer, more in-depth articles",
+      "Enhanced SEO review and optimization",
+      "Priority support and article fine-tuning"
+    ],
+    trialNote: "7-day free trial"
   }
 ];
 
@@ -65,7 +82,7 @@ const PricingSection = props => {
       ) : (
         <h1 className="section-title">Pricing for autoBlogger</h1>
       )}
-      <p className="section-lead">Start with a 14-day free trial, then choose the publishing pace that fits your store.</p>
+      <p className="section-lead">Choose the publishing pace and article depth that fit your store. Starter, Growth, and Volume include a 14-day free trial; Authority includes a 7-day free trial.</p>
       <p className="section-supporting">
         Compare what each plan includes with the{" "}
         <SmartLink to="/features" className="text-primary font-semibold hover:underline">
@@ -117,9 +134,11 @@ const PricingSection = props => {
         })}
       </div>
 
+      <p className="pricing-billing-note">All prices are in USD. Recurring and usage-based charges are billed every 30 days.</p>
+
       <div className="section-action">
         <a href="https://apps.shopify.com/autoblogger" className="button-primary" aria-label="Get started with autoBlogger">
-          Start 14-Day Free Trial
+          Start Free Trial
         </a>
       </div>
     </section>

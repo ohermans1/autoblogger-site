@@ -10,9 +10,9 @@ const FeaturesSection = props => {
     { title: "Article modes", description: "Topic and product-focused SEO content built for Shopify stores." },
     { title: "SEO-ready", description: "Optimized HTML, overviews, FAQs, metadata, and structured formatting." },
     { title: "Easy blog management", description: "Plan, schedule, and manage your publishing calendar without extra admin." },
-    { title: "Premium extras", description: "Setup support, content workflow guidance, and structured data bonuses for stores that want more help." },
+    { title: "Higher-plan extras", description: "Add schedule control, social sharing, backlinks, companion apps, premium articles, and advanced review." },
     { title: "Built for Shopify workflows", description: "Edit directly in Shopify and automatically share to social channels." },
-    { title: "14-day free trial", description: "Try autoBlogger before choosing a paid plan." }
+    { title: "Free trial", description: "Try Starter, Growth, or Volume for 14 days, or Authority for 7 days." }
   ];
 
   return (
@@ -59,7 +59,7 @@ const FeaturesSection = props => {
 
       <div className="section-action">
         <a href={appStoreUrl} className="button-primary" aria-label="Get started with autoBlogger">
-          Start 14-day free trial
+          Start free trial
         </a>
       </div>
     </section>

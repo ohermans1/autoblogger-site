@@ -38,7 +38,7 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
           Free SEO Checklist
         </SmartNavLink>
         <a href="https://apps.shopify.com/autoblogger" target="_blank" rel="noopener noreferrer" className="mobile-nav__cta" onClick={toggleMenu}>
-          Start 14-day free trial
+          Start free trial
         </a>
       </nav>
     )

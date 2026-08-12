@@ -17,16 +17,27 @@
   },
   {
     "route": "/pricing",
-    "title": "autoBlogger Pricing: 14-Day Trial, Starter, Growth, and Pro Plans",
-    "description": "Compare autoBlogger pricing, plan limits, and the 14-day Shopify free trial for weekly, three-times-weekly, or daily SEO blog publishing.",
-    "heading": "autoBlogger Pricing and 14-Day Trial",
-    "intro": "Choose the plan that matches your publishing pace. Start with a 14-day trial and scale from weekly to daily automated SEO blogging as your store grows.",
+    "title": "autoBlogger Pricing: Starter, Growth, Volume, and Authority Plans",
+    "description": "Compare autoBlogger pricing, publishing limits, features, and free trials across Starter, Growth, Volume, and Authority plans.",
+    "heading": "autoBlogger Pricing and Free Trials",
+    "intro": "Choose the plan that matches your publishing pace and preferred article depth. Starter, Growth, and Volume include a 14-day free trial, while Authority includes a 7-day free trial.",
     "bullets": [
-      "Starter: weekly SEO publishing",
-      "Growth: three SEO posts per week with advanced automation",
-      "Pro: daily SEO publishing for higher-volume content plans",
+      "Starter (Core): one SEO blog per week for $9.95/month",
+      "Growth (Popular): three SEO blogs per week for $19.95/month",
+      "Volume (Daily): daily SEO blog publishing for $29.95/month",
+      "Authority (Pro): three premium SEO articles per week for $59.95/month",
       "All paid plans are managed through Shopify billing"
     ],
+    "comparisonTable": {
+      "title": "Plan comparison",
+      "columns": ["Plan", "Monthly", "Annual", "Publishing", "Key features", "Trial"],
+      "rows": [
+        ["Starter (Core)", "$9.95", "$99.95 (save 16%)", "1 SEO blog per week", "Set-and-forget automation, structured articles, internal product links, optimized metadata, AI imagery, and holiday articles", "14 days"],
+        ["Growth (Popular)", "$19.95", "$199.95 (save 16%)", "3 SEO blogs per week", "All Starter features, ChatGPT-5.6, schedule control, social sharing, backlink network, autoSchema, autoLLMs, and a featured Medium article", "14 days"],
+        ["Volume (Daily)", "$29.95", "$299.95 (save 17%)", "Daily SEO blogs", "All Starter features, ChatGPT-5.6, schedule control, social sharing, backlink network, autoSchema, autoLLMs, and a featured Medium article", "14 days"],
+        ["Authority (Pro)", "$59.95", "$599.95 (save 17%)", "3 premium SEO articles per week", "All Growth features, multi-pass writing and editing, 4 premium images, advanced models, longer articles, enhanced SEO review, and priority fine-tuning", "7 days"]
+      ]
+    },
     "changefreq": "monthly",
     "priority": 0.8,
     "tags": ["shopify", "pricing", "conversion"]
@@ -70,7 +81,7 @@
       },
       {
         "question": "Is there a free plan?",
-        "answer": "autoBlogger includes a 14-day free trial through the Shopify App Store. There is no ongoing free plan after the trial."
+        "answer": "autoBlogger includes a 14-day free trial on Starter, Growth, and Volume, or a 7-day free trial on Authority. There is no ongoing free plan after the trial."
       },
       {
         "question": "Is autoBlogger available for Shopify?",
@@ -87,6 +98,14 @@
       {
         "question": "Can content be edited after publishing?",
         "answer": "Yes. Merchants can edit generated posts directly in Shopify at any time."
+      },
+      {
+        "question": "How many articles are published on each plan?",
+        "answer": "Starter publishes one SEO blog per week, Growth publishes three per week, Volume publishes daily, and Authority publishes three premium SEO articles per week."
+      },
+      {
+        "question": "How much does each autoBlogger plan cost?",
+        "answer": "Starter is $9.95/month or $99.95/year, Growth is $19.95/month or $199.95/year, Volume is $29.95/month or $299.95/year, and Authority is $59.95/month or $599.95/year."
       }
     ]
   },
@@ -460,15 +479,15 @@
   },
   {
     "route": "/premium-extras",
-    "title": "Premium Extras | autoBlogger",
-    "description": "Learn about premium autoBlogger extras including setup support, content workflow guidance, and complimentary autoSchema access.",
-    "heading": "autoBlogger Premium Extras",
-    "intro": "Premium plans include additional setup and workflow support beyond automated SEO blogging.",
+    "title": "Premium Plan Extras | autoBlogger",
+    "description": "Compare the advanced automation, companion apps, premium article features, and priority support included with higher autoBlogger plans.",
+    "heading": "autoBlogger Premium Plan Extras",
+    "intro": "Growth and Volume add advanced automation and companion apps, while Authority adds premium multi-pass articles, enhanced review, and priority fine-tuning.",
     "bullets": [
-      "Priority setup support",
-      "Content workflow guidance",
-      "Complimentary access to autoSchema bonus",
-      "Designed to support cleaner SEO operations"
+      "Growth and Volume include schedule control, social sharing, backlink access, autoSchema, and autoLLMs",
+      "Growth publishes three SEO blogs per week; Volume publishes daily",
+      "Authority publishes three premium multi-pass SEO articles per week",
+      "Authority includes premium AI imagery, enhanced SEO review, and priority fine-tuning"
     ],
     "changefreq": "monthly",
     "priority": 0.5,

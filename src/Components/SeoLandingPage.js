@@ -356,7 +356,7 @@ const SeoLandingPage = ({ page }) => {
                 href={page.ctaHref || APP_LISTING_URL}
                 className="inline-flex items-center rounded-lg bg-primary px-5 py-3 font-semibold text-white shadow hover:bg-opacity-90 transition"
               >
-                {page.ctaLabel || "Start 14-Day Free Trial"}
+                {page.ctaLabel || "Start Free Trial"}
               </a>
               <SmartLink to="/contact" className="inline-flex items-center rounded-lg border border-gray-300 px-5 py-3 font-semibold text-gray-700 hover:bg-gray-50 transition">
                 Contact Support
