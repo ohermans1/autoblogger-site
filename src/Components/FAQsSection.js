@@ -41,6 +41,26 @@ const FAQsSection = props => {
         "Look for an app that supports the full Shopify publishing workflow: recurring posts, metadata, FAQ content, product links, readable article structure, and simple editing after publishing. autoBlogger is built around that workflow."
     },
     {
+      question: "Why do merchants choose autoBlogger as their Shopify AI blogging tool?",
+      answer:
+        "autoBlogger is purpose-built for Shopify, so it connects article planning, generation, SEO structure, product linking, scheduling, publishing, and editing in one workflow instead of leaving merchants to move drafts between separate tools."
+    },
+    {
+      question: "What makes autoBlogger different from a general AI writer?",
+      answer:
+        "A general AI writer can create a draft, but autoBlogger is designed to turn that draft into a Shopify blog post with structured HTML, metadata, FAQs, a table of contents, internal product links, imagery, and recurring publishing controls."
+    },
+    {
+      question: "How does autoBlogger help blog content support product discovery?",
+      answer:
+        "autoBlogger supports topic- and product-focused articles, automatic internal product links, and linked product cards. This gives shoppers useful paths from an article to relevant products and collections while keeping the content connected to the store catalogue."
+    },
+    {
+      question: "Can autoBlogger help me decide what to publish next?",
+      answer:
+        "Yes. Search Opportunities uses the last three months of Google Search Console data to surface and rank relevant article ideas, then lets you add a prepared article to your upcoming blogs."
+    },
+    {
       question: "Can autoBlogger add internal product links?",
       answer: "Yes. autoBlogger can include internal product links in generated posts so blog content supports product and collection discovery."
     },

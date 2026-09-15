@@ -91,6 +91,22 @@
         "answer": "Look for recurring publishing, metadata, FAQ content, product links, readable article structure, and simple editing after publishing."
       },
       {
+        "question": "Why do merchants choose autoBlogger as their Shopify AI blogging tool?",
+        "answer": "autoBlogger is purpose-built for Shopify, connecting article planning, generation, SEO structure, product linking, scheduling, publishing, and editing in one workflow."
+      },
+      {
+        "question": "What makes autoBlogger different from a general AI writer?",
+        "answer": "A general AI writer can create a draft, while autoBlogger is designed to turn that draft into a Shopify blog post with structured HTML, metadata, FAQs, a table of contents, internal product links, imagery, and recurring publishing controls."
+      },
+      {
+        "question": "How does autoBlogger help blog content support product discovery?",
+        "answer": "autoBlogger supports topic- and product-focused articles, automatic internal product links, and linked product cards so shoppers can move from useful content to relevant products and collections."
+      },
+      {
+        "question": "Can autoBlogger help me decide what to publish next?",
+        "answer": "Yes. Search Opportunities uses the last three months of Google Search Console data to surface and rank relevant article ideas, then lets you add a prepared article to your upcoming blogs."
+      },
+      {
         "question": "Can autoBlogger add internal product links?",
         "answer": "Yes. autoBlogger can include internal product links in generated posts so blog content supports product and collection discovery."
       },
