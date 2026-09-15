@@ -2,14 +2,15 @@
   {
     "route": "/features",
     "title": "autoBlogger Features | Automated SEO Blogging for Shopify",
-    "description": "Explore autoBlogger features for Shopify: automated SEO blog publishing, product-focused posts, metadata, internal links, FAQs, and social sharing.",
+    "description": "Explore autoBlogger features for Shopify: automated SEO publishing, product cards, metadata, AI imagery, advanced articles, Search Opportunities, social sharing, backlinks, autoSchema, and autoLLMs.",
     "heading": "autoBlogger Features",
     "intro": "autoBlogger helps Shopify merchants publish useful, search-focused blog content with less manual work. The app combines topic planning, article generation, internal linking, and distribution in one workflow.",
     "bullets": [
-      "Automated publishing with structured, readable article formatting",
-      "Product-focused and topic-focused blog modes for Shopify stores",
-      "Built-in metadata, internal product links, and FAQ content blocks",
-      "Social sharing support and scheduling controls"
+      "Automated publishing with structured, readable article formatting, metadata, FAQs, tags, table of contents, internal links, and product cards",
+      "Topic- and product-focused modes, automatic or manual image selection, seasonal campaigns, flexible schedules, calendar view, and indexing status",
+      "Advanced multi-pass generation, article structures, AI tone, keyword controls, author cards, disclaimers, per-article prompts, and brand profiles",
+      "Publishing milestones, topic explanations, article value receipts, SEO scorecards, and Search Opportunities powered by Google Search Console data",
+      "Automatic social sharing, AI-placed backlink-network links, autoSchema, autoLLMs, ChatGPT-5.6, and a featured Medium article on eligible plans"
     ],
     "changefreq": "monthly",
     "priority": 0.8,
@@ -17,15 +18,14 @@
   },
   {
     "route": "/pricing",
-    "title": "autoBlogger Pricing: Starter, Growth, Volume, and Authority Plans",
-    "description": "Compare autoBlogger pricing, publishing limits, features, and free trials across Starter, Growth, Volume, and Authority plans.",
+    "title": "autoBlogger Pricing: Starter, Growth, and Volume Plans",
+    "description": "Compare autoBlogger pricing, publishing limits, features, and free trials across Starter, Growth, and Volume plans.",
     "heading": "autoBlogger Pricing and Free Trials",
-    "intro": "Choose the plan that matches your publishing pace and preferred article depth. Starter, Growth, and Volume include a 14-day free trial, while Authority includes a 7-day free trial.",
+    "intro": "Choose the plan that matches your publishing pace. Starter, Growth, and Volume each include a 14-day free trial.",
     "bullets": [
       "Starter (Core): one SEO blog per week for $9.95/month",
       "Growth (Popular): three SEO blogs per week for $19.95/month",
       "Volume (Daily): daily SEO blog publishing for $29.95/month",
-      "Authority (Pro): three premium SEO articles per week for $59.95/month",
       "All paid plans are managed through Shopify billing"
     ],
     "comparisonTable": {
@@ -34,8 +34,7 @@
       "rows": [
         ["Starter (Core)", "$9.95", "$99.95 (save 16%)", "1 SEO blog per week", "Set-and-forget automation, structured articles, internal product links, optimized metadata, AI imagery, and holiday articles", "14 days"],
         ["Growth (Popular)", "$19.95", "$199.95 (save 16%)", "3 SEO blogs per week", "All Starter features, ChatGPT-5.6, schedule control, social sharing, backlink network, autoSchema, autoLLMs, and a featured Medium article", "14 days"],
-        ["Volume (Daily)", "$29.95", "$299.95 (save 17%)", "Daily SEO blogs", "All Starter features, ChatGPT-5.6, schedule control, social sharing, backlink network, autoSchema, autoLLMs, and a featured Medium article", "14 days"],
-        ["Authority (Pro)", "$59.95", "$599.95 (save 17%)", "3 premium SEO articles per week", "All Growth features, multi-pass writing and editing, 4 premium images, advanced models, longer articles, enhanced SEO review, and priority fine-tuning", "7 days"]
+        ["Volume (Daily)", "$29.95", "$299.95 (save 17%)", "Daily SEO blogs", "All Starter features, ChatGPT-5.6, schedule control, social sharing, backlink network, autoSchema, autoLLMs, and a featured Medium article", "14 days"]
       ]
     },
     "changefreq": "monthly",
@@ -81,7 +80,7 @@
       },
       {
         "question": "Is there a free plan?",
-        "answer": "autoBlogger includes a 14-day free trial on Starter, Growth, and Volume, or a 7-day free trial on Authority. There is no ongoing free plan after the trial."
+        "answer": "autoBlogger includes a 14-day free trial on Starter, Growth, and Volume. There is no ongoing free plan after the trial."
       },
       {
         "question": "Is autoBlogger available for Shopify?",
@@ -101,11 +100,11 @@
       },
       {
         "question": "How many articles are published on each plan?",
-        "answer": "Starter publishes one SEO blog per week, Growth publishes three per week, Volume publishes daily, and Authority publishes three premium SEO articles per week."
+        "answer": "Starter publishes one SEO blog per week, Growth publishes three per week, and Volume publishes daily."
       },
       {
         "question": "How much does each autoBlogger plan cost?",
-        "answer": "Starter is $9.95/month or $99.95/year, Growth is $19.95/month or $199.95/year, Volume is $29.95/month or $299.95/year, and Authority is $59.95/month or $599.95/year."
+        "answer": "Starter is $9.95/month or $99.95/year, Growth is $19.95/month or $199.95/year, and Volume is $29.95/month or $299.95/year."
       }
     ]
   },
@@ -214,11 +213,11 @@
       },
       {
         "question": "Can autoBlogger create long and detailed articles?",
-        "answer": "Yes. Its regular plans create structured SEO articles, while the Authority plan is specifically designed for longer premium articles using a multi-pass writing and editing workflow, enhanced SEO review, and premium imagery."
+        "answer": "Yes. autoBlogger creates structured SEO articles with readable headings, metadata, FAQs, internal links, and relevant imagery."
       },
       {
         "question": "Does autoBlogger include social sharing and backlinks?",
-        "answer": "Growth, Volume, and Authority include automated social sharing and access to autoBlogger's backlink network. The Shopify listing currently names Facebook and Instagram. Availability and plan details should be checked on the current pricing page before installing."
+        "answer": "Growth and Volume include automated social sharing and access to autoBlogger's backlink network. The Shopify listing currently names Facebook and Instagram. Availability and plan details should be checked on the current pricing page before installing."
       }
     ]
   },
@@ -600,14 +599,13 @@
   {
     "route": "/premium-extras",
     "title": "Premium Plan Extras | autoBlogger",
-    "description": "Compare the advanced automation, companion apps, premium article features, and priority support included with higher autoBlogger plans.",
+    "description": "Compare the advanced automation and companion apps included with Growth and Volume autoBlogger plans.",
     "heading": "autoBlogger Premium Plan Extras",
-    "intro": "Growth and Volume add advanced automation and companion apps, while Authority adds premium multi-pass articles, enhanced review, and priority fine-tuning.",
+    "intro": "Growth and Volume add advanced automation, distribution tools, and companion apps.",
     "bullets": [
       "Growth and Volume include schedule control, social sharing, backlink access, autoSchema, and autoLLMs",
       "Growth publishes three SEO blogs per week; Volume publishes daily",
-      "Authority publishes three premium multi-pass SEO articles per week",
-      "Authority includes premium AI imagery, enhanced SEO review, and priority fine-tuning"
+      "Both plans use ChatGPT-5.6 and include a featured store article on Medium"
     ],
     "changefreq": "monthly",
     "priority": 0.5,

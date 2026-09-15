@@ -54,23 +54,6 @@ const pricingPlans = [
       "Featured store article on Medium"
     ],
     trialNote: "14-day free trial"
-  },
-  {
-    title: "Authority (Pro)",
-    monthlyPrice: "$59.95 / month",
-    yearlyPriceNote: "or $599.95/year and save 17%",
-    highlight: "Premium SEO content with advanced review",
-    features: [
-      "All Growth plan features included",
-      "Three premium SEO articles each week",
-      "Multi-pass AI writing and editing",
-      "Four premium AI images per article",
-      "Access to our most advanced AI models",
-      "Longer, more in-depth articles",
-      "Enhanced SEO review and optimization",
-      "Priority support and article fine-tuning"
-    ],
-    trialNote: "7-day free trial"
   }
 ];
 
@@ -82,7 +65,7 @@ const PricingSection = props => {
       ) : (
         <h1 className="section-title">Pricing for autoBlogger</h1>
       )}
-      <p className="section-lead">Choose the publishing pace and article depth that fit your store. Starter, Growth, and Volume include a 14-day free trial; Authority includes a 7-day free trial.</p>
+      <p className="section-lead">Choose the publishing pace that fits your store. Starter, Growth, and Volume each include a 14-day free trial.</p>
       <p className="section-supporting">
         Compare what each plan includes with the{" "}
         <SmartLink to="/features" className="text-primary font-semibold hover:underline">

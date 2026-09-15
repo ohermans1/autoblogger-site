@@ -42,11 +42,11 @@ const HOME_FAQ = [
   {
     question: "How does the free trial work?",
     answer:
-      "Install autoBlogger from the Shopify App Store and choose a plan. Starter, Growth, and Volume include a 14-day free trial; Authority includes a 7-day free trial."
+      "Install autoBlogger from the Shopify App Store and choose a plan. Starter, Growth, and Volume each include a 14-day free trial."
   },
   {
     question: "Is there a free plan?",
-    answer: "autoBlogger includes a 14-day free trial on Starter, Growth, and Volume, or a 7-day free trial on Authority. There is no ongoing free plan after the trial."
+    answer: "autoBlogger includes a 14-day free trial on Starter, Growth, and Volume. There is no ongoing free plan after the trial."
   },
   {
     question: "Is autoBlogger available for Shopify?",
@@ -63,7 +63,7 @@ const HOME_FAQ = [
   },
   {
     question: "How many articles are published on each plan?",
-    answer: "Starter publishes one SEO blog each week, Growth publishes three per week, Volume publishes daily, and Authority publishes three premium SEO articles per week."
+    answer: "Starter publishes one SEO blog each week, Growth publishes three per week, and Volume publishes daily."
   },
   {
     question: "How do I contact support?",

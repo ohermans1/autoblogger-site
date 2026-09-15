@@ -6,13 +6,25 @@ const FeaturesSection = props => {
   const appStoreUrl = "https://apps.shopify.com/autoblogger";
 
   const features = [
-    { title: "Consistent publishing", description: "Automated SEO publishing with structured, search-ready articles." },
-    { title: "Article modes", description: "Topic and product-focused SEO content built for Shopify stores." },
-    { title: "SEO-ready", description: "Optimized HTML, overviews, FAQs, metadata, and structured formatting." },
-    { title: "Easy blog management", description: "Plan, schedule, and manage your publishing calendar without extra admin." },
-    { title: "Higher-plan extras", description: "Add schedule control, social sharing, backlinks, companion apps, premium articles, and advanced review." },
-    { title: "Built for Shopify workflows", description: "Edit directly in Shopify and automatically share to social channels." },
-    { title: "Free trial", description: "Try Starter, Growth, or Volume for 14 days, or Authority for 7 days." }
+    { title: "Automated publishing", description: "Publish structured, search-ready SEO articles on a recurring schedule." },
+    { title: "Topic and product article modes", description: "Create content around customer questions, products, collections, and buying intent, with linked product cards when useful." },
+    { title: "Built-in on-page SEO", description: "Every article can include optimized HTML, metadata, overviews, FAQs, table of contents, and tags." },
+    { title: "Automatic internal links", description: "Connect blog content to relevant products and collections to improve discovery." },
+    { title: "Flexible image controls", description: "Use improved automatic image selection or choose Unsplash images, uploads, Shopify Files, or direct image URLs yourself." },
+    { title: "Seasonal campaigns", description: "Create and schedule holiday and sale articles in advance, then keep seasonal promotions moving automatically." },
+    { title: "Schedule and calendar view", description: "Choose exact publishing times, review drafts and published posts by day, and see Google indexing status on eligible plans." },
+    { title: "Article structure and tone", description: "Enable and rearrange advanced article structures, choose an AI tone, and add multiple SEO keywords at once." },
+    { title: "Advanced multi-pass articles", description: "Generate higher-quality articles with enhanced AI imagery using the advanced mode, available in Advanced Settings." },
+    { title: "Author cards and disclaimers", description: "Add an author card and a manually written disclaimer to every article from Advanced Settings." },
+    { title: "Per-article instructions", description: "Give any upcoming post a short custom prompt for its topic, angle, or approach." },
+    { title: "Brand-aware setup", description: "Use useful details from your About, Story, or FAQ page to prepare editable topics, keywords, and a brand profile." },
+    { title: "Publishing insights", description: "Track milestones, see why each generated topic suits your store, and review an article value receipt with an SEO scorecard." },
+    { title: "Search Opportunities", description: "Turn the last three months of Google Search Console data into ranked, prepared article ideas for your upcoming blogs." },
+    { title: "Social sharing and smarter backlinks", description: "Eligible plans can share new articles automatically and use AI to place relevant backlink-network links naturally." },
+    { title: "Companion SEO apps", description: "Growth and Volume include autoSchema for structured data and autoLLMs for LLMs.txt support." },
+    { title: "Advanced AI and distribution", description: "Growth and Volume use ChatGPT-5.6 and include a featured store article on Medium." },
+    { title: "Built for Shopify", description: "Edit published posts directly in Shopify whenever you need to." },
+    { title: "Free trial", description: "Try Starter, Growth, or Volume free for 14 days." }
   ];
 
   return (

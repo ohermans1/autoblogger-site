@@ -19,20 +19,9 @@ const PremiumExtras = () => {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-center mb-5 text-gray-800">Authority Upgrades</h2>
-            <p className="text-center text-gray-700 mb-4">
-              Authority includes every Growth feature and publishes three premium SEO articles each week. Articles receive multi-pass AI writing and editing, four premium AI images, access to the most
-              advanced available models, greater depth, and enhanced SEO review.
-            </p>
-            <p className="text-center text-gray-700">
-              Authority also includes priority support and article fine-tuning, with a 7-day free trial.
-            </p>
-          </section>
-
-          <section>
             <h2 className="text-2xl font-bold text-center mb-5 text-gray-800">Included Companion Apps</h2>
             <p className="text-center text-gray-700 mb-4">
-              Growth, Volume, and Authority include autoSchema and autoLLMs. autoSchema adds structured data to help search engines understand store pages, while autoLLMs supports AI discovery with an
+              Growth and Volume include autoSchema and autoLLMs. autoSchema adds structured data to help search engines understand store pages, while autoLLMs supports AI discovery with an
               automatically maintained LLMs.txt file.
             </p>
             <p className="text-center text-gray-700 mb-4">

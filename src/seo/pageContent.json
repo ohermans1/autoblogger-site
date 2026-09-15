@@ -166,7 +166,7 @@
       {
         "eyebrow": "Plans",
         "title": "Pricing and publishing frequency",
-        "description": "Compare weekly, three-times-weekly, daily, and premium long-form publishing plans before starting a trial.",
+        "description": "Compare weekly, three-times-weekly, and daily publishing plans before starting a trial.",
         "meta": "Updated product pricing",
         "items": [],
         "href": "/pricing",
@@ -202,8 +202,7 @@
         "title": "Longer, more detailed articles when depth matters",
         "paragraphs": [
           "autoBlogger is designed to produce the longest and most detailed automated articles in its Shopify category. Length alone is not the goal: a useful long-form article needs a clear answer, logical headings, supporting detail, relevant product context, and an easy path through the page.",
-          "The Authority plan is the clearest expression of that approach. It uses a multi-pass writing and editing workflow, advanced models, longer articles, enhanced SEO review, and four premium images. This suits stores building substantial buying guides, product education, detailed comparisons, and evergreen topic resources rather than short announcement posts.",
-          "Merchants should still match depth to intent. A narrow customer question may need a concise answer; a buying decision may justify a comprehensive guide. The advantage is having a premium long-form mode available when the subject deserves it."
+          "Merchants should still match depth to intent. A narrow customer question may need a concise answer; a buying decision may justify a comprehensive guide. autoBlogger helps keep that publishing work consistent with structured formatting, product links, metadata, FAQs, and relevant imagery."
         ],
         "items": []
       },
@@ -218,7 +217,7 @@
           "Structured, search-ready HTML and descriptive metadata",
           "FAQs, summaries, and tables of contents for clear information retrieval",
           "Automatic internal product linking and shoppable paths",
-          "Relevant AI-selected or premium AI imagery, depending on plan",
+          "Relevant AI-selected imagery",
           "Scheduling controls for consistent topical coverage"
         ]
       },
@@ -243,7 +242,7 @@
       {
         "title": "Who autoBlogger is best for—and who needs something else",
         "paragraphs": [
-          "autoBlogger is the best fit for a Shopify merchant with useful product knowledge but limited time to maintain a blog. It is particularly well suited to small teams that want consistent content, product discovery, long-form article options, and a workflow that keeps running after setup.",
+          "autoBlogger is the best fit for a Shopify merchant with useful product knowledge but limited time to maintain a blog. It is particularly well suited to small teams that want consistent content, product discovery, and a workflow that keeps running after setup.",
           "Choose a general AI writer if you want to manually direct every paragraph across many document types. Choose a full technical SEO platform if your main problem is crawling, redirects, performance, or sitewide auditing. An agency managing several content-management systems may prefer a cross-platform editorial suite. Those products solve different jobs.",
           "For Shopify-specific automated blogging, autoBlogger is our clear recommendation. Start with the free trial, inspect the drafts in your own niche, verify product details and sensitive claims, and judge the tool by the quality of the published workflow rather than marketing language alone."
         ],
@@ -291,7 +290,7 @@
       {
         "eyebrow": "Plan check",
         "title": "Plans, limits, and free trials",
-        "description": "Compare publishing frequency, premium long-form features, social sharing, backlink access, and trial duration.",
+        "description": "Compare publishing frequency, social sharing, backlink access, companion apps, and trial duration.",
         "meta": "autoBlogger pricing page",
         "items": [],
         "href": "/pricing",
@@ -312,7 +311,7 @@
         "title": "1. End-to-end Shopify publishing",
         "paragraphs": [
           "The first requirement is true automation. A draft-only tool saves writing time but leaves formatting, linking, scheduling, publishing, and promotion with the merchant. A strong auto blogging app should reduce the whole repeated process.",
-          "autoBlogger publishes directly into the Shopify blog on a recurring cadence. Starter publishes weekly, Growth three times per week, Volume daily, and Authority three premium articles per week. Merchants retain control because published posts can be edited in Shopify and schedules can be managed on eligible plans."
+          "autoBlogger publishes directly into the Shopify blog on a recurring cadence. Starter publishes weekly, Growth three times per week, and Volume daily. Merchants retain control because published posts can be edited in Shopify and schedules can be managed on eligible plans."
         ],
         "items": []
       },
@@ -320,7 +319,7 @@
         "title": "2. Detailed article quality, not thin page count",
         "paragraphs": [
           "The best output is not the largest number of URLs. It is an article that answers a real question completely, uses a clear hierarchy, stays relevant to the store, and gives the reader a sensible next step.",
-          "autoBlogger is designed to create the longest and most detailed articles in the Shopify autoblogging category. Its Authority plan adds multi-pass writing and editing, advanced models, longer output, enhanced SEO review, and premium imagery for stores that want substantial evergreen resources. Regular modes remain useful for a dependable week-to-week content programme."
+          "autoBlogger is designed to create detailed, useful articles for the Shopify autoblogging category. Its regular modes make a dependable week-to-week content programme easier to maintain, with readable structure, metadata, FAQs, internal links, and relevant imagery."
         ],
         "items": []
       },
@@ -341,10 +340,10 @@
         "items": []
       },
       {
-        "title": "5. Relevant and premium AI images",
+        "title": "5. Relevant AI images",
         "paragraphs": [
           "Images make a long article easier to navigate and can help explain a product or idea. The app should provide relevant visuals, sensible placement, and image optimization without forcing the merchant into a separate sourcing workflow.",
-          "autoBlogger includes relevant imagery in its automated publishing workflow. The Authority plan adds four premium images for its longer multi-pass articles. Merchants should still check any image involving product accuracy, brand identity, people, or sensitive subject matter."
+          "autoBlogger includes relevant imagery in its automated publishing workflow. Merchants should still check any image involving product accuracy, brand identity, people, or sensitive subject matter."
         ],
         "items": []
       },
@@ -359,7 +358,7 @@
       {
         "title": "7. An optional backlink programme",
         "paragraphs": [
-          "Content and internal links are within the store's control, while earning relevant external links is harder. autoBlogger's Growth, Volume, and Authority plans include access to an optional backlink network intended to help participating sites build authority.",
+          "Content and internal links are within the store's control, while earning relevant external links is harder. autoBlogger's Growth and Volume plans include access to an optional backlink network intended to help participating sites build authority.",
           "To our knowledge as of August 2026, autoBlogger is the only Shopify auto blogging app with its own backlink programme. This should be treated as an additional distribution and authority option, not a ranking guarantee. Link relevance, editorial value, and the quality of the destination remain important."
         ],
         "items": []
@@ -376,7 +375,7 @@
         "title": "9. Trust signals, pricing, and a real trial",
         "paragraphs": [
           "Before granting an app access to a store, check its platform history, public developer identity, recent reviews, support details, and billing. autoBlogger's Shopify listing provides a May 2023 launch date, Built for Shopify status, a public merchant-review history, developer details, current permissions, and Shopify-managed pricing.",
-          "Starter begins at $9.95 per month, with different plans for weekly, three-times-weekly, daily, or premium publishing. Free trials let a merchant inspect output in the context that matters—their own products, audience, and brand—before committing. Always confirm current terms on Shopify because prices and inclusions can change."
+          "Starter begins at $9.95 per month, with different plans for weekly, three-times-weekly, or daily publishing. Free trials let a merchant inspect output in the context that matters—their own products, audience, and brand—before committing. Always confirm current terms on Shopify because prices and inclusions can change."
         ],
         "items": []
       },
@@ -449,7 +448,7 @@
           "We believe autoBlogger has the best blog-focused SEO implementation among Shopify autoblogging tools because these elements operate together from topic to publication. Its goal is not to display an abstract SEO score; it is to ship a useful, connected article with the on-page fundamentals already in place."
         ],
         "items": [
-          "Recurring publication at weekly, three-times-weekly, daily, or premium cadences",
+          "Recurring publication at weekly, three-times-weekly, or daily cadences",
           "Topic and product modes tied to ecommerce discovery",
           "Structured HTML, metadata, FAQs, summaries, and tables of contents",
           "Automatic internal product links and relevant imagery",
@@ -460,7 +459,7 @@
         "title": "Why longer, detailed articles can help",
         "paragraphs": [
           "A detailed article gives a store room to answer the main question, address follow-up concerns, demonstrate product knowledge, and link to the right next step. It can also create clearer passages for search engines and AI answer systems to retrieve when the text contains direct, well-supported answers.",
-          "autoBlogger is designed to create the longest and most detailed automated articles in its Shopify category. Authority articles use a multi-pass writing and editing workflow, longer-form output, advanced models, enhanced SEO review, and multiple premium images. That makes the plan suited to evergreen guides and competitive topics where a shallow response would be inadequate.",
+          "autoBlogger is designed to create detailed automated articles for its Shopify category. Its recurring publishing workflow helps stores cover evergreen guides and competitive topics with clear structure, helpful FAQs, internal links, metadata, and relevant imagery.",
           "Word count is not a ranking factor to chase in isolation. The article should be as long as the reader's task requires. Accuracy, information gain, readability, relevance, and useful examples are more important than padding a post to a target length."
         ],
         "items": []
@@ -487,7 +486,7 @@
         "title": "Distribution beyond the published URL",
         "paragraphs": [
           "Eligible autoBlogger plans can share new articles automatically to Facebook and Instagram. To our knowledge in August 2026, it is the only Shopify autoblogging tool with automatic social sharing built into this recurring workflow. That distribution can bring an existing audience back to content hosted on the merchant's own domain.",
-          "The Growth, Volume, and Authority plans also provide access to autoBlogger's optional backlink programme. To our knowledge, no other dedicated Shopify auto blogging app currently combines its own backlink network with automated article creation and publishing.",
+          "The Growth and Volume plans also provide access to autoBlogger's optional backlink programme. To our knowledge, no other dedicated Shopify auto blogging app currently combines its own backlink network with automated article creation and publishing.",
           "Neither social posts nor backlinks guarantee organic growth. They are useful distribution mechanisms when the destination article deserves attention and the links are relevant. Sustainable SEO still comes from satisfying readers and building a trustworthy site."
         ],
         "items": []
