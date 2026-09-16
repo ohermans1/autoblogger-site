@@ -24,24 +24,6 @@ const NAV_LINKS = [
   { label: "Free SEO Checklist", href: "/free-seo-checklist" }
 ];
 
-const REVIEW_SNIPPETS = [
-  {
-    author: "SK8 Clothing",
-    text: "The app makes blog publishing simple and saves significant time each week.",
-    rating: 5
-  },
-  {
-    author: "Tony's Aussie Prints",
-    text: "Setup is straightforward and the automated workflow is reliable.",
-    rating: 5
-  },
-  {
-    author: "Capric Clothes",
-    text: "Helpful for stores that need consistent content without a large team.",
-    rating: 5
-  }
-];
-
 const APP_CATALOG_ENTITIES = [
   {
     name: "autoBlogger",
@@ -205,7 +187,7 @@ function renderInlineLinks(value) {
 
 function toAbsolute(route) {
   if (!route || route === "/") return `${SITE_URL}/`;
-  return `${SITE_URL}${route}`;
+  return `${SITE_URL}${route.endsWith("/") ? route : `${route}/`}`;
 }
 
 function isIndexablePage(page) {
@@ -313,7 +295,7 @@ function buildBreadcrumbList(page, canonicalUrl) {
   };
 }
 
-function buildReviewsGraph() {
+function buildSoftwareApplicationGraph(includeRating) {
   return {
     "@type": "SoftwareApplication",
     "@id": `${SITE_URL}/#autoblogger-app`,
@@ -321,17 +303,17 @@ function buildReviewsGraph() {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     url: APP_LISTING_URL,
-    aggregateRating: {
+    offers: {
+      "@type": "Offer",
+      price: "9.95",
+      priceCurrency: "USD",
+      url: APP_LISTING_URL
+    },
+    aggregateRating: includeRating ? {
       "@type": "AggregateRating",
       ratingValue: "4.9",
-      ratingCount: "22"
-    },
-    review: REVIEW_SNIPPETS.map(item => ({
-      "@type": "Review",
-      author: { "@type": "Organization", name: item.author },
-      reviewRating: { "@type": "Rating", ratingValue: String(item.rating), bestRating: "5" },
-      reviewBody: item.text
-    }))
+      ratingCount: "85"
+    } : undefined
   };
 }
 
@@ -463,7 +445,7 @@ function buildSchemaGraph(page, canonicalUrl) {
         "@type": "ImageObject",
         url: DEFAULT_OG_IMAGE
       },
-      sameAs: APP_CATALOG_ENTITIES.map(app => app.url),
+      sameAs: [APP_LISTING_URL],
       contactPoint: [
         {
           "@type": "ContactPoint",
@@ -510,7 +492,7 @@ function buildSchemaGraph(page, canonicalUrl) {
   if (collectionGraph) graph.push(collectionGraph);
   if (siteMapGraph) graph.push(siteMapGraph);
   if (appCatalogGraph) graph.push(appCatalogGraph);
-  if (shouldIncludeSoftwareApplication(page)) graph.push(buildReviewsGraph());
+  if (shouldIncludeSoftwareApplication(page)) graph.push(buildSoftwareApplicationGraph(page.route === "/reviews"));
 
   return {
     "@context": "https://schema.org",
@@ -871,14 +853,23 @@ function renderHtml(page, pages) {
   const canonicalRoute = getCanonicalRoute(page);
   const canonicalUrl = toAbsolute(canonicalRoute);
   const schema = serializeJsonForScript(buildSchemaGraph(page, canonicalUrl));
-  const nav = NAV_LINKS.map(link => `<a href="${link.href}">${escapeHtml(link.label)}</a>`).join("");
+  const nav = NAV_LINKS.filter(link => ["Features", "Pricing", "Reviews", "Blog", "Contact"].includes(link.label))
+    .map(link => `<a href="${link.href}">${escapeHtml(link.label)}</a>`)
+    .join("");
+  const mobileNav = NAV_LINKS.map(link => `<a href="${link.href}">${escapeHtml(link.label)}</a>`).join("");
   const ctaLabel = page.ctaLabel || "Start Free Trial";
   const ctaHref = page.ctaHref || APP_LISTING_URL;
   const isStaffPickPage = page.route === "/2x-staff-pick";
   const isBlogIndexPage = page.route === "/blog";
   const isBlogArticlePage = hasRoutePrefix(page, "/blog") && page.route !== "/blog";
+  const isContactPage = page.route === "/contact";
+  const isReviewsPage = page.route === "/reviews";
   const primaryContent =
-    page.route === "/site-map"
+    isContactPage
+      ? `<p>${escapeHtml(page.intro)}</p><section class="sub-card contact-direct"><h2>Email autoBlogger support</h2><p>Have a question about setup, plans, or a feature? Send us a note with your store URL and what you need help with.</p><p><a class="contact-email" href="mailto:support@autoblogger.bot">support@autoblogger.bot</a></p><p>If an email app does not open, copy the address and use your inbox.</p></section>${renderQuickTakeaways(page)}`
+      : isReviewsPage
+      ? `<p>${escapeHtml(page.intro)}</p><section class="sub-card"><h2>Shopify App Store rating</h2><p>autoBlogger is rated 4.9 out of 5 from 85 reviews on the <a href="${APP_LISTING_URL}">Shopify App Store</a>. Read the latest merchant feedback there.</p></section>${renderQuickTakeaways(page)}${renderContentSections(page)}`
+      : page.route === "/site-map"
       ? `<p>${escapeHtml(page.intro)}</p>${renderSiteMapCollection(pages)}`
       : isStaffPickPage
         ? renderStaffPickPrimaryContent(page)
@@ -886,17 +877,20 @@ function renderHtml(page, pages) {
           ? renderBlogIndexContent(page)
           : isBlogArticlePage
             ? renderBlogArticleContent(page)
-            : `${renderBreadcrumbNav(page)}<p>${escapeHtml(page.intro)}</p>${renderQuickTakeaways(page)}${renderResourceCards(page)}${renderToolSection(page)}${renderComparisonTable(page)}${renderProofGallery(page)}${renderContentSections(page)}${renderChecklist(page)}`;
+            : `<p>${escapeHtml(page.intro)}</p>${renderQuickTakeaways(page)}${renderResourceCards(page)}${renderToolSection(page)}${renderComparisonTable(page)}${renderProofGallery(page)}${renderContentSections(page)}${renderChecklist(page)}`;
   const toolScript = renderToolScript(page);
   const isBlogPage = isBlogIndexPage || isBlogArticlePage;
   const mainLayoutClass = isStaffPickPage ? "container staff-pick-layout" : isBlogPage ? "container blog-layout" : "container grid";
   const articleClass = isStaffPickPage ? "card staff-pick-card" : isBlogPage ? "blog-shell" : "card";
-  const articleHeading = page.route === "/site-map" || isStaffPickPage || isBlogPage ? "" : `<h1>${escapeHtml(page.heading)}</h1>`;
+  const articleHeading = isStaffPickPage || isBlogPage ? "" : `${renderBreadcrumbNav(page)}<h1>${escapeHtml(page.heading)}</h1>`;
   const articleActions = isStaffPickPage || isBlogPage
     ? ""
-    : `<div class="actions"><a class="btn-primary" href="${escapeHtml(ctaHref)}">${escapeHtml(ctaLabel)}</a><a class="btn-secondary" href="/contact">Contact Support</a></div>`;
+    : isContactPage
+      ? `<div class="actions"><a class="btn-primary" href="mailto:support@autoblogger.bot">Email support</a><a class="btn-secondary" href="${escapeHtml(APP_LISTING_URL)}">View the Shopify app</a></div>`
+      : `<div class="actions"><a class="btn-primary" href="${escapeHtml(ctaHref)}">${escapeHtml(ctaLabel)}</a><a class="btn-secondary" href="/contact">Contact Support</a></div>`;
   const asideContent = isStaffPickPage || isBlogPage ? "" : `<aside>${renderRelatedLinks(page, pages)}${renderFaqSection(page)}</aside>`;
   const ogType = isGuidePage(page) || isStaffPickPage ? "article" : "website";
+  const showMarketingCta = !["/privacy", "/terms", "/autoschema-privacy", "/autoschema-terms", "/site-map"].includes(page.route);
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -940,7 +934,10 @@ function renderHtml(page, pages) {
       .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 1.4rem 1.3rem; }
       .blog-shell { max-width: 760px; margin: 0 auto; background: #ffffff; }
       .staff-pick-card { max-width: 960px; margin: 0 auto; padding: 2rem; border-radius: 28px; box-shadow: 0 6px 24px rgba(15, 23, 42, 0.06); }
-      .sub-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; margin-top: 1rem; }
+      .sub-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; margin-top: 1rem; }${isContactPage ? `
+      .contact-direct { background: #f2f8f2; border-color: #d5e8da; padding: 1.5rem; }
+      .contact-direct p { margin: 0.65rem 0; }
+      .contact-email { color: #0f6869; font-size: clamp(1.15rem, 2.5vw, 1.5rem); font-weight: 800; overflow-wrap: anywhere; }` : ""}
       .breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; font-size: 0.95rem; margin-bottom: 1rem; color: #4b5563; }
       .breadcrumb a { color: #0f766e; font-weight: 600; text-decoration: none; }
       h1 { margin-top: 0; line-height: 1.25; }
@@ -1046,14 +1043,18 @@ function renderHtml(page, pages) {
       @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .proof-grid, .resource-grid, .tool-results, .staff-pick-sections { grid-template-columns: 1fr; } .staff-pick-card .proof-grid { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } .staff-pick-title { font-size: 2.4rem; } }
       @media (max-width: 640px) { .tool-grid { grid-template-columns: 1fr; } .staff-pick-card { padding: 1.25rem; } .staff-pick-hero { padding: 2rem 1.25rem; } .staff-pick-title { font-size: 2rem; } .staff-pick-card .sub-card { padding: 1.25rem; } .blog-shell { width: 100%; } .blog-intro { font-size: 1.1rem; } .blog-list-item h2 { font-size: 1.45rem; } }
     </style>
+    <link rel="stylesheet" href="/static-site.css" />
   </head>
   <body>
-    <header>
-      <div class="container">
-        <nav aria-label="Primary">${nav}</nav>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="static-header">
+      <div class="container static-header-inner">
+        <a class="static-brand" href="/" aria-label="autoBlogger home"><img src="/logo.png" width="44" height="44" alt="" /><span>auto<span>Blogger</span><small>for Shopify</small></span></a>
+        <nav class="static-desktop-nav" aria-label="Primary">${nav}<details class="resource-menu"><summary>Resources <span aria-hidden="true">⌄</span></summary><div class="resource-menu-panel"><a href="/free-seo-checklist">Free SEO checklist</a><a href="/2x-staff-pick">2x Staff Pick</a><a href="/faqs">FAQs</a><a href="/other-apps">Other apps</a></div></details><a class="static-header-cta" href="${APP_LISTING_URL}">Start free trial</a></nav>
+        <details class="static-mobile-menu"><summary>Menu <span aria-hidden="true">☰</span></summary><nav aria-label="Mobile navigation">${mobileNav}<a class="static-header-cta" href="${APP_LISTING_URL}">Start free trial</a></nav></details>
       </div>
     </header>
-    <main>
+    <main id="main-content">
       <div class="${mainLayoutClass}">
         <article class="${articleClass}">
           ${articleHeading}
@@ -1062,7 +1063,9 @@ function renderHtml(page, pages) {
         </article>
         ${asideContent}
       </div>
-    </main>
+    </main>${showMarketingCta ? `
+    <section class="static-cta"><div class="container static-cta-inner"><div><span class="static-kicker">BUILT FOR SHOPIFY</span><h2>Ready for a blog that keeps moving?</h2><p>Plan, publish, and connect helpful content to your products with autoBlogger.</p></div><a class="static-cta-button" href="${APP_LISTING_URL}">Try autoBlogger free →</a></div></section>` : ""}
+    <footer class="static-footer"><div class="container static-footer-inner"><div><a href="/" class="static-footer-brand">autoBlogger</a><p>The original AI blogging workflow built for Shopify stores.</p></div><nav aria-label="Footer navigation"><a href="/features">Features</a><a href="/pricing">Pricing</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav></div><div class="container static-footer-bottom">autoBlogger is operated by Oliver R Corich-Hermans, Station Road, St Monans, UK.</div></footer>
     ${toolScript}
   </body>
 </html>`;

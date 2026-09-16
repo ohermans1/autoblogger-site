@@ -8,7 +8,7 @@ const FinalCtaSection = () => (
       <div>
         <span className="section-kicker">READY WHEN YOU ARE</span>
         <h2 id="final-cta-heading">Your next great blog post starts here.</h2>
-        <p>Make consistent Shopify blogging part of your routine, without adding another weekly writing job.</p>
+        <p>Try the Shopify-first tool built to make detailed, connected, consistent blogging part of your routine.</p>
         <div className="final-cta__actions">
           <a className="button-primary" href="https://apps.shopify.com/autoblogger" target="_blank" rel="noopener noreferrer">Try autoBlogger free <FiArrowRight aria-hidden="true" /></a>
           <SmartLink className="button-secondary" to="/contact">Talk to us</SmartLink>

@@ -22,6 +22,7 @@ test("renders all current Shopify plans with the correct prices and trials", () 
     expect(within(card).getByText(plan.monthly)).toBeInTheDocument();
     expect(within(card).getByText(plan.annual)).toBeInTheDocument();
     expect(within(card).getByText(plan.trial)).toBeInTheDocument();
+    expect(within(card).getByRole("link", { name: `Start the ${plan.name} free trial on Shopify` })).toHaveAttribute("href", "https://apps.shopify.com/autoblogger");
   });
 });
 

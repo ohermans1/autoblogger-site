@@ -31,13 +31,13 @@ const FeaturesSection = props => {
   return (
     <section id="features" className="content-section content-section--tint">
       {props.home ? (
-        <h2 className="section-title">Built for the way Shopify stores grow</h2>
+        <h2 className="section-title">One of Shopify's most complete blogging workflows</h2>
       ) : (
-        <h1 className="section-title">autoBlogger Features for Shopify SEO Publishing</h1>
+        <h1 className="section-title">The feature-rich Shopify auto blogging tool</h1>
       )}
 
       <p className="section-lead">
-        Turn your ideas and products into helpful articles that keep your store visible and easy to explore.
+        The original autoBlogger brings planning, writing, on-page SEO, product links, scheduling, and publishing together. Explore why it's our pick for the best Shopify auto blogging workflow.
       </p>
       {!props.home && <p className="section-supporting">
         Want a practical next step? Use the{" "}

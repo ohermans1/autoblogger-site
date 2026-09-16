@@ -17,9 +17,9 @@ import {
 } from "../seo/pageCatalog";
 
 const HOME_META = {
-  title: "autoBlogger: Shopify AI Blog Automation App | Free Trial",
+  title: "autoBlogger | The Original Shopify AI Blogging Tool",
   description:
-    "Automatically publish SEO-focused Shopify blog posts with product links, FAQs, metadata, and social sharing. 2x Shopify Staff Pick.",
+    "Meet the original autoBlogger, our pick for Shopify's best all-in-one auto blogging tool. Plan, write, link products, and publish SEO-ready articles on schedule.",
   path: "/",
   type: "website",
   robots: DEFAULT_ROBOTS
@@ -33,118 +33,12 @@ const FALLBACK_META = {
   robots: "noindex,follow"
 };
 
-const HOME_FAQ = [
-  {
-    question: "What is autoBlogger?",
-    answer:
-      "autoBlogger is a Shopify app that automates SEO blog publishing to help build topical coverage, improve product discovery, and support organic search growth."
-  },
-  {
-    question: "How does the free trial work?",
-    answer:
-      "Install autoBlogger from the Shopify App Store and choose a plan. Starter, Growth, and Volume each include a 14-day free trial."
-  },
-  {
-    question: "Is there a free plan?",
-    answer: "autoBlogger includes a 14-day free trial on Starter, Growth, and Volume. There is no ongoing free plan after the trial."
-  },
-  {
-    question: "Is autoBlogger available for Shopify?",
-    answer: "Yes. autoBlogger is a Shopify app and is installed from the Shopify App Store."
-  },
-  {
-    question: "What should I look for in a Shopify blog automation app?",
-    answer:
-      "Look for recurring posts, metadata, FAQ content, product links, readable article structure, and simple editing after publishing. autoBlogger is built around that Shopify workflow."
-  },
-  {
-    question: "Why do merchants choose autoBlogger as their Shopify AI blogging tool?",
-    answer:
-      "autoBlogger is purpose-built for Shopify, connecting article planning, generation, SEO structure, product linking, scheduling, publishing, and editing in one workflow."
-  },
-  {
-    question: "What makes autoBlogger different from a general AI writer?",
-    answer:
-      "A general AI writer can create a draft, while autoBlogger is designed to turn that draft into a Shopify blog post with structured HTML, metadata, FAQs, a table of contents, internal product links, imagery, and recurring publishing controls."
-  },
-  {
-    question: "How does autoBlogger help blog content support product discovery?",
-    answer:
-      "autoBlogger supports topic- and product-focused articles, automatic internal product links, and linked product cards so shoppers can move from useful content to relevant products and collections."
-  },
-  {
-    question: "Can autoBlogger help me decide what to publish next?",
-    answer:
-      "Yes. Search Opportunities uses the last three months of Google Search Console data to surface and rank relevant article ideas, then lets you add a prepared article to your upcoming blogs."
-  },
-  {
-    question: "Can autoBlogger add internal product links?",
-    answer: "Yes. autoBlogger can include internal product links in generated posts so blog content supports product and collection discovery."
-  },
-  {
-    question: "How many articles are published on each plan?",
-    answer: "Starter publishes one SEO blog each week, Growth publishes three per week, and Volume publishes daily."
-  },
-  {
-    question: "How do I contact support?",
-    answer: "Email support@autoblogger.bot for support."
-  }
-];
-
 const APP_AGGREGATE_RATING = {
   ratingValue: "4.9",
-  ratingCount: "84",
+  ratingCount: "85",
   bestRating: "5",
   worstRating: "1"
 };
-
-const REVIEW_ENTITIES = [
-  {
-    author: "SK8 Clothing",
-    text: "The app saves time and keeps SEO blog publishing consistent.",
-    rating: "5"
-  },
-  {
-    author: "Tony's Aussie Prints",
-    text: "Simple setup and reliable automation for regular blog output.",
-    rating: "5"
-  },
-  {
-    author: "Capric Clothes",
-    text: "Helpful for stores that need consistent content without extra overhead.",
-    rating: "5"
-  },
-  {
-    author: "OCL",
-    text: "Makes it easier to publish good SEO content consistently, with steady organic traffic, better indexing, and sales from content.",
-    rating: "5"
-  },
-  {
-    author: "Rhia Janta-Cooper Fine Art",
-    text: "Writes insightful articles and manages complex, diverse, and engaging blog content with links to older blogs and artworks.",
-    rating: "5"
-  },
-  {
-    author: "JR Colombian Emeralds",
-    text: "Saves tremendous time creating SEO-friendly content; blogs are well-written, easy to customize, and streamline content strategy.",
-    rating: "5"
-  },
-  {
-    author: "The Packaging Club",
-    text: "Fantastic blog generation tool with well-written, well-structured articles and useful keyword and topic-direction controls.",
-    rating: "5"
-  },
-  {
-    author: "Jamie Clarke Counselling",
-    text: "Creates relevant blogs, publishes to social media, saves hours of work, and comes with helpful support.",
-    rating: "5"
-  },
-  {
-    author: "Rakaposhi Organics",
-    text: "Generates high-quality, SEO-optimized, customizable posts with natural content, images, FAQs, product links, and social sharing.",
-    rating: "5"
-  }
-];
 
 const APP_CATALOG_ENTITIES = [
   {
@@ -303,7 +197,7 @@ function buildBreadcrumb(page, canonicalUrl) {
   };
 }
 
-function buildSoftwareApplicationGraph(includeReviews) {
+function buildSoftwareApplicationGraph(includeRating) {
   return {
     "@type": "SoftwareApplication",
     "@id": `${SITE_URL}/#autoblogger-app`,
@@ -317,46 +211,13 @@ function buildSoftwareApplicationGraph(includeReviews) {
       "@type": "Offer",
       priceCurrency: "USD",
       price: "9.95",
-      description: "Starter plan starts at $9.95 per month"
+      description: "Starter plan starts at $9.95 per month",
+      url: "https://apps.shopify.com/autoblogger"
     },
-    aggregateRating: {
+    aggregateRating: includeRating ? {
       "@type": "AggregateRating",
       ...APP_AGGREGATE_RATING
-    },
-    review: includeReviews
-      ? REVIEW_ENTITIES.map(item => ({
-          "@type": "Review",
-          author: {
-            "@type": "Organization",
-            name: item.author
-          },
-          reviewRating: {
-            "@type": "Rating",
-            ratingValue: item.rating,
-            bestRating: "5"
-          },
-          reviewBody: item.text
-        }))
-      : undefined
-  };
-}
-
-function buildFaqGraph(path, page, canonicalUrl) {
-  const faqItems = path === "/" ? HOME_FAQ : page?.faq || [];
-
-  if (faqItems.length === 0) return null;
-
-  return {
-    "@type": "FAQPage",
-    "@id": `${canonicalUrl}#faq`,
-    mainEntity: faqItems.map(item => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer
-      }
-    }))
+    } : undefined
   };
 }
 
@@ -458,7 +319,6 @@ function shouldIncludeSoftwareApplication(path, page) {
 
 function buildSchemaGraph(path, meta, canonicalUrl, page, isKnownPath) {
   const breadcrumb = buildBreadcrumb(page, canonicalUrl);
-  const faqGraph = buildFaqGraph(path, page, canonicalUrl);
   const guideGraph = buildGuideGraph(page, canonicalUrl);
   const collectionGraph = buildCollectionGraph(page, canonicalUrl);
   const siteMapGraph = buildSiteMapGraph(page, canonicalUrl);
@@ -474,7 +334,7 @@ function buildSchemaGraph(path, meta, canonicalUrl, page, isKnownPath) {
         "@type": "ImageObject",
         url: DEFAULT_OG_IMAGE
       },
-      sameAs: APP_CATALOG_ENTITIES.map(app => app.url),
+      sameAs: ["https://apps.shopify.com/autoblogger"],
       contactPoint: [
         {
           "@type": "ContactPoint",
@@ -520,7 +380,6 @@ function buildSchemaGraph(path, meta, canonicalUrl, page, isKnownPath) {
   ];
 
   if (breadcrumb) graph.push(breadcrumb);
-  if (faqGraph) graph.push(faqGraph);
   if (guideGraph) graph.push(guideGraph);
   if (collectionGraph) graph.push(collectionGraph);
   if (siteMapGraph) graph.push(siteMapGraph);

@@ -111,6 +111,9 @@ const PricingSection = props => {
                 </ul>
 
                 {plan.trialNote && <p className="pricing-card__trial">{plan.trialNote}</p>}
+                <a href="https://apps.shopify.com/autoblogger" target="_blank" rel="noopener noreferrer" className={`pricing-card__action ${isPopular ? "pricing-card__action--popular" : ""}`} aria-label={`Start the ${plan.title} free trial on Shopify`}>
+                  Start free trial
+                </a>
               </div>
             </div>
           );

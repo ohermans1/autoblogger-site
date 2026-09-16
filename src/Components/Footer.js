@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="site-footer__inner">
         <div className="site-footer__brand">
           <img src="/logo.png" alt="autoBlogger" width="1200" height="1200" loading="lazy" decoding="async" />
-          <p>Consistent SEO publishing for ambitious Shopify stores.</p>
+          <p>The original autoBlogger: a complete AI blogging workflow built for Shopify stores.</p>
         </div>
         <nav className="site-footer__links" aria-label="Footer navigation">
         <SmartLink to="/privacy">
@@ -21,6 +21,9 @@ const Footer = () => {
         </SmartLink>
         <SmartLink to="/blog">
           Blog
+        </SmartLink>
+        <SmartLink to="/contact">
+          Contact support
         </SmartLink>
         <SmartLink to="/free-seo-checklist">
           Free SEO Checklist

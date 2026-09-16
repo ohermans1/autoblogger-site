@@ -130,6 +130,15 @@ const FAQsSection = props => {
       )
     }
   ];
+  const homeQuestions = new Set([
+    "What is autoBlogger?",
+    "How does the free trial work?",
+    "What makes autoBlogger different from a general AI writer?",
+    "How does autoBlogger help blog content support product discovery?",
+    "How many articles are published on each plan?",
+    "Can I edit content before or after publishing?"
+  ]);
+  const visibleFaqs = props.home ? faqs.filter(faq => homeQuestions.has(faq.question)) : faqs;
 
   const toggleFAQ = index => {
     setOpenIndex(openIndex === index ? null : index);
@@ -147,7 +156,7 @@ const FAQsSection = props => {
         <p className="section-lead">Everything you need to know about setup, content, and plans.</p>
 
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
+          {visibleFaqs.map((faq, index) => (
             <div key={index} className={`faq-item ${openIndex === index ? "faq-item--open" : ""}`}>
               <button
                 className="faq-question"
@@ -167,6 +176,7 @@ const FAQsSection = props => {
             </div>
           ))}
         </div>
+        {props.home && <div className="section-action"><SmartLink to="/faqs" className="button-secondary">See all questions</SmartLink></div>}
       </div>
     </section>
   );

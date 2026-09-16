@@ -22,8 +22,9 @@ const HeroSection = () => {
             </SmartLink>
             <h1>Your Shopify blog, <span>on a roll.</span></h1>
             <p className="hero-lead">
-              The AI blogging tool built for Shopify stores that want to show up more often. autoBlogger plans topics, creates search-ready posts, connects products, and publishes on schedule.
+              Meet the original autoBlogger, built for Shopify since 2023. One feature-rich workflow plans topics, creates detailed search-ready articles, links your products, and publishes on schedule.
             </p>
+            <p className="hero-positioning">Our pick for the best all-in-one auto blogging tool for Shopify.</p>
             <div className="hero-actions">
               <a href={shopifyUrl} target="_blank" rel="noopener noreferrer" className="button-primary" onClick={trackTrialClick}>
                 Start your 14-day free trial <FiArrowRight aria-hidden="true" />

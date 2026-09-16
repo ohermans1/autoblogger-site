@@ -120,7 +120,7 @@ export function normalizePath(pathname) {
 
 export function buildAbsoluteUrl(path) {
   if (!path || path === "/") return `${SITE_URL}/`;
-  return `${SITE_URL}${path}`;
+  return `${SITE_URL}${path.endsWith("/") ? path : `${path}/`}`;
 }
 
 export function getCanonicalRoute(page) {

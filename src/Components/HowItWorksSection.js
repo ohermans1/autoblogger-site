@@ -14,7 +14,7 @@ const HowItWorksSection = () => (
       <div className="how-section__intro">
         <span className="section-kicker">THE WAY IT WORKS</span>
         <h2 id="how-heading">From a blank blog to a <em>publishing rhythm.</em></h2>
-        <p>Everything you need to turn good intentions into a blog that keeps showing up for shoppers.</p>
+        <p>More than an AI writer: the original autoBlogger handles the work from your next idea to a published Shopify article.</p>
         <SmartLink to="/features" className="text-link">See all features <FiArrowRight aria-hidden="true" /></SmartLink>
       </div>
       <div className="how-steps">
