@@ -1,11 +1,4 @@
-# robots.txt - autoblogger.bot
-# See: https://www.robotstxt.org/robotstxt.html
-
-# Allow all crawlers
 User-agent: *
 Disallow:
 
-# Helpful pointers
 Sitemap: https://autoblogger.bot/sitemap.xml
-Humans: https://autoblogger.bot/humans.txt
-Host: autoblogger.bot
