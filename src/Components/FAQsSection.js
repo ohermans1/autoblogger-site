@@ -138,7 +138,7 @@ const FAQsSection = props => {
   return (
     <section className="content-section faq-section">
       {props.home ? (
-        <h3 className="section-title">Questions, answered</h3>
+        <h2 className="section-title">Questions, answered</h2>
       ) : (
         <h1 className="section-title">Frequently Asked Questions about autoBlogger</h1>
       )}

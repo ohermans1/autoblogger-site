@@ -3,7 +3,8 @@ import App from "./App";
 
 test("renders primary hero heading", async () => {
   render(<App />);
-  const headingElement = await screen.findByText(/Shopify AI blog automation/i);
+  const headingElement = await screen.findByRole("heading", { name: /Your Shopify blog, on a roll/i });
   expect(headingElement).toBeInTheDocument();
-  expect(await screen.findByText(/More tools for Shopify growth/i)).toBeInTheDocument();
+  expect(await screen.findByRole("heading", { name: /From a blank blog to a publishing rhythm/i })).toBeInTheDocument();
+  expect(await screen.findByRole("link", { name: /Start your 14-day free trial/i })).toHaveAttribute("href", "https://apps.shopify.com/autoblogger");
 });

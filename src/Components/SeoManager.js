@@ -93,7 +93,7 @@ const HOME_FAQ = [
 
 const APP_AGGREGATE_RATING = {
   ratingValue: "4.9",
-  ratingCount: "22",
+  ratingCount: "84",
   bestRating: "5",
   worstRating: "1"
 };
@@ -112,6 +112,36 @@ const REVIEW_ENTITIES = [
   {
     author: "Capric Clothes",
     text: "Helpful for stores that need consistent content without extra overhead.",
+    rating: "5"
+  },
+  {
+    author: "OCL",
+    text: "Makes it easier to publish good SEO content consistently, with steady organic traffic, better indexing, and sales from content.",
+    rating: "5"
+  },
+  {
+    author: "Rhia Janta-Cooper Fine Art",
+    text: "Writes insightful articles and manages complex, diverse, and engaging blog content with links to older blogs and artworks.",
+    rating: "5"
+  },
+  {
+    author: "JR Colombian Emeralds",
+    text: "Saves tremendous time creating SEO-friendly content; blogs are well-written, easy to customize, and streamline content strategy.",
+    rating: "5"
+  },
+  {
+    author: "The Packaging Club",
+    text: "Fantastic blog generation tool with well-written, well-structured articles and useful keyword and topic-direction controls.",
+    rating: "5"
+  },
+  {
+    author: "Jamie Clarke Counselling",
+    text: "Creates relevant blogs, publishes to social media, saves hours of work, and comes with helpful support.",
+    rating: "5"
+  },
+  {
+    author: "Rakaposhi Organics",
+    text: "Generates high-quality, SEO-optimized, customizable posts with natural content, images, FAQs, product links, and social sharing.",
     rating: "5"
   }
 ];

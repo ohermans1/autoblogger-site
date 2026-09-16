@@ -26,19 +26,20 @@ const FeaturesSection = props => {
     { title: "Built for Shopify", description: "Edit published posts directly in Shopify whenever you need to." },
     { title: "Free trial", description: "Try Starter, Growth, or Volume free for 14 days." }
   ];
+  const visibleFeatures = props.home ? features.slice(0, 4) : features;
 
   return (
     <section id="features" className="content-section content-section--tint">
       {props.home ? (
-        <h3 className="section-title">Everything you need to publish consistently</h3>
+        <h2 className="section-title">Built for the way Shopify stores grow</h2>
       ) : (
         <h1 className="section-title">autoBlogger Features for Shopify SEO Publishing</h1>
       )}
 
       <p className="section-lead">
-        autoBlogger turns your Shopify blog into a repeatable SEO publishing workflow with content designed for topical coverage and product discovery.
+        Turn your ideas and products into helpful articles that keep your store visible and easy to explore.
       </p>
-      <p className="section-supporting">
+      {!props.home && <p className="section-supporting">
         Want a practical next step? Use the{" "}
         <SmartLink to="/free-seo-checklist" className="text-primary font-semibold hover:underline">
           free SEO checklist
@@ -52,11 +53,11 @@ const FeaturesSection = props => {
           merchant reviews
         </SmartLink>
         .
-      </p>
+      </p>}
 
       <div className="feature-grid">
         <ul>
-          {features.map((feature, index) => (
+          {visibleFeatures.map((feature, index) => (
             <li key={index} className="feature-card">
               <span className="feature-card__icon">
                 <FaCheckCircle />
@@ -70,9 +71,7 @@ const FeaturesSection = props => {
       </div>
 
       <div className="section-action">
-        <a href={appStoreUrl} className="button-primary" aria-label="Get started with autoBlogger">
-          Start free trial
-        </a>
+        {props.home ? <SmartLink to="/features" className="button-secondary">Explore all features</SmartLink> : <a href={appStoreUrl} className="button-primary" aria-label="Get started with autoBlogger">Start free trial</a>}
       </div>
     </section>
   );

@@ -3,6 +3,8 @@ import { HashRouter as Router, Navigate, Route, Routes, useLocation } from "reac
 import PageHeader from "./Components/PageHeader";
 import Footer from "./Components/Footer";
 import HeroSection from "./Components/HeroSection";
+import HowItWorksSection from "./Components/HowItWorksSection";
+import FinalCtaSection from "./Components/FinalCtaSection";
 import SeoManager from "./Components/SeoManager";
 import NotFoundPage from "./Components/NotFoundPage";
 import { STATIC_SEO_PAGES } from "./seo/pageCatalog";
@@ -90,12 +92,12 @@ const App = () => {
               element={
                 <>
                   <HeroSection />
+                  <HowItWorksSection />
                   {lazySection(<FeaturesSection home={true} />)}
+                  {lazySection(<ReviewsSection home={true} />)}
                   {lazySection(<PricingSection home={true} />)}
                   {lazySection(<FAQsSection home={true} />)}
-                  {lazySection(<ReviewsSection home={true} />)}
-                  {lazySection(<ContactSection home={true} />)}
-                  {lazySection(<OtherAppsSection home={true} />)}
+                  <FinalCtaSection />
                 </>
               }
             />

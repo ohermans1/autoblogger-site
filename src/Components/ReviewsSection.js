@@ -23,13 +23,50 @@ const ReviewsSection = props => {
       link: "https://capriclothes.com/",
       rating: "5 out of 5",
       text: "Helpful for merchants who are not natural blog writers but still need a steady SEO content workflow to support products and collections."
+    },
+    {
+      site: "OCL",
+      link: "https://apps.shopify.com/autoblogger/reviews?ratings%5B%5D=5",
+      rating: "5 out of 5",
+      text: "It's made it much easier for us to publish good SEO content consistently without it becoming another huge workload. We're seeing steady organic traffic, better indexing, and sales directly from the content."
+    },
+    {
+      site: "Rhia Janta-Cooper Fine Art",
+      link: "https://apps.shopify.com/autoblogger/reviews?ratings%5B%5D=5",
+      rating: "5 out of 5",
+      text: "The software writes insightful articles about my artworks and manages complex, diverse, and engaging blog content with ease. It uses links to my older blogs and artworks."
+    },
+    {
+      site: "JR Colombian Emeralds",
+      link: "https://apps.shopify.com/autoblogger/reviews?ratings%5B%5D=5",
+      rating: "5 out of 5",
+      text: "The app has saved us a tremendous amount of time creating SEO-friendly content. The AI-generated blogs are well-written, easy to customize, and have streamlined our content strategy."
+    },
+    {
+      site: "The Packaging Club",
+      link: "https://apps.shopify.com/autoblogger/reviews?ratings%5B%5D=5&page=2",
+      rating: "5 out of 5",
+      text: "Fantastic blog generation tool. Articles are well written and very well structured, and I've only scratched the surface of training it on keywords and topic direction."
+    },
+    {
+      site: "Jamie Clarke Counselling",
+      link: "https://apps.shopify.com/autoblogger/reviews?ratings%5B%5D=5&page=2",
+      rating: "5 out of 5",
+      text: "Automatically creates relevant blogs for my website and publishes them to Facebook and LinkedIn. It has saved me hours of work, and support is great at answering questions."
+    },
+    {
+      site: "Rakaposhi Organics",
+      link: "https://apps.shopify.com/autoblogger/reviews?ratings%5B%5D=5&page=2",
+      rating: "5 out of 5",
+      text: "Generating high-quality, SEO-optimized blog posts with high customization, all hands-off. The content feels natural and includes images, FAQs, product links, and social sharing."
     }
   ];
+  const displayedReviews = props.home ? reviews.slice(3, 6) : reviews;
 
   return (
     <section className="content-section content-section--tint reviews-section">
       {props.home ? (
-        <h3 className="section-title">Loved by Shopify merchants</h3>
+        <h2 className="section-title">Good words from busy merchants</h2>
       ) : (
         <h1 className="section-title">Latest autoBlogger Reviews from Shopify Merchants</h1>
       )}
@@ -41,7 +78,7 @@ const ReviewsSection = props => {
         </a>
       </h4>
       <p className="section-lead">Real feedback from merchants building a more consistent content workflow.</p>
-      <p className="section-supporting">
+      {!props.home && <p className="section-supporting">
         See how the product lines up with the{" "}
         <SmartLink to="/2x-staff-pick" className="text-primary font-semibold hover:underline">
           2x Shopify Staff Pick proof
@@ -59,10 +96,10 @@ const ReviewsSection = props => {
           free SEO checklist
         </SmartLink>
         .
-      </p>
+      </p>}
 
       <div className="review-grid">
-        {reviews.map(review => (
+        {displayedReviews.map(review => (
           <article key={review.site} className="review-card">
             <span className="review-card__quote" aria-hidden="true">“</span>
             <h2 className="text-lg font-bold mb-2">

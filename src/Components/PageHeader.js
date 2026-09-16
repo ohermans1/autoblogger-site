@@ -9,7 +9,7 @@ const PageHeader = ({ toggleMobileMenu, isMobileMenuOpen }) => {
     <header className="site-header">
       <div className="site-header__inner">
         {/* Logo */}
-        <SmartLink to="/" className="flex shrink-0 items-center" aria-label="autoBlogger home">
+        <SmartLink to="/" className="header-brand" aria-label="autoBlogger home">
           <img
             src="/logo.png"
             alt="autoBlogger"
@@ -20,6 +20,7 @@ const PageHeader = ({ toggleMobileMenu, isMobileMenuOpen }) => {
             fetchpriority="high"
             decoding="async"
           />
+          <span>auto<span>Blogger</span><small>for Shopify</small></span>
         </SmartLink>
 
         {/* Navigation Links */}

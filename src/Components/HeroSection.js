@@ -1,70 +1,72 @@
 import React from "react";
 import ReactGA from "react-ga4";
-import { FiArrowRight, FiCheck, FiEdit3, FiLink, FiSearch } from "react-icons/fi";
+import { FiArrowRight, FiCheck, FiFileText, FiLink2, FiSearch, FiZap } from "react-icons/fi";
 import { SmartLink } from "./SmartLink";
 
-const HeroSection = () => {
-  const shopifyUrl = "https://apps.shopify.com/autoblogger";
+const shopifyUrl = "https://apps.shopify.com/autoblogger";
 
-  // Function to handle click events and send to Google Analytics
-  const handleAppStoreClick = platform => {
-    ReactGA.event({
-      category: "App Store Links",
-      action: `Clicked ${platform} App Store Link`,
-      label: `${platform} App Store Link Click`
-    });
-  };
+const HeroSection = () => {
+  const trackTrialClick = () => ReactGA.event({
+    category: "App Store Links",
+    action: "Clicked Shopify App Store Link",
+    label: "Hero trial click"
+  });
 
   return (
-    <section className="hero-section">
-      <div className="hero-section__glow hero-section__glow--one" aria-hidden="true" />
-      <div className="hero-section__glow hero-section__glow--two" aria-hidden="true" />
-      <div className="hero-grid">
-        <div className="hero-copy">
-          <SmartLink to="/2x-staff-pick" className="eyebrow-pill">
-            <span aria-hidden="true">★</span> 2x Shopify Staff Pick
-          </SmartLink>
-          <h1>Shopify AI blog automation for an <span>SEO growth engine.</span></h1>
-          <p className="hero-lead">
-            Publish useful, search-focused articles with optimized structure, relevant imagery, and internal product links—without rebuilding your workflow every week.
-          </p>
-          <div className="hero-actions">
-            <a href={shopifyUrl} target="_blank" rel="noopener noreferrer" className="button-primary" onClick={() => handleAppStoreClick("Shopify")}>
-              Start free trial <FiArrowRight aria-hidden="true" />
-            </a>
-            <SmartLink to="/features" className="button-secondary">See how it works</SmartLink>
+    <>
+      <section className="hero-section">
+        <div className="hero-grid">
+          <div className="hero-copy">
+            <SmartLink to="/2x-staff-pick" className="eyebrow-pill">
+              <span className="eyebrow-pill__star" aria-hidden="true">★</span> Twice picked by Shopify staff <FiArrowRight aria-hidden="true" />
+            </SmartLink>
+            <h1>Your Shopify blog, <span>on a roll.</span></h1>
+            <p className="hero-lead">
+              The AI blogging tool built for Shopify stores that want to show up more often. autoBlogger plans topics, creates search-ready posts, connects products, and publishes on schedule.
+            </p>
+            <div className="hero-actions">
+              <a href={shopifyUrl} target="_blank" rel="noopener noreferrer" className="button-primary" onClick={trackTrialClick}>
+                Start your 14-day free trial <FiArrowRight aria-hidden="true" />
+              </a>
+              <SmartLink to="/features" className="button-secondary">Explore the features</SmartLink>
+            </div>
+            <p className="hero-fineprint"><FiCheck aria-hidden="true" /> Made for Shopify stores <span aria-hidden="true">·</span> Edit posts in Shopify <span aria-hidden="true">·</span> Plans from $9.95/month</p>
           </div>
-          <div className="hero-trust" aria-label="Product benefits">
-            <span><FiCheck aria-hidden="true" /> Built for Shopify</span>
-            <span><FiCheck aria-hidden="true" /> No credit card upfront</span>
-            <span><FiCheck aria-hidden="true" /> Edit any time</span>
+
+          <div className="hero-visual" aria-label="Illustration of an autoBlogger article publishing workflow">
+            <div className="hero-visual__orbit hero-visual__orbit--one" aria-hidden="true" />
+            <div className="hero-visual__orbit hero-visual__orbit--two" aria-hidden="true" />
+            <div className="hero-floating hero-floating--top"><FiZap aria-hidden="true" /> Your next post, handled</div>
+            <div className="workflow-card">
+              <div className="workflow-card__header">
+                <div className="workflow-card__identity"><span className="workflow-card__mark"><FiFileText aria-hidden="true" /></span><div><span className="workflow-card__label">autoBlogger studio</span><strong>Upcoming article</strong></div></div>
+                <span className="status-pill"><span /> On schedule</span>
+              </div>
+              <div className="article-preview">
+                <div className="article-preview__top"><span className="article-preview__tag">SHOPIFY BLOG</span><span>01 / 03</span></div>
+                <div className="article-preview__art" aria-hidden="true"><span /><span /><span /></div>
+                <h2>How to find the right fit for your everyday essentials</h2>
+                <div className="article-preview__lines" aria-hidden="true"><span /><span /><span /></div>
+              </div>
+              <div className="workflow-steps">
+                <div><FiSearch aria-hidden="true" /><span><strong>Search-ready</strong><small>Built-in SEO</small></span></div>
+                <div><FiLink2 aria-hidden="true" /><span><strong>Connected</strong><small>Product links</small></span></div>
+                <div><FiCheck aria-hidden="true" /><span><strong>Scheduled</strong><small>Ready to publish</small></span></div>
+              </div>
+              <div className="workflow-card__footer"><span>One less thing on your to-do list</span><span className="workflow-card__dots" aria-hidden="true"><i /><i /><i /></span></div>
+            </div>
+            <div className="hero-floating hero-floating--bottom"><span className="hero-floating__pulse" /> Publishing, even when you're busy</div>
           </div>
         </div>
-
-        <div className="workflow-card" aria-label="Example autoBlogger publishing workflow">
-          <div className="workflow-card__header">
-            <div>
-              <span className="workflow-card__label">Publishing workflow</span>
-              <strong>Next article</strong>
-            </div>
-            <span className="status-pill"><span /> Ready</span>
-          </div>
-          <div className="article-preview">
-            <span className="article-preview__tag">SEO article</span>
-            <h2>How to choose the right products for your store</h2>
-            <div className="article-preview__lines"><span /><span /><span /></div>
-          </div>
-          <div className="workflow-steps">
-            <div><FiSearch aria-hidden="true" /><span><strong>Search-ready</strong><small>Metadata & structure</small></span></div>
-            <div><FiLink aria-hidden="true" /><span><strong>Product links</strong><small>Added automatically</small></span></div>
-            <div><FiEdit3 aria-hidden="true" /><span><strong>Fully editable</strong><small>Inside Shopify</small></span></div>
-          </div>
-          <div className="workflow-card__footer">
-            <span>Scheduled for Thursday</span><strong>10:00 AM</strong>
-          </div>
+      </section>
+      <div className="proof-strip" aria-label="Why merchants choose autoBlogger">
+        <div className="proof-strip__inner">
+          <span><strong>2×</strong> Shopify Staff Pick</span>
+          <span><strong>4.9/5</strong> Shopify App Store rating</span>
+          <span><strong>14 days</strong> to try it free</span>
         </div>
       </div>
-    </section>
+    </>
   );
 };
 

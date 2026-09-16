@@ -61,12 +61,12 @@ const PricingSection = props => {
   return (
     <section className="content-section pricing-section">
       {props.home ? (
-        <h3 className="section-title">Simple pricing that scales with you</h3>
+        <h2 className="section-title">Find your publishing pace</h2>
       ) : (
         <h1 className="section-title">Pricing for autoBlogger</h1>
       )}
       <p className="section-lead">Choose the publishing pace that fits your store. Starter, Growth, and Volume each include a 14-day free trial.</p>
-      <p className="section-supporting">
+      {!props.home && <p className="section-supporting">
         Compare what each plan includes with the{" "}
         <SmartLink to="/features" className="text-primary font-semibold hover:underline">
           features overview
@@ -80,7 +80,7 @@ const PricingSection = props => {
           merchant feedback
         </SmartLink>
         .
-      </p>
+      </p>}
 
       <div className="pricing-grid">
         {pricingPlans.map((plan, index) => {
