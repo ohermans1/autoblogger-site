@@ -20,6 +20,15 @@ const AsSeenOnPage = () => (
         </article>
 
         <article className="as-seen-page__card">
+          <span className="as-seen-page__label">Directory listing</span>
+          <h2>Approved on SaaSHub</h2>
+          <p>Find autoBlogger on SaaSHub.</p>
+          <a href="https://www.saashub.com/autoblogger-bot?utm_source=badge&utm_campaign=badge&utm_content=autoblogger-bot&badge_variant=color&badge_kind=approved" target="_blank" rel="noopener noreferrer" aria-label="Visit autoBlogger on SaaSHub (opens in a new tab)">
+            <img className="as-seen-page__saashub-image" src="https://cdn-b.saashub.com/img/badges/approved-color.png?v=1" alt="AutoBlogger.bot badge" loading="lazy" />
+          </a>
+        </article>
+
+        <article className="as-seen-page__card">
           <span className="as-seen-page__label">Shopify recognition</span>
           <h2>Built for Shopify</h2>
           <p>The Built for Shopify badge for autoBlogger.</p>
