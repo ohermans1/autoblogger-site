@@ -533,6 +533,17 @@
     "tags": ["shopify", "trust", "proof", "reviews"]
   },
   {
+    "route": "/as-seen-on",
+    "title": "As Seen On | autoBlogger",
+    "description": "See where autoBlogger is listed and recognized, including Directree and Built for Shopify.",
+    "heading": "As seen on",
+    "intro": "Places where autoBlogger has been listed or recognized.",
+    "bullets": [],
+    "changefreq": "monthly",
+    "priority": 0.5,
+    "tags": ["shopify", "trust", "proof"]
+  },
+  {
     "route": "/free-seo-checklist",
     "title": "Free Shopify SEO Checklist Template | Download XLSX",
     "description": "Use the free Shopify SEO checklist template to track technical SEO, content, internal links, and weekly optimization tasks. Wix checklist included.",

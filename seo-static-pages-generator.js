@@ -19,6 +19,7 @@ const NAV_LINKS = [
   { label: "Reviews", href: "/reviews" },
   { label: "Blog", href: "/blog" },
   { label: "2x Staff Pick", href: "/2x-staff-pick" },
+  { label: "As Seen On", href: "/as-seen-on" },
   { label: "Contact", href: "/contact" },
   { label: "Other Apps", href: "/other-apps" },
   { label: "Free SEO Checklist", href: "/free-seo-checklist" }
@@ -860,6 +861,7 @@ function renderHtml(page, pages) {
   const ctaLabel = page.ctaLabel || "Start Free Trial";
   const ctaHref = page.ctaHref || APP_LISTING_URL;
   const isStaffPickPage = page.route === "/2x-staff-pick";
+  const isAsSeenOnPage = page.route === "/as-seen-on";
   const isBlogIndexPage = page.route === "/blog";
   const isBlogArticlePage = hasRoutePrefix(page, "/blog") && page.route !== "/blog";
   const isContactPage = page.route === "/contact";
@@ -871,6 +873,8 @@ function renderHtml(page, pages) {
       ? `<p>${escapeHtml(page.intro)}</p><section class="sub-card"><h2>Shopify App Store rating</h2><p>autoBlogger is rated 4.9 out of 5 from 85 reviews on the <a href="${APP_LISTING_URL}">Shopify App Store</a>. Read the latest merchant feedback there.</p></section>${renderQuickTakeaways(page)}${renderContentSections(page)}`
       : page.route === "/site-map"
       ? `<p>${escapeHtml(page.intro)}</p>${renderSiteMapCollection(pages)}`
+      : isAsSeenOnPage
+        ? `<p>${escapeHtml(page.intro)}</p><div class="as-seen-grid"><section class="as-seen-card"><span class="as-seen-label">Directory listing</span><h2>Verified on Directree</h2><p>Find autoBlogger on Directree.</p><a href="https://www.directree.io" target="_blank" rel="noopener noreferrer" aria-label="Visit autoBlogger on Directree (opens in a new tab)"><img src="https://www.directree.io/badge/directree-badge-lightmode.svg" alt="Verified on Directree" width="200" height="37" loading="lazy" /></a></section><section class="as-seen-card"><span class="as-seen-label">Shopify recognition</span><h2>Built for Shopify</h2><p>The Built for Shopify badge for autoBlogger.</p><a href="https://apps.shopify.com/autoblogger" target="_blank" rel="noopener noreferrer" aria-label="View autoBlogger on the Shopify App Store (opens in a new tab)"><img class="as-seen-shopify-image" src="/built-for-shopify-badge.png" alt="autoBlogger is officially Built for Shopify" width="619" height="619" loading="lazy" /></a></section></div>`
       : isStaffPickPage
         ? renderStaffPickPrimaryContent(page)
         : isBlogIndexPage
@@ -880,15 +884,15 @@ function renderHtml(page, pages) {
             : `<p>${escapeHtml(page.intro)}</p>${renderQuickTakeaways(page)}${renderResourceCards(page)}${renderToolSection(page)}${renderComparisonTable(page)}${renderProofGallery(page)}${renderContentSections(page)}${renderChecklist(page)}`;
   const toolScript = renderToolScript(page);
   const isBlogPage = isBlogIndexPage || isBlogArticlePage;
-  const mainLayoutClass = isStaffPickPage ? "container staff-pick-layout" : isBlogPage ? "container blog-layout" : "container grid";
-  const articleClass = isStaffPickPage ? "card staff-pick-card" : isBlogPage ? "blog-shell" : "card";
+  const mainLayoutClass = isStaffPickPage ? "container staff-pick-layout" : isAsSeenOnPage ? "container as-seen-layout" : isBlogPage ? "container blog-layout" : "container grid";
+  const articleClass = isStaffPickPage ? "card staff-pick-card" : isAsSeenOnPage ? "card as-seen-article" : isBlogPage ? "blog-shell" : "card";
   const articleHeading = isStaffPickPage || isBlogPage ? "" : `${renderBreadcrumbNav(page)}<h1>${escapeHtml(page.heading)}</h1>`;
-  const articleActions = isStaffPickPage || isBlogPage
+  const articleActions = isStaffPickPage || isAsSeenOnPage || isBlogPage
     ? ""
     : isContactPage
       ? `<div class="actions"><a class="btn-primary" href="mailto:support@autoblogger.bot">Email support</a><a class="btn-secondary" href="${escapeHtml(APP_LISTING_URL)}">View the Shopify app</a></div>`
       : `<div class="actions"><a class="btn-primary" href="${escapeHtml(ctaHref)}">${escapeHtml(ctaLabel)}</a><a class="btn-secondary" href="/contact">Contact Support</a></div>`;
-  const asideContent = isStaffPickPage || isBlogPage ? "" : `<aside>${renderRelatedLinks(page, pages)}${renderFaqSection(page)}</aside>`;
+  const asideContent = isStaffPickPage || isAsSeenOnPage || isBlogPage ? "" : `<aside>${renderRelatedLinks(page, pages)}${renderFaqSection(page)}</aside>`;
   const ogType = isGuidePage(page) || isStaffPickPage ? "article" : "website";
   const showMarketingCta = !["/privacy", "/terms", "/autoschema-privacy", "/autoschema-terms", "/site-map"].includes(page.route);
 
@@ -1050,7 +1054,7 @@ function renderHtml(page, pages) {
     <header class="static-header">
       <div class="container static-header-inner">
         <a class="static-brand" href="/" aria-label="autoBlogger home"><img src="/logo.png" width="44" height="44" alt="" /><span>auto<span>Blogger</span><small>for Shopify</small></span></a>
-        <nav class="static-desktop-nav" aria-label="Primary">${nav}<details class="resource-menu"><summary>Resources <span aria-hidden="true">⌄</span></summary><div class="resource-menu-panel"><a href="/free-seo-checklist">Free SEO checklist</a><a href="/2x-staff-pick">2x Staff Pick</a><a href="/faqs">FAQs</a><a href="/other-apps">Other apps</a></div></details><a class="static-header-cta" href="${APP_LISTING_URL}">Start free trial</a></nav>
+        <nav class="static-desktop-nav" aria-label="Primary">${nav}<details class="resource-menu"><summary>Resources <span aria-hidden="true">⌄</span></summary><div class="resource-menu-panel"><a href="/free-seo-checklist">Free SEO checklist</a><a href="/2x-staff-pick">2x Staff Pick</a><a href="/as-seen-on">As Seen On</a><a href="/faqs">FAQs</a><a href="/other-apps">Other apps</a></div></details><a class="static-header-cta" href="${APP_LISTING_URL}">Start free trial</a></nav>
         <details class="static-mobile-menu"><summary>Menu <span aria-hidden="true">☰</span></summary><nav aria-label="Mobile navigation">${mobileNav}<a class="static-header-cta" href="${APP_LISTING_URL}">Start free trial</a></nav></details>
       </div>
     </header>

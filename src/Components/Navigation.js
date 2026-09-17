@@ -26,6 +26,7 @@ const Navigation = () => {
         <div className="nav-dropdown__menu">
           <SmartNavLink to="/free-seo-checklist" className={navClass}>Free SEO checklist</SmartNavLink>
           <SmartNavLink to="/2x-staff-pick" className={navClass}>2x Staff Pick</SmartNavLink>
+          <SmartNavLink to="/as-seen-on" className={navClass}>As Seen On</SmartNavLink>
           <SmartNavLink to="/faqs" className={navClass}>FAQs</SmartNavLink>
           <SmartNavLink to="/other-apps" className={navClass}>Other apps</SmartNavLink>
           <SmartNavLink to="/contact" className={navClass}>Contact</SmartNavLink>

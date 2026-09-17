@@ -16,6 +16,7 @@ export const SITE_NAV_ITEMS = [
   { name: "Reviews", path: "/reviews" },
   { name: "Blog", path: "/blog" },
   { name: "2x Staff Pick", path: "/2x-staff-pick" },
+  { name: "As Seen On", path: "/as-seen-on" },
   { name: "Contact", path: "/contact" },
   { name: "Other Apps", path: "/other-apps" },
   { name: "Free SEO Checklist", path: "/free-seo-checklist" }

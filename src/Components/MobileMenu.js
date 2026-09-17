@@ -28,6 +28,9 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
         <SmartNavLink to="/2x-staff-pick" onClick={toggleMenu} className={linkClass}>
           2x Staff Pick
         </SmartNavLink>
+        <SmartNavLink to="/as-seen-on" onClick={toggleMenu} className={linkClass}>
+          As Seen On
+        </SmartNavLink>
         <SmartNavLink to="/contact" onClick={toggleMenu} className={linkClass}>
           Contact Us
         </SmartNavLink>
