@@ -67,6 +67,14 @@ const SectionFallback = () => <section className="py-10" aria-hidden="true" />;
 
 const lazySection = element => <Suspense fallback={<SectionFallback />}>{element}</Suspense>;
 
+const StandaloneArticleRedirect = ({ route }) => {
+  useEffect(() => {
+    window.location.replace(`${route}/`);
+  }, [route]);
+
+  return null;
+};
+
 const App = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -124,7 +132,11 @@ const App = () => {
             <Route path="/premium-extras" element={lazySection(<PremiumExtras />)} />
             <Route path="/site-map" element={lazySection(<SiteMapPage />)} />
             {generatedRoutePages.map(page => (
-              <Route key={page.route} path={page.route} element={lazySection(<SeoLandingPage page={page} />)} />
+              <Route
+                key={page.route}
+                path={page.route}
+                element={page.standaloneHtml ? <StandaloneArticleRedirect route={page.route} /> : lazySection(<SeoLandingPage page={page} />)}
+              />
             ))}
             <Route path="*" element={<NotFoundPage />} />
           </Routes>

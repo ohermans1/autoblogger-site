@@ -1092,9 +1092,10 @@ function writePage(page, pages) {
 
 function generatePages(pages = STATIC_SEO_PAGES) {
   pages.forEach(page => {
+    if (page.standaloneHtml) return;
     writePage(page, pages);
   });
-  console.log(`Generated ${pages.length} static SEO route pages.`);
+  console.log(`Generated ${pages.filter(page => !page.standaloneHtml).length} static SEO route pages.`);
 }
 
 if (require.main === module) {

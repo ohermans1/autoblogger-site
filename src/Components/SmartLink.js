@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { normalizePath } from "../seo/pageCatalog";
+import { getPageByRoute, normalizePath } from "../seo/pageCatalog";
 
 function isModifiedEvent(event) {
   return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
@@ -24,7 +24,8 @@ export const SmartLink = React.forwardRef(({ to, onClick, target, className, chi
       rest.download ||
       event.button !== 0 ||
       isModifiedEvent(event) ||
-      isExternalHref(href)
+      isExternalHref(href) ||
+      getPageByRoute(href)?.standaloneHtml
     ) {
       return;
     }

@@ -155,7 +155,23 @@
     "priority": 0.7,
     "tags": ["blog", "shopify", "trust", "reviews"],
     "ctaLabel": "Read Latest Post",
-    "ctaHref": "/blog/best-ai-blogging-tool-shopify"
+    "ctaHref": "/blog/shopify-ai-blogging-apps-seo-comparison"
+  },
+  {
+    "route": "/blog/shopify-ai-blogging-apps-seo-comparison",
+    "title": "Shopify AI Blogging Apps Compared by Real SEO Output",
+    "description": "A real-world SEO comparison of published Shopify blog articles associated with autoBlogger, Bloggle, Essential AI SEO, Auto Blogs Agent, Jolt and AI Blog Agent.",
+    "heading": "I Compared the SEO Structure of 6 Shopify AI Blogging Apps Using Real Published Articles",
+    "intro": "Instead of comparing feature lists, I looked at the actual SEO structure of published Shopify blog posts associated with autoBlogger, Bloggle, Essential AI SEO, Auto Blogs Agent, Jolt and AI Blog Agent.",
+    "articleKicker": "Real SEO output comparison",
+    "authorName": "Ollie Hermans",
+    "authorUrl": "https://autoblogger.bot/",
+    "datePublished": "2026-09-18",
+    "dateModified": "2026-09-18",
+    "changefreq": "monthly",
+    "priority": 0.78,
+    "tags": ["blog", "shopify", "seo", "ai", "comparison"],
+    "standaloneHtml": true
   },
   {
     "route": "/blog/best-ai-blogging-tool-shopify",
