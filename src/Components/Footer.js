@@ -16,6 +16,12 @@ const Footer = () => {
         <SmartLink to="/terms">
           Terms and Conditions
         </SmartLink>
+        <SmartLink to="/backlink-terms">
+          Backlink Program Terms
+        </SmartLink>
+        <SmartLink to="/free-extras">
+          Free Extras
+        </SmartLink>
         <SmartLink to="/premium-extras">
           Premium Extras
         </SmartLink>

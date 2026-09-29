@@ -214,7 +214,7 @@ function isGuidePage(page) {
 function getPageSection(page) {
   if (page.route === "/site-map") return "Site";
   if (page.route === "/blog" || hasRoutePrefix(page, "/blog")) return "Blog";
-  if (["/privacy", "/terms", "/autoschema-terms", "/autoschema-privacy"].includes(page.route)) return "Legal";
+  if (["/privacy", "/terms", "/autoschema-terms", "/autoschema-privacy", "/backlink-terms"].includes(page.route)) return "Legal";
   return "Core";
 }
 
@@ -898,7 +898,7 @@ function renderHtml(page, pages) {
       : `<div class="actions"><a class="btn-primary" href="${escapeHtml(ctaHref)}">${escapeHtml(ctaLabel)}</a><a class="btn-secondary" href="/contact">Contact Support</a></div>`;
   const asideContent = isStaffPickPage || isAsSeenOnPage || isBlogPage ? "" : `<aside>${renderRelatedLinks(page, pages)}${renderFaqSection(page)}</aside>`;
   const ogType = isGuidePage(page) || isStaffPickPage ? "article" : "website";
-  const showMarketingCta = !["/privacy", "/terms", "/autoschema-privacy", "/autoschema-terms", "/site-map"].includes(page.route);
+  const showMarketingCta = !["/privacy", "/terms", "/autoschema-privacy", "/autoschema-terms", "/backlink-terms", "/site-map"].includes(page.route);
 
   return `<!DOCTYPE html>
 <html lang="en">

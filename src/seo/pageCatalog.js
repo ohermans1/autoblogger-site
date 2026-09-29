@@ -154,7 +154,7 @@ export function isGuidePage(pageOrRoute) {
 export function getPageSection(page) {
   if (page.route === "/site-map") return "Site";
   if (page.route === "/blog" || hasRoutePrefix(page, "/blog")) return "Blog";
-  if (["/privacy", "/terms", "/autoschema-terms", "/autoschema-privacy"].includes(page.route)) return "Legal";
+  if (["/privacy", "/terms", "/autoschema-terms", "/autoschema-privacy", "/backlink-terms"].includes(page.route)) return "Legal";
   return "Core";
 }
 

@@ -640,6 +640,39 @@
     "tags": ["legal", "schema"]
   },
   {
+    "route": "/backlink-terms",
+    "title": "Backlink Program Terms | autoBlogger",
+    "description": "Read the backlink program terms for autoBlogger.",
+    "heading": "Backlink Program Terms",
+    "intro": "Review program eligibility, usage rules, and participation expectations for the backlink program.",
+    "bullets": [
+      "Program participation terms",
+      "Responsibilities and usage boundaries",
+      "Content and link placement context",
+      "Reference to the full terms document"
+    ],
+    "changefreq": "yearly",
+    "priority": 0.3,
+    "tags": ["legal", "backlinks"],
+    "ctaLabel": "View Backlink Program Terms",
+    "ctaHref": "https://ohermans1.github.io/autoBlogger-Backlink-Programme/"
+  },
+  {
+    "route": "/free-extras",
+    "title": "Free Extras | autoBlogger",
+    "description": "Learn about autoBlogger extras including backlink programme participation, spotlight articles, and complimentary autoSchema access.",
+    "heading": "Free Extras",
+    "intro": "Explore the additional visibility and SEO extras available to eligible autoBlogger users.",
+    "bullets": [
+      "Backlink programme participation on eligible plans",
+      "Weekly spotlight article opportunities",
+      "Complimentary autoSchema access"
+    ],
+    "changefreq": "monthly",
+    "priority": 0.4,
+    "tags": ["conversion", "backlinks", "growth"]
+  },
+  {
     "route": "/premium-extras",
     "title": "Premium Plan Extras | autoBlogger",
     "description": "Compare the advanced automation and companion apps included with Growth and Volume autoBlogger plans.",

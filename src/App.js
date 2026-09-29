@@ -19,6 +19,8 @@ const SEOChecklist = lazy(() => import("./Components/SEOChecklist"));
 const PricingSection = lazy(() => import("./Components/PricingSection"));
 const PrivacyPolicy = lazy(() => import("./Components/PrivacyPolicy"));
 const TermsAndConditions = lazy(() => import("./Components/TermsAndConditions"));
+const BacklinkProgramTerms = lazy(() => import("./Components/BacklinkProgramTerms"));
+const FreeExtras = lazy(() => import("./Components/FreeExtras"));
 const PremiumExtras = lazy(() => import("./Components/PremiumExtras"));
 const AutoSchemaTerms = lazy(() => import("./Components/AutoSchemaTerms"));
 const AutoSchemaPrivacy = lazy(() => import("./Components/AutoSchemaPrivacy"));
@@ -41,6 +43,8 @@ const CUSTOM_ROUTE_PATHS = new Set([
   "/terms",
   "/autoschema-terms",
   "/autoschema-privacy",
+  "/backlink-terms",
+  "/free-extras",
   "/premium-extras",
   "/site-map"
 ]);
@@ -129,6 +133,8 @@ const App = () => {
             <Route path="/terms" element={lazySection(<TermsAndConditions />)} />
             <Route path="/autoschema-terms" element={lazySection(<AutoSchemaTerms />)} />
             <Route path="/autoschema-privacy" element={lazySection(<AutoSchemaPrivacy />)} />
+            <Route path="/backlink-terms" element={lazySection(<BacklinkProgramTerms />)} />
+            <Route path="/free-extras" element={lazySection(<FreeExtras />)} />
             <Route path="/premium-extras" element={lazySection(<PremiumExtras />)} />
             <Route path="/site-map" element={lazySection(<SiteMapPage />)} />
             {generatedRoutePages.map(page => (
