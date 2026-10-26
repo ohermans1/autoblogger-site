@@ -34,8 +34,8 @@ const FALLBACK_META = {
 };
 
 const APP_AGGREGATE_RATING = {
-  ratingValue: "4.9",
-  ratingCount: "85",
+  ratingValue: "5",
+  ratingCount: "93",
   bestRating: "5",
   worstRating: "1"
 };

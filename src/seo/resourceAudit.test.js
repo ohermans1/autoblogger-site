@@ -108,7 +108,7 @@ test("software schema uses a real offer and only marks ratings where visible", (
 
   expect(featuresApp.offers).toMatchObject({ price: "9.95", priceCurrency: "USD" });
   expect(featuresApp.aggregateRating).toBeUndefined();
-  expect(reviewsApp.aggregateRating).toMatchObject({ ratingValue: "4.9", ratingCount: "85" });
+  expect(reviewsApp.aggregateRating).toMatchObject({ ratingValue: "5", ratingCount: "93" });
   expect(reviewsApp.review).toBeUndefined();
 });
 

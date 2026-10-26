@@ -63,7 +63,7 @@ const HeroSection = () => {
       <div className="proof-strip" aria-label="Why merchants choose autoBlogger">
         <div className="proof-strip__inner">
           <span><strong>2×</strong> Shopify Staff Pick</span>
-          <span><strong>4.9/5</strong> Shopify App Store rating</span>
+          <span><strong>5/5</strong> Shopify App Store rating</span>
           <span><strong>14 days</strong> to try it free</span>
         </div>
       </div>

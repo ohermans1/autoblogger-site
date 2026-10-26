@@ -312,8 +312,8 @@ function buildSoftwareApplicationGraph(includeRating) {
     },
     aggregateRating: includeRating ? {
       "@type": "AggregateRating",
-      ratingValue: "4.9",
-      ratingCount: "85"
+      ratingValue: "5",
+      ratingCount: "93"
     } : undefined
   };
 }
@@ -870,7 +870,7 @@ function renderHtml(page, pages) {
     isContactPage
       ? `<p>${escapeHtml(page.intro)}</p><section class="sub-card contact-direct"><h2>Email autoBlogger support</h2><p>Have a question about setup, plans, or a feature? Send us a note with your store URL and what you need help with.</p><p><a class="contact-email" href="mailto:support@autoblogger.bot">support@autoblogger.bot</a></p><p>If an email app does not open, copy the address and use your inbox.</p></section>${renderQuickTakeaways(page)}`
       : isReviewsPage
-      ? `<p>${escapeHtml(page.intro)}</p><section class="sub-card"><h2>Shopify App Store rating</h2><p>autoBlogger is rated 4.9 out of 5 from 85 reviews on the <a href="${APP_LISTING_URL}">Shopify App Store</a>. Read the latest merchant feedback there.</p></section>${renderQuickTakeaways(page)}${renderContentSections(page)}`
+      ? `<p>${escapeHtml(page.intro)}</p><section class="sub-card"><h2>Shopify App Store rating</h2><p>autoBlogger is rated 5 out of 5 from 93 reviews on the <a href="${APP_LISTING_URL}">Shopify App Store</a>. Read the latest merchant feedback there.</p></section>${renderQuickTakeaways(page)}${renderContentSections(page)}`
       : page.route === "/site-map"
       ? `<p>${escapeHtml(page.intro)}</p>${renderSiteMapCollection(pages)}`
       : isAsSeenOnPage

@@ -72,7 +72,7 @@ const ReviewsSection = props => {
       )}
 
       <h4 className="rating-line">
-        <span aria-hidden="true">★★★★★</span> 4.9 out of 5 on the{" "}
+        <span aria-hidden="true">★★★★★</span> 5 out of 5 on the{" "}
         <a href={fullReviewsLink} target="_blank" rel="noopener noreferrer" aria-label="Visit the Shopify App Store to read more reviews">
           Shopify App Store
         </a>
