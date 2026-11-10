@@ -28,7 +28,7 @@ const AsSeenOnPage = () => (
           </a>
         </article>
 
-        <article className="as-seen-page__card">
+        <article className="as-seen-page__card as-seen-page__card--featured">
           <span className="as-seen-page__label">Shopify recognition</span>
           <h2>Built for Shopify</h2>
           <p>The Built for Shopify badge for autoBlogger.</p>
