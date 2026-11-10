@@ -32,6 +32,7 @@ const HeroSection = () => {
               <SmartLink to="/features" className="button-secondary">Explore the features</SmartLink>
             </div>
             <p className="hero-fineprint"><FiCheck aria-hidden="true" /> Made for Shopify stores <span aria-hidden="true">·</span> Edit posts in Shopify <span aria-hidden="true">·</span> Plans from $9.95/month</p>
+            <p className="hero-featured">Proudly featured on <a href="https://appstoreindex.org/" target="_blank" rel="noopener noreferrer">App Store Index</a></p>
           </div>
 
           <div className="hero-visual" aria-label="Illustration of an autoBlogger article publishing workflow">

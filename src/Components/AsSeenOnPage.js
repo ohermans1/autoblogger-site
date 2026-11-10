@@ -36,6 +36,14 @@ const AsSeenOnPage = () => (
             <img className="as-seen-page__shopify-image" src="/built-for-shopify-badge.png" alt="autoBlogger is officially Built for Shopify" width="619" height="619" loading="lazy" />
           </a>
         </article>
+        <article className="as-seen-page__card">
+          <span className="as-seen-page__label">Directory listing</span>
+          <h2>Listed on App Store Index</h2>
+          <p>Find autoBlogger on App Store Index.</p>
+          <a href="https://appstoreindex.org/apps/autoblogger" target="_blank" rel="noopener noreferrer" aria-label="autoBlogger — App Store Index (opens in a new tab)">
+            <img src="https://appstoreindex.org/badges/listed-light.svg" alt="Listed on App Store Index" width="240" height="72" loading="lazy" style={{ display: "block", maxWidth: "100%", height: "auto", border: 0 }} />
+          </a>
+        </article>
       </div>
     </div>
   </section>
